@@ -1,0 +1,28 @@
+# Environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+
+# Run outputs — released results are archived on Zenodo, not committed here
+runs/
+out/
+*.out
+*.log
+
+# Large solver artefacts (wake fields, time histories) are deleted after approved post-processing
+*.h5
+*.nc
+*.vtk
+*.vtu
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use OpenFAWE, please cite the archived release below rather than the repository URL."
+title: "OpenFAWE: an open framework for coupled floating airborne wind energy dynamics and physics-linked cost screening"
+abstract: >-
+  OpenFAWE is an open-source, time-domain framework for the offshore engineering side of
+  Floating Airborne Wind Energy (F-AWE): how a floating station and its lines respond when a
+  crosswind-flying airborne unit acts on them as a moving, direction-varying boundary condition,
+  and what the resulting design envelopes cost. It couples an airborne-wind lifting-surface /
+  free-vortex-wake module with potential-flow hydrodynamics in a Cummins time-domain model, two
+  configurations of a lumped-mass line model, and turbulent inflow. Design-basis load envelopes
+  are carried through line and anchor sizing into manufacturing-stage CAPEX and comparative
+  levelised cost of energy, with computed and assumed cost drivers reported separately. OpenFAWE
+  does not aim to advance airborne-wind flight physics, kite design or flight-control synthesis;
+  those inputs are taken from the published state of the art and frozen in the design basis.
+type: software
+authors:
+  - family-names: Tian
+    given-names: Yinong
+    orcid: "https://orcid.org/0000-0003-1912-0232"
+    affiliation: "Centre for Marine Technology and Ocean Engineering (CENTEC), Instituto Superior Tecnico, University of Lisbon"
+    email: yinong.tian@tecnico.ulisboa.pt
+version: 0.1.0
+date-released: "2026-07-29"
+doi: 10.5281/zenodo.21656345
+license: Apache-2.0
+repository-code: "https://github.com/robytian/OpenFAWE"
+url: "https://doi.org/10.5281/zenodo.21656345"
+keywords:
+  - airborne wind energy
+  - floating airborne wind energy
+  - floating offshore wind
+  - coupled multi-body dynamics
+  - free-vortex wake
+  - mooring dynamics
+  - shared mooring
+  - levelised cost of energy
+  - Gaussian process surrogate
+  - uncertainty quantification
+  - open-source scientific software
+  - offshore renewable energy
+references:
+  - type: software
+    title: "MRUT (Multi-Rotor/Unit Wind Turbines Tool)"
+    authors:
+      - family-names: Tian
+        given-names: Yinong
+        orcid: "https://orcid.org/0000-0003-1912-0232"
+    year: 2025
+    doi: 10.17632/5jrdc8jb65.1
+    notes: >-
+      Separate earlier project by the same author. OpenFAWE reimplements its free-vortex-wake
+      kernels from published formulations and regression cases and does not import, link against,
+      call or vendor MRUT.

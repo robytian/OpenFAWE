@@ -1,0 +1,57 @@
+{
+  "upload_type": "software",
+  "title": "OpenFAWE: an open framework for coupled floating airborne wind energy dynamics and physics-linked cost screening",
+  "version": "0.1.0",
+  "language": "eng",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "creators": [
+    {
+      "name": "Tian, Yinong",
+      "orcid": "0000-0003-1912-0232",
+      "affiliation": "Centre for Marine Technology and Ocean Engineering (CENTEC), Instituto Superior Tecnico, University of Lisbon"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Wang, Shan",
+      "type": "Supervisor",
+      "orcid": "0000-0002-6990-8071",
+      "affiliation": "Centre for Marine Technology and Ocean Engineering (CENTEC), Instituto Superior Tecnico, University of Lisbon"
+    }
+  ],
+  "keywords": [
+    "airborne wind energy",
+    "floating airborne wind energy",
+    "floating offshore wind",
+    "coupled multi-body dynamics",
+    "free-vortex wake",
+    "mooring dynamics",
+    "shared mooring",
+    "levelised cost of energy",
+    "Gaussian process surrogate",
+    "uncertainty quantification",
+    "open-source scientific software",
+    "offshore renewable energy"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/robytian/OpenFAWE",
+      "relation": "isSupplementTo",
+      "scheme": "url",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.17632/5jrdc8jb65.1",
+      "relation": "references",
+      "scheme": "doi",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "10.54499/CETP/0002/2023",
+      "relation": "references",
+      "scheme": "doi"
+    }
+  ],
+  "notes": "Project-owned code is released under Apache-2.0; documentation and benchmark data under CC BY 4.0. Third-party solvers are reused through adapters under their own licences and are not vendored. OpenFAWE reimplements its free-vortex-wake kernels from published formulations and regression cases and does not import or call MRUT (doi:10.17632/5jrdc8jb65.1), which remains a separate project."
+}
