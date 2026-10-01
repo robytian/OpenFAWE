@@ -1,154 +1,78 @@
+<p align="center">
+  <img src="docs/figures/openfawe-hero.png" alt="Free vortex wakes of the TU Delft V3 kite and the Makani M600 computed with OpenFAWE" width="100%">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/status-research%20preview-0f2738" alt="status: research preview">
+  <img src="https://img.shields.io/badge/platform-Windows%2064--bit-1f7ea2" alt="platform: Windows 64-bit">
+  <img src="https://img.shields.io/badge/licence-all%20rights%20reserved-4a5560" alt="licence: all rights reserved">
+</p>
+
 # OpenFAWE
 
-**An open framework for coupled floating airborne wind energy (F-AWE) dynamics and physics-linked cost screening.**
+Aerodynamic simulation of airborne wind energy kites — research preview.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21656345.svg)](https://doi.org/10.5281/zenodo.21656345)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Docs: CC BY 4.0](https://img.shields.io/badge/Docs%20%26%20data-CC%20BY%204.0-lightgrey.svg)](#licensing)
+> **Status.** OpenFAWE is independent research carried out and funded by the author.
+> The source code is not public yet. It will be released progressively after the related
+> journal papers are published, and more features will be added over time. This repository
+> currently provides a method comparison report and a Windows research-preview program.
 
----
+## Results at a glance
 
-> ### Status: v0.1.0 — specification and roadmap release
->
-> **This repository does not yet contain a production solver.** It currently publishes the scope,
-> module boundaries, design basis, evidence and acceptance rules, and the release policy, so that
-> they can be inspected before any results exist. Solver, array and cost components are added only
-> as they pass the documented verification and component-validation checks described in
-> [`docs/evidence-policy.md`](docs/evidence-policy.md).
->
-> Planned sequence and gates: [`ROADMAP.md`](ROADMAP.md).
+<p align="center">
+  <img src="docs/figures/Fig1_V3_methods_vs_public_600dpi.png" alt="TU Delft V3 kite: lift, drag and pitching moment of eight OpenFAWE method combinations compared with wind-tunnel, RANS and open-source VSM results" width="100%">
+</p>
 
----
+TU Delft V3 kite: eight OpenFAWE method combinations compared with wind-tunnel measurements
+(Poland et al., 2026), RANS results (Viré et al., 2020) and the open-source vortex-step-method
+code (Cayon et al., 2023).
 
-## What this is
+- The open-source VSM code, run with the same input, reproduces OpenFAWE VSM: lift within 0.3%,
+  drag within 0.9%.
+- At 5.4° and 7.4° the lift of the polar-coupled methods is within −12% to +5% of the wind tunnel.
+  The low-angle lift and the pitching moment differ from the measurements for all codes,
+  including RANS and the open-source VSM; this is still being studied.
+- For the Makani M600, the straight-wake methods are within −1.6% to +0.8% of the open-source
+  VSM lift ([Figure 2](docs/figures/Fig2_M600_methods_vs_public_VSM_600dpi.png)). The effect of a
+  fuselage is shown separately and is not a validation ([Figure 3](docs/figures/Fig3_M600_fuselage_effect_600dpi.png)).
 
-OpenFAWE addresses the offshore engineering side of Floating Airborne Wind Energy: how a floating
-station and its lines respond when a crosswind-flying airborne unit acts on them as a **moving,
-direction-varying boundary condition** — and what the resulting design envelopes cost.
+Full details, limitations and references: **[method comparison report](docs/comparison-report.md)**.
 
-Power estimates alone cannot show whether an F-AWE concept stays dynamically and structurally
-feasible offshore once waves, platform motion, airborne-line loads, mooring response, array
-interference, access and replacement are included. OpenFAWE targets that pre-prototype decision gap
-by turning coupled offshore physics into reproducible design and cost evidence.
+## OpenFAWE Wake Viewer (Windows)
 
-## Three questions it is built to answer
+Choose a model (V3 kite or M600), a wind speed and a simulated time; the program computes the
+free vortex wake and replays it. Download it from
+[Releases](https://github.com/robytian/OpenFAWE/releases).
 
-**1 · Coupled single-unit response.** When does the coupled response of a floating station, its
-airborne tether and its station-keeping lines depart from the superposition of separately evaluated
-aerodynamic, hydrodynamic and mooring models?
+1. Download `OpenFAWE-WakeViewer-0.1.0-win64.zip` and check its SHA-256 against the value on the
+   release page.
+2. Unzip it and run `OpenFAWE-WakeViewer.exe`. The program is not code-signed, so Windows may show
+   "Windows protected your PC"; choose "More info" and then "Run anyway".
+3. Choose the model, wind speed and simulated time, then click **Run and view wake**.
+   Runs are saved in `%USERPROFILE%\OpenFAWE-WakeViewer\runs`.
 
-For each pre-registered observable OpenFAWE reports a calibrated effect ratio
+What this preview does not do: the angle of attack is fixed per model; only the lifting-line
+free-wake method is offered; section polars are fixed (no Reynolds-number correction); at most
+80 time steps are computed; there is no tether, control or power model. The results are
+research output and are not validated for design use.
 
-```
-R = | y_full − y_superposition | / U95
-```
+## Methods in brief
 
-where `U95` is the combined 95 % numerical and forcing uncertainty. Non-superposition is treated as
-established only if `R > 1` for at least two observables from **different subsystems** — including
-station motion and line load — and the exceedance recurs under **two forcing seeds**.
+Eight aerodynamic method combinations: lifting line (LL), vortex step method (VSM;
+Cayon et al., 2023), inviscid vortex-lattice lifting surface (LS) and polar-coupled LS, each
+with a prescribed straight wake or a free vortex wake. The free-wake formulation is derived
+from OpenFAST/OLAF (Branlard et al., 2022). The wake images above are archived 40-step
+free-wake states from an impulsive start; they illustrate the method and are not a
+convergence result.
 
-**2 · Array coupling.** Within geometrically feasible two-unit layouts, do combined wake and
-shared-mooring interactions move energy, motion, tether, fairlead or anchor observables by more than
-the combined uncertainty — or is there a defensible negligible-interaction boundary?
+## Licence
 
-**3 · Physics to cost.** Does a configuration favoured by annual energy production alone survive
-load-driven line and anchor sizing and bounded lifecycle assumptions?
+Copyright (c) 2026 Yinong Tian. All rights reserved; see [LICENSE.md](LICENSE.md).
+Third-party components remain under their own licences; see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-## Scope — and what is deliberately outside it
+Questions and bug reports: please open an issue.
 
-**In scope.** Coupled offshore response under a moving, direction-varying airborne load; airborne-tether
-and station-keeping line mechanics including shared topology; two-unit wake and shared-mooring
-interaction; a surrogate with an explicit applicability domain; design-basis load envelopes carried
-into line and anchor sizing, manufacturing-stage CAPEX and comparative levelised cost of energy.
+## 中文说明
 
-**Out of scope.** OpenFAWE does **not** aim to advance airborne-wind flight physics, kite design or
-flight-control synthesis — those inputs are taken from the published state of the art and frozen in
-the design basis. Also excluded: full membrane aeroelasticity; fatigue-life modelling
-(cycle-count-ready channels are archived, but no fatigue model is introduced); transition-control
-simulation for launch, landing and recovery (prescribed load envelopes are used instead); and any
-certification assessment.
-
-The DB1–DB4 matrix adapts IEC 61400-3-2:2025 and DNV-ST-0119 logic as a traceable **research** design
-basis. It is not a certification claim. See [`docs/design-basis.md`](docs/design-basis.md).
-
-## Planned architecture
-
-| Layer | Component | Origin |
-|---|---|---|
-| Aerodynamics | Lifting-surface / free-vortex-wake module for the airborne unit; vortex-step screening model | **new OpenFAWE code**, reimplemented from published formulations and regression cases |
-| Control | Published pumping-cycle controller, frozen at project start; saturation and tether-force exceedance kept as diagnostics | frozen published input |
-| Hydrodynamics | Potential-flow coefficients (HAMS; NEMOH-v3 quadratic-transfer-function checks) assembled into a Cummins model with viscous correction, Newman slow drift and wave-drift damping | reused open solvers + **new** assembly |
-| Lines | One lumped-mass core (MoorDyn) in two configurations: a variable-length airborne tether carrying the pumping boundary condition, and submerged station-keeping lines with seabed contact and shared topology | reused open solver + **new** boundary condition, adapters and shared-load routing |
-| Inflow | Turbulent wind fields (TurbSim); current treated explicitly | reused open solver |
-| Coupling | Predictor–corrector macro-step layer, project adapters, automated evidence checks | **new OpenFAWE code** |
-| Surrogate | Gaussian-process active learning with a variable-specific applicability map; constraint-crossing intervals are returned to the coupled solver rather than accepted | **new OpenFAWE code** |
-| Cost | Design-basis load envelopes → line and anchor sizing → manufacturing-stage CAPEX → comparative LCoE under declared low / central / high lifecycle scenarios | **new OpenFAWE code** |
-| Validation evidence only | Selected CFD (OpenFOAM) comparisons | evidence source, not a runtime dependency |
-
-Architecture detail and interface boundaries: [`docs/architecture.md`](docs/architecture.md).
-
-## Reference configuration
-
-The reference case couples a published multi-megawatt rigid fixed-wing pumping system
-(150.3 m² wing; 526–1434 m tether; up to 3.8 MW) to a VolturnUS-S-derived semi-submersible station
-(243.3 m water depth; 20 m draft; three 851.55 m lines; 877.3 m anchor radius).
-
-The motivating overlap is spectral: the pumping cycle sits at roughly 133–333 s while the station's
-horizontal slow modes sit at roughly 65–210 s. The two bands overlap, which is precisely why
-component superposition cannot be assumed.
-
-## Provenance
-
-OpenFAWE reimplements its free-vortex-wake kernels from **published formulations and regression
-cases**. It does **not** import or call
-[MRUT](https://github.com/robytian/MRUT) (Multi-Rotor/Unit Wind Turbines Tool,
-[doi:10.17632/5jrdc8jb65.1](https://doi.org/10.17632/5jrdc8jb65.1)) — the maintainer's earlier
-rotor-wake code, which remains a separate project under separate versioning.
-
-Third-party solvers are reused through project adapters and keep their own licences; they are not
-vendored into this repository.
-
-**Traceability rule.** One versioned case identifier follows every input, solver run, evidence check
-and cost result, so any released number can be traced back to the run that produced it.
-
-## Repository layout
-
-```
-README.md              this file
-ROADMAP.md             planned work, deliverables, milestones and gates
-CHANGELOG.md           released versions
-CONTRIBUTING.md        governance: contributions, review, dependencies, deprecation, releases
-LICENSE                Apache-2.0
-CITATION.cff           how to cite
-.zenodo.json           archival metadata for tagged releases
-docs/
-  architecture.md      module map, interfaces, coupling scheme, physics-to-cost chain
-  design-basis.md      DB1-DB4 load-case matrix and environmental content
-  evidence-policy.md   verification vs validation, acceptance rules, uncertainty handling
-```
-
-## Licensing
-
-- **Code owned by this project:** [Apache-2.0](LICENSE).
-- **Documentation and benchmark data:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-- **Third-party dependencies:** retain their own licences. Restricted or partner-confidential inputs
-  are never placed in this repository.
-
-## Citation
-
-Please cite the archived release rather than the repository URL:
-
-> Tian, Y. *OpenFAWE: an open framework for coupled floating airborne wind energy dynamics and
-> physics-linked cost screening.* Zenodo. https://doi.org/10.5281/zenodo.21656345
-
-Machine-readable metadata: [`CITATION.cff`](CITATION.cff).
-
-## Development
-
-Developed by **Yinong Tian** ([ORCID 0000-0003-1912-0232](https://orcid.org/0000-0003-1912-0232)) at
-the Centre for Marine Technology and Ocean Engineering (CENTEC), Instituto Superior Técnico,
-University of Lisbon, Portugal, with scientific supervision from
-**Dr Shan Wang** ([ORCID 0000-0002-6990-8071](https://orcid.org/0000-0002-6990-8071)).
-
-Questions, corrections and reuse requests are welcome through
-[GitHub Issues](https://github.com/robytian/OpenFAWE/issues).
+OpenFAWE 是作者自费开展的独立研究，用于空中风能风筝的气动仿真。源代码暂不公开，将在相关期刊论文发表后逐步开源，后续会补充更多功能。本仓库目前提供方法对比报告和一个 Windows 研究预览程序（可选择模型、风速和仿真时间，计算并回放自由尾迹），程序请在 Releases 下载。计算结果为研究结果，不能用于设计。
