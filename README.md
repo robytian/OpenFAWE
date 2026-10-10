@@ -5,7 +5,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/status-research%20preview-0f2738" alt="status: research preview">
   <img src="https://img.shields.io/badge/platform-Windows%2064--bit-1f7ea2" alt="platform: Windows 64-bit">
-  <img src="https://img.shields.io/badge/licence-all%20rights%20reserved-4a5560" alt="licence: all rights reserved">
+  <img src="https://img.shields.io/badge/source%20licence-Apache--2.0-4a5560" alt="source licence: Apache-2.0">
 </p>
 
 # OpenFAWE
@@ -13,9 +13,10 @@
 Aerodynamic simulation of airborne wind energy kites — research preview.
 
 > **Status.** OpenFAWE is independent research carried out and funded by the author.
-> The source code is not public yet. It will be released progressively after the related
-> journal papers are published, and more features will be added over time. This repository
-> currently provides a method comparison report and a Windows research-preview program.
+> The source code of the aerodynamic module is released here under the Apache License 2.0
+> ([`src/`](src), [`tests/`](tests)). Kite models, examples and the other modules will be added
+> progressively. The repository also provides a method comparison report and a Windows
+> research-preview program.
 
 ## Results at a glance
 
@@ -65,14 +66,33 @@ from OpenFAST/OLAF (Branlard et al., 2022). The wake images above are archived 4
 free-wake states from an impulsive start; they illustrate the method and are not a
 convergence result.
 
+## Source code: aerodynamic module
+
+[`src/openfawe/aero`](src/openfawe/aero) contains the lifting line, the vortex step method and the
+vortex-lattice lifting surface, each with a prescribed straight wake or a time-marching free vortex
+wake, the Lamb–Oseen regularised Biot–Savart kernel with a NumPy reference, a compiled (Numba) direct
+sum and a Barnes–Hut tree code, and the Newton solution of the circulation closure. Kite models and
+section data are not included yet; tests that need them are deselected in
+[`tests/conftest.py`](tests/conftest.py).
+
+```
+python -m venv .venv
+.venv/bin/pip install -e ".[fast,test]"      # Windows: .venv\Scripts\pip
+python -m pytest tests
+```
+
+Python 3.12 or newer.
+
 ## Licence
 
-Copyright (c) 2026 Yinong Tian. All rights reserved; see [LICENSE.md](LICENSE.md).
-Third-party components remain under their own licences; see
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+Source code (`src/`, `tests/`): Copyright (c) 2026 Yinong Tian, Apache License 2.0; see
+[LICENSE](LICENSE) and [NOTICE](NOTICE). The Windows research-preview program, the text, figures
+and data summaries: see [LICENSE-BINARIES.md](LICENSE-BINARIES.md). Third-party components remain
+under their own licences; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and
+[`third_party/`](third_party).
 
 Questions and bug reports: please open an issue.
 
 ## 中文说明
 
-OpenFAWE 是作者自费开展的独立研究，用于空中风能风筝的气动仿真。源代码暂不公开，将在相关期刊论文发表后逐步开源，后续会补充更多功能。本仓库目前提供方法对比报告和一个 Windows 研究预览程序（可选择模型、风速和仿真时间，计算并回放自由尾迹），程序请在 Releases 下载。计算结果为研究结果，不能用于设计。
+OpenFAWE 是作者自费开展的独立研究，用于空中风能风筝的气动仿真。气动模块的源代码已按 Apache-2.0 许可公开（src、tests 文件夹），风筝模型、算例和其他模块将逐步补充。本仓库另提供方法对比报告和一个 Windows 研究预览程序（可选择模型、风速和仿真时间，计算并回放自由尾迹），程序请在 Releases 下载。计算结果为研究结果，不能用于设计。

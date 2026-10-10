@@ -1,8 +1,10 @@
 # Third-party notices
 
-The OpenFAWE research-preview programs contain or are derived from the
-following third-party works. Each remains under its own licence. Full licence
-texts are in the `licenses` folder of the release, or at the links below.
+The OpenFAWE source code and research-preview programs contain or are derived
+from the following third-party works. Each remains under its own licence. Full
+licence texts and the file-level attributions of the source code are in
+[`third_party/`](third_party), in the `licenses` folder of the release, or at the
+links below.
 
 ## Methods and data
 

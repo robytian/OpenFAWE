@@ -1,10 +1,11 @@
-# OpenFAWE — licence for the research-preview releases
+# OpenFAWE — licence for the research-preview binary programs
 
 Copyright (c) 2026 Yinong Tian. All rights reserved.
 
-OpenFAWE is independent research carried out and funded by the author. The
-source code is not yet published. It will be released progressively under an
-open-source licence after the related journal papers are published.
+This licence applies to the binary programs published under "Releases" of this
+repository and to the text, figures and data summaries in this repository. The
+source code in `src/` and `tests/` is licensed under the Apache License 2.0; see
+LICENSE and NOTICE.
 
 The binary programs published under "Releases" of this repository are provided
 free of charge for personal, academic and other non-commercial evaluation. You
