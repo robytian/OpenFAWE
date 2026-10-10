@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openfawe"
+version = "0.2.0.dev0"
+description = "OpenFAWE aerodynamic module: lifting line, vortex step method and lifting surface with straight and free vortex wakes for airborne wind energy kites"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "third_party/LICENSE-*.txt"]
+authors = [{ name = "Yinong Tian" }]
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.3,<3", "h5py>=3.12,<4", "psutil>=7,<8"]
+
+[project.optional-dependencies]
+fast = ["numpy>=2.3,<2.4", "scipy==1.16.3", "numba==0.62.1", "threadpoolctl==3.5.0"]
+test = ["pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/robytian/OpenFAWE"
+
+[tool.setuptools.packages.find]
+where = ["src"]

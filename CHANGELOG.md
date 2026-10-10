@@ -9,6 +9,29 @@ is published that says so and the archived record is annotated; the original is 
 
 ---
 
+## [Unreleased]
+
+### Added
+
+- `src/openfawe/aero` and `src/openfawe/aero_archive.py`, `run_catalog.py`, `aero_demo.py`,
+  `aero_vtk.py`, `provenance.py`: lifting line, vortex step method and vortex-lattice lifting surface
+  with straight and free vortex wakes; NumPy, Numba and tree-code Biot–Savart backends; run archives.
+  Apache License 2.0 (`LICENSE`, `NOTICE`, `third_party/`).
+- `tests/`: unit and verification tests of these modules. Tests that need kite models, section data
+  or reference fixtures not yet published are deselected in `tests/conftest.py` (308 pass).
+- `pyproject.toml`.
+
+### Changed
+
+- The licence of the Windows research-preview program and of the text and figures moved from
+  `LICENSE.md` to `LICENSE-BINARIES.md`; the source code is under the Apache License 2.0 (`LICENSE`).
+
+### Not included yet
+
+- Kite models, section data, examples and reference fixtures; the other modules.
+
+---
+
 ## [0.1.0] — 2026-07-29
 
 First public release. **Specification and roadmap only — no production solver.**

@@ -1,0 +1,19 @@
+OpenFAWE
+Copyright 2026 Yinong Tian
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The source code contains parts derived from the following works, which remain
+under their own licences (texts and file-level attributions in third_party/):
+
+- Vortex-Step-Method, Copyright (c) 2022-2024 Oriol Cayon, Jelle Poland, TU Delft,
+  MIT License. The vortex step method in src/openfawe/aero/vsm.py is ported from
+  it with modifications (third_party/VSM-NOTICE.md, third_party/LICENSE-VSM.txt).
+- OpenFAST / OLAF, National Renewable Energy Laboratory and contributors, Apache
+  License 2.0. Biot-Savart kernels and the free-vortex-wake formulation are adapted
+  from it with modifications (third_party/OPENFAST-NOTICE.md,
+  third_party/OPENFAST-WING-WAKE-NOTICE.md, third_party/LICENSE-OpenFAST.txt).
+- Makani, Makani Technologies LLC, Apache License 2.0. The section polar lookup
+  and the hover strip model in src/openfawe/aero/polars.py and
+  src/openfawe/aero/makani_hover_strip.py are transcribed from its public source
+  code (third_party/MAKANI-NOTICE.md, third_party/LICENSE-Makani.txt).

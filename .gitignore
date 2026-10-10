@@ -26,3 +26,6 @@ out/
 Thumbs.db
 .idea/
 .vscode/
+
+# Local test and run outputs
+local/
