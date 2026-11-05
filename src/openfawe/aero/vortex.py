@@ -55,6 +55,62 @@ class TreeSettings:
             raise ValueError("tree core clearance must be finite and nonnegative")
 
 
+@dataclass(frozen=True)
+class CudaSettings:
+    """Opt-in direct summation on a CUDA GPU (GPU direct-sum contract, docs/tasks/OF-0006-accel20261001).
+
+    precision: 'fp64' (double throughout), 'mixed' (float32 pair arithmetic about per-block local origins, float64
+    accumulation) or 'fp32' (float32 accumulation as well). block: threads per block and segments per shared-memory
+    tile (32, 64, 128 or 256). See vortex_cuda.
+
+    suspect (whole-step GPU contract, revision 3; only the 'cuda_tree' backend in single precision): 'cpu' (default)
+    recomputes every target with a near-axis ("suspect") pair whole on the CPU tree code in float64, as stage S1;
+    'gpu64' evaluates just the suspect pairs again on the GPU in float64 and recomputes no target on the CPU. 'cpu' is
+    left out of the wake metadata, so the metadata of every earlier configuration is unchanged.
+
+    control (whole-step GPU contract revision 4 addendum 1, S4 (a); only with a wake's 'cuda_tree' velocity backend, which
+    ``WakeConfig`` checks when it is built): 'cpu' (default, left out of the metadata) keeps the VSM free wake's induction
+    at the control and load points on the CPU's exact direct sum; 'gpu' evaluates it with the GPU direct sum (backend
+    'cuda', this precision and block). Only the VSM free wake (``vsm_wake.history_vsm_induction``) reads it; the
+    lifting-line and lattice wakes are unaffected.
+    A single sum (``segments_velocity``) does not read it: the wake's choice is made in ``vsm_wake.control_options``.
+    """
+    precision: str = "mixed"
+    block: int = 128
+    suspect: str = "cpu"
+    control: str = "cpu"
+
+    def __post_init__(self):
+        if self.precision not in ("fp64", "mixed", "fp32"):
+            raise ValueError("cuda precision must be 'fp64', 'mixed' or 'fp32'")
+        if isinstance(self.block, (bool, np.bool_)) or self.block not in (32, 64, 128, 256):
+            raise ValueError("cuda block must be 32, 64, 128 or 256")
+        if self.suspect not in ("cpu", "gpu64"):
+            raise ValueError("cuda suspect must be 'cpu' or 'gpu64'")
+        if self.suspect == "gpu64" and self.precision == "fp64":
+            raise ValueError("cuda suspect='gpu64' is for the single precisions 'mixed' and 'fp32' only")
+        if self.control not in ("cpu", "gpu"):
+            raise ValueError("cuda control must be 'cpu' or 'gpu'")
+
+
+def cuda_backend_available():
+    """True when the 'cuda' backend can run here (imports numba.cuda; only called when 'cuda' is selected)."""
+    try:
+        from .vortex_cuda import available
+    except Exception:  # noqa: BLE001 - numba.cuda missing or broken means "not available"
+        return False
+    return available()
+
+
+def cuda_unavailable_reason():
+    """Why the 'cuda' backend is not available here (the probe's exception, or the import error)."""
+    try:
+        from .vortex_cuda import probe_error
+    except Exception as error:  # noqa: BLE001
+        return f"{type(error).__name__}: {str(error)[:400]}"
+    return probe_error()
+
+
 class FilamentSingularity(ValueError):
     """Observation is on a segment/end point and needs an explicit policy."""
 
@@ -288,7 +344,7 @@ def _sum_batched(points, starts, directions, lengths, edges, gamma, model, radiu
 
 def segments_velocity(points, nodes, connectivity, circulation, *, model=CoreModel.NONE,
                       core_radius=0.0, exclusions=None, singularity="raise", chunk_size=4096,
-                      backend="numpy", tree=None):
+                      backend="numpy", tree=None, cuda=None):
     """Sum directed segments into a new float64 (n,3) velocity array.
 
     points/nodes: (n,3)/(m,3) metres; connectivity: integer (k,2), zero-based.
@@ -312,11 +368,29 @@ def segments_velocity(points, nodes, connectivity, circulation, *, model=CoreMod
     ``'tree'`` (opt-in hierarchical approximation with ``tree`` settings; see
     vortex_tree). A compiled pair that the reference would reject re-runs the
     reference, so exceptions keep their historical type and message.
+    ``'cuda'`` (opt-in direct sum on a CUDA GPU with ``cuda`` settings; see vortex_cuda) is accepted only with
+    CudaSettings and only where a CUDA device is available. ``'cuda_tree'`` (opt-in: the tree built on the CPU,
+    evaluated on a CUDA GPU; see vortex_cuda_tree; whole-step GPU contract S1) needs both ``tree`` and ``cuda``.
     """
-    if backend not in ("numpy", "numba", "tree"):
-        raise ValueError("backend must be 'numpy', 'numba' or 'tree'")
-    if (tree is not None) != (backend == "tree"):
-        raise ValueError("tree settings are required exactly for backend='tree'")
+    if backend not in ("numpy", "numba", "tree", "cuda", "cuda_tree"):
+        raise ValueError("backend must be 'numpy', 'numba', 'tree', 'cuda' or 'cuda_tree'")
+    if backend == "cuda_tree":
+        if tree is None or cuda is None:
+            raise ValueError("backend='cuda_tree' needs both tree and cuda settings")
+        if not isinstance(tree, TreeSettings):
+            raise ValueError("tree must be TreeSettings")
+    else:
+        if (tree is not None) != (backend == "tree"):
+            raise ValueError("tree settings are required exactly for backend='tree'")
+        if (cuda is not None) != (backend == "cuda"):
+            raise ValueError("cuda settings are required exactly for backend='cuda'")
+    if cuda is not None:
+        if not isinstance(cuda, CudaSettings):
+            raise ValueError("cuda must be CudaSettings")
+        if cuda.suspect != "cpu" and backend != "cuda_tree":
+            raise ValueError("cuda suspect='gpu64' is for the cuda_tree backend only")
+        if not cuda_backend_available():
+            raise ValueError(f"the cuda velocity backend needs a CUDA device ({cuda_unavailable_reason()})")
     points, nodes = _matrix(points, 3, "points"), _matrix(nodes, 3, "nodes")
     edges = _indices(connectivity, 2, "connectivity")
     if np.any(edges < 0) or np.any(edges >= len(nodes)):
@@ -372,6 +446,14 @@ def segments_velocity(points, nodes, connectivity, circulation, *, model=CoreMod
                     from .vortex_numba import direct_sum
                     out, flagged = direct_sum(points, starts, directions, lengths, gamma,
                                               radius, model, csr, singularity)
+                elif backend == "cuda":
+                    from .vortex_cuda import cuda_sum
+                    out, flagged = cuda_sum(points, starts, directions, lengths, gamma,
+                                            radius, model, csr, singularity, cuda)
+                elif backend == "cuda_tree":
+                    from .vortex_cuda_tree import cuda_tree_sum
+                    out, flagged = cuda_tree_sum(points, starts, directions, lengths, gamma,
+                                                 radius, model, csr, singularity, tree, cuda)
                 else:
                     from .vortex_tree import tree_sum
                     out, flagged = tree_sum(points, starts, directions, lengths, gamma,

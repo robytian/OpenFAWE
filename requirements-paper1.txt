@@ -1,0 +1,13 @@
+# Versions of the paper-1 runs (core and Numba pins of the development repository at e58677c and 901d096e;
+# the crosswind runs record Python 3.12.10, NumPy 2.3.5 and Numba 0.62.1). The GPU tree code uses numba.cuda.
+numpy==2.3.5
+h5py==3.16.0
+psutil==7.2.2
+scipy==1.16.3
+numba==0.62.1
+llvmlite==0.45.1
+threadpoolctl==3.5.0
+# Figures only
+matplotlib
+pyvista
+Pillow

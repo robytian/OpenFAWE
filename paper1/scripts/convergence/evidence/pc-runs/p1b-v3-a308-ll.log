@@ -1,0 +1,11 @@
+  V3 free_wake step 0 CL=0.297732 t=0.1s
+  V3 free_wake step 20 CL=0.414765 t=2.4s
+  V3 free_wake step 40 CL=0.419240 t=4.4s
+  V3 free_wake step 60 CL=0.420183 t=7.0s
+  V3 free_wake step 80 CL=0.420521 t=12.3s
+  V3 free_wake step 100 CL=0.420678 t=15.2s
+  V3 free_wake step 120 CL=0.420765 t=18.6s
+  V3 free_wake step 140 CL=0.420817 t=22.0s
+  V3 free_wake step 160 CL=0.420849 t=26.0s
+  V3 free_wake step 180 CL=0.420871 t=30.3s
+{"out": "p1b-v3-a308-ll", "status": "complete", "error": null, "frames": 181, "elapsed_s": 30.3}

@@ -1,0 +1,368 @@
+{
+ "budget": {
+  "CL": 0.0005,
+  "CD": 0.0005,
+  "CMy": 0.0002
+ },
+ "models": {
+  "v3": {
+   "reference": "v3-vsm-direct-200",
+   "reference_status": "complete",
+   "reference_wall_s": 865.0246420730002,
+   "candidates": [
+    {
+     "run": "v2-v3-tree-t05-p2",
+     "settings": {
+      "backend": "tree",
+      "theta": 0.5,
+      "order": 2,
+      "leaf": 32
+     },
+     "status": "complete",
+     "frames": 201,
+     "worst": {
+      "CL": 6.95436068291363e-05,
+      "CD": 2.477295192893285e-05,
+      "CMy": 1.4649148015737079e-05
+     },
+     "worst_step": {
+      "CL": 200,
+      "CD": 122,
+      "CMy": 200
+     },
+     "within_budget": true,
+     "wall_s": {
+      "reference": 864.1996705250017,
+      "tree": 60.01104679700711,
+      "speedup": 14.40067648625155
+     },
+     "last_step_s": {
+      "reference": 12.467083294000076,
+      "tree": 0.7008209480000005
+     },
+     "final": {
+      "reference": {
+       "CL": 0.5726949319516037,
+       "CD": 0.051548809740292766,
+       "CMy": 0.036988653432649884
+      },
+      "tree": {
+       "CL": 0.572655104680423,
+       "CD": 0.05154982883828798,
+       "CMy": 0.03700330258066562
+      }
+     }
+    },
+    {
+     "run": "v2-v3-tree-t03-p1",
+     "settings": {
+      "backend": "tree",
+      "theta": 0.3,
+      "order": 1,
+      "leaf": 32
+     },
+     "status": "complete",
+     "frames": 201,
+     "worst": {
+      "CL": 5.90825073483532e-05,
+      "CD": 1.5683185398036518e-05,
+      "CMy": 1.1962693520529977e-05
+     },
+     "worst_step": {
+      "CL": 72,
+      "CD": 143,
+      "CMy": 143
+     },
+     "within_budget": true,
+     "wall_s": {
+      "reference": 864.1996705250017,
+      "tree": 99.28926849100299,
+      "speedup": 8.703857764883326
+     },
+     "last_step_s": {
+      "reference": 12.467083294000076,
+      "tree": 1.2545279309997568
+     },
+     "final": {
+      "reference": {
+       "CL": 0.5726949319516037,
+       "CD": 0.051548809740292766,
+       "CMy": 0.036988653432649884
+      },
+      "tree": {
+       "CL": 0.5727226956052561,
+       "CD": 0.05154838364353056,
+       "CMy": 0.03697959066986687
+      }
+     }
+    },
+    {
+     "run": "v2-v3-tree-t03-p2",
+     "settings": {
+      "backend": "tree",
+      "theta": 0.3,
+      "order": 2,
+      "leaf": 32
+     },
+     "status": "complete",
+     "frames": 201,
+     "worst": {
+      "CL": 9.799511166025058e-06,
+      "CD": 4.822147549461351e-06,
+      "CMy": 2.2079920700274203e-06
+     },
+     "worst_step": {
+      "CL": 168,
+      "CD": 192,
+      "CMy": 193
+     },
+     "within_budget": true,
+     "wall_s": {
+      "reference": 864.1996705250017,
+      "tree": 98.93511928200587,
+      "speedup": 8.735014187041877
+     },
+     "last_step_s": {
+      "reference": 12.467083294000076,
+      "tree": 1.2104334730001938
+     },
+     "final": {
+      "reference": {
+       "CL": 0.5726949319516037,
+       "CD": 0.051548809740292766,
+       "CMy": 0.036988653432649884
+      },
+      "tree": {
+       "CL": 0.5726906897655395,
+       "CD": 0.05154901254184643,
+       "CMy": 0.036990579110965205
+      }
+     }
+    },
+    {
+     "run": "v2-v3-tree-t02-p2",
+     "settings": {
+      "backend": "tree",
+      "theta": 0.2,
+      "order": 2,
+      "leaf": 32
+     },
+     "status": "complete",
+     "frames": 201,
+     "worst": {
+      "CL": 4.563634962582135e-06,
+      "CD": 2.541278271423065e-06,
+      "CMy": 8.97740917028822e-07
+     },
+     "worst_step": {
+      "CL": 154,
+      "CD": 104,
+      "CMy": 168
+     },
+     "within_budget": true,
+     "wall_s": {
+      "reference": 864.1996705250017,
+      "tree": 165.39734914000564,
+      "speedup": 5.224991059520993
+     },
+     "last_step_s": {
+      "reference": 12.467083294000076,
+      "tree": 1.865871951000372
+     },
+     "final": {
+      "reference": {
+       "CL": 0.5726949319516037,
+       "CD": 0.051548809740292766,
+       "CMy": 0.036988653432649884
+      },
+      "tree": {
+       "CL": 0.5726934024549876,
+       "CD": 0.05154881465487418,
+       "CMy": 0.0369890886342083
+      }
+     }
+    }
+   ]
+  },
+  "m600": {
+   "reference": "m600-vsm-direct-200",
+   "reference_status": "complete",
+   "reference_wall_s": 1724.1415508960001,
+   "candidates": [
+    {
+     "run": "v2-m600-tree-t05-p2",
+     "settings": {
+      "backend": "tree",
+      "theta": 0.5,
+      "order": 2,
+      "leaf": 32
+     },
+     "status": "complete",
+     "frames": 201,
+     "worst": {
+      "CL": 0.0004935872147419435,
+      "CD": 0.0016043162920608852,
+      "CMy": 0.004785885183811296
+     },
+     "worst_step": {
+      "CL": 16,
+      "CD": 16,
+      "CMy": 16
+     },
+     "within_budget": false,
+     "wall_s": {
+      "reference": 1716.5980693340005,
+      "tree": 118.57112599399989,
+      "speedup": 14.47737005905524
+     },
+     "last_step_s": {
+      "reference": 26.575559726999927,
+      "tree": 0.9254711200001111
+     },
+     "final": {
+      "reference": {
+       "CL": 1.940957428140689,
+       "CD": 0.059404403147917124,
+       "CMy": -0.08649562236507861
+      },
+      "tree": {
+       "CL": 1.9409667317089505,
+       "CD": 0.0594057645191127,
+       "CMy": -0.08653948949280182
+      }
+     }
+    },
+    {
+     "run": "v2-m600-tree-t03-p1",
+     "settings": {
+      "backend": "tree",
+      "theta": 0.3,
+      "order": 1,
+      "leaf": 32
+     },
+     "status": "complete",
+     "frames": 201,
+     "worst": {
+      "CL": 0.00037745012834736766,
+      "CD": 0.001166503391787664,
+      "CMy": 0.003443740192753772
+     },
+     "worst_step": {
+      "CL": 16,
+      "CD": 16,
+      "CMy": 16
+     },
+     "within_budget": false,
+     "wall_s": {
+      "reference": 1716.5980693340005,
+      "tree": 239.85809645000018,
+      "speedup": 7.156723474172303
+     },
+     "last_step_s": {
+      "reference": 26.575559726999927,
+      "tree": 2.051445287000206
+     },
+     "final": {
+      "reference": {
+       "CL": 1.940957428140689,
+       "CD": 0.059404403147917124,
+       "CMy": -0.08649562236507861
+      },
+      "tree": {
+       "CL": 1.9409759801846203,
+       "CD": 0.05940623020203428,
+       "CMy": -0.08647563985123856
+      }
+     }
+    },
+    {
+     "run": "v2-m600-tree-t03-p2",
+     "settings": {
+      "backend": "tree",
+      "theta": 0.3,
+      "order": 2,
+      "leaf": 32
+     },
+     "status": "complete",
+     "frames": 201,
+     "worst": {
+      "CL": 2.5033368288264962e-05,
+      "CD": 0.0001059692762340669,
+      "CMy": 0.000252641575797824
+     },
+     "worst_step": {
+      "CL": 16,
+      "CD": 122,
+      "CMy": 16
+     },
+     "within_budget": false,
+     "wall_s": {
+      "reference": 1716.5980693340005,
+      "tree": 198.85508230799906,
+      "speedup": 8.632407326030657
+     },
+     "last_step_s": {
+      "reference": 26.575559726999927,
+      "tree": 1.9377675589998944
+     },
+     "final": {
+      "reference": {
+       "CL": 1.940957428140689,
+       "CD": 0.059404403147917124,
+       "CMy": -0.08649562236507861
+      },
+      "tree": {
+       "CL": 1.9409535496076618,
+       "CD": 0.059404796009910825,
+       "CMy": -0.08649759738790545
+      }
+     }
+    },
+    {
+     "run": "v2-m600-tree-t02-p2",
+     "settings": {
+      "backend": "tree",
+      "theta": 0.2,
+      "order": 2,
+      "leaf": 32
+     },
+     "status": "complete",
+     "frames": 201,
+     "worst": {
+      "CL": 7.849222426740587e-06,
+      "CD": 7.14854739384348e-05,
+      "CMy": 3.42144688298511e-05
+     },
+     "worst_step": {
+      "CL": 143,
+      "CD": 113,
+      "CMy": 16
+     },
+     "within_budget": true,
+     "wall_s": {
+      "reference": 1716.5980693340005,
+      "tree": 309.7011366350007,
+      "speedup": 5.542756762165529
+     },
+     "last_step_s": {
+      "reference": 26.575559726999927,
+      "tree": 2.836597571999846
+     },
+     "final": {
+      "reference": {
+       "CL": 1.940957428140689,
+       "CD": 0.059404403147917124,
+       "CMy": -0.08649562236507861
+      },
+      "tree": {
+       "CL": 1.9409509416911541,
+       "CD": 0.05940385746293771,
+       "CMy": -0.08649667333825733
+      }
+     }
+    }
+   ]
+  }
+ },
+ "note": "Reference: exact Numba direct sum. Wing-point induction is direct in both runs; the tree enters only through wake-node convection. One Numba thread per run on the 2-core cloud machine; two runs in parallel; timings indicative."
+}

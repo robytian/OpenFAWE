@@ -1,0 +1,542 @@
+{
+ "script": "k7_readback.py",
+ "k7_split": {},
+ "rotor_effect": {
+  "mbl_vs_p1n": {
+   "with_rotors": {
+    "K3": 7.632866718822249e-08,
+    "K7": {
+     "verdict": "passed",
+     "reason": "lap 3 against lap 2",
+     "limit": 0.01
+    },
+    "last_pair": {
+     "lap": 3,
+     "against": 2,
+     "force_max_relative": 0.0015789167499786765,
+     "force_mean_relative": 0.0003861530853185175,
+     "moment_max_relative": 0.0015723332156952683,
+     "moment_mean_relative": 0.0005242445162256646
+    },
+    "elapsed_s": 133225.62262829999,
+    "backend": "tree",
+    "dt_s": 0.009998763768303066,
+    "rotors": {
+     "omega_rad_s": 97.4,
+     "discs": 8,
+     "nodes_per_ring": 16,
+     "surface_core_m": 0.1,
+     "free_convection_ring_steps": 200,
+     "retained_ring_steps": 200,
+     "ring_core_m": 0.45,
+     "ring_bound_core_m": 0.64,
+     "ring_surface_overlap": 2.0,
+     "ring_sheet_drift": false,
+     "ring_ambient_spacing": false,
+     "rotor_set": "cases/rotors/m600_rotors_makani.json",
+     "table": "cases/rotors/makani/rotor_rev4.json",
+     "rule": "constant speed; 97.4 rad/s is the maximum-shaft-power speed of the table at the loop-mean commanded airspeed 46.5 m/s"
+    }
+   },
+   "without": {
+    "K3": 9.842172765428048e-08,
+    "K7": {
+     "verdict": "passed",
+     "reason": "lap 4 against lap 3",
+     "limit": 0.01
+    },
+    "last_pair": {
+     "lap": 4,
+     "against": 3,
+     "force_max_relative": 0.0007870866178030286,
+     "force_mean_relative": 0.00017678060602709604,
+     "moment_max_relative": 0.0008736051694474522,
+     "moment_mean_relative": 0.000328450923782219
+    },
+    "elapsed_s": 10432.361503999913,
+    "backend": "cuda_tree"
+   },
+   "per_lap": [
+    {
+     "lap": 1,
+     "force_coefficient_with": [
+      -0.07107940945722253,
+      -0.01518209658311079,
+      2.24442777796025
+     ],
+     "force_coefficient_without": [
+      -0.06685806872507136,
+      -0.01740073208474933,
+      2.324823443681221
+     ],
+     "force_coefficient_change": [
+      -0.004221340732151177,
+      0.0022186355016385415,
+      -0.08039566572097101
+     ],
+     "moment_coefficient_with": [
+      0.8262676796657087,
+      -0.23374931543659402,
+      -0.12922279249651625
+     ],
+     "moment_coefficient_without": [
+      0.8365707270841994,
+      -0.22874888940332844,
+      -0.14339641759633745
+     ],
+     "moment_coefficient_change": [
+      -0.010303047418490752,
+      -0.005000426033265587,
+      0.014173625099821202
+     ],
+     "lift_relative_change": -0.036068265385863274,
+     "aero_power_with_W": 568719.5535935274,
+     "aero_power_without_W": 573356.4122360178,
+     "rotor_shaft_power_W": {
+      "mean": 528136.6900258015,
+      "min": 333931.5585684644,
+      "max": 831795.5872984987
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13818.66631545508,
+      "min": -18846.514613008043,
+      "max": -10046.043672723987
+     },
+     "rotor_power_on_body_mean_W": -639200.6781657799,
+     "ring_nodes_within_surface_core": {
+      "mean": 0.3563034188034188,
+      "max": 2,
+      "steps_nonzero": 601
+     }
+    },
+    {
+     "lap": 2,
+     "force_coefficient_with": [
+      -0.07192330881667305,
+      -0.015093430592801833,
+      2.24701171358989
+     ],
+     "force_coefficient_without": [
+      -0.06779716765676315,
+      -0.017350343586082447,
+      2.3288255252080434
+     ],
+     "force_coefficient_change": [
+      -0.004126141159909905,
+      0.002256912993280614,
+      -0.08181381161815349
+     ],
+     "moment_coefficient_with": [
+      0.82639965975596,
+      -0.2321059902129984,
+      -0.12871166269708428
+     ],
+     "moment_coefficient_without": [
+      0.8369463158861413,
+      -0.22746542012619828,
+      -0.1430932715638764
+     ],
+     "moment_coefficient_change": [
+      -0.010546656130181353,
+      -0.004640570086800133,
+      0.014381608866792128
+     ],
+     "lift_relative_change": -0.03652759696588137,
+     "aero_power_with_W": 569822.0127245835,
+     "aero_power_without_W": 574767.1069812959,
+     "rotor_shaft_power_W": {
+      "mean": 527967.4095077983,
+      "min": 333906.5620463405,
+      "max": 831900.6730273124
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13814.38064286876,
+      "min": -18847.772594141632,
+      "max": -10045.430979921995
+     },
+     "rotor_power_on_body_mean_W": -639047.3786643965,
+     "ring_nodes_within_surface_core": {
+      "mean": 0.35149572649572647,
+      "max": 2,
+      "steps_nonzero": 604
+     }
+    },
+    {
+     "lap": 3,
+     "force_coefficient_with": [
+      -0.07184259300733906,
+      -0.01507616420692321,
+      2.246752880029933
+     ],
+     "force_coefficient_without": [
+      -0.06769072571756828,
+      -0.017330732536904696,
+      2.3284720190666657
+     ],
+     "force_coefficient_change": [
+      -0.00415186728977078,
+      0.002254568329981485,
+      -0.08171913903673289
+     ],
+     "moment_coefficient_with": [
+      0.8263736592268776,
+      -0.23203113213493476,
+      -0.12861896903798659
+     ],
+     "moment_coefficient_without": [
+      0.836918237847209,
+      -0.22735722502436886,
+      -0.14298928732205185
+     ],
+     "moment_coefficient_change": [
+      -0.010544578620331424,
+      -0.004673907110565895,
+      0.014370318284065264
+     ],
+     "lift_relative_change": -0.03648193252368315,
+     "aero_power_with_W": 569577.0977132836,
+     "aero_power_without_W": 574411.8408759127,
+     "rotor_shaft_power_W": {
+      "mean": 527936.9918838958,
+      "min": 333902.53782429284,
+      "max": 831906.0178734505
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13813.701294589871,
+      "min": -18847.839448627885,
+      "max": -10045.325451625667
+     },
+     "rotor_power_on_body_mean_W": -639024.1168865111,
+     "ring_nodes_within_surface_core": {
+      "mean": 0.34935897435897434,
+      "max": 2,
+      "steps_nonzero": 603
+     }
+    }
+   ]
+  },
+  "mblsc030_vs_p1n": {
+   "with_rotors": {
+    "K3": 7.632866718822249e-08,
+    "K7": {
+     "verdict": "passed",
+     "reason": "lap 3 against lap 2",
+     "limit": 0.01
+    },
+    "last_pair": {
+     "lap": 3,
+     "against": 2,
+     "force_max_relative": 0.0017294624943118412,
+     "force_mean_relative": 0.0004966485820198857,
+     "moment_max_relative": 0.0019661787669771062,
+     "moment_mean_relative": 0.0006860492786934705
+    },
+    "elapsed_s": 131771.3845742999,
+    "backend": "tree",
+    "dt_s": 0.009998763768303066,
+    "rotors": {
+     "omega_rad_s": 97.4,
+     "discs": 8,
+     "nodes_per_ring": 16,
+     "surface_core_m": 0.3,
+     "free_convection_ring_steps": 200,
+     "retained_ring_steps": 200,
+     "ring_core_m": 0.45,
+     "ring_bound_core_m": 0.64,
+     "ring_surface_overlap": null,
+     "ring_sheet_drift": false,
+     "ring_ambient_spacing": false,
+     "rotor_set": "cases/rotors/m600_rotors_makani.json",
+     "table": "cases/rotors/makani/rotor_rev4.json",
+     "rule": "constant speed; 97.4 rad/s is the maximum-shaft-power speed of the table at the loop-mean commanded airspeed 46.5 m/s"
+    }
+   },
+   "without": {
+    "K3": 9.842172765428048e-08,
+    "K7": {
+     "verdict": "passed",
+     "reason": "lap 4 against lap 3",
+     "limit": 0.01
+    },
+    "last_pair": {
+     "lap": 4,
+     "against": 3,
+     "force_max_relative": 0.0007870866178030286,
+     "force_mean_relative": 0.00017678060602709604,
+     "moment_max_relative": 0.0008736051694474522,
+     "moment_mean_relative": 0.000328450923782219
+    },
+    "elapsed_s": 10432.361503999913,
+    "backend": "cuda_tree"
+   },
+   "per_lap": [
+    {
+     "lap": 1,
+     "force_coefficient_with": [
+      -0.07097471854005387,
+      -0.014959723887391937,
+      2.2470552994663215
+     ],
+     "force_coefficient_without": [
+      -0.06685806872507136,
+      -0.01740073208474933,
+      2.324823443681221
+     ],
+     "force_coefficient_change": [
+      -0.004116649814982512,
+      0.002441008197357394,
+      -0.07776814421489942
+     ],
+     "moment_coefficient_with": [
+      0.8236791863604973,
+      -0.24122583476841478,
+      -0.12851558032343266
+     ],
+     "moment_coefficient_without": [
+      0.8365707270841994,
+      -0.22874888940332844,
+      -0.14339641759633745
+     ],
+     "moment_coefficient_change": [
+      -0.012891540723702133,
+      -0.01247694536508634,
+      0.01488083727290479
+     ],
+     "lift_relative_change": -0.03450827265179457,
+     "aero_power_with_W": 569168.3484390444,
+     "aero_power_without_W": 573356.4122360178,
+     "rotor_shaft_power_W": {
+      "mean": 528096.8102765257,
+      "min": 333977.01595180156,
+      "max": 831624.818156342
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13818.015622927385,
+      "min": -18844.001266924377,
+      "max": -10047.520562841597
+     },
+     "rotor_power_on_body_mean_W": -639163.3893466541,
+     "ring_nodes_within_surface_core": {
+      "mean": 18.155982905982906,
+      "max": 24,
+      "steps_nonzero": 1869
+     }
+    },
+    {
+     "lap": 2,
+     "force_coefficient_with": [
+      -0.07184093122950144,
+      -0.014881164598583945,
+      2.249773346009359
+     ],
+     "force_coefficient_without": [
+      -0.06779716765676315,
+      -0.017350343586082447,
+      2.3288255252080434
+     ],
+     "force_coefficient_change": [
+      -0.004043763572738293,
+      0.002469178987498502,
+      -0.07905217919868424
+     ],
+     "moment_coefficient_with": [
+      0.8237958490777595,
+      -0.23998562193922582,
+      -0.12804626371955294
+     ],
+     "moment_coefficient_without": [
+      0.8369463158861413,
+      -0.22746542012619828,
+      -0.1430932715638764
+     ],
+     "moment_coefficient_change": [
+      -0.013150466808381833,
+      -0.012520201813027543,
+      0.015047007844323473
+     ],
+     "lift_relative_change": -0.034911645023732896,
+     "aero_power_with_W": 570359.8891956722,
+     "aero_power_without_W": 574767.1069812959,
+     "rotor_shaft_power_W": {
+      "mean": 527922.779712243,
+      "min": 333951.77252611564,
+      "max": 831679.2795503401
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13813.61591108649,
+      "min": -18844.662301795808,
+      "max": -10046.907250540098
+     },
+     "rotor_power_on_body_mean_W": -639005.3503238781,
+     "ring_nodes_within_surface_core": {
+      "mean": 18.291666666666668,
+      "max": 24,
+      "steps_nonzero": 1872
+     }
+    },
+    {
+     "lap": 3,
+     "force_coefficient_with": [
+      -0.07172998614322298,
+      -0.014866807272106191,
+      2.249437772475817
+     ],
+     "force_coefficient_without": [
+      -0.06769072571756828,
+      -0.017330732536904696,
+      2.3284720190666657
+     ],
+     "force_coefficient_change": [
+      -0.004039260425654709,
+      0.002463925264798505,
+      -0.07903424659084868
+     ],
+     "moment_coefficient_with": [
+      0.823733750767965,
+      -0.23986926577609038,
+      -0.12797844315616827
+     ],
+     "moment_coefficient_without": [
+      0.836918237847209,
+      -0.22735722502436886,
+      -0.14298928732205185
+     ],
+     "moment_coefficient_change": [
+      -0.013184487079244023,
+      -0.01251204075172152,
+      0.01501084416588358
+     ],
+     "lift_relative_change": -0.034905526628895456,
+     "aero_power_with_W": 570010.5156932691,
+     "aero_power_without_W": 574411.8408759127,
+     "rotor_shaft_power_W": {
+      "mean": 527888.862473706,
+      "min": 333936.4262402816,
+      "max": 831721.2747071151
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13812.876833406377,
+      "min": -18845.16212536586,
+      "max": -10046.544075954253
+     },
+     "rotor_power_on_body_mean_W": -638980.4407545135,
+     "ring_nodes_within_surface_core": {
+      "mean": 18.278311965811966,
+      "max": 24,
+      "steps_nonzero": 1872
+     }
+    }
+   ]
+  }
+ },
+ "k7a": {
+  "mbl-m600-single-rotors-modelb-rb064-sc010-dt010-3laps": {
+   "run": "mbl-m600-single-rotors-modelb-rb064-sc010-dt010-3laps",
+   "steps_per_lap": 1872,
+   "laps": 3,
+   "backend": "tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 3,
+     "against": 2,
+     "force": {
+      "max": 0.00046427254956938165,
+      "mean": 0.00012258116980783432,
+      "loop_angle_of_max_deg": 0.0,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.00042433419557761065,
+      "mean": 0.00021586899886770597,
+      "loop_angle_of_max_deg": 13.8,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "wing_plus_rotor_force": {
+      "max": 0.0004564973464179869,
+      "mean": 0.0001226665525435949,
+      "loop_angle_of_max_deg": 0.0
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "mbl-m600-single-rotors-modelb-rb064-sc030-dt010-3laps": {
+   "run": "mbl-m600-single-rotors-modelb-rb064-sc030-dt010-3laps",
+   "steps_per_lap": 1872,
+   "laps": 3,
+   "backend": "tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 3,
+     "against": 2,
+     "force": {
+      "max": 0.000508483449441615,
+      "mean": 0.0001603526794198807,
+      "loop_angle_of_max_deg": 0.0,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.0006366078281986711,
+      "mean": 0.000277658073464228,
+      "loop_angle_of_max_deg": 287.5,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "wing_plus_rotor_force": {
+      "max": 0.0004974743473850909,
+      "mean": 0.00016063306595498508,
+      "loop_angle_of_max_deg": 0.0
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "mbl5-m600-single-rotors-modelb-rb064-sc010-dt005-3laps": {
+   "run": "mbl5-m600-single-rotors-modelb-rb064-sc010-dt005-3laps",
+   "steps_per_lap": 3744,
+   "laps": 3,
+   "backend": "cuda_tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 3,
+     "against": 2,
+     "force": {
+      "max": 0.0005126327717088197,
+      "mean": 0.00015968017564862557,
+      "loop_angle_of_max_deg": 336.8,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.000828028302607019,
+      "mean": 0.00035454208375084795,
+      "loop_angle_of_max_deg": 320.4,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "wing_plus_rotor_force": {
+      "max": 0.0005021552913879888,
+      "mean": 0.0001579846003401784,
+      "loop_angle_of_max_deg": 336.8
+     },
+     "verdict": "passed"
+    }
+   }
+  }
+ }
+}

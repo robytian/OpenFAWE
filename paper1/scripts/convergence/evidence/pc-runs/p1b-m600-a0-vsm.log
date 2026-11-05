@@ -1,0 +1,18 @@
+  M600 vsm_free_wake step 0 CL=0.717234 t=0.8s
+  M600 vsm_free_wake step 20 CL=1.812037 t=3.4s
+  M600 vsm_free_wake step 40 CL=1.901463 t=6.1s
+  M600 vsm_free_wake step 60 CL=1.923833 t=9.3s
+  M600 vsm_free_wake step 80 CL=1.932147 t=12.3s
+  M600 vsm_free_wake step 100 CL=1.936019 t=15.2s
+  M600 vsm_free_wake step 120 CL=1.938074 t=18.7s
+  M600 vsm_free_wake step 140 CL=1.939285 t=22.8s
+  M600 vsm_free_wake step 160 CL=1.940069 t=27.7s
+  M600 vsm_free_wake step 180 CL=1.940587 t=32.6s
+  M600 vsm_free_wake step 200 CL=1.940951 t=37.8s
+  M600 vsm_free_wake step 220 CL=1.941222 t=43.8s
+  M600 vsm_free_wake step 240 CL=1.941419 t=50.5s
+  M600 vsm_free_wake step 260 CL=1.941571 t=58.1s
+  M600 vsm_free_wake step 280 CL=1.941694 t=66.5s
+  M600 vsm_free_wake step 300 CL=1.941793 t=76.4s
+  M600 vsm_free_wake step 320 CL=1.941872 t=88.5s
+{"out": "p1b-m600-a0-vsm", "status": "complete", "error": null, "frames": 331, "elapsed_s": 94.8}

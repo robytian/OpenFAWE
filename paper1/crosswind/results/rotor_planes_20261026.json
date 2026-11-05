@@ -1,0 +1,285 @@
+{
+ "script": "rotor_wake_figs.py planes",
+ "stations_D": [
+  0.5,
+  1.0,
+  2.0
+ ],
+ "half_D": 0.75,
+ "count": 61,
+ "sigma_m": 3.0,
+ "runs": {
+  "p1n-m600-single-dt010-4laps": {
+   "step": 7488,
+   "dt": 0.009998763768303066,
+   "diameter_m": 270.0,
+   "planes": [
+    {
+     "station_D": 0.5,
+     "x_m": 478.2967154007019,
+     "wing_positive_m2_s": 606.0063921440278,
+     "wing_negative_m2_s": -606.0063921440279,
+     "wing_crossings": 646,
+     "wing_positive_centroid_yz_m": [
+      120.29760104993531,
+      25.423947091357775
+     ],
+     "wing_positive_centroid_r_over_R": 0.910776508992125,
+     "wing_negative_centroid_yz_m": [
+      117.35984961098637,
+      25.30273097896216
+     ],
+     "wing_negative_centroid_r_over_R": 0.8893073859192859,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 0.3223337620525045,
+     "momentum_deficit_m2_s": 5408.373133805841
+    },
+    {
+     "station_D": 1.0,
+     "x_m": 613.2967154007019,
+     "wing_positive_m2_s": 9183.782017078884,
+     "wing_negative_m2_s": -9183.782017078884,
+     "wing_crossings": 7548,
+     "wing_positive_centroid_yz_m": [
+      -27.355353702645246,
+      -97.99015654122968
+     ],
+     "wing_positive_centroid_r_over_R": 0.7536062783578243,
+     "wing_negative_centroid_yz_m": [
+      -28.670676129321237,
+      -97.7075554809575
+     ],
+     "wing_negative_centroid_r_over_R": 0.7542753885309953,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 1.7000912584246068,
+     "momentum_deficit_m2_s": -6819.337588142934
+    },
+    {
+     "station_D": 2.0,
+     "x_m": 883.2967154007019,
+     "wing_positive_m2_s": 4657.760040347331,
+     "wing_negative_m2_s": -4657.760040347331,
+     "wing_crossings": 4232,
+     "wing_positive_centroid_yz_m": [
+      5.06021483217517,
+      25.457835578221847
+     ],
+     "wing_positive_centroid_r_over_R": 0.19226570070982493,
+     "wing_negative_centroid_yz_m": [
+      2.814775323608779,
+      24.79521312583617
+     ],
+     "wing_negative_centroid_r_over_R": 0.18484792312039205,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 1.4050148406013645,
+     "momentum_deficit_m2_s": 1670.002402233847
+    }
+   ]
+  },
+  "p1a-m600-single-rotors-adp-dt010-4laps": {
+   "step": 7488,
+   "dt": 0.009998763768303066,
+   "diameter_m": 270.0,
+   "planes": [
+    {
+     "station_D": 0.5,
+     "x_m": 478.2967154007019,
+     "wing_positive_m2_s": 814.6291570142326,
+     "wing_negative_m2_s": -814.6291570142328,
+     "wing_crossings": 739,
+     "wing_positive_centroid_yz_m": [
+      121.88070333561507,
+      21.71451465289846
+     ],
+     "wing_positive_centroid_r_over_R": 0.917036617967808,
+     "wing_negative_centroid_yz_m": [
+      119.61654847986475,
+      22.207793489118927
+     ],
+     "wing_negative_centroid_r_over_R": 0.9011897261194033,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 0.2864488414501122,
+     "momentum_deficit_m2_s": 5141.080536159742
+    },
+    {
+     "station_D": 1.0,
+     "x_m": 613.2967154007019,
+     "wing_positive_m2_s": 9560.679613844146,
+     "wing_negative_m2_s": -9560.679613844146,
+     "wing_crossings": 7559,
+     "wing_positive_centroid_yz_m": [
+      -34.29905472757498,
+      -101.99372174667822
+     ],
+     "wing_positive_centroid_r_over_R": 0.7970846891628817,
+     "wing_negative_centroid_yz_m": [
+      -35.257841616195805,
+      -101.95910888388771
+     ],
+     "wing_negative_centroid_r_over_R": 0.7991344865306751,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 1.7027712400738646,
+     "momentum_deficit_m2_s": -10177.874609746443
+    },
+    {
+     "station_D": 2.0,
+     "x_m": 883.2967154007019,
+     "wing_positive_m2_s": 3920.3362409968354,
+     "wing_negative_m2_s": -3920.3362409968354,
+     "wing_crossings": 4291,
+     "wing_positive_centroid_yz_m": [
+      16.64350711923167,
+      20.57663489862938
+     ],
+     "wing_positive_centroid_r_over_R": 0.19603815772844893,
+     "wing_negative_centroid_yz_m": [
+      14.174385053926326,
+      19.8221009307766
+     ],
+     "wing_negative_centroid_r_over_R": 0.18050818021838755,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 0.8747006572209995,
+     "momentum_deficit_m2_s": 3291.023377844493
+    }
+   ]
+  },
+  "mbn-m600-single-dt005-3laps": {
+   "step": 11232,
+   "dt": 0.004999381884151533,
+   "diameter_m": 270.0,
+   "planes": [
+    {
+     "station_D": 0.5,
+     "x_m": 478.2967154007012,
+     "wing_positive_m2_s": 3940.3538017245974,
+     "wing_negative_m2_s": -3940.3538017245974,
+     "wing_crossings": 2749,
+     "wing_positive_centroid_yz_m": [
+      123.40862569553836,
+      27.790026047982707
+     ],
+     "wing_positive_centroid_r_over_R": 0.9370289691881943,
+     "wing_negative_centroid_yz_m": [
+      122.86157924895022,
+      27.669761902057445
+     ],
+     "wing_negative_centroid_r_over_R": 0.9328800598121957,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 1.336844070903223,
+     "momentum_deficit_m2_s": -246.02782517360035
+    },
+    {
+     "station_D": 1.0,
+     "x_m": 613.2967154007013,
+     "wing_positive_m2_s": 27415.616597796936,
+     "wing_negative_m2_s": -27415.61659779694,
+     "wing_crossings": 19323,
+     "wing_positive_centroid_yz_m": [
+      -18.665638563988352,
+      -91.22459838055823
+     ],
+     "wing_positive_centroid_r_over_R": 0.6897379639098234,
+     "wing_negative_centroid_yz_m": [
+      -19.102618577482456,
+      -91.16125395532404
+     ],
+     "wing_negative_centroid_r_over_R": 0.6899348594218728,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 2.916778929303713,
+     "momentum_deficit_m2_s": -39231.789536123084
+    },
+    {
+     "station_D": 2.0,
+     "x_m": 883.2967154007013,
+     "wing_positive_m2_s": 0.0,
+     "wing_negative_m2_s": 0.0,
+     "wing_crossings": 0,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 0.0154600399701883,
+     "momentum_deficit_m2_s": 2505.6308621904727
+    }
+   ]
+  },
+  "mbl5-m600-single-rotors-modelb-rb064-sc010-dt005-3laps": {
+   "step": 11232,
+   "dt": 0.004999381884151533,
+   "diameter_m": 270.0,
+   "planes": [
+    {
+     "station_D": 0.5,
+     "x_m": 478.2967154007012,
+     "wing_positive_m2_s": 4748.972612620471,
+     "wing_negative_m2_s": -4748.972612620471,
+     "wing_crossings": 5289,
+     "wing_positive_centroid_yz_m": [
+      114.78371710060156,
+      26.9505644308866
+     ],
+     "wing_positive_centroid_r_over_R": 0.8733718030849348,
+     "wing_negative_centroid_yz_m": [
+      114.77848474080076,
+      26.91614825672221
+     ],
+     "wing_negative_centroid_r_over_R": 0.8732758312478027,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 0.7320740940243347,
+     "momentum_deficit_m2_s": 3117.408990151798
+    },
+    {
+     "station_D": 1.0,
+     "x_m": 613.2967154007013,
+     "wing_positive_m2_s": 36251.413870291835,
+     "wing_negative_m2_s": -36251.413870291835,
+     "wing_crossings": 30899,
+     "wing_positive_centroid_yz_m": [
+      -32.8694675406639,
+      -97.65525179992329
+     ],
+     "wing_positive_centroid_r_over_R": 0.7632487814337601,
+     "wing_negative_centroid_yz_m": [
+      -33.290116247358405,
+      -97.54148983747109
+     ],
+     "wing_negative_centroid_r_over_R": 0.7634509075975,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 2.763134604508007,
+     "momentum_deficit_m2_s": -24464.40210732596
+    },
+    {
+     "station_D": 2.0,
+     "x_m": 883.2967154007013,
+     "wing_positive_m2_s": 0.0,
+     "wing_negative_m2_s": 0.0,
+     "wing_crossings": 0,
+     "rings_positive_m2_s": 0.0,
+     "rings_negative_m2_s": 0.0,
+     "rings_crossings": 0,
+     "deficit_max": 0.009999594313956583,
+     "momentum_deficit_m2_s": 2162.2706889461997
+    }
+   ]
+  }
+ }
+}

@@ -32,6 +32,8 @@ def validate_configuration(config, settings):
         raise ValueError('material aging or ambient-only convection does not apply to straight LL')
     if config.wake_core_chord_fraction is not None:
         raise ValueError('local material birth cores do not apply to straight LL')
+    if config.free_convection_rows is not None or config.retained_rows is not None:
+        raise ValueError('the far-wake limits do not apply to straight LL')
 
 
 @dataclass(frozen=True)

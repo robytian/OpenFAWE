@@ -1,0 +1,5 @@
+# Paper 1, third batch: V3 7.3503 deg spanwise x3 with the smaller core (the x3 run with 0.075 m failed at the
+# starting step; at 5.41 deg x3 completes with 0.075 m and with 0.05 m). Also x2 with 0.05 m for a like-for-like pair.
+c3s-v3-a735-refine3-core005 V3 80 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 3 --core 0.05
+c3s-v3-a735-refine2-core005 V3 80 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 2 --core 0.05
+c3s-v3-a735-refine1-core005 V3 80 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 1 --core 0.05

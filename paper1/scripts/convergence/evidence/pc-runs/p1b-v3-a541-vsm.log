@@ -1,0 +1,11 @@
+  V3 vsm_free_wake step 0 CL=0.234387 t=0.7s
+  V3 vsm_free_wake step 20 CL=0.562728 t=2.9s
+  V3 vsm_free_wake step 40 CL=0.570451 t=4.9s
+  V3 vsm_free_wake step 60 CL=0.571805 t=6.9s
+  V3 vsm_free_wake step 80 CL=0.572250 t=9.0s
+  V3 vsm_free_wake step 100 CL=0.572443 t=11.6s
+  V3 vsm_free_wake step 120 CL=0.572547 t=14.6s
+  V3 vsm_free_wake step 140 CL=0.572608 t=18.0s
+  V3 vsm_free_wake step 160 CL=0.572648 t=22.0s
+  V3 vsm_free_wake step 180 CL=0.572674 t=26.8s
+{"out": "p1b-v3-a541-vsm", "status": "complete", "error": null, "frames": 181, "elapsed_s": 26.8}

@@ -39,7 +39,7 @@ J. Comput. Phys. 172 (2001) 879-907 (to be verified before citation).
 import math
 
 import numpy as np
-from numba import njit, prange
+from numba import get_num_threads, njit, prange
 
 from .vortex_numba import FLAG_NONFINITE, FLAG_OK, pair_velocity
 
@@ -49,8 +49,11 @@ _STACK = 512
 
 
 @njit(cache=True)
-def build_tree(mid, leaf_size):
-    """Return (order, lo, hi, left, right, node_count) of a median-split binary tree."""
+def build_tree_serial(mid, leaf_size):
+    """Return (order, lo, hi, left, right, node_count) of a median-split binary tree.
+
+    The serial reference (depth-first numbering) of ``build_tree``; kept for the bit-identity checks.
+    """
     n = mid.shape[0]
     order = np.arange(n)
     capacity = 4 * (n // max(leaf_size, 1) + 1) + 1
@@ -113,8 +116,8 @@ def build_tree(mid, leaf_size):
 
 
 @njit(cache=True)
-def node_moments(order, lo, hi, starts, ends, alpha, length_vectors, radius, gamma):
-    """Centre, bounding radius, largest core and moments for every node."""
+def node_moments_serial(order, lo, hi, starts, ends, alpha, length_vectors, radius, gamma):
+    """Centre, bounding radius, largest core and moments for every node (serial reference of ``node_moments``)."""
     count = lo.shape[0]
     centre = np.zeros((count, 3))
     bound = np.zeros(count)
@@ -161,6 +164,215 @@ def node_moments(order, lo, hi, starts, ends, alpha, length_vectors, radius, gam
         # Small relative pad keeps the containing sphere conservative under roundoff.
         bound[node] = math.sqrt(r2) * (1.0 + 1e-12)
         core[node] = largest
+    return centre, bound, core, m0, m1, m2
+
+
+@njit(cache=True, parallel=True)
+def _split_level(mid, order, lo_level, hi_level, leaf_size, split, axis_of):
+    """Split every node of one level in parallel; the segment ranges of the nodes are disjoint."""
+    for i in prange(lo_level.shape[0]):
+        a = lo_level[i]
+        b = hi_level[i]
+        split[i] = False
+        if b - a <= leaf_size:
+            continue
+        low = np.full(3, np.inf)
+        high = np.full(3, -np.inf)
+        for k in range(a, b):
+            s = order[k]
+            for axis in range(3):
+                v = mid[s, axis]
+                if v < low[axis]:
+                    low[axis] = v
+                if v > high[axis]:
+                    high[axis] = v
+        axis = 0
+        extent = high[0] - low[0]
+        for candidate in range(1, 3):
+            if high[candidate] - low[candidate] > extent:
+                extent = high[candidate] - low[candidate]
+                axis = candidate
+        if not extent > 0.0:
+            continue  # coincident midpoints stay one leaf
+        indices = order[a:b].copy()
+        keys = np.empty(b - a)
+        for k in range(b - a):
+            keys[k] = mid[indices[k], axis]
+        permutation = np.argsort(keys, kind="mergesort")
+        for k in range(b - a):
+            order[a + k] = indices[permutation[k]]
+        split[i] = True
+        axis_of[i] = axis
+
+
+def build_tree(mid, leaf_size):
+    """Return (order, lo, hi, left, right, node_count) of a median-split binary tree.
+
+    The same partition as ``build_tree_serial`` (the same splitting rule, the same stable sort of each node's own
+    range, so ``order`` and every node's segment range are identical), built level by level with the nodes of a level
+    split in parallel, then numbered as the serial build numbers them, so every returned array equals the serial
+    one element for element (tree-parallel contract, T1).
+
+    The loop over levels is plain Python and calls the compiled parallel ``_split_level`` directly: a cached
+    ``@njit`` function that calls a cached parallel function crashed when loaded from numba's cache in a new process
+    (tree-parallel contract, read-back 4 and revision 3). The bookkeeping of each level and the final numbering are
+    the former body, moved unchanged into two cached serial functions.
+    """
+    n = mid.shape[0]
+    leaf_size = int(leaf_size)
+    order = np.arange(n, dtype=np.int64)
+    capacity = 4 * (n // max(leaf_size, 1) + 1) + 1
+    lo = np.empty(capacity, np.int64)
+    hi = np.empty(capacity, np.int64)
+    left = np.full(capacity, -1, np.int64)
+    right = np.full(capacity, -1, np.int64)
+    lo[0] = 0
+    hi[0] = n
+    count = 1
+    level = np.zeros(1, np.int64)
+    while level.shape[0] > 0:
+        lo_level = lo[level]
+        hi_level = hi[level]
+        split = np.zeros(level.shape[0], np.bool_)
+        axis_of = np.zeros(level.shape[0], np.int64)
+        _split_level(mid, order, lo_level, hi_level, leaf_size, split, axis_of)
+        level, count = _next_level(level, split, lo, hi, left, right, count)
+    out_lo, out_hi, out_left, out_right = _renumber(lo, hi, left, right, count)
+    return order, out_lo, out_hi, out_left, out_right, count
+
+
+@njit(cache=True)
+def _next_level(level, split, lo, hi, left, right, count):
+    """The children of the split nodes of one level (serial; the former loop of ``build_tree``)."""
+    following = np.empty(2 * int(split.sum()), np.int64)
+    j = 0
+    for i in range(level.shape[0]):
+        if not split[i]:
+            continue
+        node = level[i]
+        a = lo[node]
+        b = hi[node]
+        middle = (a + b) // 2
+        first = count
+        second = count + 1
+        count += 2
+        lo[first] = a
+        hi[first] = middle
+        lo[second] = middle
+        hi[second] = b
+        left[node] = first
+        right[node] = second
+        following[j] = first
+        following[j + 1] = second
+        j += 2
+    return following, count
+
+
+@njit(cache=True)
+def _renumber(lo, hi, left, right, count):
+    """Number the nodes as build_tree_serial does (its stack: a split node's children get the next two numbers, the
+    first child is split next), so that the arrays are those of the serial build, element for element."""
+    out_lo = np.empty(count, np.int64)
+    out_hi = np.empty(count, np.int64)
+    out_left = np.full(count, -1, np.int64)
+    out_right = np.full(count, -1, np.int64)
+    number = np.empty(count, np.int64)
+    number[0] = 0
+    out_lo[0] = lo[0]
+    out_hi[0] = hi[0]
+    assigned = 1
+    stack = np.empty(count, np.int64)
+    stack[0] = 0
+    top = 1
+    while top > 0:
+        top -= 1
+        node = stack[top]
+        if left[node] < 0:
+            continue
+        first = assigned
+        second = assigned + 1
+        assigned += 2
+        number[left[node]] = first
+        number[right[node]] = second
+        out_left[number[node]] = first
+        out_right[number[node]] = second
+        out_lo[first] = lo[left[node]]
+        out_hi[first] = hi[left[node]]
+        out_lo[second] = lo[right[node]]
+        out_hi[second] = hi[right[node]]
+        stack[top] = right[node]
+        stack[top + 1] = left[node]
+        top += 2
+    return out_lo, out_hi, out_left, out_right
+
+
+def node_moments(order, lo, hi, starts, ends, alpha, length_vectors, radius, gamma):
+    """Centre, bounding radius, largest core and moments for every node.
+
+    ``node_moments_serial`` with the loop over nodes in parallel: each node writes only its own entries and sums its
+    own segments in the same order, so the results are bit-identical (tree-parallel contract, T1). The number of
+    workers is read here, outside the compiled function, so that the compiled function can be cached (numba does not
+    cache a function that calls ``get_num_threads``).
+    """
+    return _node_moments_parallel(order, lo, hi, starts, ends, alpha, length_vectors, radius, gamma, get_num_threads())
+
+
+@njit(cache=True, parallel=True)
+def _node_moments_parallel(order, lo, hi, starts, ends, alpha, length_vectors, radius, gamma, workers):
+    count = lo.shape[0]
+    centre = np.zeros((count, 3))
+    bound = np.zeros(count)
+    core = np.zeros(count)
+    m0 = np.zeros((count, 3))
+    m1 = np.zeros((count, 3, 3))
+    m2 = np.zeros((count, 3, 3, 3))
+    # Deal the nodes out round-robin, worker t takes t, t + T, t + 2T, ... (a node's number is below its descendants',
+    # so this spreads the large nodes; balance only: every node is independent, so the results do not depend on the
+    # schedule or on the number of workers).
+    for worker in prange(workers):
+        for node in range(worker, count, workers):
+            low = np.full(3, np.inf)
+            high = np.full(3, -np.inf)
+            for k in range(lo[node], hi[node]):
+                s = order[k]
+                for axis in range(3):
+                    for value in (starts[s, axis], ends[s, axis]):
+                        if value < low[axis]:
+                            low[axis] = value
+                        if value > high[axis]:
+                            high[axis] = value
+            for axis in range(3):
+                centre[node, axis] = 0.5 * (low[axis] + high[axis])
+            r2 = 0.0
+            largest = 0.0
+            for k in range(lo[node], hi[node]):
+                s = order[k]
+                for point in (starts[s], ends[s]):
+                    q = ((point[0] - centre[node, 0]) ** 2 + (point[1] - centre[node, 1]) ** 2
+                         + (point[2] - centre[node, 2]) ** 2)
+                    if q > r2:
+                        r2 = q
+                if radius[s] > largest:
+                    largest = radius[s]
+                if gamma[s] == 0.0:
+                    continue
+                # The offset of the segment's midpoint as three scalars (the serial version's array d, without a
+                # heap allocation per segment, which threads would contend for); same arithmetic, same order.
+                d0 = 0.5 * (starts[s, 0] + ends[s, 0]) - centre[node, 0]
+                d1 = 0.5 * (starts[s, 1] + ends[s, 1]) - centre[node, 1]
+                d2 = 0.5 * (starts[s, 2] + ends[s, 2]) - centre[node, 2]
+                for i in range(3):
+                    m0[node, i] += alpha[s, i]
+                    for j in range(3):
+                        dj = d0 if j == 0 else (d1 if j == 1 else d2)
+                        m1[node, i, j] += alpha[s, i] * dj
+                        for l in range(3):
+                            dl = d0 if l == 0 else (d1 if l == 1 else d2)
+                            m2[node, i, j, l] += alpha[s, i] * (
+                                dj * dl + length_vectors[s, j] * length_vectors[s, l] / 12.0)
+            # Small relative pad keeps the containing sphere conservative under roundoff.
+            bound[node] = math.sqrt(r2) * (1.0 + 1e-12)
+            core[node] = largest
     return centre, bound, core, m0, m1, m2
 
 

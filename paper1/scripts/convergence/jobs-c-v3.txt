@@ -1,0 +1,10 @@
+# Phase C, V3 VSM free wake (convergence-plan.md). Tree setting from V2 (cheapest within budget on both models): theta 0.2, order 2, leaf 32; c2 long runs reuse v3-vsm-tree02-400 and m600-vsm-tree02-400 (same settings).
+c1-v3-dt0400 V3 40 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.4
+c1-v3-dt0200 V3 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2
+c1-v3-dt0100 V3 160 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.1
+c3-v3-refine2 V3 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 2
+c4-v3-core0075 V3 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --core 0.075
+c4-v3-core0300 V3 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --core 0.3
+c3-v3-refine3 V3 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 3
+c2-v3-long400 V3 400 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --save 400
+c1-v3-dt0050 V3 320 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.05

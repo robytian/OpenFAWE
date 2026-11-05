@@ -143,7 +143,7 @@ class WakeGuardIntegrationTests(unittest.TestCase):
         # The 38-case campaign uses this unchanged run_one function. Its existing
         # rectangle option keeps this interface test tiny; it is not kite validation.
         repository = Path(__file__).resolve().parents[1]
-        path = repository/'docs/tasks/OF-0006-polarcoupled20260924/evidence/run_comparison.py'
+        path = repository/'paper1/scripts/methods/run_comparison.py'
         specification = importlib.util.spec_from_file_location('guard_campaign_fixture', path)
         driver = importlib.util.module_from_spec(specification)
         specification.loader.exec_module(driver)

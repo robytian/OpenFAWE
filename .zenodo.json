@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "OpenFAWE: an open framework for coupled floating airborne wind energy dynamics and physics-linked cost screening",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "language": "eng",
   "access_right": "open",
   "license": "Apache-2.0",
@@ -22,19 +22,23 @@
   ],
   "keywords": [
     "airborne wind energy",
-    "floating airborne wind energy",
-    "floating offshore wind",
-    "coupled multi-body dynamics",
     "free-vortex wake",
-    "mooring dynamics",
-    "shared mooring",
-    "levelised cost of energy",
-    "Gaussian process surrogate",
-    "uncertainty quantification",
-    "open-source scientific software",
-    "offshore renewable energy"
+    "vortex step method",
+    "rotor vortex rings",
+    "crosswind flight",
+    "kite aerodynamics",
+    "Barnes-Hut tree code",
+    "GPU",
+    "floating airborne wind energy",
+    "open-source scientific software"
   ],
   "related_identifiers": [
+    {
+      "identifier": "10.48550/arXiv.2610.37313",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    },
     {
       "identifier": "https://github.com/robytian/OpenFAWE",
       "relation": "isSupplementTo",
@@ -53,5 +57,6 @@
       "scheme": "doi"
     }
   ],
-  "notes": "Project-owned code is released under Apache-2.0; documentation and benchmark data under CC BY 4.0. Third-party solvers are reused through adapters under their own licences and are not vendored. OpenFAWE reimplements its free-vortex-wake kernels from published formulations and regression cases and does not import or call MRUT (doi:10.17632/5jrdc8jb65.1), which remains a separate project."
+  "notes": "Project-owned code, models, scripts and data are released under Apache-2.0. Algorithms ported from the Vortex-Step-Method (MIT) and OpenFAST/OLAF (Apache-2.0) and the Makani M600 models and routines (Apache-2.0) keep their licences (NOTICE, THIRD_PARTY_NOTICES.md, third_party/). OpenFAWE reimplements its free-vortex-wake kernels from published formulations and regression cases and does not import or call MRUT (doi:10.17632/5jrdc8jb65.1), which remains a separate project.",
+  "description": "OpenFAWE release 0.2.0: free-vortex-wake aerodynamics for airborne wind energy kites (vortex step method with a time-marching free wake, CPU and GPU tree codes, actuator-disc rotors releasing vortex rings, prescribed crosswind motions of one or several kites in one wake, lumped-mass tether, TU Delft V3 and Makani M600 models), with the code and data of arXiv:2610.37313. Control, ground station, power and floating-platform models are under development and not included."
 }

@@ -1,0 +1,155 @@
+{
+ "note": "Phase C ladder specification for analyse_convergence.py; run directories under local/accel-20261001/runs. Coarse -> fine order. Tree setting as selected by V2 (recorded in each history.json). C3s: core radius scaled with the panel width (0.15 m / n), added after the fixed-core refine-3 failures. C3b: refine 1/2/3 all at core 0.075 m (fixed core small enough for refine 3).",
+ "ladders": [
+  {
+   "id": "C1-V3-dt",
+   "model": "V3",
+   "kind": "levels",
+   "ratio": 2,
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/c1-v3-dt0400",
+    "local/accel-20261001/runs/c1-v3-dt0200",
+    "local/accel-20261001/runs/c1-v3-dt0100",
+    "local/accel-20261001/runs/c1-v3-dt0050"
+   ]
+  },
+  {
+   "id": "C1-M600-dt",
+   "model": "M600",
+   "kind": "levels",
+   "ratio": 2,
+   "time_s": 1.6,
+   "runs": [
+    "local/accel-20261001/runs/c1-m600-dt0040",
+    "local/accel-20261001/runs/c1-m600-dt0020",
+    "local/accel-20261001/runs/c1-m600-dt0010",
+    "local/accel-20261001/runs/c1-m600-dt0005"
+   ]
+  },
+  {
+   "id": "C2-V3-wake-length",
+   "model": "V3",
+   "kind": "time",
+   "wake_chords": [
+    10,
+    20,
+    40,
+    80
+   ],
+   "runs": [
+    "local/accel-20261001/runs/c2-v3-long400"
+   ]
+  },
+  {
+   "id": "C2-M600-wake-length",
+   "model": "M600",
+   "kind": "time",
+   "wake_chords": [
+    10,
+    20,
+    40,
+    80
+   ],
+   "runs": [
+    "local/accel-20261001/runs/c2-m600-long400"
+   ]
+  },
+  {
+   "id": "C3-V3-spanwise",
+   "model": "V3",
+   "kind": "levels",
+   "ratio": null,
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/c1-v3-dt0200",
+    "local/accel-20261001/runs/c3-v3-refine2",
+    "local/accel-20261001/runs/c3-v3-refine3"
+   ]
+  },
+  {
+   "id": "C3-M600-spanwise",
+   "model": "M600",
+   "kind": "levels",
+   "ratio": null,
+   "time_s": 1.6,
+   "runs": [
+    "local/accel-20261001/runs/c1-m600-dt0020",
+    "local/accel-20261001/runs/c3-m600-refine2",
+    "local/accel-20261001/runs/c3-m600-refine3"
+   ]
+  },
+  {
+   "id": "C4-V3-core",
+   "model": "V3",
+   "kind": "levels",
+   "ratio": null,
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/c4-v3-core0075",
+    "local/accel-20261001/runs/c1-v3-dt0200",
+    "local/accel-20261001/runs/c4-v3-core0300"
+   ]
+  },
+  {
+   "id": "C4-M600-core",
+   "model": "M600",
+   "kind": "levels",
+   "ratio": null,
+   "time_s": 1.6,
+   "runs": [
+    "local/accel-20261001/runs/c4-m600-core0075",
+    "local/accel-20261001/runs/c1-m600-dt0020",
+    "local/accel-20261001/runs/c4-m600-core0300"
+   ]
+  },
+  {
+   "id": "C3s-V3-spanwise-core-scaled",
+   "model": "V3",
+   "kind": "levels",
+   "ratio": null,
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/c1-v3-dt0200",
+    "local/accel-20261001/runs/c3s-v3-refine2",
+    "local/accel-20261001/runs/c3s-v3-refine3"
+   ]
+  },
+  {
+   "id": "C3s-M600-spanwise-core-scaled",
+   "model": "M600",
+   "kind": "levels",
+   "ratio": null,
+   "time_s": 1.6,
+   "runs": [
+    "local/accel-20261001/runs/c1-m600-dt0020",
+    "local/accel-20261001/runs/c3s-m600-refine2",
+    "local/accel-20261001/runs/c3s-m600-refine3"
+   ]
+  },
+  {
+   "id": "C3b-M600-spanwise-core0075",
+   "model": "M600",
+   "kind": "levels",
+   "ratio": null,
+   "time_s": 1.6,
+   "runs": [
+    "local/accel-20261001/runs/c4-m600-core0075",
+    "local/accel-20261001/runs/c3s-m600-refine2",
+    "local/accel-20261001/runs/c3s-m600-refine3-core0075"
+   ]
+  },
+  {
+   "id": "C3b-V3-spanwise-core0075",
+   "model": "V3",
+   "kind": "levels",
+   "ratio": null,
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/c4-v3-core0075",
+    "local/accel-20261001/runs/c3s-v3-refine2",
+    "local/accel-20261001/runs/c3s-v3-refine3-core0075"
+   ]
+  }
+ ]
+}

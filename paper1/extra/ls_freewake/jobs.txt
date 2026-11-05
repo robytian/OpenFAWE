@@ -1,0 +1,15 @@
+# Paper 1, Fig. 4: lifting-surface free wakes to the converged length of the VSM/LL runs
+# (V3 180 steps = 40 c at the three wind-tunnel angles; M600 330 steps = 103 c at -4/0/4 deg).
+# NAME MODEL VARIANT ALPHA STEPS
+lsf-v3-a308-lsi V3 LSi 3.0810784665258444 180
+lsf-v3-a541-lsi V3 LSi 5.412846420261046 180
+lsf-v3-a735-lsi V3 LSi 7.350324457982788 180
+lsf-v3-a308-lsp V3 LSp 3.0810784665258444 180
+lsf-v3-a541-lsp V3 LSp 5.412846420261046 180
+lsf-v3-a735-lsp V3 LSp 7.350324457982788 180
+lsf-m600-a0-lsp M600 LSp 0 330
+lsf-m600-am4-lsp M600 LSp -4 330
+lsf-m600-a4-lsp M600 LSp 4 330
+lsf-m600-a0-lsi M600 LSi 0 330
+lsf-m600-am4-lsi M600 LSi -4 330
+lsf-m600-a4-lsi M600 LSi 4 330

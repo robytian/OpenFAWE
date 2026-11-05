@@ -1,0 +1,199 @@
+{
+ "environment": {
+  "python": "3.12.14 (main, Sep 29 2026, 15:00:58) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "numpy": "2.3.5",
+  "logical_cpus": 16,
+  "numba": "0.62.1",
+  "numba_threads": 16,
+  "numba_threading_layer": "omp",
+  "cpu": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "numba_max_threads": 16,
+  "threads_tested": [
+   1,
+   4,
+   16
+  ],
+  "git": {
+   "commit": "589269eb6bbcf58239f4e028aa18f9aab844b47a",
+   "dirty": false
+  }
+ },
+ "started": "2026-10-01 19:04:48",
+ "kernel": [
+  {
+   "state": "m600_vsm_step0400.npz",
+   "targets": 20852,
+   "segments": 40501,
+   "rows": {
+    "numba-1": {
+     "backend": "numba",
+     "threads": 1,
+     "seconds": 38.70053129999724,
+     "bitwise_equal_to_one_thread": true
+    },
+    "tree-t03-1": {
+     "backend": "tree",
+     "theta": 0.3,
+     "order": 2,
+     "leaf": 32,
+     "threads": 1,
+     "seconds": 1.230774499999825,
+     "max_err_over_U": 0.0005620827716532586,
+     "rms_err_over_U": 6.77537408679271e-05
+    },
+    "tree-t02-1": {
+     "backend": "tree",
+     "theta": 0.2,
+     "order": 2,
+     "leaf": 32,
+     "threads": 1,
+     "seconds": 2.216005700000096,
+     "max_err_over_U": 0.0001257771243278127,
+     "rms_err_over_U": 1.4576336660272592e-05
+    },
+    "numba-4": {
+     "backend": "numba",
+     "threads": 4,
+     "seconds": 12.385355899998103,
+     "bitwise_equal_to_one_thread": true
+    },
+    "tree-t03-4": {
+     "backend": "tree",
+     "theta": 0.3,
+     "order": 2,
+     "leaf": 32,
+     "threads": 4,
+     "seconds": 0.64719150000019,
+     "max_err_over_U": 0.0005620827716532586,
+     "rms_err_over_U": 6.77537408679271e-05
+    },
+    "tree-t02-4": {
+     "backend": "tree",
+     "theta": 0.2,
+     "order": 2,
+     "leaf": 32,
+     "threads": 4,
+     "seconds": 1.190108800001326,
+     "max_err_over_U": 0.0001257771243278127,
+     "rms_err_over_U": 1.4576336660272592e-05
+    },
+    "numba-16": {
+     "backend": "numba",
+     "threads": 16,
+     "seconds": 4.242893499991624,
+     "bitwise_equal_to_one_thread": true
+    },
+    "tree-t03-16": {
+     "backend": "tree",
+     "theta": 0.3,
+     "order": 2,
+     "leaf": 32,
+     "threads": 16,
+     "seconds": 0.3205940999905579,
+     "max_err_over_U": 0.0005620827716532586,
+     "rms_err_over_U": 6.77537408679271e-05
+    },
+    "tree-t02-16": {
+     "backend": "tree",
+     "theta": 0.2,
+     "order": 2,
+     "leaf": 32,
+     "threads": 16,
+     "seconds": 0.49327720000292175,
+     "max_err_over_U": 0.0001257771243278127,
+     "rms_err_over_U": 1.4576336660272592e-05
+    }
+   }
+  },
+  {
+   "state": "v3_vsm_step0400.npz",
+   "targets": 14837,
+   "segments": 29273,
+   "rows": {
+    "numba-1": {
+     "backend": "numba",
+     "threads": 1,
+     "seconds": 18.780751300000702,
+     "bitwise_equal_to_one_thread": true
+    },
+    "tree-t03-1": {
+     "backend": "tree",
+     "theta": 0.3,
+     "order": 2,
+     "leaf": 32,
+     "threads": 1,
+     "seconds": 0.8309103000065079,
+     "max_err_over_U": 0.00022169705032491896,
+     "rms_err_over_U": 3.6421622445546876e-05
+    },
+    "tree-t02-1": {
+     "backend": "tree",
+     "theta": 0.2,
+     "order": 2,
+     "leaf": 32,
+     "threads": 1,
+     "seconds": 1.624523999998928,
+     "max_err_over_U": 4.3699372465943785e-05,
+     "rms_err_over_U": 6.682966147508826e-06
+    },
+    "numba-4": {
+     "backend": "numba",
+     "threads": 4,
+     "seconds": 4.639890000005835,
+     "bitwise_equal_to_one_thread": true
+    },
+    "tree-t03-4": {
+     "backend": "tree",
+     "theta": 0.3,
+     "order": 2,
+     "leaf": 32,
+     "threads": 4,
+     "seconds": 0.3175805999926524,
+     "max_err_over_U": 0.00022169705032491896,
+     "rms_err_over_U": 3.6421622445546876e-05
+    },
+    "tree-t02-4": {
+     "backend": "tree",
+     "theta": 0.2,
+     "order": 2,
+     "leaf": 32,
+     "threads": 4,
+     "seconds": 0.5505976999993436,
+     "max_err_over_U": 4.3699372465943785e-05,
+     "rms_err_over_U": 6.682966147508826e-06
+    },
+    "numba-16": {
+     "backend": "numba",
+     "threads": 16,
+     "seconds": 1.9814947999984724,
+     "bitwise_equal_to_one_thread": true
+    },
+    "tree-t03-16": {
+     "backend": "tree",
+     "theta": 0.3,
+     "order": 2,
+     "leaf": 32,
+     "threads": 16,
+     "seconds": 0.20080000000598375,
+     "max_err_over_U": 0.00022169705032491896,
+     "rms_err_over_U": 3.6421622445546876e-05
+    },
+    "tree-t02-16": {
+     "backend": "tree",
+     "theta": 0.2,
+     "order": 2,
+     "leaf": 32,
+     "threads": 16,
+     "seconds": 0.31928440000046976,
+     "max_err_over_U": 4.3699372465943785e-05,
+     "rms_err_over_U": 6.682966147508826e-06
+    }
+   }
+  }
+ ],
+ "history": [],
+ "finished": "2026-10-01 19:10:17"
+}

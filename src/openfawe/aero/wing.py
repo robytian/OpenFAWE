@@ -347,6 +347,17 @@ def wake_config_metadata(config):
         values.pop('tree', None)
     elif values.get('tree') is None:
         values.pop('tree', None)
+    if values.get('free_convection_rows') is None:
+        values.pop('free_convection_rows', None)
+    if values.get('retained_rows') is None:
+        values.pop('retained_rows', None)
+    if values.get('cuda') is None:
+        values.pop('cuda', None)
+    else:
+        if values['cuda'].get('suspect') == 'cpu':
+            values['cuda'].pop('suspect')        # whole-step GPU contract revision 3: the default stays out
+        if values['cuda'].get('control') == 'cpu':
+            values['cuda'].pop('control')        # revision 4 addendum 1, S4 (a): the default stays out
     return values
 
 

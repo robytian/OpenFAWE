@@ -1,0 +1,18 @@
+  V3 vsm_free_wake step 0 CL=0.299605 t=0.7s
+  V3 vsm_free_wake step 20 CL=0.611627 t=2.5s
+  V3 vsm_free_wake step 40 CL=0.673076 t=5.2s
+  V3 vsm_free_wake step 60 CL=0.695442 t=8.1s
+  V3 vsm_free_wake step 80 CL=0.705312 t=11.2s
+  V3 vsm_free_wake step 100 CL=0.710244 t=14.1s
+  V3 vsm_free_wake step 120 CL=0.712956 t=17.5s
+  V3 vsm_free_wake step 140 CL=0.714567 t=21.0s
+  V3 vsm_free_wake step 160 CL=0.715586 t=25.0s
+  V3 vsm_free_wake step 180 CL=0.716262 t=29.6s
+  V3 vsm_free_wake step 200 CL=0.716729 t=35.4s
+  V3 vsm_free_wake step 220 CL=0.717069 t=41.3s
+  V3 vsm_free_wake step 240 CL=0.717319 t=48.0s
+  V3 vsm_free_wake step 260 CL=0.717511 t=55.2s
+  V3 vsm_free_wake step 280 CL=0.717663 t=63.4s
+  V3 vsm_free_wake step 300 CL=0.717783 t=72.6s
+  V3 vsm_free_wake step 320 CL=0.717878 t=82.0s
+{"out": "c1-v3-a735-dt0050", "status": "complete", "error": null, "frames": 321, "elapsed_s": 82.0}
