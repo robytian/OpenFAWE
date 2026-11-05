@@ -1,0 +1,149 @@
+{
+ "base": {
+  "CZ": 0.040501500640303834,
+  "Cm": 0.026646033381392393
+ },
+ "status": {
+  "R-base": "complete",
+  "zs1872c010": "complete",
+  "R-keep050": "complete",
+  "R-keep100": "complete",
+  "R-keep400": "complete",
+  "R-n32": "complete",
+  "R-core015": "complete",
+  "R-core090": "complete",
+  "R-adp": "complete",
+  "R-keep001": "complete",
+  "R-om060": "complete",
+  "R-om160": "complete",
+  "R-om200": "complete"
+ },
+ "consistency": {
+  "previous": {
+   "CZ": 0.040501500640303834,
+   "Cm": 0.026646033381392393
+  },
+  "abs_diff_CZ": 0.0,
+  "abs_diff_Cm": 0.0
+ },
+ "numerical": {
+  "R-keep050": {
+   "label": "rings kept 0.5 s",
+   "effect": {
+    "CZ": 0.04269500790709589,
+    "Cm": 0.02589014523193221
+   },
+   "abs_diff_CZ": 0.002193507266792058,
+   "rel_diff_Cm": 0.028367755104143928,
+   "mean_step_time_s": 1.3705480000000003,
+   "insensitive": true
+  },
+  "R-keep100": {
+   "label": "rings kept 1 s",
+   "effect": {
+    "CZ": 0.040501500640303834,
+    "Cm": 0.026646033381392393
+   },
+   "abs_diff_CZ": 0.0,
+   "rel_diff_Cm": 0.0,
+   "mean_step_time_s": 1.4975900000000002,
+   "insensitive": true
+  },
+  "R-keep400": {
+   "label": "rings kept 4 s",
+   "effect": {
+    "CZ": 0.040501500640303834,
+    "Cm": 0.026646033381392393
+   },
+   "abs_diff_CZ": 0.0,
+   "rel_diff_Cm": 0.0,
+   "mean_step_time_s": 1.4922980000000001,
+   "insensitive": true
+  },
+  "R-n32": {
+   "label": "32 nodes per ring",
+   "effect": {
+    "CZ": 0.04066540937202979,
+    "Cm": 0.026938635861598618
+   },
+   "abs_diff_CZ": 0.00016390873172595494,
+   "rel_diff_Cm": 0.010981089606025816,
+   "mean_step_time_s": 1.923944,
+   "insensitive": true
+  },
+  "R-core015": {
+   "label": "ring core 0.15 m",
+   "effect": {
+    "CZ": 0.04041400976331031,
+    "Cm": 0.02700349743842886
+   },
+   "abs_diff_CZ": 8.749087699352204e-05,
+   "rel_diff_Cm": 0.013415282189284275,
+   "mean_step_time_s": 1.556703,
+   "insensitive": true
+  },
+  "R-core090": {
+   "label": "ring core 0.9 m",
+   "effect": {
+    "CZ": 0.040455772122529654,
+    "Cm": 0.0264844453416021
+   },
+   "abs_diff_CZ": 4.572851777417952e-05,
+   "rel_diff_Cm": 0.006064243689761883,
+   "mean_step_time_s": 1.492122,
+   "insensitive": true
+  }
+ },
+ "reported": {
+  "R-adp": {
+   "label": "model A'' (sheet drift)",
+   "effect": {
+    "CZ": 0.04455099332848277,
+    "Cm": 0.02902185587236989
+   },
+   "abs_diff_CZ": 0.004049492688178939,
+   "rel_diff_Cm": 0.08916233260582025,
+   "mean_step_time_s": 1.484745
+  },
+  "R-keep001": {
+   "label": "newest ring only (no slipstream)",
+   "effect": {
+    "CZ": -0.003734785303378594,
+    "Cm": -0.0012381864597678517
+   },
+   "abs_diff_CZ": 0.044236285943682424,
+   "rel_diff_Cm": 1.0464679467313325,
+   "mean_step_time_s": 0.61027
+  },
+  "R-om060": {
+   "label": "60 rad/s",
+   "effect": {
+    "CZ": 0.03179917066580216,
+    "Cm": 0.022873616421520276
+   },
+   "abs_diff_CZ": 0.008702329974501676,
+   "rel_diff_Cm": 0.14157517953522086,
+   "mean_step_time_s": 1.450558
+  },
+  "R-om160": {
+   "label": "160 rad/s",
+   "effect": {
+    "CZ": -0.010207197166551616,
+    "Cm": -0.012699002053895713
+   },
+   "abs_diff_CZ": 0.05070869780685545,
+   "rel_diff_Cm": 1.476581330967023,
+   "mean_step_time_s": 1.406105
+  },
+  "R-om200": {
+   "label": "200 rad/s",
+   "effect": {
+    "CZ": -0.061614506272564,
+    "Cm": -0.06772790772174565
+   },
+   "abs_diff_CZ": 0.10211600691286783,
+   "rel_diff_Cm": 3.541763224279445,
+   "mean_step_time_s": 1.432322
+  }
+ }
+}

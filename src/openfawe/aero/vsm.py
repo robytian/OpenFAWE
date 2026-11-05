@@ -669,5 +669,13 @@ def _check_load_flow(velocity, tangent, span, kind, *, allow_zero=False):
         raise ValueError(f'zero VSM load {kind} flow has no sectional direction')
     if np.any(cross_speed <= 16*np.finfo(float).eps*speed):
         raise ValueError(f'pure-span VSM load {kind} flow is outside this contract')
-    if np.any(np.sum(velocity*tangent, axis=1) <= 0):
-        raise ValueError(f'VSM load {kind} requires forward chordwise flow')
+    chordwise = np.sum(velocity*tangent, axis=1)
+    if np.any(chordwise <= 0):
+        # The message names the panels so that a failed step of a run can be traced to a surface (the check itself
+        # is unchanged; panel indices are those of the solved assembly, in its panel order). The two speeds come
+        # before the list: receipts keep a limited length of the text and the list can be long.
+        reversed_panels = np.flatnonzero(chordwise <= 0)
+        worst = reversed_panels[np.argmin(chordwise[reversed_panels])]
+        raise ValueError(f'VSM load {kind} requires forward chordwise flow (worst panel {int(worst)}: chordwise speed '
+                         f'{float(chordwise[worst]):.4g} m/s, speed {float(speed[worst]):.4g} m/s; '
+                         f'{len(reversed_panels)} panels: {reversed_panels.tolist()})')

@@ -1,0 +1,7 @@
+# Lane B: long tree states for V1 (geometry providers), then V3 V2 tree candidates
+m600-vsm-tree02-400 M600 400 --backend tree --theta 0.2 --order 2 --leaf 32 --save 200,400
+v3-vsm-tree02-400 V3 400 --backend tree --theta 0.2 --order 2 --leaf 32 --save 200,400
+v2-v3-tree-t05-p2 V3 200 --backend tree --theta 0.5 --order 2 --leaf 32
+v2-v3-tree-t03-p2 V3 200 --backend tree --theta 0.3 --order 2 --leaf 32
+v2-v3-tree-t03-p1 V3 200 --backend tree --theta 0.3 --order 1 --leaf 32
+v2-v3-tree-t02-p2 V3 200 --backend tree --theta 0.2 --order 2 --leaf 32

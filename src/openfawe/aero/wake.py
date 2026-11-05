@@ -3,15 +3,19 @@
 # Map_LL_NW/PropagateWake. See third_party/OPENFAST-WING-WAKE-NOTICE.md.
 """Finite free-wake runs with Euler, Heun or RK4 geometry convection.
 
-No automatic row deletion, far-wake model, ground image, flight or line
-dynamics. Pure state transitions let a caller discard/repeat a coupling attempt.
+No ground image, flight or line dynamics. By default no row is ever deleted
+and there is no far-wake model. Two opt-in far-wake treatments exist:
+``WakeConfig.free_convection_rows`` (old rows drift with the ambient flow) and
+``WakeConfig.retained_rows`` (rows older than the limit are discarded, which
+bounds the cost per step of the wing wake; rotor rings are not truncated). Pure
+state transitions let a caller discard/repeat a coupling attempt.
 """
 
 from dataclasses import dataclass, field
 import operator
 import numpy as np
 
-from .vortex import CoreModel, TreeSettings, _real, _model, segments_velocity
+from .vortex import CoreModel, CudaSettings, TreeSettings, _real, _model, segments_velocity, cuda_backend_available
 from .wing import (Wing, WingSolution, SectionPolar, SolveSettings, owned, positive,
                    vector_field, influence_matrix, solve_circulation)
 from .cores import WakeCores, initial_cores, check_cores, advance_cores, edge_radii
@@ -28,6 +32,10 @@ def kernel_options(config, large=False):
     backend = getattr(config, 'velocity_backend', 'numpy')
     if backend == 'tree' and large:
         return dict(backend='tree', tree=config.tree)
+    if backend == 'cuda' and large:            # GPU direct-sum contract D1: the same large sums as the tree
+        return dict(backend='cuda', cuda=config.cuda)
+    if backend == 'cuda_tree' and large:       # whole-step GPU contract S1: CPU-built tree, GPU evaluation
+        return dict(backend='cuda_tree', tree=config.tree, cuda=config.cuda)
     return dict(backend='numpy' if backend == 'numpy' else 'numba')
 
 
@@ -62,11 +70,48 @@ class WakeConfig:
     wake_core_chord_fraction: float | None = None
     velocity_backend: str = 'numpy'
     tree: TreeSettings | None = None
+    # Far-wake treatment (opt-in; None, the default, leaves every path and result unchanged): only this
+    # many newest wake rows (counting the row leaving the trailing edge) are convected with the induced
+    # velocity; older rows are convected with the ambient velocity at their own position and stage time
+    # (uniform wind, Euler: a rigid drift). They keep their circulation and still induce velocity on the
+    # wing and on the younger rows; no row is discarded, so the cost per step still grows with the wake.
+    # Supported by the free-wake methods built on this module (free_wake, vsm_free_wake) only.
+    # Analogous to the frozen buffer zone of OLAF, where "the markers convect at the average ambient
+    # velocity" (Shaler, Branlard and Platt 2020, NREL/TP-5000-75959, Introduction p. 4 and section
+    # 3.2.3), with two differences: each node here uses the local ambient velocity, not an average, and
+    # nothing is truncated behind the zone. The OpenFAST source itself has not been compared.
+    free_convection_rows: int | None = None
+    # Far-wake truncation (opt-in; None, the default, keeps every released row and every existing result):
+    # after each step only this many newest released rows are kept; the vortex rings between older rows
+    # are removed whole, so the remaining lattice stays a set of closed rings (the spanwise filaments of
+    # the last kept row then carry the full circulation of the last ring, a starting-vortex-like end).
+    # The circulation solve of a step sees exactly the rows stored in the state it returns. With a
+    # limit the number of stored rows is min(step, retained_rows) and ``max_rows`` no longer ends a
+    # run. Precedent: the wake length limit of OLAF (WakeLength; Shaler, Branlard and Platt 2020,
+    # NREL/TP-5000-75959, Introduction p. 4 and section 3.2.3), where the root and tip vortices "are
+    # truncated after a specified distance" behind a frozen buffer zone. Rotor rings are not truncated,
+    # so with rotors the cost per step is not bounded by this option alone.
+    # Row counting: ``retained_rows`` counts released rows; ``free_convection_rows`` counts the row at the
+    # trailing edge as well. Frozen rows therefore exist only while free_convection_rows < retained_rows.
+    # The limit is a number of rows, not a length: the kept wake is retained_rows * dt * relative speed.
+    retained_rows: int | None = None
+    # Opt-in GPU sums: CudaSettings exactly when velocity_backend is 'cuda' (direct sum, GPU direct-sum contract D1) or
+    # 'cuda_tree' (the CPU-built tree evaluated on the GPU, which also needs tree settings; whole-step GPU contract S1); the last
+    # field, and left out of wake_config_metadata when None, so every other configuration's metadata is unchanged.
+    cuda: CudaSettings | None = None
 
     def __post_init__(self):
         for name in ("dt_s", "core_radius_m", "density_kg_m3", "kinematic_viscosity_m2_s"):
             positive(getattr(self,name),name)
         count(self.max_rows,"max_rows",1)
+        if self.free_convection_rows is not None:
+            object.__setattr__(self, 'free_convection_rows', count(self.free_convection_rows, 'free_convection_rows', 1))
+            if self.free_wake is False:
+                raise ValueError('the far-wake limit needs a free wake')
+        if self.retained_rows is not None:
+            object.__setattr__(self, 'retained_rows', count(self.retained_rows, 'retained_rows', 1))
+            if self.retained_rows > self.max_rows:
+                raise ValueError('retained_rows cannot exceed max_rows')
         count(self.geometry_substeps, 'geometry_substeps', 1)
         count(self.guard_chordwise_panels, 'guard chordwise panels', 1)
         if self.surface_guard not in ('off', 'reject_static'):
@@ -76,10 +121,26 @@ class WakeConfig:
         if self.convection_integrator not in ('euler', 'heun', 'rk4'):
             raise ValueError('unknown wake convection integrator')
         _model(self.core_model)
-        if self.velocity_backend not in ('numpy', 'numba', 'tree'):
-            raise ValueError("velocity backend must be 'numpy', 'numba' or 'tree'")
-        if (self.tree is not None) != (self.velocity_backend == 'tree'):
-            raise ValueError('tree settings are required exactly for the tree velocity backend')
+        if self.velocity_backend not in ('numpy', 'numba', 'tree', 'cuda', 'cuda_tree'):
+            raise ValueError("velocity backend must be 'numpy', 'numba', 'tree', 'cuda' or 'cuda_tree'")
+        if self.velocity_backend == 'cuda_tree':
+            if self.tree is None or self.cuda is None:
+                raise ValueError('the cuda_tree velocity backend needs both tree and cuda settings')
+        else:
+            if (self.tree is not None) != (self.velocity_backend == 'tree'):
+                raise ValueError('tree settings are required exactly for the tree velocity backend')
+            if (self.cuda is not None) != (self.velocity_backend == 'cuda'):
+                raise ValueError('cuda settings are required exactly for the cuda velocity backend')
+        if self.cuda is not None:
+            if not isinstance(self.cuda, CudaSettings):
+                raise ValueError('cuda must be CudaSettings')
+            if self.cuda.suspect != 'cpu' and self.velocity_backend != 'cuda_tree':
+                raise ValueError("cuda suspect='gpu64' is for the cuda_tree velocity backend only")
+            if getattr(self.cuda, 'control', 'cpu') != 'cpu' and self.velocity_backend != 'cuda_tree':
+                raise ValueError("cuda control='gpu' needs the cuda_tree velocity backend")    # GPU contract revision 4 addendum 2
+            if not cuda_backend_available():
+                from .vortex import cuda_unavailable_reason
+                raise ValueError(f'the cuda velocity backend needs a CUDA device ({cuda_unavailable_reason()})')
         if self.tree is not None and not isinstance(self.tree, TreeSettings):
             raise ValueError('tree must be TreeSettings')
         if self.tree is not None and self.core_model not in (CoreModel.NONE, CoreModel.RANKINE,
@@ -98,6 +159,32 @@ class WakeConfig:
             raise ValueError('unknown core evolution policy')
         if self.core_evolution != 'constant' and self.core_model != CoreModel.LAMB_OSEEN:
             raise ValueError('age growth is qualified only with the Lamb-Oseen core')
+
+
+def stored_rows(step, config):
+    """Released rows a state holds after ``step`` steps: the step count, or less with ``retained_rows``."""
+    limit=getattr(config,'retained_rows',None)
+    return step if limit is None else min(step,limit)
+
+
+def retain_newest(rows, release_times, history, cores, config):
+    """Opt-in far-wake truncation: keep the newest ``config.retained_rows`` released rows.
+
+    ``rows`` (r,nodes,3), ``release_times`` (r,), ``history`` (r-1,panels) and the core history are
+    cut together, so whole rings are removed. Without a limit, or below it, the inputs are returned
+    as they are (the default path).
+    """
+    limit=getattr(config,'retained_rows',None)
+    if limit is None or len(rows) <= limit:
+        return rows, release_times, history, cores
+    kept=None if cores is None else WakeCores(cores.span[:limit], cores.stream[:limit], cores.policy,
+                                              cores.initial_radius, cores.diffusion_rate, chord_fraction=cores.chord_fraction)
+    return rows[:limit], release_times[:limit], history[:limit-1], kept
+
+
+def row_limit_reached(state, config):
+    """True when a run without truncation has used its ``max_rows``; never with ``retained_rows``."""
+    return getattr(config,'retained_rows',None) is None and state.step >= config.max_rows
 
 
 @dataclass(frozen=True)
@@ -130,15 +217,16 @@ class WakeState:
             object.__setattr__(self,name,owned(getattr(self,name)))
         n=self.wing.panels
         object.__setattr__(self,'structural_velocity',owned(vector_field(self.structural_velocity,n,'structural velocity')))
-        if self.free_rows.shape != (self.step,self.wing.node_count,3) or self.release_times_s.shape != (self.step,) or self.older_circulation.shape != (max(self.step-1,0),n):
+        rows=stored_rows(self.step,self.config)   # equals the step unless the opt-in truncation is set
+        if self.free_rows.shape != (rows,self.wing.node_count,3) or self.release_times_s.shape != (rows,) or self.older_circulation.shape != (max(rows-1,0),n):
             raise ValueError("wake row/strength/step shape mismatch")
         if np.any(self.release_times_s >= self.time_s) or np.any(np.diff(self.release_times_s) >= 0):
             raise ValueError("wake release times must be past and newest-first")
         if self.solution.circulation.shape != (n,):
             raise ValueError("wing solution shape mismatch")
         if self.cores is not None and (not isinstance(self.cores, WakeCores) or
-                self.cores.span.shape != (self.step, n) or
-                self.cores.stream.shape != (self.step, self.wing.node_count)):
+                self.cores.span.shape != (rows, n) or
+                self.cores.stream.shape != (rows, self.wing.node_count)):
             raise ValueError('core history shape/type mismatch')
 
 
@@ -217,21 +305,45 @@ def extended_network(state):
             np.concatenate((gamma, np.asarray(rings.circulation, dtype=float))), ring_first)
 
 
-def ring_induction(rings, points, config, *, large=False):
+def ring_induction(rings, points, config, *, large=False, sheet_points=None):
     """Velocity of a state's rings at lifting-surface points (zero without rings).
 
     The core is the rings' ``surface_core_m`` when they declare one (a model
     parameter for filaments crossing the surface), else the configured core.
-    Convection of the rings themselves always uses the configured core.
+    Convection uses the rings' ``core_m`` when declared, else the configured core.
+    Rings that declare ``surface_overlap`` induce through their refined sheet at these points
+    (``RingWake.surface_sheet``; the rings to refine are chosen at ``sheet_points`` when given, else at ``points``);
+    without it the stored rings are used unchanged.
     """
     points = np.asarray(points, dtype=float)
     if rings is None or len(rings.edges) == 0:
         return np.zeros_like(points)
     core = getattr(rings, 'surface_core_m', None)
-    return segments_velocity(points, np.asarray(rings.nodes, dtype=float), np.asarray(rings.edges, dtype=np.int64),
-                             np.asarray(rings.circulation, dtype=float), model=config.core_model,
-                             core_radius=config.core_radius_m if core is None else float(core),
+    core = config.core_radius_m if core is None else float(core)
+    nodes, edges, gamma = rings.nodes, rings.edges, rings.circulation
+    if getattr(rings, 'surface_overlap', None) is not None:
+        chosen = points if sheet_points is None else np.asarray(sheet_points, dtype=float)
+        nodes, edges, gamma, _ = rings.surface_sheet(chosen.reshape(-1, 3), core)
+    return segments_velocity(points, np.asarray(nodes, dtype=float), np.asarray(edges, dtype=np.int64),
+                             np.asarray(gamma, dtype=float), model=config.core_model,
+                             core_radius=core,
                              **kernel_options(config, large=large))
+
+
+def ring_induction_pair(rings, first_points, second_points, config):
+    """``ring_induction`` at two point sets of the lifting surfaces (closure and load points) from one sheet.
+
+    Without ``surface_overlap`` these are the two plain calls. With it, the sheet is refined once at the union of the
+    two sets and evaluated at both in one sum (per-point sums do not depend on the point set), so the closure and the
+    loads see the same sheet (contract section 8, 2026-10-22 18:55 BST).
+    """
+    first_points, second_points = np.asarray(first_points, dtype=float), np.asarray(second_points, dtype=float)
+    if rings is None or len(rings.edges) == 0 or getattr(rings, 'surface_overlap', None) is None:
+        return ring_induction(rings, first_points, config), ring_induction(rings, second_points, config)
+    both = np.concatenate((first_points.reshape(-1, 3), second_points.reshape(-1, 3)))
+    velocity = ring_induction(rings, both, config)
+    count = len(first_points.reshape(-1, 3))
+    return velocity[:count].reshape(first_points.shape), velocity[count:].reshape(second_points.shape)
 
 
 def compiled_network(config):
@@ -244,7 +356,8 @@ def ambient_velocity(inflow, points, time):
     return vector_field(values,len(points),"ambient velocity")
 
 
-def _network_convection(nodes, edges, gamma, first, radii, config, inflow, time, ring_first=None):
+def _network_convection(nodes, edges, gamma, first, radii, config, inflow, time, ring_first=None, ring_free=None,
+                        ring_radii=None):
     """Evaluate one geometry stage on the same frozen circulation graph.
 
     Points are nodes[first:]. With ``ring_first`` (index of the first ring
@@ -252,9 +365,15 @@ def _network_convection(nodes, edges, gamma, first, radii, config, inflow, time,
     rule while ring nodes nodes[ring_first:] use 'zero': identical rings can
     stack exactly onto one another (starting-ring cluster) and the regularised
     velocity on a filament is zero. Per-point sums do not depend on the point
-    set, so the row velocities are the same as without rings.
+    set, so the row velocities are the same as without rings. ``ring_free``
+    (None: all) is the number of leading ring nodes that take the induced
+    velocity; the ring nodes after them keep the ambient velocity (the frozen
+    far wake of the rings, ``RingWake.free_convection_steps``). ``ring_radii``
+    (None: ``radii``) are the per-edge cores used for the ring targets only
+    (``RingWake.bound_core_m``); the row targets always use ``radii``.
     """
     points=nodes[first:]
+    target_radii=radii if ring_radii is None else ring_radii
     velocity=ambient_velocity(inflow,points,time).copy()
     if config.free_wake and len(edges):
         # Distinct surface IDs can share the same physical root node. Every
@@ -272,7 +391,27 @@ def _network_convection(nodes, edges, gamma, first, radii, config, inflow, time,
                 for node in (a,b):
                     exclusions.extend((index,segment) for index in locations.get(tuple(nodes[node]),()))
             exclusions=np.asarray(exclusions,dtype=np.int64).reshape(-1,2)
-        if ring_first is None or ring_first >= len(nodes):
+        rows_end=len(points) if ring_first is None or ring_first >= len(nodes) else ring_first-first
+        # The ring targets: all ring nodes, or the leading ``ring_free`` of them (older rings keep the ambient velocity).
+        ring_end=len(points) if ring_free is None else min(len(points), rows_end+int(ring_free))
+        limit=getattr(config,'free_convection_rows',None)
+        if limit is not None and limit*first < rows_end:
+            # Far-wake treatment: the newest ``limit`` rows are the only row targets; the older rows keep
+            # the ambient velocity set above. Per-point sums do not depend on the point set, so the
+            # free rows get the velocity they would get without the limit. Ring nodes stay free unless
+            # the rings declare their own limit (``ring_free``).
+            # Older rows are no longer targets, so a point-on-filament or overflow condition that the
+            # complete evaluation would raise for an old row is not raised here.
+            free=limit*first
+            velocity[:free] += segments_velocity(points[:free],nodes,edges,gamma,model=config.core_model,
+                                                 core_radius=radii, exclusions=exclusions[exclusions[:,0]<free],
+                                                 **kernel_options(config, large=True))
+            if rows_end < ring_end:
+                ring_pairs=exclusions[(exclusions[:,0]>=rows_end)&(exclusions[:,0]<ring_end)]-np.array([rows_end,0])
+                velocity[rows_end:ring_end] += segments_velocity(points[rows_end:ring_end],nodes,edges,gamma,model=config.core_model,
+                                                                 core_radius=target_radii, exclusions=ring_pairs, singularity='zero',
+                                                                 **kernel_options(config, large=True))
+        elif ring_first is None or ring_first >= len(nodes):
             velocity += segments_velocity(points,nodes,edges,gamma,model=config.core_model,
                                           core_radius=radii,
                                           exclusions=exclusions,
@@ -280,23 +419,42 @@ def _network_convection(nodes, edges, gamma, first, radii, config, inflow, time,
         else:
             split=ring_first-first
             rows_pairs=exclusions[exclusions[:,0]<split]
-            ring_pairs=exclusions[exclusions[:,0]>=split]-np.array([split,0])
+            ring_pairs=exclusions[(exclusions[:,0]>=split)&(exclusions[:,0]<ring_end)]-np.array([split,0])
             velocity[:split] += segments_velocity(points[:split],nodes,edges,gamma,model=config.core_model,
                                                   core_radius=radii, exclusions=rows_pairs,
                                                   **kernel_options(config, large=True))
-            velocity[split:] += segments_velocity(points[split:],nodes,edges,gamma,model=config.core_model,
-                                                  core_radius=radii, exclusions=ring_pairs, singularity='zero',
-                                                  **kernel_options(config, large=True))
+            if split < ring_end:
+                velocity[split:ring_end] += segments_velocity(points[split:ring_end],nodes,edges,gamma,model=config.core_model,
+                                                              core_radius=target_radii, exclusions=ring_pairs, singularity='zero',
+                                                              **kernel_options(config, large=True))
     return velocity
 
 
 def _edge_radii_extended(state, edges, ring_first, config):
-    """Material cores for the wing edges, the constant configured core for ring edges."""
+    """Material cores for the wing edges; for ring edges the rings' own core (``RingWake.core_m``) when they declare
+    one, else the constant configured core."""
     wing_count = int(np.count_nonzero(np.all(edges < ring_first, axis=1))) if len(edges) else 0
     if wing_count == len(edges):
         return edge_radii(state.wing, edges, state.cores, config.core_radius_m)
     radii = edge_radii(state.wing, edges[:wing_count], state.cores, config.core_radius_m)
-    return np.concatenate((np.broadcast_to(radii, (wing_count,)), np.full(len(edges) - wing_count, config.core_radius_m)))
+    ring_core = getattr(state.rings, 'core_m', None)
+    ring_core = config.core_radius_m if ring_core is None else float(ring_core)
+    return np.concatenate((np.broadcast_to(radii, (wing_count,)), np.full(len(edges) - wing_count, ring_core)))
+
+
+def _ring_target_radii(state, edges, first, radii):
+    """Per-edge cores for the ring targets (``RingWake.bound_core_m``), or None when the rings declare none.
+
+    The bound system of the lifting surfaces is every wing edge whose two nodes lie on the bound row or the
+    trailing-edge row (node ids below ``2*first``): the bound vortex and the chordwise and trailing-edge segments of
+    the bound rings. Those edges take ``bound_core_m``; every other edge keeps its core.
+    """
+    bound_core = None if state.rings is None else getattr(state.rings, 'bound_core_m', None)
+    if bound_core is None or not len(edges):
+        return None
+    ring_radii = np.array(np.broadcast_to(radii, (len(edges),)), dtype=float)
+    ring_radii[np.all(edges < 2*first, axis=1)] = float(bound_core)
+    return ring_radii
 
 
 def node_convection_velocity(state, config, inflow):
@@ -307,7 +465,7 @@ def node_convection_velocity(state, config, inflow):
     first=state.wing.node_count
     radii=_edge_radii_extended(state, edges, ring_first, config)
     velocity=_network_convection(nodes, edges, gamma, first, radii, config, inflow, state.time_s, ring_first)
-    return velocity[:ring_first-first].reshape(state.step+1,first,3)
+    return velocity[:ring_first-first].reshape(len(state.free_rows)+1,first,3)
 
 
 def convect_rows(state, config, inflow, *, next_wing=None):
@@ -318,7 +476,7 @@ def convect_rows(state, config, inflow, *, next_wing=None):
 def convect_geometry(state, config, inflow, *, next_wing=None):
     """Advance old TE/free geometry (and ring nodes); release no intermediate wake rows.
 
-    Returns (rows, ring_nodes): rows shaped (step+1, node_count, 3) and the
+    Returns (rows, ring_nodes): rows shaped (stored rows + 1, node_count, 3) and the
     moved ring nodes (empty without rings). Bound nodes never fluid-convect.
 
     All stages retain the old circulation graph. Bound nodes interpolate
@@ -342,12 +500,17 @@ def convect_geometry(state, config, inflow, *, next_wing=None):
             not np.array_equal(next_wing.panel_edges, state.wing.panel_edges)):
         raise ValueError('wing topology cannot change during geometry convection')
     radii=_edge_radii_extended(state, edges, ring_first, config)
+    ring_radii=_ring_target_radii(state, edges, first, radii)
     bound=nodes[:first]
     displacement = None if next_wing is None else next_wing.bound-bound
     if displacement is not None and not np.any(displacement):
         displacement = None
     points=nodes[first:].copy()
     split=ring_first-first  # row points precede ring points
+    # Frozen far wake of the rings (opt-in on the ring set): the leading ring nodes that convect freely.
+    ring_free=None
+    if state.rings is not None and getattr(state.rings, 'free_convection_steps', None) is not None:
+        ring_free=state.rings.free_node_count(state.time_s, config.dt_s)
     dt=config.dt_s/config.geometry_substeps
     guard = make_surface_guard(state.wing, config, next_wing)
 
@@ -357,13 +520,22 @@ def convect_geometry(state, config, inflow, *, next_wing=None):
                              state.wing, stage=label, time_s=time)
         return candidate
 
+    # Opt-in sheet drift of the frozen rings (RingWake.sheet_drift, model A''): a constant velocity per ring node.
+    drift = None
+    if state.rings is not None and getattr(state.rings, 'sheet_drift', False) and ring_free is not None:
+        node_drift = getattr(state.rings, 'drift_m_s', None)
+        if node_drift is not None and len(node_drift) > ring_free:
+            drift = np.zeros_like(points)
+            drift[split+ring_free:] = node_drift[ring_free:]
+
     def rhs(current, time):
         # Avoid arithmetic on the legacy fixed path and the first Euler stage.
         stage_bound = bound
         if displacement is not None and time != state.time_s:
             stage_bound = bound + ((time-state.time_s)/config.dt_s)*displacement
-        return _network_convection(np.concatenate((stage_bound,current)), edges, gamma,
-                                   first, radii, config, inflow, time, ring_first)
+        velocity = _network_convection(np.concatenate((stage_bound,current)), edges, gamma,
+                                       first, radii, config, inflow, time, ring_first, ring_free, ring_radii)
+        return velocity if drift is None else velocity + drift
 
     for substep in range(config.geometry_substeps):
         time=state.time_s+substep*dt
@@ -380,7 +552,7 @@ def convect_geometry(state, config, inflow, *, next_wing=None):
             k4=rhs(checked(points+dt*k3, points, 'rk4_stage4', time+dt),time+dt)
             candidate=points+dt*(k1+2*k2+2*k3+k4)/6
         points=checked(candidate, points, 'accepted_geometry', time+dt)
-    return points[:split].reshape(state.step+1,first,3), points[split:]
+    return points[:split].reshape(len(state.free_rows)+1,first,3), points[split:]
 
 
 def make_surface_guard(wing, config, next_wing=None):
@@ -446,7 +618,7 @@ def advance_wake(state, polar, config, inflow, *, next_wing=None,
     validate_state_config(state, config)
     if type(state) is not WakeState:
         raise ValueError('advance_wake requires its own WakeState')
-    if state.step >= config.max_rows:
+    if row_limit_reached(state, config):
         raise ValueError("wake row limit reached; choose a bounded run or explicit later far-wake treatment")
     new_time=state.time_s+config.dt_s
     if not np.isfinite(new_time) or new_time <= state.time_s:
@@ -468,6 +640,7 @@ def advance_wake(state, polar, config, inflow, *, next_wing=None,
     rings=None if state.rings is None else state.rings.moved(ring_nodes)
     cores=advance_cores(state, new_rows, config)
     history=np.vstack([state.solution.circulation,state.older_circulation]) if state.step else np.empty((0,wing.panels))
+    new_rows,release_times,history,cores=retain_newest(new_rows,np.r_[state.time_s,state.release_times_s],history,cores,config)
     known=np.zeros_like(wing.cp)
     if len(new_rows)>1:
         nodes,edges,gamma=pack_rings(new_rows,history,wing.panel_edges,compiled=compiled_network(config))
@@ -482,5 +655,5 @@ def advance_wake(state, polar, config, inflow, *, next_wing=None,
                                density=config.density_kg_m3,kinematic_viscosity=config.kinematic_viscosity_m2_s,
                                initial=state.solution.circulation,settings=config.solve)
     return WakeState(new_time,state.step+1,wing,solution,new_rows,
-                     np.r_[state.time_s,state.release_times_s],history,structural_velocity,cores,config=config,
+                     release_times,history,structural_velocity,cores,config=config,
                      rings=rings)

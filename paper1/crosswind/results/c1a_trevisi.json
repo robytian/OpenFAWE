@@ -1,0 +1,39 @@
+{
+ "inputs": {
+  "figures": "results/c1a_wake_figures.json",
+  "cl": 2.33,
+  "radius": 135.0,
+  "speed": 45.3,
+  "wind": 9.0,
+  "elevation": 31.9,
+  "period": 18.72,
+  "span": 25.7,
+  "aspect": 20.0,
+  "cw": 6.05,
+  "out": "results/c1a_trevisi.json"
+ },
+ "axial_wind_m_s": 7.640745188662274,
+ "lambda_": 5.928741095465196,
+ "near_wake_shortening_m_s": 1.679864508840646,
+ "shortening_over_axial_wind": 0.2198561092356953,
+ "model": {
+  "kappa0": 0.09518518518518518,
+  "lambda0": 7.599548193163219,
+  "CDi_far": 0.003581329426480955,
+  "induced_incidence_deg": 0.08806654986410574,
+  "lift_loss": 0.003991055836395914
+ },
+ "tip_axial_speed_m_s": {
+  "outer": 0.40526740491933927,
+  "inner": 0.3976528943452735
+ },
+ "computed_pitch_m": 135.51941593064097,
+ "computed_pitch_over_D": 0.5019237627060776,
+ "with_computed_pitch": {
+  "kappa0": 0.09518518518518518,
+  "lambda0": 6.259103248374162,
+  "CDi_far": 0.002676891596874417,
+  "induced_incidence_deg": 0.06582600459868646,
+  "lift_loss": 0.0029831446814437956
+ }
+}

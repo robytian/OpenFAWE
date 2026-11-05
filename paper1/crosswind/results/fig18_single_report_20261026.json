@@ -1,0 +1,182 @@
+{
+ "script": "rotor_wake_figs.py fig18",
+ "tube": {
+  "run": "p1a-m600-single-rotors-adp-dt010-4laps",
+  "step": 7488,
+  "dt": 0.009998763768303066
+ },
+ "model_b": {
+  "run": "mbl5-m600-single-rotors-modelb-rb064-sc010-dt005-3laps",
+  "step": 11232,
+  "dt": 0.004999381884151533
+ },
+ "stations_body_x_m": {
+  "wing_trailing_edge": 1.068861054269155,
+  "horizontal_tail_leading_edge": 6.6415299278201685
+ },
+ "ring_centres": {
+  "tube": {
+   "top": {
+    "wing_trailing_edge": {
+     "x_behind_hub_m": 3.028861054269155,
+     "dz_m": 0.2611149089462755,
+     "r_over_R": 1.0000000000000007,
+     "dy_m": 0.07397850869073407
+    },
+    "horizontal_tail_leading_edge": {
+     "x_behind_hub_m": 8.601529927820168,
+     "dz_m": 0.7323561607948884,
+     "r_over_R": 0.9999999999999982,
+     "dy_m": 0.07464614458955707
+    }
+   },
+   "bottom": {
+    "wing_trailing_edge": {
+     "x_behind_hub_m": 2.681861054269155,
+     "dz_m": 0.22873987124485268,
+     "r_over_R": 1.0000000000000009,
+     "dy_m": 0.06152116373662949
+    },
+    "horizontal_tail_leading_edge": {
+     "x_behind_hub_m": 8.254529927820169,
+     "dz_m": 0.6952419324416571,
+     "r_over_R": 1.0000000000000038,
+     "dy_m": 0.05840932006440138
+    }
+   }
+  },
+  "model_b": {
+   "top": {
+    "wing_trailing_edge": {
+     "x_behind_hub_m": 3.028861054269155,
+     "dz_m": 0.3067554102221088,
+     "r_over_R": 1.0012328130337371,
+     "dy_m": 0.06319697093412208
+    },
+    "horizontal_tail_leading_edge": {
+     "x_behind_hub_m": 8.601529927820168,
+     "dz_m": 0.21712275841925274,
+     "r_over_R": 1.0823552230536282,
+     "dy_m": 0.06995627108472205
+    }
+   },
+   "bottom": {
+    "wing_trailing_edge": {
+     "x_behind_hub_m": 2.681861054269155,
+     "dz_m": 0.22828966033012332,
+     "r_over_R": 1.0717765070150242,
+     "dy_m": 0.06321386251152479
+    },
+    "horizontal_tail_leading_edge": {
+     "x_behind_hub_m": 8.254529927820169,
+     "dz_m": 0.08380830277577415,
+     "r_over_R": 1.0178231125341115,
+     "dy_m": 0.05091389883963658
+    }
+   }
+  }
+ },
+ "colour_limits": {
+  "filaments": 32.78028167898993,
+  "rings": [
+   -5.0,
+   -1.0
+  ]
+ },
+ "wall_distance_m": {
+  "tube": {
+   "main wing": {
+    "min": 0.1214303684755242,
+    "median": 1.569115089381115,
+    "below_0p2": 5,
+    "points": 34
+   },
+   "horizontal tail": {
+    "min": 0.234804675972797,
+    "median": 0.5464128810905293,
+    "below_0p2": 0,
+    "points": 8
+   },
+   "vertical tail": {
+    "min": 0.09111813006827878,
+    "median": 0.2315574887206133,
+    "below_0p2": 2,
+    "points": 7
+   },
+   "all": {
+    "min": 0.09111813006827878,
+    "median": 0.530075487921081,
+    "below_0p2": 7,
+    "points": 49
+   }
+  },
+  "model_b": {
+   "main wing": {
+    "min": 0.0374949361434879,
+    "median": 1.465265481348203,
+    "below_0p2": 9,
+    "points": 34
+   },
+   "horizontal tail": {
+    "min": 0.1587599749017992,
+    "median": 0.2752148427336578,
+    "below_0p2": 3,
+    "points": 8
+   },
+   "vertical tail": {
+    "min": 0.07054702632401937,
+    "median": 0.32993941735698784,
+    "below_0p2": 2,
+    "points": 7
+   },
+   "all": {
+    "min": 0.0374949361434879,
+    "median": 0.39437429651146266,
+    "below_0p2": 14,
+    "points": 49
+   }
+  }
+ },
+ "track_extremes": {
+  "tube": {
+   "top": {
+    "dz_max": 1.014152942952486,
+    "dz_max_x": 12.0,
+    "r_min": 0.999999999999995,
+    "r_min_x": 0.0,
+    "r_max": 1.0000000000000047,
+    "r_max_x": 5.25,
+    "slope_dz_per_m": 0.08488439318894599
+   },
+   "bottom": {
+    "dz_max": 1.002416810955515,
+    "dz_max_x": 12.0,
+    "r_min": 0.9999999999999952,
+    "r_min_x": 0.0,
+    "r_max": 1.0000000000000047,
+    "r_max_x": 5.25,
+    "slope_dz_per_m": 0.08390315790884953
+   }
+  },
+  "model_b": {
+   "top": {
+    "dz_max": 0.32895525900839395,
+    "dz_max_x": 2.35,
+    "r_min": 0.9605285205403106,
+    "r_min_x": 1.9000000000000001,
+    "r_max": 1.0977475151794711,
+    "r_max_x": 12.0,
+    "slope_dz_per_m": 0.001495152716719705
+   },
+   "bottom": {
+    "dz_max": 0.29065690111976333,
+    "dz_max_x": 1.85,
+    "r_min": 0.9999999999999954,
+    "r_min_x": 0.0,
+    "r_max": 1.1177298077209854,
+    "r_max_x": 1.75,
+    "slope_dz_per_m": -0.012345620057529528
+   }
+  }
+ }
+}

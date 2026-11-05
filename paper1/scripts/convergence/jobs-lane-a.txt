@@ -1,0 +1,6 @@
+# Lane A: M600 direct reference (V1 states + V2 reference), then M600 V2 tree candidates
+m600-vsm-direct-200 M600 200 --backend numba --save 40,100,200
+v2-m600-tree-t05-p2 M600 200 --backend tree --theta 0.5 --order 2 --leaf 32
+v2-m600-tree-t03-p2 M600 200 --backend tree --theta 0.3 --order 2 --leaf 32
+v2-m600-tree-t03-p1 M600 200 --backend tree --theta 0.3 --order 1 --leaf 32
+v2-m600-tree-t02-p2 M600 200 --backend tree --theta 0.2 --order 2 --leaf 32

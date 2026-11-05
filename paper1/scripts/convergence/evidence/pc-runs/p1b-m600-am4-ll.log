@@ -1,0 +1,18 @@
+  M600 free_wake step 0 CL=0.997634 t=0.1s
+  M600 free_wake step 20 CL=1.445892 t=4.2s
+  M600 free_wake step 40 CL=1.504624 t=7.2s
+  M600 free_wake step 60 CL=1.518400 t=9.8s
+  M600 free_wake step 80 CL=1.523800 t=12.9s
+  M600 free_wake step 100 CL=1.526392 t=16.4s
+  M600 free_wake step 120 CL=1.527866 t=20.4s
+  M600 free_wake step 140 CL=1.528720 t=25.0s
+  M600 free_wake step 160 CL=1.529257 t=30.4s
+  M600 free_wake step 180 CL=1.529598 t=35.7s
+  M600 free_wake step 200 CL=1.529856 t=41.6s
+  M600 free_wake step 220 CL=1.530042 t=48.2s
+  M600 free_wake step 240 CL=1.530206 t=55.7s
+  M600 free_wake step 260 CL=1.530317 t=64.1s
+  M600 free_wake step 280 CL=1.530409 t=73.4s
+  M600 free_wake step 300 CL=1.530480 t=83.8s
+  M600 free_wake step 320 CL=1.530543 t=95.3s
+{"out": "p1b-m600-am4-ll", "status": "complete", "error": null, "frames": 331, "elapsed_s": 101.3}

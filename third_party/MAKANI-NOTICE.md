@@ -34,9 +34,23 @@ Source-derived files (transcriptions with the source routine named in the file):
   CalcBlownWingForceMomentPos and config/m600/sim/rotor_sim.py parameters (comparison only).
 - cases/rotors/m600_rotors_makani.json: config/m600/rotors.py positions/axes and
   config/prop/propellers.py Rev4 directions, mapped with diag(-1, 1, -1).
-- docs/tasks/OF-0006-body20260930 fuselage mesh: see CAMBER-SOURCES.md.
+- paper1/crosswind/mesh fuselage mesh (display only): see CAMBER-SOURCES.md.
 
 Changes in 2026: Python/NumPy implementations with explicit input validation and honest
 failures; the actuator-disc vortex-ring wake, the free-wake coupling and the full-incidence
-wing closure are OpenFAWE models, not Makani's; Makani's empirical corrections and
-whole-kite aerodynamic tables are kept as switchable comparison modules.
+wing closure are OpenFAWE models, not Makani's; of Makani's empirical corrections the blown-wing
+thrust deflection is kept as a switchable comparison module (rotor/makani_corrections.py). The tail
+thrust-coefficient tables and a whole-kite aerodynamic table module are not implemented (corrected
+2026-10-03; this notice previously said both were kept as modules); the ASWING baseline table is
+stored as reference data only.
+
+Added in release 0.3.0 (crosswind flight of paper 1, source anchors in each file):
+
+- src/openfawe/flight/crosswind_loop.py: the playbook construction and the nominal-loop law of the Makani
+  flight controller (config/m600/control/crosswind_playbook_utils.py, control/crosswind/*.c,
+  control/simple_aero.c, common/c_math/{geometry,util}.c); modifications listed in the file header.
+- cases/flight/m600_crosswind_playbook_land.json: config/m600/control/crosswind_playbook.py (land set) and
+  the constants of config/m600/control/crosswind.py.
+- cases/aircraft/m600_makani_rigid_body.json: config/m600/wing.py (wing serial 06, crosswind).
+- cases/ground/makani_gs02_parker_ranch.json: config/base_station and config/common/sim parameters of the
+  GS02 ground station (drawing and tether ground point only).

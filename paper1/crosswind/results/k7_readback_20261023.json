@@ -1,0 +1,824 @@
+{
+ "script": "k7_readback.py",
+ "k7_split": {
+  "c3c7": {
+   "steps_per_lap": 936,
+   "laps": 7,
+   "backend": "tree",
+   "free_convection_rows": 936,
+   "written_K7": {
+    "A": {
+     "verdict": "passed",
+     "reason": "lap 7 against lap 6",
+     "limit": 0.01
+    },
+    "B": {
+     "verdict": "failed",
+     "reason": "lap 7 against lap 6",
+     "limit": 0.01
+    }
+   },
+   "units": {
+    "A": [
+     {
+      "lap": 2,
+      "against": 1,
+      "force": {
+       "K7_local_max": 0.7345166376048693,
+       "aero_only_max": 0.4247544149308702,
+       "lap_max_normalised_max": 0.4336816046889168,
+       "tether_difference_max": 1.1706628744141199,
+       "loop_angle_of_max_deg": 0.0,
+       "total_norm_at_max": 39004.882477145555,
+       "total_norm_lap_max": 66061.67939227377,
+       "aero_norm_at_max": 67448.62972450176,
+       "aero_steps_above_0p5_percent": 35,
+       "aero_steps_above_1_percent": 26
+      },
+      "moment": {
+       "K7_local_max": 0.621864963092299,
+       "aero_only_max": 0.46458311646992095,
+       "lap_max_normalised_max": 0.5869517312701105,
+       "tether_difference_max": 1.498299032689829,
+       "loop_angle_of_max_deg": 1.9,
+       "total_norm_at_max": 43107.80682261308,
+       "total_norm_lap_max": 45671.9577957898,
+       "aero_norm_at_max": 57701.748889076356,
+       "aero_steps_above_0p5_percent": 39,
+       "aero_steps_above_1_percent": 30
+      }
+     },
+     {
+      "lap": 3,
+      "against": 2,
+      "force": {
+       "K7_local_max": 0.0017821961948916243,
+       "aero_only_max": 0.0005157943751902781,
+       "lap_max_normalised_max": 0.0007481719811211729,
+       "tether_difference_max": 0.013376998103922233,
+       "loop_angle_of_max_deg": 0.0,
+       "total_norm_at_max": 27684.62771112088,
+       "total_norm_lap_max": 65946.6531876979,
+       "aero_norm_at_max": 95638.82228716774,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.001995486349241501,
+       "aero_only_max": 0.0004397950980646453,
+       "lap_max_normalised_max": 0.0007537906426766192,
+       "tether_difference_max": 0.07202643634809647,
+       "loop_angle_of_max_deg": 261.5,
+       "total_norm_at_max": 16338.084305882841,
+       "total_norm_lap_max": 45720.57930487706,
+       "aero_norm_at_max": 85944.29856637736,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     },
+     {
+      "lap": 4,
+      "against": 3,
+      "force": {
+       "K7_local_max": 0.0007943001877357235,
+       "aero_only_max": 0.00023002335650270213,
+       "lap_max_normalised_max": 0.0003335865817063086,
+       "tether_difference_max": 0.0006457973468059208,
+       "loop_angle_of_max_deg": 0.0,
+       "total_norm_at_max": 27682.030121230222,
+       "total_norm_lap_max": 65913.44774640046,
+       "aero_norm_at_max": 95589.71621559253,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.000962407793008199,
+       "aero_only_max": 0.00017572341619136877,
+       "lap_max_normalised_max": 0.0002649101286683383,
+       "tether_difference_max": 0.003225638749427162,
+       "loop_angle_of_max_deg": 53.8,
+       "total_norm_at_max": 6273.0706009072865,
+       "total_norm_lap_max": 45731.18246123281,
+       "aero_norm_at_max": 36855.10364795379,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     },
+     {
+      "lap": 5,
+      "against": 4,
+      "force": {
+       "K7_local_max": 0.00028190610143943347,
+       "aero_only_max": 8.781582711553615e-05,
+       "lap_max_normalised_max": 0.00015595457077294345,
+       "tether_difference_max": 4.455770249478519e-05,
+       "loop_angle_of_max_deg": 330.0,
+       "total_norm_at_max": 34934.03163863333,
+       "total_norm_lap_max": 65902.28062594408,
+       "aero_norm_at_max": 112314.36737269531,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.00043572421764304927,
+       "aero_only_max": 0.00012152412593892274,
+       "lap_max_normalised_max": 0.00016767647026171971,
+       "tether_difference_max": 0.00022175352205522358,
+       "loop_angle_of_max_deg": 265.4,
+       "total_norm_at_max": 17138.171817602946,
+       "total_norm_lap_max": 45733.39393637268,
+       "aero_norm_at_max": 84360.41151743352,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     },
+     {
+      "lap": 6,
+      "against": 5,
+      "force": {
+       "K7_local_max": 0.00021624739287479417,
+       "aero_only_max": 6.353172022061128e-05,
+       "lap_max_normalised_max": 9.685285451095242e-05,
+       "tether_difference_max": 3.158205799991265e-06,
+       "loop_angle_of_max_deg": 350.0,
+       "total_norm_at_max": 29451.85258100545,
+       "total_norm_lap_max": 65899.84465940947,
+       "aero_norm_at_max": 100265.01889114258,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.0002534316806012941,
+       "aero_only_max": 5.7660264160343556e-05,
+       "lap_max_normalised_max": 9.720170857617146e-05,
+       "tether_difference_max": 1.563382102176547e-05,
+       "loop_angle_of_max_deg": 232.7,
+       "total_norm_at_max": 14282.483728267165,
+       "total_norm_lap_max": 45738.04836072432,
+       "aero_norm_at_max": 85852.43623090348,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     },
+     {
+      "lap": 7,
+      "against": 6,
+      "force": {
+       "K7_local_max": 0.0002616455722526946,
+       "aero_only_max": 7.501881505688531e-05,
+       "lap_max_normalised_max": 0.00010312870962007518,
+       "tether_difference_max": 2.6421912480145693e-07,
+       "loop_angle_of_max_deg": 13.5,
+       "total_norm_at_max": 25942.737026701965,
+       "total_norm_lap_max": 65900.39589851779,
+       "aero_norm_at_max": 90481.33073073995,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.00026066133870352587,
+       "aero_only_max": 6.561654826485047e-05,
+       "lap_max_normalised_max": 8.684553196429873e-05,
+       "tether_difference_max": 1.2161035556346178e-06,
+       "loop_angle_of_max_deg": 247.3,
+       "total_norm_at_max": 15238.316204615016,
+       "total_norm_lap_max": 45736.83656075069,
+       "aero_norm_at_max": 88913.78730066515,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     }
+    ],
+    "B": [
+     {
+      "lap": 2,
+      "against": 1,
+      "force": {
+       "K7_local_max": 0.7348425057196226,
+       "aero_only_max": 0.4249440819861193,
+       "lap_max_normalised_max": 0.4337193938168878,
+       "tether_difference_max": 1.1706626806699205,
+       "loop_angle_of_max_deg": 0.0,
+       "total_norm_at_max": 39004.99412530217,
+       "total_norm_lap_max": 66085.41842313201,
+       "aero_norm_at_max": 67448.62901460899,
+       "aero_steps_above_0p5_percent": 80,
+       "aero_steps_above_1_percent": 26
+      },
+      "moment": {
+       "K7_local_max": 0.621754357828019,
+       "aero_only_max": 0.4644977646954283,
+       "lap_max_normalised_max": 0.5871427405751861,
+       "tether_difference_max": 1.4982989005729905,
+       "loop_angle_of_max_deg": 1.9,
+       "total_norm_at_max": 43107.592839618,
+       "total_norm_lap_max": 45648.75259677378,
+       "aero_norm_at_max": 57701.7995018798,
+       "aero_steps_above_0p5_percent": 106,
+       "aero_steps_above_1_percent": 30
+      }
+     },
+     {
+      "lap": 3,
+      "against": 2,
+      "force": {
+       "K7_local_max": 0.045769844884588684,
+       "aero_only_max": 0.019141631143653953,
+       "lap_max_normalised_max": 0.04576050104657209,
+       "tether_difference_max": 0.013376959192100912,
+       "loop_angle_of_max_deg": 258.1,
+       "total_norm_at_max": 65995.84466401034,
+       "total_norm_lap_max": 66009.32035741853,
+       "aero_norm_at_max": 157803.6969329877,
+       "aero_steps_above_0p5_percent": 72,
+       "aero_steps_above_1_percent": 36
+      },
+      "moment": {
+       "K7_local_max": 0.23034161565174946,
+       "aero_only_max": 0.040524617118799004,
+       "lap_max_normalised_max": 0.07844382362626236,
+       "tether_difference_max": 0.0720263260154752,
+       "loop_angle_of_max_deg": 252.3,
+       "total_norm_at_max": 15568.232289867447,
+       "total_norm_lap_max": 45714.392959412486,
+       "aero_norm_at_max": 88489.63700723455,
+       "aero_steps_above_0p5_percent": 103,
+       "aero_steps_above_1_percent": 80
+      }
+     },
+     {
+      "lap": 4,
+      "against": 3,
+      "force": {
+       "K7_local_max": 0.003742809328861754,
+       "aero_only_max": 0.0015299833833790418,
+       "lap_max_normalised_max": 0.003686059485079078,
+       "tether_difference_max": 0.0006457806775870267,
+       "loop_angle_of_max_deg": 258.5,
+       "total_norm_at_max": 63320.246736654364,
+       "total_norm_lap_max": 64295.11274875524,
+       "aero_norm_at_max": 154900.77472955067,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.015866789650429175,
+       "aero_only_max": 0.003044084251167939,
+       "lap_max_normalised_max": 0.005751169260682458,
+       "tether_difference_max": 0.0032255974801955745,
+       "loop_angle_of_max_deg": 249.2,
+       "total_norm_at_max": 16567.39649430418,
+       "total_norm_lap_max": 45707.46978835895,
+       "aero_norm_at_max": 86519.451596148,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     },
+     {
+      "lap": 5,
+      "against": 4,
+      "force": {
+       "K7_local_max": 0.001151276419871928,
+       "aero_only_max": 0.0004753538986102606,
+       "lap_max_normalised_max": 0.0011503863627241667,
+       "tether_difference_max": 4.447074024938047e-05,
+       "loop_angle_of_max_deg": 248.1,
+       "total_norm_at_max": 64111.31496436415,
+       "total_norm_lap_max": 64160.918068143365,
+       "aero_norm_at_max": 155273.46289872346,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.01433635263012785,
+       "aero_only_max": 0.002378946797318685,
+       "lap_max_normalised_max": 0.004505367793686767,
+       "tether_difference_max": 0.00022151209122966975,
+       "loop_angle_of_max_deg": 263.8,
+       "total_norm_at_max": 14331.088915088942,
+       "total_norm_lap_max": 45700.86984398402,
+       "aero_norm_at_max": 86684.27945616447,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     },
+     {
+      "lap": 6,
+      "against": 5,
+      "force": {
+       "K7_local_max": 0.0018286451426412606,
+       "aero_only_max": 0.0007503308538101783,
+       "lap_max_normalised_max": 0.001812731411856581,
+       "tether_difference_max": 3.148295945720747e-06,
+       "loop_angle_of_max_deg": 268.5,
+       "total_norm_at_max": 63663.96159059536,
+       "total_norm_lap_max": 64222.8591408956,
+       "aero_norm_at_max": 155156.61323968408,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.040412268187534434,
+       "aero_only_max": 0.007008116946560972,
+       "lap_max_normalised_max": 0.01315906685783034,
+       "tether_difference_max": 1.563018304295838e-05,
+       "loop_angle_of_max_deg": 265.4,
+       "total_norm_at_max": 14706.395001576964,
+       "total_norm_lap_max": 45702.07392940861,
+       "aero_norm_at_max": 86216.73378817056,
+       "aero_steps_above_0p5_percent": 21,
+       "aero_steps_above_1_percent": 0
+      }
+     },
+     {
+      "lap": 7,
+      "against": 6,
+      "force": {
+       "K7_local_max": 0.0020333724193927834,
+       "aero_only_max": 0.0008353748152501518,
+       "lap_max_normalised_max": 0.0020208768162346736,
+       "tether_difference_max": 5.83066139370203e-07,
+       "loop_angle_of_max_deg": 267.7,
+       "total_norm_at_max": 63826.22903002177,
+       "total_norm_lap_max": 64220.88308445532,
+       "aero_norm_at_max": 155358.3989027743,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.028150420077046323,
+       "aero_only_max": 0.005013909221989022,
+       "lap_max_normalised_max": 0.009386953808217201,
+       "tether_difference_max": 1.3677781680598855e-06,
+       "loop_angle_of_max_deg": 265.4,
+       "total_norm_at_max": 15146.269417372569,
+       "total_norm_lap_max": 45704.71256612872,
+       "aero_norm_at_max": 85770.43606897102,
+       "aero_steps_above_0p5_percent": 2,
+       "aero_steps_above_1_percent": 0
+      }
+     }
+    ]
+   }
+  },
+  "c3e": {
+   "steps_per_lap": 936,
+   "laps": 4,
+   "backend": "tree",
+   "free_convection_rows": 1872,
+   "written_K7": {
+    "A": {
+     "verdict": "passed",
+     "reason": "lap 4 against lap 3",
+     "limit": 0.01
+    },
+    "B": {
+     "verdict": "failed",
+     "reason": "lap 4 against lap 3",
+     "limit": 0.01
+    }
+   },
+   "units": {
+    "A": [
+     {
+      "lap": 2,
+      "against": 1,
+      "force": {
+       "K7_local_max": 0.7345541910247502,
+       "aero_only_max": 0.4247763410856321,
+       "lap_max_normalised_max": 0.4338470498294816,
+       "tether_difference_max": 1.1706628744141199,
+       "loop_angle_of_max_deg": 0.0,
+       "total_norm_at_max": 39004.88151431376,
+       "total_norm_lap_max": 66039.86173934798,
+       "aero_norm_at_max": 67448.59481326857,
+       "aero_steps_above_0p5_percent": 35,
+       "aero_steps_above_1_percent": 26
+      },
+      "moment": {
+       "K7_local_max": 0.6218558206923411,
+       "aero_only_max": 0.46457623579159985,
+       "lap_max_normalised_max": 0.5871095467016301,
+       "tether_difference_max": 1.498299032689829,
+       "loop_angle_of_max_deg": 1.9,
+       "total_norm_at_max": 43107.74665124802,
+       "total_norm_lap_max": 45658.946141498556,
+       "aero_norm_at_max": 57701.674412653665,
+       "aero_steps_above_0p5_percent": 40,
+       "aero_steps_above_1_percent": 30
+      }
+     },
+     {
+      "lap": 3,
+      "against": 2,
+      "force": {
+       "K7_local_max": 0.001611248998459239,
+       "aero_only_max": 0.00046628917931122894,
+       "lap_max_normalised_max": 0.0006965477014335539,
+       "tether_difference_max": 0.013376998103922233,
+       "loop_angle_of_max_deg": 0.0,
+       "total_norm_at_max": 27683.83869902687,
+       "total_norm_lap_max": 65911.32721149409,
+       "aero_norm_at_max": 95640.25551285261,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.002130191990600482,
+       "aero_only_max": 0.0004443980895354233,
+       "lap_max_normalised_max": 0.00076001851673546,
+       "tether_difference_max": 0.07202643634809647,
+       "loop_angle_of_max_deg": 52.7,
+       "total_norm_at_max": 6261.984561164147,
+       "total_norm_lap_max": 45711.75723819207,
+       "aero_norm_at_max": 36977.47611556251,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     },
+     {
+      "lap": 4,
+      "against": 3,
+      "force": {
+       "K7_local_max": 0.0007567669988179862,
+       "aero_only_max": 0.00021908674280608043,
+       "lap_max_normalised_max": 0.00038124479528703033,
+       "tether_difference_max": 0.0006457973468059208,
+       "loop_angle_of_max_deg": 3.1,
+       "total_norm_at_max": 27227.332100778254,
+       "total_norm_lap_max": 65881.50560808499,
+       "aero_norm_at_max": 94312.94621380101,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      },
+      "moment": {
+       "K7_local_max": 0.0009584043301359391,
+       "aero_only_max": 0.00026864461465883795,
+       "lap_max_normalised_max": 0.00041257192725672987,
+       "tether_difference_max": 0.003225638749427162,
+       "loop_angle_of_max_deg": 256.9,
+       "total_norm_at_max": 15838.10808375367,
+       "total_norm_lap_max": 45723.494580291364,
+       "aero_norm_at_max": 87407.78423705095,
+       "aero_steps_above_0p5_percent": 0,
+       "aero_steps_above_1_percent": 0
+      }
+     }
+    ],
+    "B": [
+     {
+      "lap": 2,
+      "against": 1,
+      "force": {
+       "K7_local_max": 0.7332747732157398,
+       "aero_only_max": 0.4240382229240585,
+       "lap_max_normalised_max": 0.4328326909816261,
+       "tether_difference_max": 1.170662558361073,
+       "loop_angle_of_max_deg": 0.0,
+       "total_norm_at_max": 39005.04255902151,
+       "total_norm_lap_max": 66079.60612187427,
+       "aero_norm_at_max": 67448.5938207046,
+       "aero_steps_above_0p5_percent": 70,
+       "aero_steps_above_1_percent": 46
+      },
+      "moment": {
+       "K7_local_max": 0.6221684231427397,
+       "aero_only_max": 0.46480869315347423,
+       "lap_max_normalised_max": 0.5875601096945771,
+       "tether_difference_max": 1.4982991106371628,
+       "loop_angle_of_max_deg": 1.9,
+       "total_norm_at_max": 43107.602146395715,
+       "total_norm_lap_max": 45646.71496645536,
+       "aero_norm_at_max": 57701.61553354531,
+       "aero_steps_above_0p5_percent": 104,
+       "aero_steps_above_1_percent": 90
+      }
+     },
+     {
+      "lap": 3,
+      "against": 2,
+      "force": {
+       "K7_local_max": 0.08901264167891722,
+       "aero_only_max": 0.026512610011852573,
+       "lap_max_normalised_max": 0.04222815191186653,
+       "tether_difference_max": 0.013377088776906021,
+       "loop_angle_of_max_deg": 342.7,
+       "total_norm_at_max": 31161.677054368098,
+       "total_norm_lap_max": 65895.31725578818,
+       "aero_norm_at_max": 104730.17844201335,
+       "aero_steps_above_0p5_percent": 354,
+       "aero_steps_above_1_percent": 112
+      },
+      "moment": {
+       "K7_local_max": 0.2644450291848824,
+       "aero_only_max": 0.11690128248313225,
+       "lap_max_normalised_max": 0.12861747017635397,
+       "tether_difference_max": 0.07202670654805843,
+       "loop_angle_of_max_deg": 238.5,
+       "total_norm_at_max": 14455.731494280762,
+       "total_norm_lap_max": 45666.92093179349,
+       "aero_norm_at_max": 87933.3377868133,
+       "aero_steps_above_0p5_percent": 936,
+       "aero_steps_above_1_percent": 800
+      }
+     },
+     {
+      "lap": 4,
+      "against": 3,
+      "force": {
+       "K7_local_max": 0.03353764973825971,
+       "aero_only_max": 0.010023528008318907,
+       "lap_max_normalised_max": 0.018210085692276848,
+       "tether_difference_max": 0.00064580390608171,
+       "loop_angle_of_max_deg": 342.7,
+       "total_norm_at_max": 30488.645233961084,
+       "total_norm_lap_max": 65330.95218960358,
+       "aero_norm_at_max": 102011.73664186824,
+       "aero_steps_above_0p5_percent": 104,
+       "aero_steps_above_1_percent": 1
+      },
+      "moment": {
+       "K7_local_max": 0.20337656453947767,
+       "aero_only_max": 0.14232280155764057,
+       "lap_max_normalised_max": 0.14025091923501956,
+       "tether_difference_max": 0.0032256635458907112,
+       "loop_angle_of_max_deg": 355.4,
+       "total_norm_at_max": 34185.54137193744,
+       "total_norm_lap_max": 49792.58826257329,
+       "aero_norm_at_max": 48958.35275150172,
+       "aero_steps_above_0p5_percent": 589,
+       "aero_steps_above_1_percent": 389
+      }
+     }
+    ]
+   }
+  }
+ },
+ "rotor_effect": {
+  "p1a_vs_p1n": {
+   "with_rotors": {
+    "K3": 9.842172765428048e-08,
+    "K7": {
+     "verdict": "passed",
+     "reason": "lap 4 against lap 3",
+     "limit": 0.01
+    },
+    "last_pair": {
+     "lap": 4,
+     "against": 3,
+     "force_max_relative": 0.0004375225951362398,
+     "force_mean_relative": 0.00020280128835038308,
+     "moment_max_relative": 0.0013807053323198518,
+     "moment_mean_relative": 0.0003227479485622145
+    },
+    "elapsed_s": 20544.413833900006,
+    "backend": "cuda_tree",
+    "dt_s": 0.009998763768303066,
+    "rotors": {
+     "omega_rad_s": 97.4,
+     "discs": 8,
+     "nodes_per_ring": 16,
+     "surface_core_m": 0.1,
+     "free_convection_ring_steps": 0,
+     "retained_ring_steps": 200,
+     "ring_core_m": 0.45,
+     "ring_bound_core_m": null,
+     "ring_surface_overlap": 2.0,
+     "ring_sheet_drift": true,
+     "ring_ambient_spacing": true,
+     "rotor_set": "cases/rotors/m600_rotors_makani.json",
+     "table": "cases/rotors/makani/rotor_rev4.json",
+     "rule": "constant speed; 97.4 rad/s is the maximum-shaft-power speed of the table at the loop-mean commanded airspeed 46.5 m/s"
+    }
+   },
+   "without": {
+    "K3": 9.842172765428048e-08,
+    "K7": {
+     "verdict": "passed",
+     "reason": "lap 4 against lap 3",
+     "limit": 0.01
+    },
+    "last_pair": {
+     "lap": 4,
+     "against": 3,
+     "force_max_relative": 0.0007870866178030286,
+     "force_mean_relative": 0.00017678060602709604,
+     "moment_max_relative": 0.0008736051694474522,
+     "moment_mean_relative": 0.000328450923782219
+    },
+    "elapsed_s": 10432.361503999913,
+    "backend": "cuda_tree"
+   },
+   "per_lap": [
+    {
+     "lap": 1,
+     "force_coefficient_with": [
+      -0.06819364949099767,
+      -0.015689952882638865,
+      2.3704969014998474
+     ],
+     "force_coefficient_without": [
+      -0.06685806872507136,
+      -0.01740073208474933,
+      2.324823443681221
+     ],
+     "force_coefficient_change": [
+      -0.0013355807659263114,
+      0.0017107792021104663,
+      0.04567345781862642
+     ],
+     "moment_coefficient_with": [
+      0.834644070680917,
+      -0.20410840045738976,
+      -0.13520518101279677
+     ],
+     "moment_coefficient_without": [
+      0.8365707270841994,
+      -0.22874888940332844,
+      -0.14339641759633745
+     ],
+     "moment_coefficient_change": [
+      -0.0019266564032824895,
+      0.024640488945938677,
+      0.008191236583540679
+     ],
+     "lift_relative_change": 0.019607617419294954,
+     "aero_power_with_W": 586371.1579165979,
+     "aero_power_without_W": 573356.4122360178,
+     "rotor_shaft_power_W": {
+      "mean": 526875.3625354472,
+      "min": 334307.87246018444,
+      "max": 828842.23468729
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13775.521849336586,
+      "min": -18801.251807554,
+      "max": -10042.904476831683
+     },
+     "rotor_power_on_body_mean_W": -637094.0303829206,
+     "ring_nodes_within_surface_core": {
+      "mean": 0.13034188034188035,
+      "max": 2,
+      "steps_nonzero": 216
+     }
+    },
+    {
+     "lap": 2,
+     "force_coefficient_with": [
+      -0.06909017212057206,
+      -0.015609214455106907,
+      2.3739346876401943
+     ],
+     "force_coefficient_without": [
+      -0.06779716765676315,
+      -0.017350343586082447,
+      2.3288255252080434
+     ],
+     "force_coefficient_change": [
+      -0.0012930044638089083,
+      0.0017411291309755404,
+      0.04510916243215091
+     ],
+     "moment_coefficient_with": [
+      0.8348693730496128,
+      -0.20203593088462848,
+      -0.1347367462661962
+     ],
+     "moment_coefficient_without": [
+      0.8369463158861413,
+      -0.22746542012619828,
+      -0.1430932715638764
+     ],
+     "moment_coefficient_change": [
+      -0.0020769428365284837,
+      0.02542948924156979,
+      0.008356525297680217
+     ],
+     "lift_relative_change": 0.019367212422016777,
+     "aero_power_with_W": 587614.3293573466,
+     "aero_power_without_W": 574767.1069812959,
+     "rotor_shaft_power_W": {
+      "mean": 526716.5565485026,
+      "min": 334285.9054262451,
+      "max": 828945.3967957337
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13771.161510724802,
+      "min": -18802.614585794407,
+      "max": -10042.353735771421
+     },
+     "rotor_power_on_body_mean_W": -636940.2417053957,
+     "ring_nodes_within_surface_core": {
+      "mean": 0.13087606837606838,
+      "max": 2,
+      "steps_nonzero": 217
+     }
+    },
+    {
+     "lap": 3,
+     "force_coefficient_with": [
+      -0.06901022553657495,
+      -0.015590550210628608,
+      2.37365301992751
+     ],
+     "force_coefficient_without": [
+      -0.06769072571756828,
+      -0.017330732536904696,
+      2.3284720190666657
+     ],
+     "force_coefficient_change": [
+      -0.0013194998190066698,
+      0.0017401823262760876,
+      0.0451810008608442
+     ],
+     "moment_coefficient_with": [
+      0.8348545548770628,
+      -0.20196305884097268,
+      -0.13463265356349968
+     ],
+     "moment_coefficient_without": [
+      0.836918237847209,
+      -0.22735722502436886,
+      -0.14298928732205185
+     ],
+     "moment_coefficient_change": [
+      -0.002063682970146141,
+      0.025394166183396183,
+      0.008356633758552168
+     ],
+     "lift_relative_change": 0.019403841253649246,
+     "aero_power_with_W": 587334.0961134066,
+     "aero_power_without_W": 574411.8408759127,
+     "rotor_shaft_power_W": {
+      "mean": 526691.832808958,
+      "min": 334264.5361591161,
+      "max": 828971.339761998
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13770.622831260462,
+      "min": -18802.956214936814,
+      "max": -10041.851192596076
+     },
+     "rotor_power_on_body_mean_W": -636923.0992435974,
+     "ring_nodes_within_surface_core": {
+      "mean": 0.13087606837606838,
+      "max": 2,
+      "steps_nonzero": 217
+     }
+    },
+    {
+     "lap": 4,
+     "force_coefficient_with": [
+      -0.06896415597019373,
+      -0.015585126567418959,
+      2.3735099807702973
+     ],
+     "force_coefficient_without": [
+      -0.0676569972563144,
+      -0.017324397369023792,
+      2.3283482585393105
+     ],
+     "force_coefficient_change": [
+      -0.0013071587138793334,
+      0.001739270801604834,
+      0.0451617222309868
+     ],
+     "moment_coefficient_with": [
+      0.8348323274263068,
+      -0.2019220667742619,
+      -0.134605918965089
+     ],
+     "moment_coefficient_without": [
+      0.8369023434476295,
+      -0.22732119372533424,
+      -0.14295575814075318
+     ],
+     "moment_coefficient_change": [
+      -0.002070016021322729,
+      0.025399126951072354,
+      0.008349839175664175
+     ],
+     "lift_relative_change": 0.019394272653394662,
+     "aero_power_with_W": 587197.6860048053,
+     "aero_power_without_W": 574304.5923907164,
+     "rotor_shaft_power_W": {
+      "mean": 526683.4091129022,
+      "min": 334260.10610396427,
+      "max": 828981.9459964386
+     },
+     "rotor_thrust_total_N": {
+      "mean": -13770.449664386415,
+      "min": -18803.098373530087,
+      "max": -10041.752116318163
+     },
+     "rotor_power_on_body_mean_W": -636917.6015756495,
+     "ring_nodes_within_surface_core": {
+      "mean": 0.13087606837606838,
+      "max": 2,
+      "steps_nonzero": 217
+     }
+    }
+   ]
+  }
+ }
+}

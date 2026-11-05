@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openfawe"
-version = "0.2.0.dev0"
-description = "OpenFAWE aerodynamic module: lifting line, vortex step method and lifting surface with straight and free vortex wakes for airborne wind energy kites"
+version = "0.3.0"
+description = "OpenFAWE: free-vortex-wake aerodynamics for airborne wind energy kites - vortex step method, CPU/GPU tree codes, rotor vortex rings, crosswind loops and several kites in one wake"
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE", "NOTICE", "third_party/LICENSE-*.txt"]
@@ -15,6 +15,7 @@ dependencies = ["numpy>=2.3,<3", "h5py>=3.12,<4", "psutil>=7,<8"]
 
 [project.optional-dependencies]
 fast = ["numpy>=2.3,<2.4", "scipy==1.16.3", "numba==0.62.1", "threadpoolctl==3.5.0"]
+paper = ["matplotlib>=3.9", "pyvista>=0.44", "Pillow>=10"]
 test = ["pytest>=8"]
 
 [project.urls]

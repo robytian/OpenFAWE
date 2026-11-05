@@ -1,0 +1,369 @@
+{
+ "created": "2026-10-09 16:25:28",
+ "producer_sha256": "fcf28fc042055e3167a2fda30aa47375f38f170edd556de89e38d5a0af40b2f4",
+ "runner_sha256": "b7e93a6852262c1dc35bc3d8b55ef8a1caf7db94cd157a57fd2b9ca1d6b7f7d5",
+ "v1_rows_sha256": "c89e947d5d8319fe2bc7cc3e417398125c495ab66a41e73423fee23d23c33c50",
+ "output": "fig/plotted-series-freewake-converged.csv",
+ "output_sha256": "ba753843802303514fd97611ccda1283217d8a04b6d14048408339de2b4b7a63",
+ "missing": [],
+ "tree_against_direct_v3": {
+  "runs": [
+   "lsf-v3-a541-lsp",
+   "lsf-v3-a541-lsp-tree"
+  ],
+  "steps_compared": 181,
+  "max_rel_dCL": 2.316455769355853e-06,
+  "max_rel_dCD": 5.8200115971650115e-05,
+  "max_abs_dCMy": 2.1659533020468302e-06,
+  "final": {
+   "direct": {
+    "CL": 0.5643061737571895,
+    "CD": 0.058893069722674926,
+    "CMy": 0.1268669354495992
+   },
+   "tree": {
+    "CL": 0.5643054660826415,
+    "CD": 0.05888964213918714,
+    "CMy": 0.12686476949629716
+   }
+  }
+ },
+ "cases": [
+  {
+   "model": "V3",
+   "variant": "LSi",
+   "alpha_deg": 3.0810784665258444,
+   "run": "lsf-v3-a308-lsi",
+   "engine": "numba",
+   "steps": 180,
+   "wake_chords": 39.97265648332416,
+   "values": {
+    "CL": 0.5602409774259813,
+    "CD": 0.02169066933175241,
+    "CMy": 0.08242033223537691
+   },
+   "change_from_40_steps_pct": {
+    "CL": 2.7234934135904387,
+    "CD": 1.2509565055477179,
+    "CMy": 1.796190033928502
+   },
+   "change_last_tenth_of_run": {
+    "CL": 2.6901778061194648e-05,
+    "CD": -1.41451747791288e-06,
+    "CMy": 5.650727056910609e-06
+   },
+   "step40_reproduces_archived_max_abs": 2.220446049250313e-16,
+   "elapsed_s": 875.453655294,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "17d63923312273fc34a009754a45c49c22937e956a0359afdc812e3f13561e61"
+  },
+  {
+   "model": "V3",
+   "variant": "LSi",
+   "alpha_deg": 5.412846420261046,
+   "run": "lsf-v3-a541-lsi",
+   "engine": "numba",
+   "steps": 180,
+   "wake_chords": 39.97265648332416,
+   "values": {
+    "CL": 0.6992207196352236,
+    "CD": 0.034269206038610556,
+    "CMy": 0.11567964044246998
+   },
+   "change_from_40_steps_pct": {
+    "CL": 2.5900814496850444,
+    "CD": 1.1591829289915756,
+    "CMy": 1.2092685365583389
+   },
+   "change_last_tenth_of_run": {
+    "CL": 3.23184464692261e-05,
+    "CD": -2.1951908652576013e-06,
+    "CMy": 5.916617169005045e-06
+   },
+   "step40_reproduces_archived_max_abs": 2.220446049250313e-16,
+   "elapsed_s": 882.8266520660001,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "977ef8cc1bfe8a4810ee7aff84762cfebdc1fe6993b93965a45c1aef208af3cc"
+  },
+  {
+   "model": "V3",
+   "variant": "LSi",
+   "alpha_deg": 7.350324457982788,
+   "run": "lsf-v3-a735-lsi",
+   "engine": "numba",
+   "steps": 180,
+   "wake_chords": 39.97265648332416,
+   "values": {
+    "CL": 0.8112902923527338,
+    "CD": 0.04665991982592787,
+    "CMy": 0.13922808386455873
+   },
+   "change_from_40_steps_pct": {
+    "CL": 2.4860216604653873,
+    "CD": 1.0908877429534947,
+    "CMy": 0.8811804758014352
+   },
+   "change_last_tenth_of_run": {
+    "CL": 3.675405449166114e-05,
+    "CD": -2.95285571574877e-06,
+    "CMy": 5.892147261932212e-06
+   },
+   "step40_reproduces_archived_max_abs": 8.326672684688674e-17,
+   "elapsed_s": 826.7214570320002,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "3839d61da31d72cc121cf66aad1a2d68f67d83810dfc749001ca6e6a059b370a"
+  },
+  {
+   "model": "V3",
+   "variant": "LSp",
+   "alpha_deg": 3.0810784665258444,
+   "run": "lsf-v3-a308-lsp",
+   "engine": "numba",
+   "steps": 180,
+   "wake_chords": 39.97265648332416,
+   "values": {
+    "CL": 0.381068765897959,
+    "CD": 0.051623419583792116,
+    "CMy": 0.09578462721574471
+   },
+   "change_from_40_steps_pct": {
+    "CL": 6.2995920803121885,
+    "CD": -1.0507574895860627,
+    "CMy": 0.00040838299635304054
+   },
+   "change_last_tenth_of_run": {
+    "CL": 3.95408452619761e-05,
+    "CD": -1.6570594790071835e-06,
+    "CMy": 3.2033456507929436e-06
+   },
+   "step40_reproduces_archived_max_abs": 8.326672684688674e-17,
+   "elapsed_s": 819.2853689450001,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "5db5e0d6a2dad39c142ec87efe6c7e1b7fbb901f19d9494adf8ca8ddafed3b98"
+  },
+  {
+   "model": "V3",
+   "variant": "LSp",
+   "alpha_deg": 5.412846420261046,
+   "run": "lsf-v3-a541-lsp",
+   "engine": "numba",
+   "steps": 180,
+   "wake_chords": 39.97265648332416,
+   "values": {
+    "CL": 0.5643061737571895,
+    "CD": 0.058893069722674926,
+    "CMy": 0.1268669354495992
+   },
+   "change_from_40_steps_pct": {
+    "CL": 5.3870442140720565,
+    "CD": 0.053224758250025594,
+    "CMy": 0.9106298477433938
+   },
+   "change_last_tenth_of_run": {
+    "CL": 4.4814238070234325e-05,
+    "CD": -1.8440777047670776e-06,
+    "CMy": 5.530401329695289e-06
+   },
+   "step40_reproduces_archived_max_abs": 2.220446049250313e-16,
+   "elapsed_s": 785.2721540280004,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "ded1aa97f9f9bb984897576934a056541cb4bdcd988186feb951e8b887853b44"
+  },
+  {
+   "model": "V3",
+   "variant": "LSp",
+   "alpha_deg": 7.350324457982788,
+   "run": "lsf-v3-a735-lsp",
+   "engine": "numba",
+   "steps": 180,
+   "wake_chords": 39.97265648332416,
+   "values": {
+    "CL": 0.7032216111268406,
+    "CD": 0.06879372680136135,
+    "CMy": 0.15212037676862358
+   },
+   "change_from_40_steps_pct": {
+    "CL": 4.712532001857483,
+    "CD": 0.517196045896684,
+    "CMy": 0.8771900210149175
+   },
+   "change_last_tenth_of_run": {
+    "CL": 4.9077908704231454e-05,
+    "CD": -2.4508544730489357e-06,
+    "CMy": 6.0909976112577535e-06
+   },
+   "step40_reproduces_archived_max_abs": 1.1102230246251565e-16,
+   "elapsed_s": 796.6166481,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "7bdeff9a92f2b924b44aa97d2234140f2f5a40d2a6f4c335456c6ba2d148f6c9"
+  },
+  {
+   "model": "M600",
+   "variant": "LSi",
+   "alpha_deg": -4.0,
+   "run": "lsf-m600-am4-lsi",
+   "engine": "tree",
+   "steps": 330,
+   "wake_chords": 102.87584755669863,
+   "values": {
+    "CL": 1.5104132896036644,
+    "CD": 0.03712952325463879,
+    "CMy": 0.08079047736748764
+   },
+   "change_from_40_steps_pct": {
+    "CL": 8.516435622093388,
+    "CD": -20.302053315187464,
+    "CMy": 41.19160521252259
+   },
+   "change_last_tenth_of_run": {
+    "CL": 0.00012321382594282504,
+    "CD": -2.616079980783531e-05,
+    "CMy": -4.777197541017131e-05
+   },
+   "step40_reproduces_archived_max_abs": 5.090964123599662e-06,
+   "elapsed_s": 1197.2974755150008,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "f5f31bfb63c146b8c68d62dd1d057ed316ec8e2a7a2835ba992484f068f4e8fe"
+  },
+  {
+   "model": "M600",
+   "variant": "LSi",
+   "alpha_deg": 0.0,
+   "run": "lsf-m600-a0-lsi",
+   "engine": "tree",
+   "steps": 330,
+   "wake_chords": 102.87584755669863,
+   "values": {
+    "CL": 1.92278823308235,
+    "CD": 0.05740361610617424,
+    "CMy": -0.07743664182027343
+   },
+   "change_from_40_steps_pct": {
+    "CL": 8.628618791355013,
+    "CD": -20.361934818011072,
+    "CMy": -13.579482009334198
+   },
+   "change_last_tenth_of_run": {
+    "CL": 0.0001599932709928087,
+    "CD": -4.414589166473054e-05,
+    "CMy": -6.448316210658223e-05
+   },
+   "step40_reproduces_archived_max_abs": 1.0429362772956807e-05,
+   "elapsed_s": 1217.8902325890003,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "d10ab72ebbb22c0d85ee1f0eafbea89a9d640e2f7a965c2941f3728a5c7f1486"
+  },
+  {
+   "model": "M600",
+   "variant": "LSi",
+   "alpha_deg": 4.0,
+   "run": "lsf-m600-a4-lsi",
+   "engine": "tree",
+   "steps": 330,
+   "wake_chords": 102.87584755669863,
+   "values": {
+    "CL": 2.3268883661048614,
+    "CD": 0.08263849723320085,
+    "CMy": -0.23868559673966855
+   },
+   "change_from_40_steps_pct": {
+    "CL": 8.631883293217513,
+    "CD": -20.16784909717724,
+    "CMy": -5.082570881924353
+   },
+   "change_last_tenth_of_run": {
+    "CL": 0.00020008767221346702,
+    "CD": -5.9308922459269664e-05,
+    "CMy": -8.280857912348893e-05
+   },
+   "step40_reproduces_archived_max_abs": 1.4013961533887453e-05,
+   "elapsed_s": 1196.9381187610006,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "cab749fc6036223a5ce81be98f51703083ee8d486a4dbd4dcd35e748441cd831"
+  },
+  {
+   "model": "M600",
+   "variant": "LSp",
+   "alpha_deg": -4.0,
+   "run": "lsf-m600-am4-lsp",
+   "engine": "tree",
+   "steps": 330,
+   "wake_chords": 102.87584755669863,
+   "values": {
+    "CL": 1.5218338381628025,
+    "CD": 0.037684621724921055,
+    "CMy": 0.07323246477000454
+   },
+   "change_from_40_steps_pct": {
+    "CL": 8.754522433374333,
+    "CD": -20.076796614268066,
+    "CMy": 51.97855055269511
+   },
+   "change_last_tenth_of_run": {
+    "CL": 0.00012723977346507098,
+    "CD": -2.598085990033333e-05,
+    "CMy": -4.742788533911024e-05
+   },
+   "step40_reproduces_archived_max_abs": 5.238577038074732e-06,
+   "elapsed_s": 1248.2227870000002,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "668f74fb94b2fd6f39ac5bc55307d5c8e81fe4e692b1836fd7d997af47a8ce21"
+  },
+  {
+   "model": "M600",
+   "variant": "LSp",
+   "alpha_deg": 0.0,
+   "run": "lsf-m600-a0-lsp",
+   "engine": "tree",
+   "steps": 330,
+   "wake_chords": 102.87584755669863,
+   "values": {
+    "CL": 1.9445850052042877,
+    "CD": 0.0587064004753738,
+    "CMy": -0.08254830521357746
+   },
+   "change_from_40_steps_pct": {
+    "CL": 9.111678166508552,
+    "CD": -19.971783342521267,
+    "CMy": -14.77152589961518
+   },
+   "change_last_tenth_of_run": {
+    "CL": 0.0001697845483117355,
+    "CD": -4.5614167222172985e-05,
+    "CMy": -6.439201679415973e-05
+   },
+   "step40_reproduces_archived_max_abs": 1.0491022848668763e-05,
+   "elapsed_s": 1231.6652276280001,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "e0b34786a8149ad5e7b6951e3be8be20c2c9fc421c5bb74585c20b4c735c868b"
+  },
+  {
+   "model": "M600",
+   "variant": "LSp",
+   "alpha_deg": 4.0,
+   "run": "lsf-m600-a4-lsp",
+   "engine": "tree",
+   "steps": 330,
+   "wake_chords": 102.87584755669863,
+   "values": {
+    "CL": 2.365799849936923,
+    "CD": 0.08541388824231162,
+    "CMy": -0.240667450039066
+   },
+   "change_from_40_steps_pct": {
+    "CL": 9.420818704579293,
+    "CD": -19.55264717525741,
+    "CMy": -6.291542680103868
+   },
+   "change_last_tenth_of_run": {
+    "CL": 0.00021941075750842032,
+    "CD": -6.208394825488184e-05,
+    "CMy": -8.322183847983555e-05
+   },
+   "step40_reproduces_archived_max_abs": 1.4578782090435283e-05,
+   "elapsed_s": 1251.7234265460002,
+   "git_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
+   "history_sha256": "23f2cf4a20e13d81b7b0053735caec09d340fa591292c9457f48d6c7c5490c6e"
+  }
+ ]
+}

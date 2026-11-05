@@ -1,0 +1,345 @@
+{
+ "script": "k7_readback.py",
+ "k7_split": {},
+ "rotor_effect": {},
+ "k7a": {
+  "c3s-m600-single-frozen1-5laps": {
+   "run": "c3s-m600-single-frozen1-5laps",
+   "steps_per_lap": 936,
+   "laps": 5,
+   "backend": "cuda_tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 5,
+     "against": 4,
+     "force": {
+      "max": 7.381110379653277e-05,
+      "mean": 3.0006455058622356e-05,
+      "loop_angle_of_max_deg": 332.7,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 8.724914136974084e-05,
+      "mean": 4.381551248333165e-05,
+      "loop_angle_of_max_deg": 296.2,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "c3a-m600-pair-d1-5laps": {
+   "run": "c3a-m600-pair-d1-5laps",
+   "steps_per_lap": 936,
+   "laps": 5,
+   "backend": "cuda_tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed",
+    "B": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 5,
+     "against": 4,
+     "force": {
+      "max": 9.320610120705768e-05,
+      "mean": 3.415722973975061e-05,
+      "loop_angle_of_max_deg": 355.4,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.00010157444454606989,
+      "mean": 6.130991546810366e-05,
+      "loop_angle_of_max_deg": 349.6,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    },
+    "B": {
+     "lap": 5,
+     "against": 4,
+     "force": {
+      "max": 0.001346111073949118,
+      "mean": 0.0003123119461966241,
+      "loop_angle_of_max_deg": 310.4,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.0037523397938336775,
+      "mean": 0.00087333546243514,
+      "loop_angle_of_max_deg": 344.6,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "c3b-m600-pair-d2-7laps": {
+   "run": "c3b-m600-pair-d2-7laps",
+   "steps_per_lap": 936,
+   "laps": 7,
+   "backend": "cuda_tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed",
+    "B": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 7,
+     "against": 6,
+     "force": {
+      "max": 6.053406985894176e-05,
+      "mean": 1.739488113822225e-05,
+      "loop_angle_of_max_deg": 246.2,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 8.293426647288013e-05,
+      "mean": 3.194897358832072e-05,
+      "loop_angle_of_max_deg": 313.1,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    },
+    "B": {
+     "lap": 7,
+     "against": 6,
+     "force": {
+      "max": 0.0009300084417348627,
+      "mean": 0.000338527478963696,
+      "loop_angle_of_max_deg": 194.2,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.007437571360234199,
+      "mean": 0.001489339355212088,
+      "loop_angle_of_max_deg": 6.5,
+      "steps_above_0p5_percent": 34,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "p1a-m600-single-rotors-adp-dt010-4laps": {
+   "run": "p1a-m600-single-rotors-adp-dt010-4laps",
+   "steps_per_lap": 1872,
+   "laps": 4,
+   "backend": "cuda_tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 4,
+     "against": 3,
+     "force": {
+      "max": 0.00014218694658930567,
+      "mean": 6.442287938252013e-05,
+      "loop_angle_of_max_deg": 278.7,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.00025444906528406354,
+      "mean": 0.00012054680901143965,
+      "loop_angle_of_max_deg": 264.0,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "wing_plus_rotor_force": {
+      "max": 0.00014081381145578922,
+      "mean": 6.415009141549937e-05,
+      "loop_angle_of_max_deg": 278.5
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "p1n-m600-single-dt010-4laps": {
+   "run": "p1n-m600-single-dt010-4laps",
+   "steps_per_lap": 1872,
+   "laps": 4,
+   "backend": "cuda_tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 4,
+     "against": 3,
+     "force": {
+      "max": 0.00022795900644012086,
+      "mean": 5.7474988498651184e-05,
+      "loop_angle_of_max_deg": 0.0,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.00017820911144525832,
+      "mean": 0.00012822784053498075,
+      "loop_angle_of_max_deg": 151.5,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "p1b-m600-single-rotors-adp-dt020-4laps": {
+   "run": "p1b-m600-single-rotors-adp-dt020-4laps",
+   "steps_per_lap": 936,
+   "laps": 4,
+   "backend": "cuda_tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed"
+   },
+   "units": {
+    "A": {
+     "lap": 4,
+     "against": 3,
+     "force": {
+      "max": 0.00018429614567884672,
+      "mean": 6.371370144544698e-05,
+      "loop_angle_of_max_deg": 0.0,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.00016904201382101405,
+      "mean": 0.00010639861844708108,
+      "loop_angle_of_max_deg": 303.8,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "wing_plus_rotor_force": {
+      "max": 0.0001809326386476053,
+      "mean": 6.367177664645394e-05,
+      "loop_angle_of_max_deg": 0.0
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "c3c7-m600-pair-d1-off05-7laps": {
+   "run": "c3c7-m600-pair-d1-off05-7laps",
+   "steps_per_lap": 936,
+   "laps": 7,
+   "backend": "tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed",
+    "B": "failed"
+   },
+   "units": {
+    "A": {
+     "lap": 7,
+     "against": 6,
+     "force": {
+      "max": 7.599188468659286e-05,
+      "mean": 2.040289945090099e-05,
+      "loop_angle_of_max_deg": 13.8,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 6.635719738143829e-05,
+      "mean": 2.5648731188499666e-05,
+      "loop_angle_of_max_deg": 330.0,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    },
+    "B": {
+     "lap": 7,
+     "against": 6,
+     "force": {
+      "max": 0.0008380251796756788,
+      "mean": 0.0001282171575622431,
+      "loop_angle_of_max_deg": 267.3,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.005013349378746899,
+      "mean": 0.00044731778870901127,
+      "loop_angle_of_max_deg": 265.8,
+      "steps_above_0p5_percent": 2,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    }
+   }
+  },
+  "c3e-m600-pair-d1-4laps-free2": {
+   "run": "c3e-m600-pair-d1-4laps-free2",
+   "steps_per_lap": 936,
+   "laps": 4,
+   "backend": "tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed",
+    "B": "failed"
+   },
+   "units": {
+    "A": {
+     "lap": 4,
+     "against": 3,
+     "force": {
+      "max": 0.00021926517598480362,
+      "mean": 8.567075161383856e-05,
+      "loop_angle_of_max_deg": 0.0,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.0002688215349986018,
+      "mean": 0.00014775895231524817,
+      "loop_angle_of_max_deg": 292.3,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "verdict": "passed"
+    },
+    "B": {
+     "lap": 4,
+     "against": 3,
+     "force": {
+      "max": 0.010028226705282662,
+      "mean": 0.002341588134724784,
+      "loop_angle_of_max_deg": 342.7,
+      "steps_above_0p5_percent": 104,
+      "steps_above_1_percent": 1
+     },
+     "moment": {
+      "max": 0.14232141360494477,
+      "mean": 0.017041507530702108,
+      "loop_angle_of_max_deg": 355.0,
+      "steps_above_0p5_percent": 589,
+      "steps_above_1_percent": 389
+     },
+     "verdict": "failed"
+    }
+   }
+  }
+ }
+}

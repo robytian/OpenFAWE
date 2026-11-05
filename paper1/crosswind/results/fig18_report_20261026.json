@@ -1,0 +1,86 @@
+{
+ "script": "rotor_wake_figs.py fig18",
+ "tube": {
+  "run": "p5-m600-pair-d1-off05-rotors-adp-7laps",
+  "step": 6552,
+  "dt": 0.019997527536606132
+ },
+ "model_b": {
+  "run": "mbl-m600-single-rotors-modelb-rb064-sc010-dt010-3laps",
+  "step": 5616,
+  "dt": 0.009998763768303066
+ },
+ "stations_body_x_m": {
+  "wing_trailing_edge": 1.068861054269155,
+  "horizontal_tail_leading_edge": 6.6415299278201685
+ },
+ "ring_centres": {
+  "tube": {
+   "top": {
+    "wing_trailing_edge": {
+     "x_behind_hub_m": 3.028861054269155,
+     "dz_m": 0.26106943881538713,
+     "r_over_R": 1.0,
+     "dy_m": 0.07378384417724236
+    },
+    "horizontal_tail_leading_edge": {
+     "x_behind_hub_m": 8.601529927820168,
+     "dz_m": 0.7322446551798216,
+     "r_over_R": 0.9999999999999993,
+     "dy_m": 0.0743518631934714
+    }
+   },
+   "bottom": {
+    "wing_trailing_edge": {
+     "x_behind_hub_m": 2.681861054269155,
+     "dz_m": 0.2286639985421402,
+     "r_over_R": 1.0,
+     "dy_m": 0.06118566046813724
+    },
+    "horizontal_tail_leading_edge": {
+     "x_behind_hub_m": 8.254529927820169,
+     "dz_m": 0.6950542674525129,
+     "r_over_R": 1.0000000000000049,
+     "dy_m": 0.058081256968281196
+    }
+   }
+  },
+  "model_b": {
+   "top": {
+    "wing_trailing_edge": {
+     "x_behind_hub_m": 3.028861054269155,
+     "dz_m": 0.3355599754040511,
+     "r_over_R": 0.9888133612069153,
+     "dy_m": 0.0630762909995505
+    },
+    "horizontal_tail_leading_edge": {
+     "x_behind_hub_m": 8.601529927820168,
+     "dz_m": 0.24568105754310504,
+     "r_over_R": 1.072416387018089,
+     "dy_m": 0.06964096655487846
+    }
+   },
+   "bottom": {
+    "wing_trailing_edge": {
+     "x_behind_hub_m": 2.681861054269155,
+     "dz_m": 0.25179155154320165,
+     "r_over_R": 1.080650058188613,
+     "dy_m": 0.06321099216705314
+    },
+    "horizontal_tail_leading_edge": {
+     "x_behind_hub_m": 8.254529927820169,
+     "dz_m": 0.09725425262400614,
+     "r_over_R": 1.0210920970195085,
+     "dy_m": 0.05082094615233461
+    }
+   }
+  }
+ },
+ "colour_limits": {
+  "filaments": 32.73614160808354,
+  "rings": [
+   -9.0,
+   -2.0
+  ]
+ }
+}

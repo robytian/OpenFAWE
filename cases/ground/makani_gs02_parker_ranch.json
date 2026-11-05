@@ -1,0 +1,414 @@
+{
+ "buoy_yaw_equilibrium_heading": 0.0,
+ "flight_plan": 6,
+ "ground_frame": {
+  "ground_z": 6.122,
+  "heading": 0.0,
+  "origin_ecef": [
+   -5465412.106,
+   -2474044.018,
+   2160944.798
+  ]
+ },
+ "ground_station": {
+  "azi_ref_offset": 0.0,
+  "gs02": {
+   "anchor_arm_length": 0.484,
+   "boom_azimuth_p": 1.5707963267948966,
+   "caming_table_drum_angle_rad": [
+    -9.5,
+    -3.8
+   ],
+   "caming_table_high_pitch_mm": [
+    -68.8652,
+    -246.6691
+   ],
+   "caming_table_low_pitch_mm": [
+    -6.5961,
+    374.6522
+   ],
+   "caming_table_min_offset_mm": 19.9,
+   "cassette_origin_l": [
+    -0.2,
+    1.15,
+    -0.12
+   ],
+   "detwist_elevation": 0.39269908169872414,
+   "drum_angles": {
+    "max": 0.0,
+    "racetrack_high": -3.141592653589793,
+    "racetrack_low": -6.283185307179586,
+    "wide_wrap_low": -10.995574287564276
+   },
+   "drum_origin_p": [
+    0.417,
+    0.0,
+    -3.05
+   ],
+   "drum_radius": 1.88,
+   "gsg_pos_drum": [
+    -2.1,
+    0.0,
+    1.348
+   ],
+   "gsg_termination_angle_in_reel_rad": 0.07318,
+   "gsg_yoke_angle_in_reel_rad": -1.453,
+   "levelwind_ele_to_shoulder": [
+    -1.4904,
+    0.4
+   ],
+   "levelwind_ele_to_wrist": [
+    0.49045,
+    -0.15
+   ],
+   "levelwind_origin_p": [
+    -1.25,
+    0.4,
+    -5.3
+   ],
+   "max_drum_accel_in_reel": 0.2,
+   "perched_wing_pos_p": [
+    0.4,
+    7.8,
+    -4.3
+   ],
+   "racetrack_tether_length": 5.1,
+   "reel_azi_offset_from_wing": -1.5707963267948966
+  }
+ },
+ "gs02_sim": {
+  "azi_accel_kp": 9.5,
+  "detwist_angle_kp": 46.8,
+  "dx_dtheta_main_wrap": -0.00696,
+  "dx_dtheta_wide_wrap": -0.0733,
+  "init_tether_tension": true,
+  "initial_drum_angle": -2.9670597283903604,
+  "initial_platform_azi": 2.2689280275926285,
+  "mclaren": {
+   "detwist_setpoint": 3.543018381548489,
+   "high_tension": {
+    "Iz_gndstation": 94400.0,
+    "a_control_threshold_azi_ht": 0.0873,
+    "a_control_tolerance_azi_ht": 0.0262,
+    "detwist_max_vel": 1.257,
+    "k_spin": 157300.0,
+    "k_stop": 314700.0,
+    "m_control_threshold_azi_ht": 500.0,
+    "m_max_azi_ht": 5000.0,
+    "n_control_tolerance_azi_ht": 0.05,
+    "n_demand_azi_ht": 1.0,
+    "omega_nom": 0.122,
+    "t_threshold_wait_azi_ht": 10.0,
+    "tau_spin": 0.6,
+    "tau_stop": 0.3,
+    "test_threshold": 0.001
+   },
+   "reel": {
+    "azi_cmd_filter_omega": 5.0,
+    "azi_cmd_filter_zeta": 1.0,
+    "azi_error_max": 0.03490658503988659,
+    "azi_offset_from_wing": -1.5707963267948966,
+    "azi_vel_cmd_ff_gain": 0.75,
+    "azi_vel_cmd_kp": 1.5,
+    "azi_vel_cmd_rate_limit": 0.11,
+    "drum_angle_upper_limit": -6.210928676147021,
+    "little_dead_zone": 0.3333333333333333,
+    "max_drum_accel": 0.2
+   },
+   "transform": {
+    "azi_dead_zone_half_width": 0.008726646259971648,
+    "azi_decel_ratio": 0.8,
+    "azi_max_accel": 0.11,
+    "azi_nominal_vel": 0.5,
+    "azi_offset_from_wing": -3.141592653589793,
+    "azi_targets_ht2reel": [
+     0.0,
+     0.0,
+     1.5533430342749532,
+     1.5533430342749532,
+     1.5707963267948966
+    ],
+    "azi_targets_reel2ht": [
+     1.5707963267948966,
+     0.0,
+     0.0,
+     1.5533430342749532,
+     1.5707963267948966
+    ],
+    "azi_tols_ht2reel": [
+     1.7453292519943295,
+     0.17453292519943295,
+     0.03490658503988659,
+     0.08726646259971647,
+     0.08726646259971647
+    ],
+    "azi_tols_reel2ht": [
+     0.08726646259971647,
+     0.17453292519943295,
+     0.17453292519943295,
+     0.13962634015954636,
+     0.13962634015954636
+    ],
+    "detwist_max_vel": 1.257,
+    "detwist_targets_ht2reel": [
+     0.0,
+     2.8797932657906435,
+     2.8797932657906435,
+     3.543018381548489,
+     3.543018381548489
+    ],
+    "detwist_targets_reel2ht": [
+     3.543018381548489,
+     0.0,
+     2.8797932657906435,
+     2.8797932657906435,
+     3.543018381548489
+    ],
+    "winch_dead_zone_half_width": 0.0008726646259971648,
+    "winch_decel_ratio": 0.5,
+    "winch_max_accel": 0.025,
+    "winch_nominal_vel": 0.25,
+    "winch_targets_ht2reel": [
+     0.0,
+     -2.8797932657906435,
+     -2.8797932657906435,
+     -3.543018381548489,
+     -6.283185307179586
+    ],
+    "winch_targets_reel2ht": [
+     -6.283185307179586,
+     0.0,
+     -2.8797932657906435,
+     -2.8797932657906435,
+     -3.543018381548489
+    ],
+    "winch_tols_ht2reel": [
+     0.5235987755982988,
+     0.03490658503988659,
+     0.03490658503988659,
+     0.03490658503988659,
+     0.03490658503988659
+    ],
+    "winch_tols_reel2ht": [
+     0.5235987755982988,
+     0.0017453292519943296,
+     0.03490658503988659,
+     0.03490658503988659,
+     0.03490658503988659
+    ]
+   },
+   "ts": 0.01
+  },
+  "min_levelwind_angle_for_tether_engagement": -0.03490658503988659,
+  "panel": {
+   "dcm_p2panel": {
+    "d": [
+     [
+      5.941347777051277e-17,
+      0.9702957262759965,
+      0.24192189559966773
+     ],
+     [
+      -1.0,
+      6.123233995736766e-17,
+      0.0
+     ],
+     [
+      -1.4813443754489663e-17,
+      -0.24192189559966773,
+      0.9702957262759965
+     ]
+    ]
+   },
+   "origin_pos_p": [
+    0.288,
+    7.15,
+    -4.332
+   ],
+   "port": {
+    "center_panel": [
+     -3.926508733790656,
+     0.7632359815061799
+    ],
+    "radius": 4.0,
+    "z_extents_p": [
+     -4.332,
+     -1.3319999999999999
+    ]
+   },
+   "starboard": {
+    "center_panel": [
+     -3.8450467837532756,
+     -1.102549423267996
+    ],
+    "radius": 4.0,
+    "z_extents_p": [
+     -4.332,
+     -1.3319999999999999
+    ]
+   },
+   "y_extents_panel": [
+    -1.9,
+    2.0
+   ]
+  },
+  "platform_radius": 3.0,
+  "prox_sensor_tether_free_length": 3.02,
+  "winch_drive_damping_ratio": 0.55,
+  "winch_drive_natural_freq": 15.811388300841896,
+  "wrap_start_posx_drum": -1.985,
+  "wrap_transition_posx_drum": -1.634
+ },
+ "gs_model": 1,
+ "perch_contactors": [
+  {
+   "damping_coeff": 100000.0,
+   "friction_coeff": 50.0,
+   "pos": [
+    -0.02,
+    -1.31,
+    0.85
+   ],
+   "spring_const": 1000000.0
+  },
+  {
+   "damping_coeff": 100000.0,
+   "friction_coeff": 50.0,
+   "pos": [
+    -0.02,
+    1.12,
+    0.85
+   ],
+   "spring_const": 1000000.0
+  },
+  {
+   "damping_coeff": 100000.0,
+   "friction_coeff": 0.8,
+   "pos": [
+    -3.0,
+    -0.21,
+    0.5
+   ],
+   "spring_const": 1000000.0
+  }
+ ],
+ "phys": {
+  "P_atm": 90728.3,
+  "R_dry_air": 287.058,
+  "R_water_vapor": 461.5,
+  "g": 9.81,
+  "g_g": [
+   0.0,
+   0.0,
+   9.81
+  ],
+  "mag_ned": [
+   0.274242,
+   0.046062,
+   0.206902
+  ],
+  "rho": 1.026
+ },
+ "phys_sim": {
+  "air_density": 1.026,
+  "wind_direction": 0.6981317007977318,
+  "wind_model": 2,
+  "wind_speed": 10.0
+ },
+ "provenance": {
+  "build_params_sha256": "a2835ac530c1d38620b28f2e54072691185098de2b0b6a4b7f00c5b517047864",
+  "config_sha256": {
+   "config/base_station/sim/buoy_sim.py": "85b18ad6c7db7ac4b1d348dac46ebe3fd62372293d6aca1574efda3baa68e0eb",
+   "config/base_station/sim/gs02_sim.py": "b1e56b328f64ee0dbf9738fe69858e150b2e1c4586bcf287991bfd6f10714c39",
+   "config/common/sim/phys_sim.py": "773011bfddbc68627d52faf9cd8f5dbe62f0f53b1150a5f3b9dad02544b36d5b",
+   "config/common/sim/tether_sim.py": "f3db4933c2773607f0551f55896d3f4918b6bfedd5c11069995495c6bfc311ca",
+   "config/common/sim/wing_sim.py": "11e60fa994d8dbb22638f05b7932db66c40f9282588a2ebe7344b5cf506ae0b7",
+   "config/m600/sim/contact_sim.py": "d575765fb38abf9794d6825cf1b10785caa0847e9d66d38a8fae502c3371b562",
+   "config/m600/system_params.py": "a846a15e56f24897a40a70cbb38cd1001aa678580421885244821f4f24c12a2a"
+  },
+  "modules": {
+   "buoy_sim": "base_station.sim.buoy_sim",
+   "contact_sim": "m600.sim.contact_sim",
+   "gs02_sim": "base_station.sim.gs02_sim",
+   "phys_sim": "common.sim.phys_sim",
+   "system": "m600.system_params",
+   "tether_sim": "common.sim.tether_sim",
+   "wing_sim": "common.sim.wing_sim"
+  },
+  "script": "docs/tasks/OF-0008-g5control20261006/makani_lib/gen_gs02_params.py",
+  "snapshot_commit": "1d66923243f73a69cddda52082fd5415907afc99",
+  "source": "google/makani (Apache-2.0), evaluated by config/mconfig.py with the module override common.test_site = kTestSiteParkerRanch",
+  "system_equals_build_params": true
+ },
+ "schema": "openfawe.makani_gs02_params.v1",
+ "test_site": 2,
+ "tether": {
+  "bending_stiffness": 35.0,
+  "gsg_ele_to_termination": 0.712,
+  "length": 425.8,
+  "linear_density": 0.917,
+  "outer_diameter": 0.0294,
+  "section_drag_coeff": 0.7,
+  "tensile_stiffness": 18000000.0
+ },
+ "tether_sim": {
+  "bending_damping_ratio_active": 1.0,
+  "ground_contactor_template": {
+   "damping_coeff": 643.6590731115949,
+   "friction_coeff": 0.8,
+   "pos": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "spring_const": 20159.99403157895
+  },
+  "longitudinal_damping_ratio_active": 0.1,
+  "longitudinal_damping_ratio_staged": 0.14,
+  "num_nodes": 19,
+  "stiff_len_lim": 1.0
+ },
+ "ts": 0.01,
+ "winch": {
+  "drum_velocity_cal": {
+   "bias": 0.0,
+   "bias_count": 0,
+   "scale": 1.0
+  },
+  "position_cal": {
+   "bias": 0.0,
+   "bias_count": 0,
+   "scale": 1.88
+  },
+  "r_drum": 1.88,
+  "transmission_ratio": 0.0,
+  "velocity_cmd_cal": {
+   "bias": 0.0,
+   "bias_count": 0,
+   "scale": 1.0
+  }
+ },
+ "wing_sim_initial": {
+  "Vb_0": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "Xg_0": [
+   -6.186299033615506,
+   -4.668758321726224,
+   -4.359999999999999
+  ],
+  "omega_0": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "q_0": [
+   0.5785325452656868,
+   -0.26951555089073925,
+   0.7404878902641793,
+   0.21056862603097426
+  ]
+ }
+}

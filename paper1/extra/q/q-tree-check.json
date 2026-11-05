@@ -1,0 +1,6 @@
+{
+ "note": "q_field.py test grid m600 state_0128, x -> [0,2] m, y [-14,14], n [-6,3], h = 0.1 m; qtest: direct compiled sum (backend numba), qtest2: tree code theta 0.3, order 2, leaf 32 (2026-10-08)",
+ "max_abs_diff": 1.227294921875,
+ "max_abs_q": 4593.22509765625,
+ "ratio": 0.0002671967725904055
+}

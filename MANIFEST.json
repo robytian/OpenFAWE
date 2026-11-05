@@ -1,0 +1,951 @@
+{
+ "release": "0.3.0",
+ "note": "Every file of the release outside paper1/ with its SHA-256 and origin. The files of paper1/ are listed in paper1/MANIFEST.json and paper1/crosswind/MANIFEST.json.",
+ "files": [
+  {
+   "path": ".gitignore",
+   "sha256": "2f1896b6567498a81585bb774b5ffb2fbb390e814934c3a4a5eee42820ac5184",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": ".zenodo.json",
+   "sha256": "b9bfea4134cba8e3de494d24e2129252a5e858e54c4625b9be4527ad7bc19380",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "CHANGELOG.md",
+   "sha256": "b497321c9a9adf43005387025e9a57018609b8c62c11764f6eaf80964aa5fe10",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "CITATION.cff",
+   "sha256": "d79af05ada361b389a6a458e6085670d1c686d3abb61f12dda75a0f1d1996ada",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "CONTRIBUTING.md",
+   "sha256": "331ae3a562a9972f4d87184a3eb25a16f90b2f279233b27ddd72359dc204c37f",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "LICENSE",
+   "sha256": "f7b4baf559c14776872229cd5b8c02489ce046eac698cfc2876f09c7b2909932",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "LICENSE-BINARIES.md",
+   "sha256": "052de2fcc6045571edb9f05078309e81c3a6142685d0f6c96cab47190b0d120f",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "NOTICE",
+   "sha256": "be18020fc9a4ac9bfe7dcd27553a0130da16e0c49ddadbf6e5f49500a574855f",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "README.md",
+   "sha256": "26a9d7432f55ff8dcc31fd2cc84ce5045bcbb5cafdc27f4145034db4a07f8256",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "ROADMAP.md",
+   "sha256": "c9b985e43a21095c15d26216ca6b7a145773eb2d334c28dbe98e3cfb389cf7c8",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "THIRD_PARTY_NOTICES.md",
+   "sha256": "5e901d315b89e3cdfe86d6927fd45648a34497ebfbdac660a5802e0b9482ac80",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "cases/aircraft/m600_makani_rigid_body.json",
+   "sha256": "69b58a11ec0ce6e629fb531859ed88895ee3c9ee4a6df24bbdbcdfdf5e674111",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/aircraft/m600_neutral.json",
+   "sha256": "98dfce28d0a73580c1a98abb264b1ad0ed9d6540d7cba798c01f886016ec31d4",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/aircraft/v3_cad.json",
+   "sha256": "eec533d1227f1bbcf9b6e4c509570767d5ed2a60345c33f654f97916c17ebb57",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/aircraft/v3_cad_attached.json",
+   "sha256": "6f6b4a87aa85381306606fa7a76029b47068f4be0ccb4bde91829539d27ae223",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/aircraft/v3_cad_camber.json",
+   "sha256": "dba4280590bc0ac434b0da55d9d6fdeed19b34dd1a6790f713b5fce1f6a950f3",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/aircraft/v3_cad_camber_integral.json",
+   "sha256": "e8ae241da0029baf998b919275a8272e4c23eb39a064a3cbaca0dedbc00616f3",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/aircraft/v3_cad_raw_supported.json",
+   "sha256": "6acf0b49a6355f9575de907ef62cf743bef66858b8e7c15c62f804aeca2e9c88",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/aircraft/wing_tail_reference.json",
+   "sha256": "e13cad172af52149d622bba0f82dfb0d3c9661b7a8a2296c246510faa6452046",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/flight/m600_crosswind_playbook_land.json",
+   "sha256": "a3f8e8ffc0ff53e759feeee27d80f60fc327e3ab53ea0870b19f79e693cc9bfc",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/ground/makani_gs02_parker_ranch.json",
+   "sha256": "73cd1443ad3efa9c114bd1592b4e7d0b12ecfd00aceebd2cfadfa883c681496e",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/polars/makani/README.md",
+   "sha256": "cf9fee1bbfb96bba05a047b84ca11ff5a05569b01765ee6562e0429927e9576d",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/polars/makani/approx_blade_rj8.json",
+   "sha256": "a693b4f094c07fae5d0a504ecf5348f131a9d279915116bf7d4b8d69fd9b87da",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/polars/makani/f8.json",
+   "sha256": "2d80d70185496cbaa443d71f03a6a8a4f5b9acc84b7540615388ad318b19bbe3",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/polars/makani/hover_model_sn02_wind_10_no_wake_model.json",
+   "sha256": "254d17acc26241bd046223ab38896ef868749020470b58e73b213d5e374b1628",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/polars/makani/mp6d.json",
+   "sha256": "779dc6ea4ca37db3c3e7aa07d15f1a0e84264d30089300cffc8bb5766dfdb774",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/polars/makani/naca0012_high_aoa.json",
+   "sha256": "42521ea5dd29fe2f7d2c659b02b30d443df091e348f14b7a53e0ccda27a7cfe0",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/polars/makani/oref.json",
+   "sha256": "26e2cf25ed0d386247f20fa50044a2176c889897e738cd903cf0f3af73f95473",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/polars/makani/ref.json",
+   "sha256": "f756d9170eeff4cc2539c50e803e7933736f784bc232ea1bf2995818a3231c4c",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/qualification/m600_makani_reconstructed.json",
+   "sha256": "e374ef0eaa47d14d9cb1019bb0071f97980159e6088da234e9c41a91178a5292",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/qualification/m600_makani_reconstructed_flat.json",
+   "sha256": "230469e4773e6eb7dca4f91bd3b931a6592e85eca79f563ee9a116bf2407fba9",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/qualification/m600_makani_reconstructed_pylons.json",
+   "sha256": "2fc6839cb698d787aecc844322dedfbb8667e8b44d7cb9f44043fd2648296949",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/qualification/m600_makani_xfoil_polars.json",
+   "sha256": "c2792d4a71a854e475de805e465eb539abed8b6c3f54859cb86d7ddacf33d592",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/qualification/m600_makani_xfoil_polars_pylons.json",
+   "sha256": "6a3e266d776c44d9d2bfd1d24b4a9b84dba1e862252d0649cec1e7034ed6b793",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/reference/de2019_source.json",
+   "sha256": "a1d9df211aa78a00bf9ea4e2a935693b6d2ee03e7063eafb0b4988698cdc6aa2",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/reference/m600_airfoil_tables.json",
+   "sha256": "5eaccd1d4338b105897fb95fbbcf60d6ba4c5a9788995562334b40420c60c755",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/rotors/m600_rotors_makani.json",
+   "sha256": "f707d4995f4c77880ba1ec9dc4069818d730224407a57c0e4d61bf1328d8698d",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "cases/rotors/makani/rotor_rev4.json",
+   "sha256": "56a334dca21004b6cc9d0b78105779c7384ba38fc8fba5bd6c01d43228e9ed73",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "docs/architecture.md",
+   "sha256": "acc17fa926e7e0af4efd692254e0d7fef0d634368ab598f50dfb1163937fe6b1",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/comparison-report.md",
+   "sha256": "b7693372e5c7cb12594ddb76bb011a57b5d57f405bd2242d319900c0367d70b1",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/design-basis.md",
+   "sha256": "a03a2e98dca827d1e0c4bc279230121acb68af1774d242bfb844835fd61940e8",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/evidence-policy.md",
+   "sha256": "ed08bd30ccaaf7ef11864c89ba43137729cf0264f2ccb271ca8b6445fba4180d",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig1_V3_methods_vs_public.pdf",
+   "sha256": "0e949fc55e011d0637b9b0a5d66e661bdc564c36ef4fb365f6bb17a51b4ee7f5",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig1_V3_methods_vs_public.svg",
+   "sha256": "d3ffc6909f23cf2d6424df64b93e4ba0920eb2d607f6191a4088605578c2679b",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig1_V3_methods_vs_public_600dpi.png",
+   "sha256": "50e17d9cdb0a792146f15ffc498b23aa45a840457fb6679fbd1d8e98411fd1b0",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig2_M600_methods_vs_public_VSM.pdf",
+   "sha256": "935099c832d8e401fcd91bb124ed0d96dab5b0a5b28c16b9014efe8e7ae4ab08",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig2_M600_methods_vs_public_VSM.svg",
+   "sha256": "abbab5ea36016b1616a77ca76633fc11fa2470f96084e2f6accc6bf62246178a",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig2_M600_methods_vs_public_VSM_600dpi.png",
+   "sha256": "f20cbb4bdca9fef5bdd565ae21b7ac7d172f59104c7b665962f83ed44d4b9130",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig3_M600_fuselage_effect.pdf",
+   "sha256": "6a8cbacdb0e51ed6002b6b7d154baffb7c2bbb05acac03171e76ab136377d2d4",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig3_M600_fuselage_effect.svg",
+   "sha256": "74624027cb1ebe543a3a7946256fb5bbafb961731fd202ff29d763843602ef78",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/Fig3_M600_fuselage_effect_600dpi.png",
+   "sha256": "a89a6b275a4e132438bc94153d93c272eb967251b221a1422bd50f59013aea6f",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/figures/openfawe-hero.png",
+   "sha256": "a51780d894dc71ea94d551442248ddaf3616636cf06b6b86b3f83963ef0355dd",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "docs/media/make_banner.py",
+   "sha256": "84bb3d8c1c830edc758c1792bbf85f81bb282d6a9566c74243789baaddbcd8c9",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "docs/media/social-preview.png",
+   "sha256": "89b050f1daba4ca7c0d2e485536be8991cddc901bd0d96d655590fb3c562dbba",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "docs/media/two-kites-wake-loop.gif",
+   "sha256": "dd024fd80ed41a3f0bb89079872621319824805adc147458421b0e26473682e5",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "docs/media/two-kites-wake.png",
+   "sha256": "57c85b5c38399184432c4fae2802d36d23c2789eb59967cc8364d34cc07ba7fa",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "pyproject.toml",
+   "sha256": "eedadc537cf3f26247ccab145e800be936df46245874474ed0f01fb37b58e531",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "requirements-paper1.txt",
+   "sha256": "9e6e4b9d54ffefe480e5255081a7c70f573e34f39954a7a3c3aabafe6f75be03",
+   "origin": "written or updated for release 0.3.0"
+  },
+  {
+   "path": "src/openfawe/__init__.py",
+   "sha256": "da74ab113e1f8d325f737e2e2ce4e9d44dc793943bff43191462daed5e7396a8",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/__init__.py",
+   "sha256": "41f67c7ed34501d9c8d7fa75c10772f313d23a0ecfedcdb466d6d17c8a634c84",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/aircraft.py",
+   "sha256": "2a13d058439f3ec3600e9ffece3ec04f09e33a887acec91dcc5a9240c09b2b20",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/camber.py",
+   "sha256": "b7b48b8238c096f7aec986d239548c1394a969e0c4d81885a01563e0d3c5dea6",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/cores.py",
+   "sha256": "a5d050daed89a8eb65a31a55314cb681ce182c40f4e600a1101da553228138bf",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/geometry_guard.py",
+   "sha256": "aa69d1c1149ec0427d4ddb0e82d2c551615339e212cbff614b3c281290049866",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/handover.py",
+   "sha256": "1f0059927b70bb2ce323cf33a994b5bb807ccd5e60d88cfab271b86a6e762b90",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/initial_rate.py",
+   "sha256": "e600091e5479b4db4f7b094dc02baec70af4319adfee1b38952e31f577d3c585",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/lifting_surface.py",
+   "sha256": "920dfda131b9c301f917058ed1431ef938927da2bbd7f84591f8e688f9f17e1c",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/ll_straight.py",
+   "sha256": "fbf142d473fbad222e981f8f0edf376295f2c5135b23974a0370e5bf0f2791c5",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/makani_hover_strip.py",
+   "sha256": "6f78c72e8e9bb58dea8aa273c19f3fd098bcbcbb48f7db42abc40091018f8f2e",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/methods.py",
+   "sha256": "8aafc242ac5afa6899033b51bdd6f6f6a6b72011a716bc3964b05ce329b3d6a2",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/network_numba.py",
+   "sha256": "3e277147d5b405e294bcaa9dcbc820e71b4eac694404467458b6297f2cfafc43",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/nonlinear.py",
+   "sha256": "80bab56eb028cabe6e857cbbbf9f8a93a4d0e31d56a15ea8961f5849ceefaa51",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/polar_coupling.py",
+   "sha256": "e5db7a4cd05582ef5f889744686dcf204a4f13b3103e0e923f0c08616cf1d8fd",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/polars.py",
+   "sha256": "bfadb71ba16575991ec1eeb1b755f3940d7f97763187869d597e7651207354e7",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/reference.py",
+   "sha256": "5d5dc88e2c3952a58215a6448533809b2a4f451ca2fb9b30ba6f1ca5ae2375cb",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/surface_cores.py",
+   "sha256": "ca2563a20ee749b0ce0386603388ee51a95169c0a5bc485f095e6fe796b705ac",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/vortex.py",
+   "sha256": "69ecd5964345d1ec0cfa715d22017392cc534884d50c467be23908ce08f38331",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_cuda.py",
+   "sha256": "be8ebeb8ab247476233b19760a2d05582e7dde2bfa43cad29eee807eec1dc8a2",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_cuda_tree.py",
+   "sha256": "2ae5a001475cf9037d816ca95db7a01f33fbaacf5be9064bf5d63fb7e99c0e6b",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_numba.py",
+   "sha256": "8844ee38b1303c6a406010f2dfc5a36f1bfc887cf39ee319c5ecb0ebc9d7d0e0",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_tree.py",
+   "sha256": "0f10f560b709a6d601e7fc2552fba83f1d506de81ca2234387b0b8a56749178d",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/vsm.py",
+   "sha256": "33b15a95193befb5f2e0dbeedb87870e003d344c49b7f80298fa63f6f4753966",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/vsm_wake.py",
+   "sha256": "aac1509d6c856168a6442cccb273ab7d984e5b9786f56c66a7d2c8b982f4c948",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/wake.py",
+   "sha256": "8ecfda39abc08eda481c30afa988ff0c06631252e98d43b037f84ce20d2a112b",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/wake_potential.py",
+   "sha256": "8dddbc98c6e005ee3efcfe8a94e6980f63ceef28ab688ac790be85f1e4c3ab2f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/wake_probe.py",
+   "sha256": "a0eb183175992d0834dad333abbbfd11a1ed20c45326983dafd8f567f3f1589a",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero/wing.py",
+   "sha256": "a755ddbc0d189935ea3b03d97508314a7c6a8ad463a6cfd7725195a42215df04",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero_archive.py",
+   "sha256": "1386136b6f16b26b54d2b76e7a5f6ae2ce85d9acdcc72496cf360e7c1f32bbdc",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero_demo.py",
+   "sha256": "b7b5d733a18e065ac3a99c4d4037f9deacb7c145f187ae97696fa4ee6d2978e3",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero_render.py",
+   "sha256": "b8e08754c56dafc621d6a3f3fb4ca00533cfa690ca4e592ab550b2a2a52c17f8",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/aero_vtk.py",
+   "sha256": "e00f18c72e2b5c38faa31c801a52e552d9272fe009c40983dd72703e58d4a176",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/flight/__init__.py",
+   "sha256": "3c69d1ad578dbd5abd86a538444f4d807d1b7b048649cd7160ebb4e13d29b6a5",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/flight/crosswind_loop.py",
+   "sha256": "54d319f5fecdd7d1a04a790507209b2d83249bd6263a38d98e2ad2aaebe66b2c",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/flight/kinematics.py",
+   "sha256": "4406192ef61b886e14be1618efc78c05b4511d506a9b015d86991b04ca3ae3a7",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/flight/multi_prescribed.py",
+   "sha256": "77bb3e8a3b8b662ddbae2d09c08e1a61b5e0157638086dd5a2a7994d877b9be5",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/flight/prescribed.py",
+   "sha256": "7687a021e5d7805010ceec3881cced1e5afaa42021515f8c3c79b0f0289c647f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/flight/residual.py",
+   "sha256": "ec379c4f6f26513d8590bc0f074dfeae303e8d81aafe70451778ac9545a574b4",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/provenance.py",
+   "sha256": "ef0f8101d5416aaed812c2fa23c28228cd34501db5ec66c0ac92c941b8a4ba8e",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/rotor/__init__.py",
+   "sha256": "c0ef7c5af4f73ced9752986bc6c09c0f5ebe3cff053181561d28e08eb65e2e6d",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/rotor/actuator_disc.py",
+   "sha256": "c8cd7957d0eab2096d9f9996159818dc204f65a80b78f7eb5c5f513f1636abc6",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/rotor/coupled.py",
+   "sha256": "c5af278eb8b9e664a3f5c488d934f6bfab2c74860a51feb1b2ba6199d1720048",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/rotor/ring_wake.py",
+   "sha256": "108213c3d16bc0ba6dd55c6499a849a7472edbe4fc796a0a207bdad537d504b7",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/rotor/table.py",
+   "sha256": "a0ba3a7f7326af33223386b2aadf3faedf06b610a72d50e51656f6dc7d9f3c48",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/run_catalog.py",
+   "sha256": "edeca330cc0cafe1def0d8106e81f16e980ebf450979463c1d4aac2af174b54a",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/tether/__init__.py",
+   "sha256": "ccb1684510dc59901a49ef4978236e456cba1b7bfe24891721eeaa36fbf16fdf",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/tether/bridle.py",
+   "sha256": "8b3de6559259a32c10c94522b3e39d84dcb9235b458c3067c7152738eb464542",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "src/openfawe/tether/lumped_line.py",
+   "sha256": "b726c5bc1c56c8b24654474723255b1398cc5d7613873468a16c2e14e7fcc32d",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/__init__.py",
+   "sha256": "08a0edeee2f3b4fb12382549bb805b0cef47f58928b990e3bf8be37efc535616",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/conftest.py",
+   "sha256": "9f2bfbcc1e795474f4388bbbc0b3ff86f9320afd658bcd0dec51ebb7a949e968",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "tests/fixtures/lifting_surface_reference.json",
+   "sha256": "c41ba755e35a9a853ffdbc657720ce2967ce9b9fdf9c6943505c726b5f15eb81",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/fixtures/ll_straight_reference.json",
+   "sha256": "e176d4a4d38cee4675137511ff4805a97584e5ec02e275fc487a709e473f4865",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/fixtures/makani-original-cfm.json",
+   "sha256": "3c600000a50088b916c1d2a867fb2c5f88a8f4847ef084cc51b387a61451d4ec",
+   "origin": "release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
+  },
+  {
+   "path": "tests/fixtures/olaf_ellipse.json",
+   "sha256": "d8174a97f788b9e89224db878996e6cb555b36c860907cf34adb0d1c821a57d6",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/fixtures/polar_coupling_geometric_reference.json",
+   "sha256": "aecf3e108129fce56dd5e4bc1e1865deb2fd99f2892e2f313f0fda6e593b81fc",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/fixtures/upstream-kernel-check.json",
+   "sha256": "a292e52f9ce3af22cd67190e10f9e1dde09804bf85d40a34213c7567c1288193",
+   "origin": "release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
+  },
+  {
+   "path": "tests/fixtures/v3-integral-case-audit.json",
+   "sha256": "d597bc8457d7960f4680dac66a6d7258e48da3f5c25105efb2debb1952a5f6fe",
+   "origin": "release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
+  },
+  {
+   "path": "tests/fixtures/v3_reference.json",
+   "sha256": "29eee27dc773a967a809bf7d05445c049f388b6b179c2d84fb246ca897b8318c",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/fixtures/vsm_assembly.json",
+   "sha256": "199698956e57ea99435b77add72c14fd1d6b10f0dc8e94165643f92dc3f9686d",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/fixtures/vsm_source.json",
+   "sha256": "504fe05b5195157ee94e18ff9e649efe700811ec2584545e1e88f861b6df9bd9",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_aero_archive.py",
+   "sha256": "b658e0c09daefa68d71b3b2e18164c067963d7ad8b4aa5e0b16e581a6322d7a7",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_aero_clock.py",
+   "sha256": "d540ecd95fe87889c28f2910e9cfe78e2a3165c2980ad7c06d1f693b43b64676",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_aero_contracts.py",
+   "sha256": "3cf29e98eb2058d4468ae1bd5c9c1f87695cd1cb7a85527f2825755e8c8a4d7b",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_aero_fields.py",
+   "sha256": "ec0e446fccdd0b840d09cc2bf45dbfaeb6cb655b4227c40fad78cbba58eb0960",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_aero_methods.py",
+   "sha256": "4c5047c779dc768fc49f1e0531f24b9b6b4dfa241d995d4177d9b0efb80abeb9",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_aero_render.py",
+   "sha256": "072812e5c7c348165a619d0e9ea3fc72ed4d9cd3b73d5d635dbc50f95c0ebe11",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_aircraft.py",
+   "sha256": "6e6138d6adc7e0cbf05381d7d8d7133cec2d65785eb05ec1326bcd8836d7bb03",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_bound_convection_core.py",
+   "sha256": "c39d54d0aa03b08ad9751ce1f8bb32e2248d1d43ca32443ad5f632b3636e266f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_bridle.py",
+   "sha256": "9dd1e396b61a9a7c92cb78c7479baf91271da210d2f4080eb764c53a3c54c5f0",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_camber.py",
+   "sha256": "6050b07ff51ce6183aec93fbe69282ea9a07aa79d07a744d18bebdc04bd31170",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "tests/test_cambered_polar_loads.py",
+   "sha256": "ae603c973dda5ba88581e170f8b1194dc791f8a98252559874e7a3aaba276063",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_cap_load_stage.py",
+   "sha256": "663ec5d250e11f4728bb5f3ab2df14c28dbaaf9f0378b37a4ef4b20f24c3a885",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_consistent_start.py",
+   "sha256": "63723aae219872dae63d172c1d0196ac735a6bfff6360a3d823fd3430f7c3944",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_cores.py",
+   "sha256": "81d4e79e7dbe8ee20a8a52fc245c2de21dd3a9a0573fdb93d9e99c2a183d7bfe",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_cosine_lattice.py",
+   "sha256": "dd88e491213d9241cb71fb94b6f37df50c1c613d34175824b1e43f80aa8ec543",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_crosswind_loop.py",
+   "sha256": "0a4d7d28943855103ff9b86f405bc3977580d52e622927c0980732d2cfe9c4b2",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_far_wake.py",
+   "sha256": "22e330c0a7e98341e975ce173d0b241c71bf64d4109b6841df0d26441f15a9d8",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_flight_kinematics.py",
+   "sha256": "620634ca541c8ff1837d869fcafc848cbd39cc89d2914f43d44cd38ad903aa52",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_geometry_guard.py",
+   "sha256": "f8a7597caae332ac78a23235c9654bc7bc3609c0666532e8ec9d14dea0bb9158",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_handover.py",
+   "sha256": "4082bf596db1943233faa5777957119340314dde4f7a3dd6c07e5277c734b344",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_hybrid_solver.py",
+   "sha256": "706f65350e022248410d790a3e2389511d97886c91af5fc186cfd3295e96f7ee",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_initial_cap.py",
+   "sha256": "2713a1ca6759ae5f2eafa3d10812f45f2de9750df0acf7ab5a3e27ddb499e8f1",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_lattice_time.py",
+   "sha256": "7c6920574d359b8cd8c7866e96fb15d48f0b4b96f2561c78da0168aa0c43b87f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_lifting_surface.py",
+   "sha256": "03ba73031adf2497c9ebe4182bc154c9b57a135541eb5c8edb8e72e5648ec52b",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_lifting_surface_archive.py",
+   "sha256": "eeb9ab5fe39b0d3b0527d644145b4edad6a1193fa503449d01a2837637736a7a",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_linear_wake_convection.py",
+   "sha256": "ef676e9379746811b4814deb48d55852f423a52e9e93f13b2ef2ba253e4bec02",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_linear_wake_cores.py",
+   "sha256": "f814f00a8a209e9ea9534f5903645479f3d7918785990d168173e339be22e1e0",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_linear_wake_polars.py",
+   "sha256": "30cef971b1168173c917278500166ef0b449b68e99919831eb06293342dd4ef1",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_linear_wake_potential.py",
+   "sha256": "fdada18e52a0e8710aa08eda3654ead594cf877d4505af9ed0f04aaefbdd8926",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_ll_straight.py",
+   "sha256": "ef6561ccb80ef4808521c187a86c445f7bf754b9a16030e4cfcc55732f32cfb4",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_local_wake_cores.py",
+   "sha256": "869f42245808919fb4290415602d69b916bfe4aa4d20a27f2239db0ba11ecbcf",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_makani_hover_strip.py",
+   "sha256": "5aae9ba75acf51925308a1b00f2f2ff448bd5d0bd73814ed06978accfb40ed8c",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "tests/test_multi_prescribed.py",
+   "sha256": "12bfe2631ce446b744fdb4f3dfb282c0896688466e1ebf8f61e719ff006cd82c",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_network_numba.py",
+   "sha256": "7a5d748728afe236290a7080db1e29f4e0b79a34d99d22d52b88b4f1c75a6833",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_nonlinear.py",
+   "sha256": "b895b61059faf844cb781c54d3a72915a551603bc039213b162c59b4bef6d3b1",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_numerical_matrix.py",
+   "sha256": "8a5e497fe382fd8d3be7c87d9cc03f874b1ecaf366017db4b6165c98185de763",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_polar_coupling.py",
+   "sha256": "a6a1dc0bf2c56ffeadfc4c464520c74460bc7b3a4c3e601a3eab9663ca2f0f39",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_polars.py",
+   "sha256": "4779acce4b11019f9121f9c3347d46dcfed6da9e9ff2a7e8eadb77b13da1a9ab",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_prescribed_motion.py",
+   "sha256": "771834ec7bb40c1c7ba627ea43f3c6bc3d1afc5b046ae338e3bee38ad4b13ecb",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_reference_aircraft.py",
+   "sha256": "2c9ed1a1e5bcaec2a2614cdd4b245ce8eefa8c2acefb718ff49019f394c499e8",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_repair_motion.py",
+   "sha256": "ed92c570d621ebd9abcdb8a523fafaec53adebf65a80b85bb0573102b44cf780",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_residual.py",
+   "sha256": "40ee95aca1d45596cad622a272e6f08fa90d6c84ac252b1eeb615d6e17da293b",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_rosenhead.py",
+   "sha256": "e9f28d4be950c5726114eb6821d5e70785f45e31c8d4cb7deb111928c85e25d8",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_te_incident_convection.py",
+   "sha256": "d508065fdf53c374a5f69bf74cda823031c8ad2028a796aaa7ffb91c7fa0e375",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_tether_lumped.py",
+   "sha256": "89202ffb62372c0c65447d1d6406f2f0dcdc23743c788de7eed1f4c09aa5f88f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vortex.py",
+   "sha256": "8746fe8bc73691a1a7bfd0c6971320e7ce206fcbdb578c223720d7c0d7d77424",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "tests/test_vortex_batch.py",
+   "sha256": "38124f59c52aa9ac72d357c65cdac44b9ff9733565ebd106145b01adaa7ce58f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vortex_batch_backends.py",
+   "sha256": "7546bbc4df7d92dfe8a1cf9e6f0d63a152c2424db2d4c442a779b77f29f0fff1",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vortex_cuda_default.py",
+   "sha256": "a9b88a26229c55c970c4f099d2d20591cd3e9ace164ce8262ecd05183ab2997b",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vortex_numba.py",
+   "sha256": "912833b80f38cc17fe670732ae073a09bdb15a919f800f8c181c5f74fde5cbc6",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vortex_tree.py",
+   "sha256": "6b355a697740fc7b7c69545509af1e9ff14498e0be6e38dded26ec4dc86af2fa",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vsm_core_profiles.py",
+   "sha256": "9935e360a1cad807eea31ca1e95cbc8224598131995ecae4252f63386f4eeacb",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vsm_full_incidence.py",
+   "sha256": "e877d7067e6706a7227b4400eeb34e8deb1db8c762161c7e8723b86b9e795301",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "tests/test_vsm_jacobian.py",
+   "sha256": "55b0cb51df01b3544bb6d8bbfc5d69401397f6c1d0db5127becea2ab8d946023",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vsm_wake.py",
+   "sha256": "40f98e22d7fe52c7a4ddbb567d9f19b6d4525769e4000333de57da5f62e6712c",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_vsm_wake_batched.py",
+   "sha256": "90ad5b49f0e005f92ef3b1577c8b0a989f4a2b0f5c40ad14b3b8961f44506afe",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_wake.py",
+   "sha256": "6fbf3a9f525fb21db675ab02acb2ffec0b21d7eafb84670e089446417ad7f56f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_wake_archive_contracts.py",
+   "sha256": "6648d850839d6db85dc2d7dd2ecc6a6840d02d2566e386eeb1825e3754d03f6f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_wake_convection.py",
+   "sha256": "9f2ac70e29a8bc191ebef28b5b954b9bdff4b1804ce806e8003cd3bb283710a2",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_wake_guard_integration.py",
+   "sha256": "cd181b3328a23902720b418b7f7c165dbd6df6c3dca94bd5c3d9eac017340ece",
+   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+  },
+  {
+   "path": "tests/test_wake_junction.py",
+   "sha256": "45228a44411485a4431cac312a0e4d291978d04758db5ff8cbf5d848b97b00bd",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "tests/test_wing.py",
+   "sha256": "f84ac9c4de24634d3bad42d79336ed065fe1a9069f1907009a64a2640d7ccac1",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "third_party/CAMBER-SOURCES.md",
+   "sha256": "448c5a112861c31a60c6ae100e15e1aa16fb5920915a0b80bc1ac08f8e6309a5",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "third_party/LICENSE-Makani.txt",
+   "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "third_party/LICENSE-OpenFAST.txt",
+   "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "third_party/LICENSE-VSM.txt",
+   "sha256": "8b5d245cd77b44a5247410a94b973a58d4a3cad5e4cda934f056bd1b84f3da6f",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "third_party/MAKANI-NOTICE.md",
+   "sha256": "3e4e1ba49983b3bcc6517f309f2b8392c516f51192110827a721c21a90c7569f",
+   "origin": "development repository at 901d096e, with the files added in release 0.3.0 appended"
+  },
+  {
+   "path": "third_party/OPENFAST-NOTICE.md",
+   "sha256": "9d6b7248137fb376cc08178291a06672634aec1ec133a4c764b511bc7e01baa8",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "third_party/OPENFAST-WING-WAKE-NOTICE.md",
+   "sha256": "f91bc3d8daa52f6ef3beb821bcdb36f2d6cb58fa65a9106dd978a0259076cde6",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  },
+  {
+   "path": "third_party/VSM-NOTICE.md",
+   "sha256": "09976b0df9e25a3e96505952577ee20d66c6f5e3adfa8c72bc0ee5ba2c8b0ecd",
+   "origin": "development repository at 901d096ec28258a802f2ffe48b187bbe728dc3ef, unchanged"
+  }
+ ]
+}

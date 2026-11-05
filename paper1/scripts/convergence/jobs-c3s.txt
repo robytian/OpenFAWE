@@ -1,0 +1,7 @@
+# Phase C3s: spanwise refinement with the core radius scaled with the panel width (0.15 m / n).
+# Added 2026-10-01 after c3-*-refine3 failed with the fixed 0.15 m core (core >= panel width): M600 refine 3
+# fails at step 0 with core 0.30 m, at step 15 with 0.15 m, completes with 0.075 m; V3 refine 3 completes with 0.05 m.
+c3s-v3-refine2 V3 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 2 --core 0.075
+c3s-v3-refine3 V3 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 3 --core 0.05
+c3s-m600-refine2 M600 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.02 --refine 2 --core 0.075
+c3s-m600-refine3 M600 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.02 --refine 3 --core 0.05

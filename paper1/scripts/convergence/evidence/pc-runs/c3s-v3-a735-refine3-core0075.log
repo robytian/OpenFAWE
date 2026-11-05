@@ -1,0 +1,1 @@
+{"out": "c3s-v3-a735-refine3-core0075", "status": "failed", "error": "NonlinearSolveError: Newton line search failed at residual 0.00165775 m^2/s", "frames": 0, "elapsed_s": 2.5}
