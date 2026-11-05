@@ -1,0 +1,65 @@
+{
+ "schema": "openfawe.rigid_body.v1",
+ "name": "M600 rigid-body properties and bridle (Makani wing serial 06, crosswind configuration)",
+ "frame": "x_downstream_y_span_z_up",
+ "length_unit": "m",
+ "mass_kg": 1730.6,
+ "centre_of_mass_m": [
+  0.086,
+  0.011,
+  -0.121
+ ],
+ "inertia_about_centre_of_mass_kg_m2": [
+  [
+   32729.9725,
+   -23.09269375,
+   36.6670875
+  ],
+  [
+   -23.09269375,
+   9961.76625,
+   -17.85762875
+  ],
+  [
+   36.6670875,
+   -17.85762875,
+   39609.1075
+  ]
+ ],
+ "bridle": {
+  "pivot_m": [
+   0.1494,
+   -0.5090999999999997,
+   -0.13035
+  ],
+  "radius_m": 4.786,
+  "attachments_m": {
+   "port": [
+    0.1494,
+    -5.8843,
+    -0.13035
+   ],
+   "starboard": [
+    0.1494,
+    5.8661,
+    -0.13035
+   ]
+  },
+  "y_offset_m": -0.5
+ },
+ "provenance": {
+  "source": "google/makani commit 1d66923, config/m600/wing.py, branch kWingSerial06Crosswind: the wing serial that config/common/wing_serial.py selects for a crosswind flight plan at the land test site (kTestSiteParkerRanch). The G4 contract takes the land set of the crosswind playbook (source S5), so the land serial is taken here; the simulator's own default test site is kTestSiteNorway (config/common/test_site.py), which selects serial 05 (1692.3 kg)",
+  "mass": "wing_mass = 1667.9 + 51.5 + 10.6 + 0.6 kg (kite, bridles, wing-side tether termination, GoPros on the termination)",
+  "centre_of_mass": "center_of_mass_pos = [-0.086, 0.011, 0.121] m in Makani body axes (source comment: for the rigid kite only, no bridles)",
+  "inertia": "I = [[30260.0, 21.35, 33.90], [21.35, 9210.0, 16.51], [33.90, 16.51, 36620.0]] * wing_mass / 1600.0 kg m^2 in Makani body axes (source comment: from the ASWING model; the same tensor for serials 04 to 07 in crosswind configuration, scaled by the total mass). The simulator sums the forces and moments on the wing about the centre of mass (sim/models/rigid_bodies/wing.cc, Wing::UpdateForceMomentPos: fmx_total.pos = center_of_mass_pos_) and uses this tensor with that moment in Euler's equation (Wing::CalcDerivFromForceMoment), so it is read here as the inertia about the centre of mass",
+  "bridle": "bridle_pos = [[-0.1494, -5.8843, 0.13035], [-0.1494, 5.8661, 0.13035]] m (port, starboard; the source notes these use the mean x and z of the true attachments), bridle_rad = 4.7860 m, bridle_y_offset = -0.5 m; pivot = mean of the two attachments with the y offset added (Wing::CalcBridlePivot)",
+  "mapping": "OpenFAWE = diag(-1,1,-1) * Makani body (same mapping as cases/rotors/m600_rotors_makani.json); vectors v' = M v, inertia I' = M I M^T (the xy and yz products change sign)",
+  "other_serials_kg": "serial 01: 1714.7; 04 hover: 1809.1; 04 crosswind: 1730.8; 05 hover: 1773.9; 05 crosswind: 1692.3; 06 hover: 1812.3; 06 crosswind: 1730.6 (this file); 07: as 04",
+  "not_transcribed": [
+   "hover-configuration mass properties (another branch of the same file)",
+   "mass-property uncertainties of the simulator",
+   "tail mass and inertia (given separately in the source, already contained in the totals)"
+  ],
+  "inconsistency_in_the_source": "the mass includes 62.7 kg of bridles, tether termination and cameras, while the source says the centre of mass is for the rigid kite only (no bridles) and the inertia is one tensor scaled by the total mass; the three are taken as the source gives them. The reference point matters for the products of inertia: m c_x c_z is about 18 kg m^2 against I_xz = 36.7 kg m^2"
+ }
+}

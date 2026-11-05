@@ -1,0 +1,170 @@
+[
+ {
+  "run": "c3s-m600-single-frozen1-5laps",
+  "kind": "single",
+  "spacing_D": null,
+  "offset_D": null,
+  "rotors": false,
+  "status": "complete",
+  "laps": 5,
+  "frames": 4681,
+  "backend": "cuda_tree",
+  "elapsed_h": 3.77,
+  "K3": {
+   "A": 1.987559571868472e-07
+  },
+  "K7": {
+   "A": "passed"
+  },
+  "K7_last": {
+   "A": {
+    "lap": 5,
+    "against": 4,
+    "force_max_relative": 0.00022240889053150553,
+    "force_mean_relative": 9.019172901444518e-05,
+    "moment_max_relative": 0.00025455872532031336,
+    "moment_mean_relative": 0.0001029745299050898
+   }
+  },
+  "units": {
+   "A": {
+    "lap": 5,
+    "CZ": 2.32699952065728,
+    "CX": -0.06766987427444879,
+    "Cm": -0.22689124586297724,
+    "lift_kN": 103.62651629144273,
+    "aero_power_kW": 574.1455096266735,
+    "tension_kN": 98.62675519116436,
+    "shaft_power_kW": null,
+    "thrust_kN": null,
+    "rotor_power_on_body_kW": null,
+    "ring_core": null
+   }
+  },
+  "planes": [
+   {
+    "station_D": 0.5,
+    "deficit_max": 0.29380568457919964,
+    "deficit_mean_positive": 0.010312452874745758,
+    "momentum_deficit_m2_s": 4821.980796305438
+   },
+   {
+    "station_D": 1.0,
+    "deficit_max": 0.6942358007538318,
+    "deficit_mean_positive": 0.023464656880607625,
+    "momentum_deficit_m2_s": 2252.5648969944073
+   },
+   {
+    "station_D": 1.5,
+    "deficit_max": 0.3551068908754039,
+    "deficit_mean_positive": 0.02259136114153637,
+    "momentum_deficit_m2_s": 3284.452771546712
+   },
+   {
+    "station_D": 2.0,
+    "deficit_max": 0.5469529200173335,
+    "deficit_mean_positive": 0.015512136326687322,
+    "momentum_deficit_m2_s": 5702.186683240078
+   },
+   {
+    "station_D": 2.5,
+    "deficit_max": 0.19216848246552432,
+    "deficit_mean_positive": 0.007290698565123327,
+    "momentum_deficit_m2_s": 4641.485337606018
+   },
+   {
+    "station_D": 3.0,
+    "deficit_max": 0.18760918838726848,
+    "deficit_mean_positive": 0.004113362020204201,
+    "momentum_deficit_m2_s": 3722.1059259342755
+   }
+  ],
+  "ring_nodes": 0
+ },
+ {
+  "run": "r1-m600-single-rotors-frozen1-4laps",
+  "kind": "single",
+  "spacing_D": null,
+  "offset_D": null,
+  "rotors": true,
+  "status": "complete",
+  "laps": 4,
+  "frames": 3745,
+  "backend": "cuda_tree",
+  "elapsed_h": 9.73,
+  "K3": {
+   "A": 1.8646598378946077e-07
+  },
+  "K7": {
+   "A": "failed"
+  },
+  "K7_last": {
+   "A": {
+    "lap": 4,
+    "against": 3,
+    "force_max_relative": 0.028340329247425328,
+    "force_mean_relative": 0.0012692491356525242,
+    "moment_max_relative": 0.10176879693286493,
+    "moment_mean_relative": 0.0037974003764150604
+   }
+  },
+  "units": {
+   "A": {
+    "lap": 4,
+    "CZ": 2.2067941564511036,
+    "CX": -0.07616087175154763,
+    "Cm": -0.24957943913139632,
+    "lift_kN": 98.33863983553736,
+    "aero_power_kW": 578.445161512695,
+    "tension_kN": 98.6267551911562,
+    "shaft_power_kW": 522.1402518796457,
+    "thrust_kN": -13.707038290261362,
+    "rotor_power_on_body_kW": -634.4900679883873,
+    "ring_core": {
+     "mean": 9.915598290598291,
+     "max": 27,
+     "steps_nonzero": 936
+    }
+   }
+  },
+  "planes": [
+   {
+    "station_D": 0.5,
+    "deficit_max": 1.0463482879333323,
+    "deficit_mean_positive": 0.012710594437364182,
+    "momentum_deficit_m2_s": -3655.656196949494
+   },
+   {
+    "station_D": 1.0,
+    "deficit_max": 1.9144612783741874,
+    "deficit_mean_positive": 0.033361615531446016,
+    "momentum_deficit_m2_s": -70019.1657732116
+   },
+   {
+    "station_D": 1.5,
+    "deficit_max": 1.9818841098866236,
+    "deficit_mean_positive": 0.014877725371807255,
+    "momentum_deficit_m2_s": -28959.932720581914
+   },
+   {
+    "station_D": 2.0,
+    "deficit_max": 1.5366921297029277,
+    "deficit_mean_positive": 0.022641817768838567,
+    "momentum_deficit_m2_s": -23938.09638657158
+   },
+   {
+    "station_D": 2.5,
+    "deficit_max": 1.4731423812784332,
+    "deficit_mean_positive": 0.002853106770216153,
+    "momentum_deficit_m2_s": 214.71064241175202
+   },
+   {
+    "station_D": 3.0,
+    "deficit_max": 0.000712477684393642,
+    "deficit_mean_positive": 0.00025424911679349497,
+    "momentum_deficit_m2_s": 657.6694871311429
+   }
+  ],
+  "ring_nodes": 479360
+ }
+]

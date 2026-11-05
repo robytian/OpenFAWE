@@ -48,7 +48,7 @@ class VortexTests(unittest.TestCase):
                 self.assertGreater(abs(velocity-full), 1e-7)
 
     def test_k02_recorded_upstream_welib_comparison(self):
-        path = Path(__file__).resolve().parents[1] / "docs/tasks/OF-0006/upstream-kernel-check.json"
+        path = Path(__file__).resolve().parents[1] / "tests/fixtures/upstream-kernel-check.json"
         data = json.loads(path.read_text(encoding="utf-8"))
         for case in data["direct_reference_results"]:
             actual = segment_velocity(A, B, case["point"], 1, model=case["core_model_id"], core_radius=.5)

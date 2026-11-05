@@ -1,0 +1,507 @@
+{
+ "reference": {
+  "run": "r1 lap 1",
+  "CX": -0.07528625601189733,
+  "CZ": 2.2043438003033593,
+  "Cm": -0.25072456546484134,
+  "lift_N": 98249.17007290696,
+  "aero_power_W": 577024.3686662005,
+  "shaft_power_W": 522388.8841930723,
+  "thrust_N": -13712.904270826795,
+  "ring_nodes_in_core_mean": 9.790598290598291,
+  "ring_nodes_in_core_max": 26,
+  "settings": {
+   "retained_ring_steps": null,
+   "ring_core_m": null,
+   "surface_core_m": 0.3,
+   "nodes_per_ring": 16
+  },
+  "cz_step_scatter": 0.0019014715108338729
+ },
+ "no_rotors": {
+  "run": "c3s lap 1",
+  "CX": -0.06695378771595795,
+  "CZ": 2.3241639020466147,
+  "Cm": -0.22841990728680364,
+  "lift_N": 103534.4322976079,
+  "aero_power_W": 573422.8818603754,
+  "cz_step_scatter": 8.697738239408852e-06
+ },
+ "rotor_effect": {
+  "CX": -0.00833246829593938,
+  "CZ": -0.11982010174325541,
+  "Cm": -0.0223046581780377
+ },
+ "runs": [
+  {
+   "run": "rs3-m600-rotors-keep1-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": 1,
+    "ring_core_m": null,
+    "surface_core_m": 0.3,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 1382.5312016999815,
+   "CX": -0.06775494533186385,
+   "CZ": 2.314583737974777,
+   "Cm": -0.23177278718731276,
+   "lift_N": 103070.21667086329,
+   "aero_power_W": 570652.5851536132,
+   "shaft_power_W": 538792.5894805184,
+   "thrust_N": -14009.6785946165,
+   "ring_nodes_in_core_mean": 0.0,
+   "ring_nodes_in_core_max": 0,
+   "change": {
+    "CX": 0.007531310680033473,
+    "CZ": 0.11023993767141782,
+    "Cm": 0.018951778277528586,
+    "lift_N": 4821.0465979563305,
+    "aero_power_W": -6371.78351258731,
+    "shaft_power_W": 16403.705287446035,
+    "thrust_N": -296.7743237897048,
+    "ring_nodes_in_core_mean": -9.790598290598291,
+    "ring_nodes_in_core_max": -26
+   },
+   "change_relative": {
+    "CZ": 0.05001031946842717,
+    "lift_N": 0.04906959106503206,
+    "aero_power_W": -0.01104248599988207,
+    "shaft_power_W": 0.03140132913200218,
+    "thrust_N": -0.02164197444454349
+   },
+   "fraction_of_rotor_effect": {
+    "CX": -0.9038511054045858,
+    "CZ": -0.9200454353446845,
+    "Cm": -0.849678041521814
+   },
+   "cz_step_change_max": 0.16386060302347483,
+   "cz_step_change_rms": 0.11283337882876654,
+   "cz_step_scatter": 1.3931085978109998e-05,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs2-m600-rotors-keep100-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": 100,
+    "ring_core_m": null,
+    "surface_core_m": 0.3,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 1647.2976223999867,
+   "CX": -0.07536333348898996,
+   "CZ": 2.20451780982573,
+   "Cm": -0.25042936282397077,
+   "lift_N": 98257.23420740235,
+   "aero_power_W": 577215.1664332425,
+   "shaft_power_W": 522416.5822045493,
+   "thrust_N": -13713.407308136406,
+   "ring_nodes_in_core_mean": 9.783119658119658,
+   "ring_nodes_in_core_max": 24,
+   "change": {
+    "CX": -7.707747709263801e-05,
+    "CZ": 0.00017400952237078826,
+    "Cm": 0.00029520264087057324,
+    "lift_N": 8.064134495391045,
+    "aero_power_W": 190.79776704194956,
+    "shaft_power_W": 27.69801147695398,
+    "thrust_N": -0.5030373096105905,
+    "ring_nodes_in_core_mean": -0.007478632478633784,
+    "ring_nodes_in_core_max": -2
+   },
+   "change_relative": {
+    "CZ": 7.893937522215966e-05,
+    "lift_N": 8.207839811172918e-05,
+    "aero_power_W": 0.00033065807512251363,
+    "shaft_power_W": 5.302182399944967e-05,
+    "thrust_N": -3.6683498963874905e-05
+   },
+   "fraction_of_rotor_effect": {
+    "CX": 0.009250257469350324,
+    "CZ": -0.001452256506538838,
+    "Cm": -0.01323502196331548
+   },
+   "cz_step_change_max": 0.019688306754448437,
+   "cz_step_change_rms": 0.002082018152369282,
+   "cz_step_scatter": 0.001759137270768079,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs1-m600-rotors-keep25-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": 25,
+    "ring_core_m": null,
+    "surface_core_m": 0.3,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 1497.1020869999775,
+   "CX": -0.07521000273812481,
+   "CZ": 2.2079073397910944,
+   "Cm": -0.25131529814512044,
+   "lift_N": 98400.28278164571,
+   "aero_power_W": 577623.6824394977,
+   "shaft_power_W": 523483.3067984045,
+   "thrust_N": -13735.050977914656,
+   "ring_nodes_in_core_mean": 9.762820512820513,
+   "ring_nodes_in_core_max": 27,
+   "change": {
+    "CX": 7.62532737725169e-05,
+    "CZ": 0.0035635394877351345,
+    "Cm": -0.0005907326802790935,
+    "lift_N": 151.11270873875765,
+    "aero_power_W": 599.3137732971227,
+    "shaft_power_W": 1094.4226053321618,
+    "thrust_N": -22.146707087860705,
+    "ring_nodes_in_core_mean": -0.027777777777778567,
+    "ring_nodes_in_core_max": 1
+   },
+   "change_relative": {
+    "CZ": 0.001616598775220419,
+    "lift_N": 0.0015380558291395508,
+    "aero_power_W": 0.0010386281859853586,
+    "shaft_power_W": 0.0020950342521600606,
+    "thrust_N": -0.0016150267405407482
+   },
+   "fraction_of_rotor_effect": {
+    "CX": -0.009151342803149581,
+    "CZ": -0.029740748304244564,
+    "Cm": 0.02648472240927498
+   },
+   "cz_step_change_max": 0.020195637684312207,
+   "cz_step_change_rms": 0.004472691991895146,
+   "cz_step_scatter": 0.0020279250127368796,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs4-m600-rotors-core045-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": null,
+    "ring_core_m": 0.45,
+    "surface_core_m": 0.3,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 3363.4536006000126,
+   "CX": -0.07574660783510338,
+   "CZ": 2.2090482231177777,
+   "Cm": -0.2504797942308294,
+   "lift_N": 98475.5805055906,
+   "aero_power_W": 578998.7620642167,
+   "shaft_power_W": 524232.8326678933,
+   "thrust_N": -13746.397725479594,
+   "ring_nodes_in_core_mean": 10.145299145299145,
+   "ring_nodes_in_core_max": 22,
+   "change": {
+    "CX": -0.0004603518232060566,
+    "CZ": 0.0047044228144184075,
+    "Cm": 0.00024477123401195344,
+    "lift_N": 226.41043268363865,
+    "aero_power_W": 1974.3933980161091,
+    "shaft_power_W": 1843.9484748209943,
+    "thrust_N": -33.49345465279839,
+    "ring_nodes_in_core_mean": 0.35470085470085344,
+    "ring_nodes_in_core_max": -4
+   },
+   "change_relative": {
+    "CZ": 0.0021341602039441354,
+    "lift_N": 0.00230445135074045,
+    "aero_power_W": 0.0034216811372801215,
+    "shaft_power_W": 0.00352983865204046,
+    "thrust_N": -0.0024424770997674996
+   },
+   "fraction_of_rotor_effect": {
+    "CX": 0.055247953770240874,
+    "CZ": -0.039262383740074035,
+    "Cm": -0.010973996196586757
+   },
+   "cz_step_change_max": 0.038120259235569165,
+   "cz_step_change_rms": 0.008233889186186482,
+   "cz_step_scatter": 0.0006797924870139472,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs5-m600-rotors-core090-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": null,
+    "ring_core_m": 0.9,
+    "surface_core_m": 0.3,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 3238.412477500038,
+   "CX": -0.07583426307437584,
+   "CZ": 2.2135174524713896,
+   "Cm": -0.2496939262762027,
+   "lift_N": 98657.27495096267,
+   "aero_power_W": 579913.42257952,
+   "shaft_power_W": 524245.3740859192,
+   "thrust_N": -13745.854063371125,
+   "ring_nodes_in_core_mean": 10.14423076923077,
+   "ring_nodes_in_core_max": 23,
+   "change": {
+    "CX": -0.0005480070624785116,
+    "CZ": 0.009173652168030344,
+    "Cm": 0.0010306391886386324,
+    "lift_N": 408.10487805571756,
+    "aero_power_W": 2889.0539133194834,
+    "shaft_power_W": 1856.4898928468465,
+    "thrust_N": -32.949792544330194,
+    "ring_nodes_in_core_mean": 0.3536324786324787,
+    "ring_nodes_in_core_max": -3
+   },
+   "change_relative": {
+    "CZ": 0.0041616249546771586,
+    "lift_N": 0.004153774304178636,
+    "aero_power_W": 0.005006814391561261,
+    "shaft_power_W": 0.0035538464715123936,
+    "thrust_N": -0.002402831077471202
+   },
+   "fraction_of_rotor_effect": {
+    "CX": 0.06576767447714972,
+    "CZ": -0.07656187930542066,
+    "Cm": -0.046207351863991
+   },
+   "cz_step_change_max": 0.034533449867910626,
+   "cz_step_change_rms": 0.010838430982660489,
+   "cz_step_scatter": 0.0005764247772520996,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs6-m600-rotors-sc015-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": null,
+    "ring_core_m": null,
+    "surface_core_m": 0.15,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 3407.1208605000284,
+   "CX": -0.07907790940294394,
+   "CZ": 2.20646753867595,
+   "Cm": -0.2488328098056379,
+   "lift_N": 98305.66104611968,
+   "aero_power_W": 593367.1245792903,
+   "shaft_power_W": 522334.60407208645,
+   "thrust_N": -13711.365868079178,
+   "ring_nodes_in_core_mean": 0.8386752136752137,
+   "ring_nodes_in_core_max": 6,
+   "change": {
+    "CX": -0.0037916533910466177,
+    "CZ": 0.002123738372590722,
+    "Cm": 0.0018917556592034368,
+    "lift_N": 56.49097321272711,
+    "aero_power_W": 16342.755913089728,
+    "shaft_power_W": -54.28012098587351,
+    "thrust_N": 1.5384027476175106,
+    "ring_nodes_in_core_mean": -8.951923076923078,
+    "ring_nodes_in_core_max": -20
+   },
+   "change_relative": {
+    "CZ": 0.0009634333683785876,
+    "lift_N": 0.0005749765944160884,
+    "aero_power_W": 0.028322470939773695,
+    "shaft_power_W": -0.00010390749617446272,
+    "thrust_N": 0.00011218650092164287
+   },
+   "fraction_of_rotor_effect": {
+    "CX": 0.4550456427052216,
+    "CZ": -0.017724391330774896,
+    "Cm": -0.08481437572830215
+   },
+   "cz_step_change_max": 0.04899461888704071,
+   "cz_step_change_rms": 0.008725519677823472,
+   "cz_step_scatter": 0.0059804020893720125,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs7-m600-rotors-sc060-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": null,
+    "ring_core_m": null,
+    "surface_core_m": 0.6,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 3433.198142100009,
+   "CX": -0.06994556348264505,
+   "CZ": 2.2078582526682595,
+   "Cm": -0.25073781334451267,
+   "lift_N": 98482.79615118768,
+   "aero_power_W": 560774.4694808415,
+   "shaft_power_W": 522201.0272703674,
+   "thrust_N": -13709.6385187722,
+   "ring_nodes_in_core_mean": 54.986111111111114,
+   "ring_nodes_in_core_max": 74,
+   "change": {
+    "CX": 0.005340692529252275,
+    "CZ": 0.0035144523649002224,
+    "Cm": -1.3247879671329787e-05,
+    "lift_N": 233.62607828072214,
+    "aero_power_W": -16249.899185359012,
+    "shaft_power_W": -187.85692270490108,
+    "thrust_N": 3.2657520545944863,
+    "ring_nodes_in_core_mean": 45.195512820512825,
+    "ring_nodes_in_core_max": 48
+   },
+   "change_relative": {
+    "CZ": 0.0015943304145281546,
+    "lift_N": 0.00237789365658109,
+    "aero_power_W": -0.02816154753207541,
+    "shaft_power_W": -0.00035961125588474446,
+    "thrust_N": 0.00023815174306599193
+   },
+   "fraction_of_rotor_effect": {
+    "CX": -0.6409496369587062,
+    "CZ": -0.029331074784353105,
+    "Cm": 0.0005939512529438502
+   },
+   "cz_step_change_max": 0.020680944723850292,
+   "cz_step_change_rms": 0.009053176258285152,
+   "cz_step_scatter": 0.0007352796127011983,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs8-m600-rotors-n32-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": null,
+    "ring_core_m": null,
+    "surface_core_m": 0.3,
+    "nodes_per_ring": 32
+   },
+   "elapsed_s": 4433.934301399975,
+   "CX": -0.0716207641297197,
+   "CZ": 2.1939922254795485,
+   "Cm": -0.2551215492229344,
+   "lift_N": 97777.02236195571,
+   "aero_power_W": 568880.4948537039,
+   "shaft_power_W": 522082.3382846907,
+   "thrust_N": -13710.595806860141,
+   "ring_nodes_in_core_mean": 22.582264957264957,
+   "ring_nodes_in_core_max": 46,
+   "change": {
+    "CX": 0.0036654918821776294,
+    "CZ": -0.010351574823810772,
+    "Cm": -0.004396983758093054,
+    "lift_N": -472.1477109512489,
+    "aero_power_W": -8143.873812496662,
+    "shaft_power_W": -306.5459083816386,
+    "thrust_N": 2.308463966654017,
+    "ring_nodes_in_core_mean": 12.791666666666666,
+    "ring_nodes_in_core_max": 20
+   },
+   "change_relative": {
+    "CZ": -0.004695989265552043,
+    "lift_N": -0.004805615259659559,
+    "aero_power_W": -0.014113569988944027,
+    "shaft_power_W": -0.0005868155270094544,
+    "thrust_N": 0.0001683424547464468
+   },
+   "fraction_of_rotor_effect": {
+    "CX": -0.4399046899421046,
+    "CZ": 0.086392639241716,
+    "Cm": 0.1971329810569591
+   },
+   "cz_step_change_max": 0.07421745818515202,
+   "cz_step_change_rms": 0.01751728329504181,
+   "cz_step_scatter": 0.003036832608263572,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs9-m600-rotors-keep20-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": 20,
+    "ring_core_m": null,
+    "surface_core_m": 0.3,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 418.10268109996105,
+   "CX": -0.0752009087082522,
+   "CZ": 2.210185376550804,
+   "Cm": -0.25190979685923054,
+   "lift_N": 98496.73301165266,
+   "aero_power_W": 578057.2525191221,
+   "shaft_power_W": 524114.3952546249,
+   "thrust_N": -13747.625167992435,
+   "ring_nodes_in_core_mean": 9.726495726495726,
+   "ring_nodes_in_core_max": 26,
+   "change": {
+    "CX": 8.534730364512244e-05,
+    "CZ": 0.005841576247444635,
+    "Cm": -0.0011852313943891968,
+    "lift_N": 247.5629387457011,
+    "aero_power_W": 1032.8838529215427,
+    "shaft_power_W": 1725.5110615525628,
+    "thrust_N": -34.720897165640054,
+    "ring_nodes_in_core_mean": -0.06410256410256565,
+    "ring_nodes_in_core_max": 0
+   },
+   "change_relative": {
+    "CZ": 0.002650029567366363,
+    "lift_N": 0.0025197458519190963,
+    "aero_power_W": 0.0017900177341020577,
+    "shaft_power_W": 0.0033031159616229936,
+    "thrust_N": -0.0025319871326970637
+   },
+   "fraction_of_rotor_effect": {
+    "CX": -0.010242739679755435,
+    "CZ": -0.04875289006148297,
+    "Cm": 0.05313828998985673
+   },
+   "cz_step_change_max": 0.03376402676054324,
+   "cz_step_change_rms": 0.006852126029068464,
+   "cz_step_scatter": 0.0019361416922664485,
+   "steps_compared": 936
+  },
+  {
+   "run": "rs10-m600-rotors-keep40-1lap",
+   "status": "complete",
+   "settings": {
+    "retained_ring_steps": 40,
+    "ring_core_m": null,
+    "surface_core_m": 0.3,
+    "nodes_per_ring": 16
+   },
+   "elapsed_s": 436.8540781000047,
+   "CX": -0.07530332877151436,
+   "CZ": 2.205495586362373,
+   "Cm": -0.2507604653076204,
+   "lift_N": 98298.5679462681,
+   "aero_power_W": 577322.2824477123,
+   "shaft_power_W": 522755.26576936943,
+   "thrust_N": -13720.368482916492,
+   "ring_nodes_in_core_mean": 9.761752136752136,
+   "ring_nodes_in_core_max": 25,
+   "change": {
+    "CX": -1.707275961702892e-05,
+    "CZ": 0.0011517860590135598,
+    "Cm": -3.589984277907465e-05,
+    "lift_N": 49.397873361143866,
+    "aero_power_W": 297.91378151171375,
+    "shaft_power_W": 366.3815762971062,
+    "thrust_N": -7.464212089696957,
+    "ring_nodes_in_core_mean": -0.028846153846155076,
+    "ring_nodes_in_core_max": -1
+   },
+   "change_relative": {
+    "CZ": 0.000522507450450811,
+    "lift_N": 0.0005027815840529502,
+    "aero_power_W": 0.0005162932411335511,
+    "shaft_power_W": 0.000701357910521108,
+    "thrust_N": -0.0005443202943942754
+   },
+   "fraction_of_rotor_effect": {
+    "CX": 0.0020489438436086106,
+    "CZ": -0.009612627950204466,
+    "Cm": 0.0016095222124687595
+   },
+   "cz_step_change_max": 0.02282792220572194,
+   "cz_step_change_rms": 0.002616619398353566,
+   "cz_step_scatter": 0.0018064399417513134,
+   "steps_compared": 936
+  }
+ ]
+}

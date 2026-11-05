@@ -1,0 +1,10 @@
+  M600 vsm_free_wake step 0 CL=0.717234 t=3.4s
+  M600 vsm_free_wake step 20 CL=1.748600 t=11.8s
+  M600 vsm_free_wake step 40 CL=1.809353 t=15.0s
+  M600 vsm_free_wake step 60 CL=1.871697 t=18.9s
+  M600 vsm_free_wake step 80 CL=1.900200 t=24.3s
+  M600 vsm_free_wake step 100 CL=1.915062 t=31.5s
+  M600 vsm_free_wake step 120 CL=1.923552 t=41.0s
+  M600 vsm_free_wake step 140 CL=1.928806 t=52.1s
+  M600 vsm_free_wake step 160 CL=1.932231 t=66.9s
+{"out": "c1d-m600-dt0010", "status": "complete", "error": null, "frames": 161, "elapsed_s": 66.9}

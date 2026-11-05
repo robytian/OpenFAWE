@@ -1,0 +1,60 @@
+{
+ "note": "LL + free wake reference ladders (decision 0016; paper 1 plan section 5 item 4); runs of jobs-paper1-20261002.txt on the owner's PC. Coarse -> fine order. Tree theta 0.2 / order 2 / leaf 32.",
+ "ladders": [
+  {
+   "id": "LL-C1-V3-dt",
+   "model": "V3",
+   "kind": "levels",
+   "ratio": 2,
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/ll-c1-v3-dt0400",
+    "local/accel-20261001/runs/ll-c1-v3-dt0200",
+    "local/accel-20261001/runs/ll-c1-v3-dt0100",
+    "local/accel-20261001/runs/ll-c1-v3-dt0050"
+   ]
+  },
+  {
+   "id": "LL-C1-M600-dt",
+   "model": "M600",
+   "kind": "levels",
+   "ratio": 2,
+   "time_s": 1.6,
+   "runs": [
+    "local/accel-20261001/runs/ll-c1-m600-dt0040",
+    "local/accel-20261001/runs/ll-c1-m600-dt0020",
+    "local/accel-20261001/runs/ll-c1-m600-dt0010",
+    "local/accel-20261001/runs/ll-c1-m600-dt0005"
+   ]
+  },
+  {
+   "id": "LL-C2-V3-wake",
+   "model": "V3",
+   "kind": "time",
+   "wake_chords": [
+    10,
+    20,
+    40,
+    80
+   ],
+   "runs": [
+    "local/accel-20261001/runs/ll-c2-v3-long400"
+   ]
+  },
+  {
+   "id": "LL-C2-M600-wake",
+   "model": "M600",
+   "kind": "time",
+   "wake_chords": [
+    10,
+    20,
+    40,
+    80,
+    120
+   ],
+   "runs": [
+    "local/accel-20261001/runs/ll-c2-m600-long400"
+   ]
+  }
+ ]
+}

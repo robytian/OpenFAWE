@@ -1,0 +1,2144 @@
+{
+  "schema": "openfawe.aircraft.aero.v2",
+  "name": "M600 Makani-input reconstructed wing-tail; ruled chord surface diagnostic",
+  "frame": "x_downstream_y_span_z_up",
+  "length_unit": "m",
+  "angle_unit": "deg",
+  "polars": {
+    "Wing-ideal-000": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.689616857145507,
+        1.0833648327116996,
+        9.856346522568908
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.285431039846239,
+        -0.285431039846239,
+        -0.285431039846239
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.17242286829799128,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-001": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.6540970108674244,
+        1.1188846789897828,
+        9.891866368846989
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2947893445882884,
+        -0.2947893445882884,
+        -0.2947893445882884
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.17807602741101247,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-002": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.618577164589341,
+        1.1544045252678654,
+        9.927386215125072
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.3041476493303376,
+        -0.3041476493303376,
+        -0.3041476493303376
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.18372918652403358,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-003": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.583057318311258,
+        1.1899243715459484,
+        9.962906061403155
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.3135059540723869,
+        -0.3135059540723869,
+        -0.3135059540723869
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.18938234563705475,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-004": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.599135494261551,
+        1.173846195595656,
+        9.946827885452862
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.3092689181723884,
+        -0.3092689181723884,
+        -0.3092689181723884
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.18682342445866448,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-005": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.666811692440221,
+        1.1061699974169867,
+        9.879151687274193
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.29143654163034155,
+        -0.29143654163034155,
+        -0.29143654163034155
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.17605242298886253,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-006": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.7344878906188885,
+        1.0384937992383185,
+        9.811475489095525
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.27360416508829494,
+        -0.27360416508829494,
+        -0.27360416508829494
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.16528142151906078,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-007": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.802164088797557,
+        0.9708176010596495,
+        9.743799290916856
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.25577178854624827,
+        -0.25577178854624827,
+        -0.25577178854624827
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.15451042004925888,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-008": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-009": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-010": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-011": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-012": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-013": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-014": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-015": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-016": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-017": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-018": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-019": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-020": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-021": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-022": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-023": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-024": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-025": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.836002187886892,
+        0.9369795019703149,
+        9.70996119182752
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2468556002752248,
+        -0.2468556002752248,
+        -0.2468556002752248
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.1491249193143579,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-026": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.802164088797557,
+        0.9708176010596495,
+        9.743799290916856
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.25577178854624827,
+        -0.25577178854624827,
+        -0.25577178854624827
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.15451042004925888,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-027": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.7344878906188885,
+        1.0384937992383185,
+        9.811475489095525
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.27360416508829494,
+        -0.27360416508829494,
+        -0.27360416508829494
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.16528142151906078,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-028": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.666811692440221,
+        1.1061699974169867,
+        9.879151687274193
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.29143654163034155,
+        -0.29143654163034155,
+        -0.29143654163034155
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.17605242298886253,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-029": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.599135494261551,
+        1.173846195595656,
+        9.946827885452862
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.3092689181723884,
+        -0.3092689181723884,
+        -0.3092689181723884
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.18682342445866448,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-030": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.583057318311258,
+        1.1899243715459484,
+        9.962906061403155
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.3135059540723869,
+        -0.3135059540723869,
+        -0.3135059540723869
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.18938234563705475,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-031": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.618577164589341,
+        1.1544045252678654,
+        9.927386215125072
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.3041476493303376,
+        -0.3041476493303376,
+        -0.3041476493303376
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.18372918652403358,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-032": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.6540970108674244,
+        1.1188846789897828,
+        9.891866368846989
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.2947893445882884,
+        -0.2947893445882884,
+        -0.2947893445882884
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.17807602741101247,
+        "profile_drag": false
+      }
+    },
+    "Wing-ideal-033": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -7.689616857145507,
+        1.0833648327116996,
+        9.856346522568908
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -0.285431039846239,
+        -0.285431039846239,
+        -0.285431039846239
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.17242286829799128,
+        "profile_drag": false
+      }
+    },
+    "Horizontal tail-ideal-000": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.772988629777702,
+        -6.9399204937758965e-06,
+        8.772974749936713
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -5.319137639764326e-06,
+        -5.319137639764326e-06,
+        -5.319137639764326e-06
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": 1.104522651249181e-06,
+        "profile_drag": false
+      }
+    },
+    "Horizontal tail-ideal-001": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.772988629777702,
+        -6.9399204937758965e-06,
+        8.772974749936713
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -5.319137639764326e-06,
+        -5.319137639764326e-06,
+        -5.319137639764326e-06
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": 1.104522651249181e-06,
+        "profile_drag": false
+      }
+    },
+    "Horizontal tail-ideal-002": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.772988629777702,
+        -6.9399204937758965e-06,
+        8.772974749936713
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -5.319137639764326e-06,
+        -5.319137639764326e-06,
+        -5.319137639764326e-06
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": 1.104522651249181e-06,
+        "profile_drag": false
+      }
+    },
+    "Horizontal tail-ideal-003": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.772988629777702,
+        -6.9399204937758965e-06,
+        8.772974749936713
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -5.319137639764326e-06,
+        -5.319137639764326e-06,
+        -5.319137639764326e-06
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": 1.104522651249181e-06,
+        "profile_drag": false
+      }
+    },
+    "Horizontal tail-ideal-004": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.772988629777702,
+        -6.9399204937758965e-06,
+        8.772974749936713
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -5.319137639764326e-06,
+        -5.319137639764326e-06,
+        -5.319137639764326e-06
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": 1.104522651249181e-06,
+        "profile_drag": false
+      }
+    },
+    "Horizontal tail-ideal-005": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.772988629777702,
+        -6.9399204937758965e-06,
+        8.772974749936713
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -5.319137639764326e-06,
+        -5.319137639764326e-06,
+        -5.319137639764326e-06
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": 1.104522651249181e-06,
+        "profile_drag": false
+      }
+    },
+    "Horizontal tail-ideal-006": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.772988629777702,
+        -6.9399204937758965e-06,
+        8.772974749936713
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -5.319137639764326e-06,
+        -5.319137639764326e-06,
+        -5.319137639764326e-06
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": 1.104522651249181e-06,
+        "profile_drag": false
+      }
+    },
+    "Horizontal tail-ideal-007": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.772988629777702,
+        -6.9399204937758965e-06,
+        8.772974749936713
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        -5.319137639764326e-06,
+        -5.319137639764326e-06,
+        -5.319137639764326e-06
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": 1.104522651249181e-06,
+        "profile_drag": false
+      }
+    },
+    "Vertical tail-ideal-000": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.721164191415514,
+        0.05181749844169145,
+        8.824799188298899
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        0.002738332326848978,
+        0.002738332326848978,
+        0.002738332326848978
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.008247011015651779,
+        "profile_drag": false
+      }
+    },
+    "Vertical tail-ideal-001": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.721164191415514,
+        0.05181749844169145,
+        8.824799188298899
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        0.002738332326848978,
+        0.002738332326848978,
+        0.002738332326848978
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.008247011015651779,
+        "profile_drag": false
+      }
+    },
+    "Vertical tail-ideal-002": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.721164191415514,
+        0.05181749844169145,
+        8.824799188298899
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        0.002738332326848978,
+        0.002738332326848978,
+        0.002738332326848978
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.008247011015651779,
+        "profile_drag": false
+      }
+    },
+    "Vertical tail-ideal-003": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.721164191415514,
+        0.05181749844169145,
+        8.824799188298899
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        0.002738332326848978,
+        0.002738332326848978,
+        0.002738332326848978
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.008247011015651779,
+        "profile_drag": false
+      }
+    },
+    "Vertical tail-ideal-004": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.721164191415514,
+        0.05181749844169145,
+        8.824799188298899
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        0.002738332326848978,
+        0.002738332326848978,
+        0.002738332326848978
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.008247011015651779,
+        "profile_drag": false
+      }
+    },
+    "Vertical tail-ideal-005": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.721164191415514,
+        0.05181749844169145,
+        8.824799188298899
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        0.002738332326848978,
+        0.002738332326848978,
+        0.002738332326848978
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.008247011015651779,
+        "profile_drag": false
+      }
+    },
+    "Vertical tail-ideal-006": {
+      "alpha_deg": [
+        -80.0,
+        0.0,
+        80.0
+      ],
+      "cl": [
+        -8.721164191415514,
+        0.05181749844169145,
+        8.824799188298899
+      ],
+      "cd": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "cm": [
+        0.002738332326848978,
+        0.002738332326848978,
+        0.002738332326848978
+      ],
+      "bounds": "error",
+      "provenance": {
+        "model": "Ideal thin-airfoil integral of processed mean line; not Makani/KiteFAST source polar",
+        "alpha0_rad": -0.008247011015651779,
+        "profile_drag": false
+      }
+    }
+  },
+  "surfaces": [
+    {
+      "name": "Wing",
+      "leading_edge": [
+        [
+          -0.192,
+          -12.8304,
+          0.3994
+        ],
+        [
+          -0.21332500000000001,
+          -11.998850000000001,
+          0.357325
+        ],
+        [
+          -0.23465,
+          -11.167300000000001,
+          0.31525
+        ],
+        [
+          -0.255975,
+          -10.33575,
+          0.273175
+        ],
+        [
+          -0.2773,
+          -9.5042,
+          0.2311
+        ],
+        [
+          -0.29705,
+          -8.734950000000001,
+          0.1922
+        ],
+        [
+          -0.31679999999999997,
+          -7.9657,
+          0.1533
+        ],
+        [
+          -0.33655,
+          -7.1964500000000005,
+          0.1144
+        ],
+        [
+          -0.3563,
+          -6.4272,
+          0.0755
+        ],
+        [
+          -0.3563,
+          -5.66195,
+          0.0755
+        ],
+        [
+          -0.3563,
+          -4.8967,
+          0.0755
+        ],
+        [
+          -0.3563,
+          -4.13145,
+          0.0755
+        ],
+        [
+          -0.3563,
+          -3.3662,
+          0.0755
+        ],
+        [
+          -0.3563,
+          -2.5996500000000005,
+          0.0755
+        ],
+        [
+          -0.3563,
+          -1.8331,
+          0.0755
+        ],
+        [
+          -0.3563,
+          -1.0665499999999999,
+          0.0755
+        ],
+        [
+          -0.3563,
+          -0.3,
+          0.0755
+        ],
+        [
+          -0.3563,
+          0.0,
+          0.0755
+        ],
+        [
+          -0.3563,
+          0.3,
+          0.0755
+        ],
+        [
+          -0.3563,
+          1.0665499999999999,
+          0.0755
+        ],
+        [
+          -0.3563,
+          1.8331,
+          0.0755
+        ],
+        [
+          -0.3563,
+          2.5996500000000005,
+          0.0755
+        ],
+        [
+          -0.3563,
+          3.3662,
+          0.0755
+        ],
+        [
+          -0.3563,
+          4.13145,
+          0.0755
+        ],
+        [
+          -0.3563,
+          4.8967,
+          0.0755
+        ],
+        [
+          -0.3563,
+          5.66195,
+          0.0755
+        ],
+        [
+          -0.3563,
+          6.4272,
+          0.0755
+        ],
+        [
+          -0.33655,
+          7.1964500000000005,
+          0.1144
+        ],
+        [
+          -0.31679999999999997,
+          7.9657,
+          0.1533
+        ],
+        [
+          -0.29705,
+          8.734950000000001,
+          0.1922
+        ],
+        [
+          -0.2773,
+          9.5042,
+          0.2311
+        ],
+        [
+          -0.255975,
+          10.33575,
+          0.273175
+        ],
+        [
+          -0.23465,
+          11.167300000000001,
+          0.31525
+        ],
+        [
+          -0.21332500000000001,
+          11.998850000000001,
+          0.357325
+        ],
+        [
+          -0.192,
+          12.8304,
+          0.3994
+        ]
+      ],
+      "trailing_edge": [
+        [
+          0.576476363743093,
+          -12.833422197920314,
+          0.3396707384281033
+        ],
+        [
+          0.642422548334653,
+          -12.003204445187643,
+          0.27126584620832744
+        ],
+        [
+          0.7075223658987599,
+          -11.173188123736486,
+          0.19887996332561825
+        ],
+        [
+          0.77163999103448,
+          -10.343371926344703,
+          0.12253892508764283
+        ],
+        [
+          0.8346403598940476,
+          -9.513751555899374,
+          0.04227252896202549
+        ],
+        [
+          0.8938584034509078,
+          -8.745812596345118,
+          -0.022608540834978874
+        ],
+        [
+          0.9526513649675823,
+          -7.977959132813991,
+          -0.0891251392586821
+        ],
+        [
+          1.0109939773747256,
+          -7.210188076485816,
+          -0.157271345416803
+        ],
+        [
+          1.068861054269155,
+          -6.434851993349571,
+          -0.2273306728061233
+        ],
+        [
+          1.068861054269155,
+          -5.66195,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          -4.8967,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          -4.13145,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          -3.3662,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          -2.5996500000000005,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          -1.8331,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          -1.0665499999999999,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          -0.3,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          0.0,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          0.3,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          1.0665499999999999,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          1.8331,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          2.5996500000000005,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          3.3662,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          4.13145,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          4.8967,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          5.66195,
+          -0.22742733352147537
+        ],
+        [
+          1.068861054269155,
+          6.434851993349571,
+          -0.2273306728061233
+        ],
+        [
+          1.0109939773747256,
+          7.210188076485816,
+          -0.157271345416803
+        ],
+        [
+          0.9526513649675823,
+          7.977959132813991,
+          -0.0891251392586821
+        ],
+        [
+          0.8938584034509078,
+          8.745812596345118,
+          -0.022608540834978874
+        ],
+        [
+          0.8346403598940476,
+          9.513751555899374,
+          0.04227252896202549
+        ],
+        [
+          0.77163999103448,
+          10.343371926344703,
+          0.12253892508764283
+        ],
+        [
+          0.7075223658987599,
+          11.173188123736486,
+          0.19887996332561825
+        ],
+        [
+          0.642422548334653,
+          12.003204445187643,
+          0.27126584620832744
+        ],
+        [
+          0.576476363743093,
+          12.833422197920314,
+          0.3396707384281033
+        ]
+      ],
+      "polar_ids": [
+        "Wing-ideal-000",
+        "Wing-ideal-001",
+        "Wing-ideal-002",
+        "Wing-ideal-003",
+        "Wing-ideal-004",
+        "Wing-ideal-005",
+        "Wing-ideal-006",
+        "Wing-ideal-007",
+        "Wing-ideal-008",
+        "Wing-ideal-009",
+        "Wing-ideal-010",
+        "Wing-ideal-011",
+        "Wing-ideal-012",
+        "Wing-ideal-013",
+        "Wing-ideal-014",
+        "Wing-ideal-015",
+        "Wing-ideal-016",
+        "Wing-ideal-017",
+        "Wing-ideal-018",
+        "Wing-ideal-019",
+        "Wing-ideal-020",
+        "Wing-ideal-021",
+        "Wing-ideal-022",
+        "Wing-ideal-023",
+        "Wing-ideal-024",
+        "Wing-ideal-025",
+        "Wing-ideal-026",
+        "Wing-ideal-027",
+        "Wing-ideal-028",
+        "Wing-ideal-029",
+        "Wing-ideal-030",
+        "Wing-ideal-031",
+        "Wing-ideal-032",
+        "Wing-ideal-033"
+      ]
+    },
+    {
+      "name": "Horizontal tail",
+      "leading_edge": [
+        [
+          6.7355,
+          -2.451,
+          -0.8165
+        ],
+        [
+          6.6286,
+          -1.8303,
+          -0.8165
+        ],
+        [
+          6.5217,
+          -1.2096,
+          -0.8165
+        ],
+        [
+          6.4148,
+          -0.5889,
+          -0.8165
+        ],
+        [
+          6.3079,
+          0.0318,
+          -0.8165
+        ],
+        [
+          6.4791,
+          0.6379250000000001,
+          -0.8165
+        ],
+        [
+          6.6503,
+          1.24405,
+          -0.8165
+        ],
+        [
+          6.8215,
+          1.850175,
+          -0.8165
+        ],
+        [
+          6.9927,
+          2.4563,
+          -0.8165
+        ]
+      ],
+      "trailing_edge": [
+        [
+          7.1762,
+          -2.451,
+          -0.8165
+        ],
+        [
+          7.20855,
+          -1.8303,
+          -0.8165
+        ],
+        [
+          7.2409,
+          -1.2096,
+          -0.8165
+        ],
+        [
+          7.27325,
+          -0.5889,
+          -0.8165
+        ],
+        [
+          7.3056,
+          0.0318,
+          -0.8165
+        ],
+        [
+          7.33755,
+          0.6379250000000001,
+          -0.8165
+        ],
+        [
+          7.3694999999999995,
+          1.24405,
+          -0.8165
+        ],
+        [
+          7.4014500000000005,
+          1.850175,
+          -0.8165
+        ],
+        [
+          7.4334,
+          2.4563,
+          -0.8165
+        ]
+      ],
+      "polar_ids": [
+        "Horizontal tail-ideal-000",
+        "Horizontal tail-ideal-001",
+        "Horizontal tail-ideal-002",
+        "Horizontal tail-ideal-003",
+        "Horizontal tail-ideal-004",
+        "Horizontal tail-ideal-005",
+        "Horizontal tail-ideal-006",
+        "Horizontal tail-ideal-007"
+      ]
+    },
+    {
+      "name": "Vertical tail",
+      "leading_edge": [
+        [
+          6.79,
+          0.012,
+          2.85
+        ],
+        [
+          6.73475,
+          0.012,
+          2.1275000000000004
+        ],
+        [
+          6.6795,
+          0.012,
+          1.405
+        ],
+        [
+          6.62425,
+          0.012,
+          0.6825
+        ],
+        [
+          6.569,
+          0.012,
+          -0.04
+        ],
+        [
+          6.598000000000001,
+          0.012000000000000002,
+          -0.274
+        ],
+        [
+          6.627000000000001,
+          0.012,
+          -0.508
+        ],
+        [
+          6.656,
+          0.012,
+          -0.742
+        ]
+      ],
+      "trailing_edge": [
+        [
+          7.7713,
+          0.012,
+          2.85
+        ],
+        [
+          7.793225,
+          0.012,
+          2.1275000000000004
+        ],
+        [
+          7.81515,
+          0.012,
+          1.405
+        ],
+        [
+          7.8370750000000005,
+          0.012,
+          0.6825
+        ],
+        [
+          7.859,
+          0.012,
+          -0.04
+        ],
+        [
+          7.849866666666667,
+          0.012000000000000002,
+          -0.274
+        ],
+        [
+          7.840733333333334,
+          0.012,
+          -0.508
+        ],
+        [
+          7.8316,
+          0.012,
+          -0.742
+        ]
+      ],
+      "polar_ids": [
+        "Vertical tail-ideal-000",
+        "Vertical tail-ideal-001",
+        "Vertical tail-ideal-002",
+        "Vertical tail-ideal-003",
+        "Vertical tail-ideal-004",
+        "Vertical tail-ideal-005",
+        "Vertical tail-ideal-006"
+      ]
+    }
+  ],
+  "provenance": {
+    "source_avl_sha256": "2585234786d393a95c9039193a692d92ade7a252270669e420683d272f528eb2",
+    "source_revision": "1d66923243f73a69cddda52082fd5415907afc99",
+    "reference_area_m2": 32.9285,
+    "reference_chord_m": 1.2831,
+    "reference_span_m": 25.6626,
+    "reference_origin_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "excluded_surfaces": [
+      "Pylon 1",
+      "Pylon 2",
+      "Pylon 3",
+      "Pylon 4"
+    ],
+    "controls": "All zero; no control-surface deformation",
+    "mach": 0.0,
+    "source_header_mach": 0.1,
+    "body_and_rotors": false,
+    "source_cdcl_used": false,
+    "model_difference": "Physical section rotation with ruled chord geometry; ideal polars retain source mean-line effects for LL/VSM. Lattice flat diagnostic, not an AVL solver reproduction.",
+    "source_profiles": {
+      "makani-APPROXblade.refvisc": {
+        "datum": "normalized_source_chord",
+        "source_nose": [
+          1.211582e-05,
+          0.0006215995
+        ],
+        "source_te_mean": [
+          1.0,
+          -6.699999999997073e-08
+        ],
+        "source_te_gap": 0.0025199999999999997,
+        "mean_line_linear_correction_slope": 6.699999999997073e-08,
+        "minimum_x_clipped_to_zero": false,
+        "zero_origin_roundoff_count": 0,
+        "leading_datum": "Original normalized (0,0), not the lowest-x sampled ordinate",
+        "source_sha256": "fefa0ea9a1fb62e3e85bd5c1bb2c7fdf337a7cc14d2d5f07ba63d8ce00ab6946",
+        "resampling_error_over_chord": 0.00016078901352180352,
+        "thin_airfoil_alpha0_rad": -0.1491249193143579,
+        "thin_airfoil_cm_quarter_chord": -0.2468556002752248
+      },
+      "makani-APPROXblade.midvisc": {
+        "datum": "normalized_source_chord",
+        "source_nose": [
+          -3.898201e-16,
+          3.290608e-09
+        ],
+        "source_te_mean": [
+          1.0,
+          7.0000000000017965e-09
+        ],
+        "source_te_gap": 0.00252,
+        "mean_line_linear_correction_slope": -7.0000000000017965e-09,
+        "minimum_x_clipped_to_zero": true,
+        "zero_origin_roundoff_count": 1,
+        "leading_datum": "Original normalized (0,0), not the lowest-x sampled ordinate",
+        "source_sha256": "5f77c71f643cb56731e6561de36036e7c3a10984f40e4438f963dd0e983cba54",
+        "resampling_error_over_chord": 9.613414161335765e-06,
+        "thin_airfoil_alpha0_rad": -0.19220892519356536,
+        "thin_airfoil_cm_quarter_chord": -0.31818510644341164
+      },
+      "makani-APPROXblade.orefvisc": {
+        "datum": "normalized_source_chord",
+        "source_nose": [
+          1.976609e-16,
+          -2.656969e-09
+        ],
+        "source_te_mean": [
+          1.0,
+          -4.999999999970306e-09
+        ],
+        "source_te_gap": 0.00252,
+        "mean_line_linear_correction_slope": 4.999999999970306e-09,
+        "minimum_x_clipped_to_zero": false,
+        "zero_origin_roundoff_count": 0,
+        "leading_datum": "Original normalized (0,0), not the lowest-x sampled ordinate",
+        "source_sha256": "1ed783ed97944c1ccc6ce59043ac47289f6f2a1bc5568fa9c0a649e2fd04a714",
+        "resampling_error_over_chord": 8.480901028590226e-06,
+        "thin_airfoil_alpha0_rad": -0.16959628874148072,
+        "thin_airfoil_cm_quarter_chord": -0.2807518874752144
+      },
+      "makani-APPROXblade.rj8": {
+        "datum": "normalized_source_chord",
+        "source_nose": [
+          -1.1e-05,
+          0.0
+        ],
+        "source_te_mean": [
+          0.9998525,
+          -0.00041250000000000005
+        ],
+        "source_te_gap": 0.0012610000000000002,
+        "mean_line_linear_correction_slope": 0.00041250000000000005,
+        "minimum_x_clipped_to_zero": true,
+        "zero_origin_roundoff_count": 1,
+        "leading_datum": "Original normalized (0,0), not the lowest-x sampled ordinate",
+        "source_sha256": "fbd2f6443ae01fead21a0ce381ffadfbcae6430856b4578fd178786d92766f20",
+        "resampling_error_over_chord": 4.243262459026402e-05,
+        "thin_airfoil_alpha0_rad": -0.008247011015651779,
+        "thin_airfoil_cm_quarter_chord": 0.002738332326848978
+      },
+      "makani-f8.dat": {
+        "datum": "normalized_source_chord",
+        "source_nose": [
+          2.125837e-05,
+          -0.001145934
+        ],
+        "source_te_mean": [
+          1.0,
+          0.0
+        ],
+        "source_te_gap": 0.00412,
+        "mean_line_linear_correction_slope": -0.0,
+        "minimum_x_clipped_to_zero": false,
+        "zero_origin_roundoff_count": 0,
+        "leading_datum": "Original normalized (0,0), not the lowest-x sampled ordinate",
+        "source_sha256": "84b1875f600da4de76bf37f502732a348c084b9d382f91f174dd70db46a39deb",
+        "resampling_error_over_chord": 5.435720068094092e-09,
+        "thin_airfoil_alpha0_rad": 1.104522651249181e-06,
+        "thin_airfoil_cm_quarter_chord": -5.319137639764326e-06
+      }
+    },
+    "geometry_checks": {
+      "Wing": {
+        "panels": 34,
+        "root_mid_chord_offset_m": [
+          0.019211332108100544,
+          0.0,
+          0.09038221147896001
+        ],
+        "incidence_deg_range": [
+          4.45,
+          12.000000000000002
+        ]
+      },
+      "Horizontal tail": {
+        "panels": 8,
+        "root_mid_chord_offset_m": [
+          -0.0,
+          -0.0,
+          -2.972131669187056e-09
+        ],
+        "incidence_deg_range": [
+          0.0,
+          0.0
+        ]
+      },
+      "Vertical tail": {
+        "panels": 7,
+        "root_mid_chord_offset_m": [
+          -0.0,
+          0.014525482226805605,
+          5.3841228672486216e-20
+        ],
+        "incidence_deg_range": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "variant": "Explicitly removed geometric camber; ideal companion polars and physical chord installation unchanged"
+  }
+}

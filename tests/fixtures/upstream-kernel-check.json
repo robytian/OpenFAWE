@@ -1,0 +1,247 @@
+{
+  "observed_utc": "2026-09-12T17:37:27.055605+00:00",
+  "evidence": "Executed existing upstream kernel/test only; no OpenFAWE physics implementation",
+  "source_sha256": "665cbdf9d317941f708d9896f9ae597960608f22b8a2e0cfa45de94cb3428e4c",
+  "upstream_unittest": {
+    "tests_run": 1,
+    "errors": 1,
+    "failures": 0,
+    "output": "test_VS_RegFunctions (welib.vortilib.elements.VortexSegment.TestVortexSegment.test_VS_RegFunctions) ... ERROR\n\n======================================================================\nERROR: test_VS_RegFunctions (welib.vortilib.elements.VortexSegment.TestVortexSegment.test_VS_RegFunctions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<workspace>\\refs\\welib\\welib\\vortilib\\elements\\VortexSegment.py\", line 129, in test_VS_RegFunctions\n    Pa = np.array([ 0, 0, -z0])\n                           ^^\nNameError: name 'z0' is not defined\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"
+  },
+  "segment_start": [
+    0.0,
+    0.0,
+    -1.0
+  ],
+  "segment_end": [
+    0.0,
+    0.0,
+    1.0
+  ],
+  "circulation_m2_per_s": 1.0,
+  "direct_reference_results": [
+    {
+      "point": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 0,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        3.179127433139941,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 1,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.031791274331399416,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 2,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.03969362731367172,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 3,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.031789684886890206,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        0.05,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 4,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.015855898567047,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 0,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.11253953951963822,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 1,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.11253953951963822,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 2,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.11180050849552554,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 3,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.10917939023478622,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 4,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.09003163161571058,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 0,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.0015836508738219027,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 1,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.0015836508738219027,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 2,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.0015836508738219027,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 3,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.0015836459249361197,
+        0.0
+      ]
+    },
+    {
+      "point": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "core_model_id": 4,
+      "core_radius_m": 0.5,
+      "velocity_m_per_s": [
+        -0.0,
+        0.0015835724791447173,
+        0.0
+      ]
+    }
+  ],
+  "independent_closed_form": {
+    "point": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "velocity_m_per_s": [
+      0.0,
+      0.11253953951963826,
+      0.0
+    ],
+    "formula": "Gamma/(2*pi*r*sqrt(r^2+1)); endpoints z=+-1, observation z=0, r=1, Gamma=1"
+  }
+}

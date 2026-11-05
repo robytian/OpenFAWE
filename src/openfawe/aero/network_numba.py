@@ -11,12 +11,19 @@ runs. The functions here reproduce those loops exactly:
   first-appearance edge order, same per-edge summation order starting from
   0.0, same exact-zero filtering. Results are bitwise identical.
 * incident_pairs: same (point, segment) pairs, in the same order, as the loop
-  in wake._network_convection. Coordinates are matched by exact equality
-  through a dictionary keyed by the coordinate triple, exactly like the
-  Python tuple keys (so -0.0 and 0.0 coincide, and NaN never matches).
+  in wake._network_convection. Coordinates are matched by exact equality.
+  GPU whole-step contract revision 4, S3 (b): the matching is now a sort of the
+  coordinates' bit patterns instead of a dictionary keyed by the coordinate
+  triple; the pairs are those of the dictionary version (kept as
+  ``incident_pairs_reference``) element for element. Both match by bit
+  pattern: -0.0 and 0.0 are different keys there (the compiled dictionary does
+  not unite them, unlike the Python tuple keys of the NumPy path - a difference
+  that predates S3), and NaN never matches.
 
-Only the accelerated backends call these; the NumPy default path keeps the
-original Python loops.
+The accelerated backends call these; the NumPy default path keeps the original
+Python loops for the wing wake, but the rotor rings' self-convection
+(``rotor.ring_wake.RingWake.self_velocity``) calls ``incident_pairs`` with every
+kernel, the NumPy one included (the pairs are the reference's either way).
 """
 
 import numpy as np
@@ -160,7 +167,87 @@ def _incident_pairs(nodes, edges, first):
     return pairs
 
 
-def incident_pairs(nodes, edges, first):
-    """Exclusion pairs of wake._network_convection, as an (e, 2) int64 array."""
+def incident_pairs_reference(nodes, edges, first):
+    """The dictionary version of ``incident_pairs`` (before S3), kept as its reference (Z1)."""
     return _incident_pairs(np.ascontiguousarray(nodes, dtype=np.float64),
                            np.ascontiguousarray(edges, dtype=np.int64), int(first))
+
+
+@njit(cache=True)
+def _incident_pairs_sorted(nodes, bits, edges, first, order):
+    """``_incident_pairs`` with the groups found from ``order`` (the nodes sorted by their coordinates' bit patterns):
+    the same group numbers (first appearance among the free points), members, loop and output."""
+    n = nodes.shape[0]
+    count = n - first
+    # no_nan: a node with a NaN coordinate never matches (as in the dictionary); +-inf coordinates match by bits
+    no_nan = np.empty(n, np.bool_)
+    for node in range(n):
+        no_nan[node] = not (np.isnan(nodes[node, 0]) or np.isnan(nodes[node, 1]) or np.isnan(nodes[node, 2]))
+    # runs of equal bit patterns along the sorted order; a NaN node is a run of its own
+    run_of = np.empty(n, np.int64)
+    runs = 0
+    previous = -1
+    for position in range(n):
+        node = order[position]
+        same = (previous >= 0 and no_nan[node] and no_nan[previous] and bits[node, 0] == bits[previous, 0]
+                and bits[node, 1] == bits[previous, 1] and bits[node, 2] == bits[previous, 2])
+        if not same:
+            runs += 1
+        run_of[node] = runs - 1
+        previous = node
+    # group numbers in order of first appearance, as the dictionary assigned them
+    group_of_run = np.full(runs, -1, np.int64)
+    point_group = np.empty(count, np.int64)
+    groups = 0
+    for index in range(count):
+        run = run_of[first + index]
+        if group_of_run[run] < 0:
+            group_of_run[run] = groups
+            groups += 1
+        point_group[index] = group_of_run[run]
+    sizes = np.zeros(groups + 1, np.int64)
+    for index in range(count):
+        sizes[point_group[index] + 1] += 1
+    for g in range(groups):
+        sizes[g + 1] += sizes[g]
+    cursor = sizes[:-1].copy()
+    members = np.empty(count, np.int64)
+    for index in range(count):
+        g = point_group[index]
+        members[cursor[g]] = index
+        cursor[g] += 1
+    total = 0
+    for segment in range(edges.shape[0]):
+        for end in range(2):
+            node = edges[segment, end]
+            if no_nan[node]:
+                g = group_of_run[run_of[node]]
+                if g >= 0:
+                    total += sizes[g + 1] - sizes[g]
+    pairs = np.empty((total, 2), np.int64)
+    m = 0
+    for segment in range(edges.shape[0]):
+        for end in range(2):
+            node = edges[segment, end]
+            if no_nan[node]:
+                g = group_of_run[run_of[node]]
+                if g >= 0:
+                    for k in range(sizes[g], sizes[g + 1]):
+                        pairs[m, 0] = members[k]
+                        pairs[m, 1] = segment
+                        m += 1
+    return pairs
+
+
+def incident_pairs(nodes, edges, first):
+    """Exclusion pairs of wake._network_convection, as an (e, 2) int64 array (S3 (b): sorted bit patterns)."""
+    nodes = np.ascontiguousarray(nodes, dtype=np.float64)
+    edges = np.ascontiguousarray(edges, dtype=np.int64)
+    # Anything but (n, 3) nodes, (e, 2) edges with indices in [0, n) and 0 <= first <= n goes to the reference itself
+    # (its result or its error; out-of-range indices are unchecked there, as before S3, and never occur in the wake).
+    if (nodes.ndim != 2 or nodes.shape[1] != 3 or edges.ndim != 2 or edges.shape[1] != 2
+            or not 0 <= int(first) <= len(nodes) or (edges.size and (edges.min() < 0 or edges.max() >= len(nodes)))):
+        return incident_pairs_reference(nodes, edges, first)
+    bits = nodes.view(np.int64)
+    order = np.lexsort((bits[:, 2], bits[:, 1], bits[:, 0])).astype(np.int64)
+    return _incident_pairs_sorted(nodes, bits, edges, int(first), order)

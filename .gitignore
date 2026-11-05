@@ -27,5 +27,5 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Local test and run outputs
+# Local run outputs of the paper scripts
 local/

@@ -1,0 +1,119 @@
+{
+ "script": "pair_wake_render.py",
+ "overview": {
+  "c3e-m600-pair-d1-4laps-free2": {
+   "step": 3744,
+   "laps": 4.0,
+   "free_rows": 1872,
+   "x_max_m": 883.2967154007016,
+   "rings": 0,
+   "drawn_rows": {
+    "A_0": 2858,
+    "A_17": 2871,
+    "A_34": 2862,
+    "B_0": 1141,
+    "B_17": 1121,
+    "B_34": 1134
+   },
+   "ground_b_m": [
+    270.0,
+    0.0,
+    0.0
+   ],
+   "scene_length_m": 1100.0
+  },
+  "p4-m600-pair-d2-rotors-adp-7laps": {
+   "step": 6552,
+   "laps": 7.0,
+   "free_rows": 936,
+   "x_max_m": 1153.2967154007024,
+   "rings": 1600,
+   "drawn_rows": {
+    "A_0": 4599,
+    "A_17": 4636,
+    "A_34": 4623,
+    "B_0": 1169,
+    "B_17": 1152,
+    "B_34": 1141
+   },
+   "ground_b_m": [
+    540.0,
+    0.0,
+    0.0
+   ],
+   "scene_length_m": 1400.0
+  },
+  "c3c7-m600-pair-d1-off05-7laps": {
+   "step": 6552,
+   "laps": 7.0,
+   "free_rows": 936,
+   "x_max_m": 883.2967154007016,
+   "rings": 0,
+   "drawn_rows": {
+    "A_0": 2848,
+    "A_17": 2877,
+    "A_34": 2844,
+    "B_0": 1134,
+    "B_17": 1128,
+    "B_34": 1108
+   },
+   "ground_b_m": [
+    270.0,
+    135.0,
+    0.0
+   ],
+   "scene_length_m": 1100.0
+  },
+  "p5-m600-pair-d1-off05-rotors-adp-7laps": {
+   "step": 6552,
+   "laps": 7.0,
+   "free_rows": 936,
+   "x_max_m": 883.2967154007016,
+   "rings": 1600,
+   "drawn_rows": {
+    "A_0": 2850,
+    "A_17": 2879,
+    "A_34": 2857,
+    "B_0": 1142,
+    "B_17": 1135,
+    "B_34": 1125
+   },
+   "ground_b_m": [
+    270.0,
+    135.0,
+    0.0
+   ],
+   "scene_length_m": 1100.0
+  }
+ },
+ "closeup": {
+  "p4-m600-pair-d2-rotors-adp-7laps": {
+   "step": 6552,
+   "half_m": 75.0,
+   "filament_points": {
+    "A": 4682,
+    "B": 2888
+   },
+   "rings_shown": 743,
+   "centre_m": [
+    895.6401489927084,
+    117.52949048172184,
+    217.04936768096948
+   ]
+  },
+  "p5-m600-pair-d1-off05-rotors-adp-7laps": {
+   "step": 6552,
+   "half_m": 75.0,
+   "filament_points": {
+    "A": 0,
+    "B": 2890
+   },
+   "rings_shown": 743,
+   "centre_m": [
+    625.6401489927084,
+    252.52949048172184,
+    217.04936768096948
+   ]
+  }
+ }
+}

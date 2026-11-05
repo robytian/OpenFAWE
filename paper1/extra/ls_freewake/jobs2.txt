@@ -1,0 +1,17 @@
+# Paper 1, Fig. 4: lifting-surface free wakes to the converged length of the VSM/LL runs.
+# V3: 180 steps = 40 c, compiled direct sum (same kernel as the archived numpy reference).
+# M600: 330 steps = 103 c; the wake-on-wake convection sum uses the tree (theta 0.2, order 2, leaf 32,
+# the paper's settings), the operator and wing-point inductions stay direct; checked against the
+# direct sum at step 40 (archived value) and on V3 (lsf-v3-a541-lsp-tree against lsf-v3-a541-lsp).
+# NAME MODEL VARIANT ALPHA STEPS ENGINE
+lsf-v3-a735-lsi V3 LSi 7.350324457982788 180 numba
+lsf-v3-a308-lsp V3 LSp 3.0810784665258444 180 numba
+lsf-v3-a541-lsp V3 LSp 5.412846420261046 180 numba
+lsf-v3-a735-lsp V3 LSp 7.350324457982788 180 numba
+lsf-m600-a0-lsp M600 LSp 0 330 tree
+lsf-m600-am4-lsp M600 LSp -4 330 tree
+lsf-m600-a4-lsp M600 LSp 4 330 tree
+lsf-m600-a0-lsi M600 LSi 0 330 tree
+lsf-m600-am4-lsi M600 LSi -4 330 tree
+lsf-m600-a4-lsi M600 LSi 4 330 tree
+lsf-v3-a541-lsp-tree V3 LSp 5.412846420261046 180 tree

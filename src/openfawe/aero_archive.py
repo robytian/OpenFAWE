@@ -775,6 +775,8 @@ class AeroWriter:
 
     def _state_attributes(self, state):
         config = state.config
+        if getattr(config, 'retained_rows', None) is not None:
+            raise ValueError('the aerodynamic archive stores one wake row per step; a truncated wake (retained_rows) is not supported')
         attributes = dict(wake_config_json=json.dumps(wake_config_metadata(config), sort_keys=True, allow_nan=False),
             dt_s=config.dt_s, core_model=int(config.core_model),
             initial_core_radius_m=config.core_radius_m,

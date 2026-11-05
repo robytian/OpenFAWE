@@ -3,8 +3,8 @@ Copyright 2026 Yinong Tian
 
 This product is licensed under the Apache License, Version 2.0 (see LICENSE).
 
-The source code contains parts derived from the following works, which remain
-under their own licences (texts and file-level attributions in third_party/):
+It contains code and data derived from the following works, which remain under
+their own licences (texts and file-level attributions in third_party/):
 
 - Vortex-Step-Method, Copyright (c) 2022-2024 Oriol Cayon, Jelle Poland, TU Delft,
   MIT License. The vortex step method in src/openfawe/aero/vsm.py is ported from
@@ -13,7 +13,10 @@ under their own licences (texts and file-level attributions in third_party/):
   License 2.0. Biot-Savart kernels and the free-vortex-wake formulation are adapted
   from it with modifications (third_party/OPENFAST-NOTICE.md,
   third_party/OPENFAST-WING-WAKE-NOTICE.md, third_party/LICENSE-OpenFAST.txt).
-- Makani, Makani Technologies LLC, Apache License 2.0. The section polar lookup
-  and the hover strip model in src/openfawe/aero/polars.py and
-  src/openfawe/aero/makani_hover_strip.py are transcribed from its public source
-  code (third_party/MAKANI-NOTICE.md, third_party/LICENSE-Makani.txt).
+- TU Delft V3 kite geometry and section polars, Airborne Wind Energy Research Group,
+  TU Delft, MIT License, distributed with Vortex-Step-Method.
+- Makani, Makani Technologies LLC, Apache License 2.0. The M600 cases,
+  cases/polars/makani, cases/rotors, cases/flight and cases/ground are derived from
+  its public data; the lumped-mass tether, the rotor-table conventions and the
+  nominal crosswind loop are transcribed from its simulator and flight controller
+  (third_party/MAKANI-NOTICE.md, third_party/LICENSE-Makani.txt).

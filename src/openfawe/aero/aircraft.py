@@ -53,36 +53,92 @@ class WingAssembly:
         return WingAssembly(tuple(w.transformed(rotation,translation) for w in self.wings),self.names)
 
 
+def _table_key(polar):
+    """The grouping key of S4 (b): the table's content for a plain ``SectionPolar``, its identity otherwise (a subclass
+    may read more)."""
+    if type(polar) is not SectionPolar:
+        return ('object', id(polar))
+    arrays = tuple((a.dtype.str, a.shape, a.tobytes()) for a in (polar.alpha_deg, polar.cl, polar.cd, polar.cm))
+    attached = None if polar.attached_deg is None else tuple(float(x).hex() for x in polar.attached_deg)
+    return ('table', arrays, polar.bounds, polar.periodic, attached)
+
+
 @dataclass(frozen=True)
 class PanelPolars:
+    """One section table per panel.
+
+    GPU whole-step contract revision 4 addendum 1, S4 (b): the panels whose tables are the same are looked up together
+    (one ``np.interp`` per table and coefficient instead of one per panel). "The same" (revision 4 addendum 3): one
+    object, or plain ``SectionPolar`` objects equal bit for bit in everything their lookups read - the four arrays
+    (dtype, shape, bytes; they are immutable copies), ``bounds``, ``periodic`` and ``attached_deg`` - the ``name`` being
+    only a label; the loaders build one object per panel, so grouping by object alone grouped nothing on the
+    reconstructed M600 tables (49 objects, 11 tables). The per-element arithmetic is the one of the per-panel loop, so
+    every value is the same bit for bit; the per-panel loops stay as the ``*_reference`` methods (tests). An angle outside
+    a table raises the same error as before.
+    """
     polars: tuple
 
     def __post_init__(self):
         object.__setattr__(self,'polars',tuple(self.polars))
         if not self.polars or any(not isinstance(p,SectionPolar) for p in self.polars):
             raise ValueError('one SectionPolar per panel is required')
+        groups={}
+        for index,polar in enumerate(self.polars):
+            groups.setdefault(_table_key(polar),(polar,[]))[1].append(index)
+        object.__setattr__(self,'_groups',tuple((polar,np.array(indices,dtype=np.int64)) for polar,indices in groups.values()))
 
-    def coefficients(self,alpha_rad):
+    def _angles(self,alpha_rad):
         alpha=_real(alpha_rad,'panel angles')
         if alpha.shape!=(len(self.polars),):raise ValueError('panel polar count and angles differ')
-        values=np.array([p.coefficients(a) for p,a in zip(self.polars,alpha)])
+        return alpha
+
+    def coefficients(self,alpha_rad):
+        alpha=self._angles(alpha_rad)
+        values=np.empty((len(self.polars),3))
+        for polar,index in self._groups:
+            cl,cd,cm=polar.coefficients(alpha[index])
+            values[index,0],values[index,1],values[index,2]=cl,cd,cm
         return tuple(values[:,i] for i in range(3))
 
     def cl_slope(self,alpha_rad):
         """One declared lift slope per panel, per radian."""
-        alpha=_real(alpha_rad,'panel angles')
-        if alpha.shape!=(len(self.polars),):raise ValueError('panel polar count and angles differ')
-        return np.array([p.cl_slope(a) for p,a in zip(self.polars,alpha)])
+        alpha=self._angles(alpha_rad)
+        out=np.empty(len(self.polars))
+        for polar,index in self._groups:
+            out[index]=polar.cl_slope(alpha[index])
+        return out
 
     def clipped(self,alpha_rad):
-        alpha=_real(alpha_rad,'panel angles')
-        if alpha.shape!=(len(self.polars),):raise ValueError('panel polar count and angles differ')
-        return np.array([a<np.deg2rad(p.alpha_deg[0]) or a>np.deg2rad(p.alpha_deg[-1]) for p,a in zip(self.polars,alpha)])
+        alpha=self._angles(alpha_rad)
+        out=np.empty(len(self.polars),dtype=bool)
+        for polar,index in self._groups:
+            out[index]=(alpha[index]<np.deg2rad(polar.alpha_deg[0]))|(alpha[index]>np.deg2rad(polar.alpha_deg[-1]))
+        return out
 
     def attached(self,alpha_rad):
         """Per-panel attached-range label (True without a declaration)."""
-        alpha=_real(alpha_rad,'panel angles')
-        if alpha.shape!=(len(self.polars),):raise ValueError('panel polar count and angles differ')
+        alpha=self._angles(alpha_rad)
+        out=np.empty(len(self.polars),dtype=bool)
+        for polar,index in self._groups:
+            out[index]=polar.attached(alpha[index])
+        return out
+
+    # The per-panel loops before S4 (b), kept as the references of the tests (Y1).
+    def coefficients_reference(self,alpha_rad):
+        alpha=self._angles(alpha_rad)
+        values=np.array([p.coefficients(a) for p,a in zip(self.polars,alpha)])
+        return tuple(values[:,i] for i in range(3))
+
+    def cl_slope_reference(self,alpha_rad):
+        alpha=self._angles(alpha_rad)
+        return np.array([p.cl_slope(a) for p,a in zip(self.polars,alpha)])
+
+    def clipped_reference(self,alpha_rad):
+        alpha=self._angles(alpha_rad)
+        return np.array([a<np.deg2rad(p.alpha_deg[0]) or a>np.deg2rad(p.alpha_deg[-1]) for p,a in zip(self.polars,alpha)])
+
+    def attached_reference(self,alpha_rad):
+        alpha=self._angles(alpha_rad)
         return np.array([bool(p.attached(a)) for p,a in zip(self.polars,alpha)])
 
 

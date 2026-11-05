@@ -14,7 +14,7 @@ from openfawe.aero import makani_hover_strip as H
 ROOT = Path(__file__).resolve().parents[1]
 TABLE = ROOT / "cases/polars/makani/hover_model_sn02_wind_10_no_wake_model.json"
 AIRFOILS = ROOT / "cases/polars/makani"
-ORACLE = ROOT / "docs/tasks/OF-0007-wingfull20261001/makani-original-cfm.json"
+ORACLE = ROOT / "tests/fixtures/makani-original-cfm.json"
 
 
 class Transcription(unittest.TestCase):
