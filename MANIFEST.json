@@ -1,61 +1,62 @@
 {
- "release": "0.3.0",
+ "release": "0.2.0",
+ "date": "2026-11-05",
  "note": "Every file of the release outside paper1/ with its SHA-256 and origin. The files of paper1/ are listed in paper1/MANIFEST.json and paper1/crosswind/MANIFEST.json.",
  "files": [
   {
    "path": ".gitignore",
    "sha256": "2f1896b6567498a81585bb774b5ffb2fbb390e814934c3a4a5eee42820ac5184",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": ".zenodo.json",
-   "sha256": "b9bfea4134cba8e3de494d24e2129252a5e858e54c4625b9be4527ad7bc19380",
-   "origin": "written or updated for release 0.3.0"
+   "sha256": "243909f3f1bfc55c13d09e6b927bb8f044a796e206abccf126f15c3d053ee6e2",
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "CHANGELOG.md",
-   "sha256": "b497321c9a9adf43005387025e9a57018609b8c62c11764f6eaf80964aa5fe10",
-   "origin": "written or updated for release 0.3.0"
+   "sha256": "291509ea351a31ff4caceb364a207b175b0c95385633408637d50c9367917e9e",
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "CITATION.cff",
-   "sha256": "d79af05ada361b389a6a458e6085670d1c686d3abb61f12dda75a0f1d1996ada",
-   "origin": "written or updated for release 0.3.0"
+   "sha256": "696cc7052131712d5305a1c2bb8894e1cad64f723b4969bd9e956ca6f21871e7",
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "CONTRIBUTING.md",
-   "sha256": "331ae3a562a9972f4d87184a3eb25a16f90b2f279233b27ddd72359dc204c37f",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "sha256": "b083e713de8f4f6c30c25c9367415800e417dbe57b66c8e3ac30dded945e7751",
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "LICENSE",
    "sha256": "f7b4baf559c14776872229cd5b8c02489ce046eac698cfc2876f09c7b2909932",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "LICENSE-BINARIES.md",
    "sha256": "052de2fcc6045571edb9f05078309e81c3a6142685d0f6c96cab47190b0d120f",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "NOTICE",
    "sha256": "be18020fc9a4ac9bfe7dcd27553a0130da16e0c49ddadbf6e5f49500a574855f",
-   "origin": "written or updated for release 0.3.0"
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "README.md",
    "sha256": "26a9d7432f55ff8dcc31fd2cc84ce5045bcbb5cafdc27f4145034db4a07f8256",
-   "origin": "written or updated for release 0.3.0"
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "ROADMAP.md",
    "sha256": "c9b985e43a21095c15d26216ca6b7a145773eb2d334c28dbe98e3cfb389cf7c8",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "THIRD_PARTY_NOTICES.md",
    "sha256": "5e901d315b89e3cdfe86d6927fd45648a34497ebfbdac660a5802e0b9482ac80",
-   "origin": "written or updated for release 0.3.0"
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "cases/aircraft/m600_makani_rigid_body.json",
@@ -195,107 +196,107 @@
   {
    "path": "docs/architecture.md",
    "sha256": "acc17fa926e7e0af4efd692254e0d7fef0d634368ab598f50dfb1163937fe6b1",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/comparison-report.md",
    "sha256": "b7693372e5c7cb12594ddb76bb011a57b5d57f405bd2242d319900c0367d70b1",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/design-basis.md",
    "sha256": "a03a2e98dca827d1e0c4bc279230121acb68af1774d242bfb844835fd61940e8",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/evidence-policy.md",
    "sha256": "ed08bd30ccaaf7ef11864c89ba43137729cf0264f2ccb271ca8b6445fba4180d",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig1_V3_methods_vs_public.pdf",
    "sha256": "0e949fc55e011d0637b9b0a5d66e661bdc564c36ef4fb365f6bb17a51b4ee7f5",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig1_V3_methods_vs_public.svg",
    "sha256": "d3ffc6909f23cf2d6424df64b93e4ba0920eb2d607f6191a4088605578c2679b",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig1_V3_methods_vs_public_600dpi.png",
    "sha256": "50e17d9cdb0a792146f15ffc498b23aa45a840457fb6679fbd1d8e98411fd1b0",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig2_M600_methods_vs_public_VSM.pdf",
    "sha256": "935099c832d8e401fcd91bb124ed0d96dab5b0a5b28c16b9014efe8e7ae4ab08",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig2_M600_methods_vs_public_VSM.svg",
    "sha256": "abbab5ea36016b1616a77ca76633fc11fa2470f96084e2f6accc6bf62246178a",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig2_M600_methods_vs_public_VSM_600dpi.png",
    "sha256": "f20cbb4bdca9fef5bdd565ae21b7ac7d172f59104c7b665962f83ed44d4b9130",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig3_M600_fuselage_effect.pdf",
    "sha256": "6a8cbacdb0e51ed6002b6b7d154baffb7c2bbb05acac03171e76ab136377d2d4",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig3_M600_fuselage_effect.svg",
    "sha256": "74624027cb1ebe543a3a7946256fb5bbafb961731fd202ff29d763843602ef78",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/Fig3_M600_fuselage_effect_600dpi.png",
    "sha256": "a89a6b275a4e132438bc94153d93c272eb967251b221a1422bd50f59013aea6f",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/figures/openfawe-hero.png",
    "sha256": "a51780d894dc71ea94d551442248ddaf3616636cf06b6b86b3f83963ef0355dd",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "docs/media/make_banner.py",
    "sha256": "84bb3d8c1c830edc758c1792bbf85f81bb282d6a9566c74243789baaddbcd8c9",
-   "origin": "written or updated for release 0.3.0"
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "docs/media/social-preview.png",
    "sha256": "89b050f1daba4ca7c0d2e485536be8991cddc901bd0d96d655590fb3c562dbba",
-   "origin": "written or updated for release 0.3.0"
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "docs/media/two-kites-wake-loop.gif",
    "sha256": "dd024fd80ed41a3f0bb89079872621319824805adc147458421b0e26473682e5",
-   "origin": "written or updated for release 0.3.0"
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "docs/media/two-kites-wake.png",
    "sha256": "57c85b5c38399184432c4fae2802d36d23c2789eb59967cc8364d34cc07ba7fa",
-   "origin": "written or updated for release 0.3.0"
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "pyproject.toml",
-   "sha256": "eedadc537cf3f26247ccab145e800be936df46245874474ed0f01fb37b58e531",
-   "origin": "written or updated for release 0.3.0"
+   "sha256": "33900c885d837bf108f0979353b81a1b86f98785dc48e571d9f8cb1ba41e6cd5",
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "requirements-paper1.txt",
    "sha256": "9e6e4b9d54ffefe480e5255081a7c70f573e34f39954a7a3c3aabafe6f75be03",
-   "origin": "written or updated for release 0.3.0"
+   "origin": "written or updated for release 0.2.0 of 2026-11-05"
   },
   {
    "path": "src/openfawe/__init__.py",
    "sha256": "da74ab113e1f8d325f737e2e2ce4e9d44dc793943bff43191462daed5e7396a8",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "src/openfawe/aero/__init__.py",
@@ -545,7 +546,7 @@
   {
    "path": "tests/conftest.py",
    "sha256": "9f2bfbcc1e795474f4388bbbc0b3ff86f9320afd658bcd0dec51ebb7a949e968",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "tests/fixtures/lifting_surface_reference.json",
@@ -560,7 +561,7 @@
   {
    "path": "tests/fixtures/makani-original-cfm.json",
    "sha256": "3c600000a50088b916c1d2a867fb2c5f88a8f4847ef084cc51b387a61451d4ec",
-   "origin": "release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
+   "origin": "first version of release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
   },
   {
    "path": "tests/fixtures/olaf_ellipse.json",
@@ -575,12 +576,12 @@
   {
    "path": "tests/fixtures/upstream-kernel-check.json",
    "sha256": "a292e52f9ce3af22cd67190e10f9e1dde09804bf85d40a34213c7567c1288193",
-   "origin": "release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
+   "origin": "first version of release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
   },
   {
    "path": "tests/fixtures/v3-integral-case-audit.json",
    "sha256": "d597bc8457d7960f4680dac66a6d7258e48da3f5c25105efb2debb1952a5f6fe",
-   "origin": "release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
+   "origin": "first version of release 0.2.0; absolute paths of the computer that wrote the record replaced by <workspace> (provenance text only)"
   },
   {
    "path": "tests/fixtures/v3_reference.json",
@@ -645,7 +646,7 @@
   {
    "path": "tests/test_camber.py",
    "sha256": "6050b07ff51ce6183aec93fbe69282ea9a07aa79d07a744d18bebdc04bd31170",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "tests/test_cambered_polar_loads.py",
@@ -755,7 +756,7 @@
   {
    "path": "tests/test_makani_hover_strip.py",
    "sha256": "5aae9ba75acf51925308a1b00f2f2ff448bd5d0bd73814ed06978accfb40ed8c",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "tests/test_multi_prescribed.py",
@@ -825,7 +826,7 @@
   {
    "path": "tests/test_vortex.py",
    "sha256": "8746fe8bc73691a1a7bfd0c6971320e7ce206fcbdb578c223720d7c0d7d77424",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "tests/test_vortex_batch.py",
@@ -860,7 +861,7 @@
   {
    "path": "tests/test_vsm_full_incidence.py",
    "sha256": "e877d7067e6706a7227b4400eeb34e8deb1db8c762161c7e8723b86b9e795301",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "tests/test_vsm_jacobian.py",
@@ -895,7 +896,7 @@
   {
    "path": "tests/test_wake_guard_integration.py",
    "sha256": "cd181b3328a23902720b418b7f7c165dbd6df6c3dca94bd5c3d9eac017340ece",
-   "origin": "release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c), unchanged"
+   "origin": "first version of release 0.2.0 (assembled 2026-10-10 from the development repository at e58677c, withdrawn the same day), unchanged"
   },
   {
    "path": "tests/test_wake_junction.py",
@@ -929,8 +930,8 @@
   },
   {
    "path": "third_party/MAKANI-NOTICE.md",
-   "sha256": "3e4e1ba49983b3bcc6517f309f2b8392c516f51192110827a721c21a90c7569f",
-   "origin": "development repository at 901d096e, with the files added in release 0.3.0 appended"
+   "sha256": "ff3c0f4b1313a313aac164512d0ab9e1d602e350a080153806993070077debb9",
+   "origin": "development repository at 901d096e, with the files added in this release appended"
   },
   {
    "path": "third_party/OPENFAST-NOTICE.md",

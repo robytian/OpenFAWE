@@ -44,7 +44,7 @@ thrust-coefficient tables and a whole-kite aerodynamic table module are not impl
 2026-10-03; this notice previously said both were kept as modules); the ASWING baseline table is
 stored as reference data only.
 
-Added in release 0.3.0 (crosswind flight of paper 1, source anchors in each file):
+Added in release 0.2.0 of 2026-11-05 (crosswind flight of paper 1, source anchors in each file):
 
 - src/openfawe/flight/crosswind_loop.py: the playbook construction and the nominal-loop law of the Makani
   flight controller (config/m600/control/crosswind_playbook_utils.py, control/crosswind/*.c,

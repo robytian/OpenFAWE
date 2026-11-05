@@ -19,7 +19,7 @@ in [`../cases`](../cases). Everything here is released under the Apache License 
 
 The verification part was computed with the development repository at commit
 `e58677c06f092141cea79ed6fc545fd4c3fd3869`; [`MANIFEST.json`](MANIFEST.json) lists the files of that
-part with their origin and SHA-256 as first assembled (release 0.2.0). The crosswind part and the
+part with their origin and SHA-256 as first assembled on 2026-10-10. The crosswind part and the
 source code of this release are described in [`crosswind/README.md`](crosswind/README.md) and
 [`crosswind/MANIFEST.json`](crosswind/MANIFEST.json); the source code is the development repository at
 commit `901d096ec28258a802f2ffe48b187bbe728dc3ef`, and the tests of [`../tests`](../tests) pass with it.
