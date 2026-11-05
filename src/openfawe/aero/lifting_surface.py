@@ -390,6 +390,9 @@ class VlmWakeState(_LatticeState):
 
 def validate_lifting_surface_wake(settings, config, transient):
     """Reject unsupported combinations instead of silently changing physics."""
+    if (getattr(config, 'free_convection_rows', None) is not None
+            or getattr(config, 'retained_rows', None) is not None):
+        raise ValueError('the far-wake limits are not implemented for the lifting-surface methods')
     if getattr(config, 'wake_core_chord_fraction', None) is not None:
         if not transient or settings.wake_basis != 'constant':
             raise ValueError('local material birth cores require a constant-basis released wake')

@@ -333,7 +333,7 @@ class CamberTests(unittest.TestCase):
         for a,b in zip(integral.polar.polars,new.polar.polars):
             for key in ('alpha_deg','cl','cd','cm'):
                 np.testing.assert_array_equal(getattr(a,key),getattr(b,key))
-        audit=json.loads((root/'docs/tasks/OF-0006-latticegap20260923/evidence/v3-integral-case-audit.json').read_text(encoding='utf-8'))
+        audit=json.loads((root/'tests/fixtures/v3-integral-case-audit.json').read_text(encoding='utf-8'))
         self.assertEqual(len(audit['original_failures']),9)
         self.assertTrue(all(row['passed'] for row in audit['profiles']))
         self.assertLessEqual(max(abs(row['revised_delta_alpha0_rad']) for row in audit['profiles']),.001)

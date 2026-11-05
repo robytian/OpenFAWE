@@ -1,0 +1,75 @@
+{
+ "source": "/tmp/wf_c1a/c1a_meridional.npz (wake_figures.py meridional, display core 3.0 m, grid 2.00 m)",
+ "window": "|x - x_crossing| < 0.08 D, half plane of the crossing",
+ "crossings": [
+  {
+   "half": "bottom",
+   "x_D": 0.44186602870813385,
+   "separation_m": 20.992247969133224,
+   "deficit_max": 0.40943917075046443,
+   "area_deficit_above_0p1_m2": 545.998863044198,
+   "area_deficit_above_0p3_m2": 80.29395044767618
+  },
+  {
+   "half": "bottom",
+   "x_D": 0.9758373205741626,
+   "separation_m": 21.30623918944686,
+   "deficit_max": 0.3716056218889676,
+   "area_deficit_above_0p1_m2": 642.3516035814094,
+   "area_deficit_above_0p3_m2": 80.29395044767618
+  },
+  {
+   "half": "bottom",
+   "x_D": 1.5543062200956939,
+   "separation_m": 11.798367167595517,
+   "deficit_max": 0.6125493221942275,
+   "area_deficit_above_0p1_m2": 690.5279738500152,
+   "area_deficit_above_0p3_m2": 180.6613885072714
+  },
+  {
+   "half": "bottom",
+   "x_D": 2.147607655502392,
+   "separation_m": 4.032599146318893,
+   "deficit_max": 0.8316482725590342,
+   "area_deficit_above_0p1_m2": 714.6161589843181,
+   "area_deficit_above_0p3_m2": 188.69078355203902
+  },
+  {
+   "half": "top",
+   "x_D": 0.15263157894736823,
+   "separation_m": 21.365996811390467,
+   "deficit_max": 0.24492456217405112,
+   "area_deficit_above_0p1_m2": 317.1611042683209,
+   "area_deficit_above_0p3_m2": 0.0
+  },
+  {
+   "half": "top",
+   "x_D": 0.7385167464114831,
+   "separation_m": 18.63063210149803,
+   "deficit_max": 0.22537635641451836,
+   "area_deficit_above_0p1_m2": 277.01412904448284,
+   "area_deficit_above_0p3_m2": 0.0
+  },
+  {
+   "half": "top",
+   "x_D": 1.3985645933014352,
+   "separation_m": 7.931539712130128,
+   "deficit_max": 0.2537179192301937,
+   "area_deficit_above_0p1_m2": 341.24928940262373,
+   "area_deficit_above_0p3_m2": 0.0
+  },
+  {
+   "half": "top",
+   "x_D": 1.9399521531100474,
+   "separation_m": 1.1066443853878756,
+   "deficit_max": 0.17978517848292241,
+   "area_deficit_above_0p1_m2": 132.48501823866567,
+   "area_deficit_above_0p3_m2": 0.0
+  }
+ ],
+ "interior": {
+  "region": "|z| < 0.25 D, 0.1 < x < 1.5 D",
+  "deficit_mean": -0.001681715432808092,
+  "deficit_max": 0.04771367917603464
+ }
+}

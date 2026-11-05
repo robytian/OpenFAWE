@@ -121,6 +121,9 @@ class AeroBackend:
         if (self.method in (AeroMethod.LL_STRAIGHT, AeroMethod.VSM, AeroMethod.VLM)
                 and self.wake.wake_core_chord_fraction is not None):
             raise ValueError('local material birth cores require a released wake')
+        if ((self.wake.free_convection_rows is not None or self.wake.retained_rows is not None)
+                and self.method not in (AeroMethod.FREE_WAKE, AeroMethod.VSM_FREE_WAKE)):
+            raise ValueError('the far-wake limits apply to free_wake and vsm_free_wake only')
         if self.method == AeroMethod.VLM and self.wake.core_evolution != 'constant':
             raise ValueError('released material core evolution does not apply to straight VLM')
         if self.method == AeroMethod.VLM and (self.lifting_surface.wake_release != 'previous'
@@ -225,6 +228,14 @@ class AeroBackend:
                 wake_history=True,
                 contract=('docs/tasks/OF-0006-07/vsm-fvw.md' if vsm
                           else 'docs/design/of-0006-wing-wake-contract.md'))
+            if self.wake.free_convection_rows is not None:
+                common.update(far_wake='opt-in, outside the contract named here: rows older than free_convection_rows are '
+                                       'convected with the local ambient velocity only; they keep their circulation '
+                                       '(docs/tasks/OF-0006-accel20261001/README.zh.md)')
+            if self.wake.retained_rows is not None:
+                common.update(far_wake_truncation='opt-in, outside the contract named here: only the newest retained_rows '
+                                                  'released rows are kept; older rings are removed whole after each step; rotor rings are not truncated '
+                                                  '(docs/tasks/OF-0006-accel20261001/README.zh.md)')
             if vsm:
                 common.update(core_policy='WakeConfig material finite-filament cores',
                     self_correction='inviscid infinite-bound sectional correction',

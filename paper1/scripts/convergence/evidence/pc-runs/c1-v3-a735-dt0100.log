@@ -1,0 +1,10 @@
+  V3 vsm_free_wake step 0 CL=0.299605 t=0.7s
+  V3 vsm_free_wake step 20 CL=0.675054 t=2.4s
+  V3 vsm_free_wake step 40 CL=0.705775 t=4.9s
+  V3 vsm_free_wake step 60 CL=0.713047 t=7.3s
+  V3 vsm_free_wake step 80 CL=0.715578 t=9.6s
+  V3 vsm_free_wake step 100 CL=0.716687 t=12.4s
+  V3 vsm_free_wake step 120 CL=0.717259 t=15.6s
+  V3 vsm_free_wake step 140 CL=0.717598 t=19.1s
+  V3 vsm_free_wake step 160 CL=0.717813 t=23.2s
+{"out": "c1-v3-a735-dt0100", "status": "complete", "error": null, "frames": 161, "elapsed_s": 23.2}

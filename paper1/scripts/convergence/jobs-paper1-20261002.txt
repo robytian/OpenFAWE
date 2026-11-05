@@ -1,0 +1,22 @@
+# Paper 1 (claude/paper1-plan.zh.md §5 items 4 and 10a): states for the wake-plane figures and the LL + free-wake ladders.
+# run_jobs.bat format: NAME MODEL STEPS options...  (tree theta 0.2 = V2 default). dt: V3 0.2 s, M600 0.02 s (archived).
+# Figure 14(b): M600 planes vs wake length -> states at 10/20/40/80/160 chords (32/64/128/257/513 steps)
+p1-m600-planes-wakelength M600 513 --backend tree --theta 0.2 --order 2 --leaf 32 --save 32,64,128,257,513
+# Figure 14(c): M600 planes vs core at 80 chords (core 0.15 comes from the run above, state 0257)
+p1-m600-planes-core0075 M600 257 --backend tree --theta 0.2 --order 2 --leaf 32 --core 0.075 --save 257
+p1-m600-planes-core0300 M600 257 --backend tree --theta 0.2 --order 2 --leaf 32 --core 0.300 --save 257
+# Figure 14(a): V3 planes vs wake length -> states at 10/20/40/80 chords (45/90/180/360 steps)
+p1-v3-planes-wakelength V3 360 --backend tree --theta 0.2 --order 2 --leaf 32 --save 45,90,180,360
+p1-v3-planes-core0075 V3 180 --backend tree --theta 0.2 --order 2 --leaf 32 --core 0.075 --save 180
+p1-v3-planes-core0300 V3 180 --backend tree --theta 0.2 --order 2 --leaf 32 --core 0.300 --save 180
+# LL + free wake reference ladders (decision 0016): time step (fixed T) and wake length
+ll-c1-v3-dt0400 V3 40 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.4
+ll-c1-v3-dt0200 V3 80 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2
+ll-c1-v3-dt0100 V3 160 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.1
+ll-c1-v3-dt0050 V3 320 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.05
+ll-c1-m600-dt0040 M600 40 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.04
+ll-c1-m600-dt0020 M600 80 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.02
+ll-c1-m600-dt0010 M600 160 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.01
+ll-c1-m600-dt0005 M600 320 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.005
+ll-c2-v3-long400 V3 400 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --save 400
+ll-c2-m600-long400 M600 400 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32 --save 400

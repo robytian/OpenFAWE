@@ -1,0 +1,54 @@
+{
+ "note": "V3 second angle 7.3503 deg (paper 1, plan section 5 item 5); run directories under local/accel-20261001/runs on the owner's PC (jobs-paper1-b-20261002.txt). Coarse -> fine order. Tree theta 0.2 / order 2 / leaf 32. Core 0.05 m span ladder from jobs-paper1-c-20261002.txt.",
+ "ladders": [
+  {
+   "id": "C1-V3-a735-dt",
+   "model": "V3",
+   "kind": "levels",
+   "ratio": 2,
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/c1-v3-a735-dt0400",
+    "local/accel-20261001/runs/c1-v3-a735-dt0200",
+    "local/accel-20261001/runs/c1-v3-a735-dt0100",
+    "local/accel-20261001/runs/c1-v3-a735-dt0050"
+   ]
+  },
+  {
+   "id": "C2-V3-a735-wake",
+   "model": "V3",
+   "kind": "time",
+   "wake_chords": [
+    10,
+    20,
+    40,
+    80
+   ],
+   "runs": [
+    "local/accel-20261001/runs/c2-v3-a735-long360"
+   ]
+  },
+  {
+   "id": "C3s-V3-a735-span-core0075",
+   "model": "V3",
+   "kind": "levels",
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/c3s-v3-a735-refine1-core0075",
+    "local/accel-20261001/runs/c3s-v3-a735-refine2-core0075",
+    "local/accel-20261001/runs/c3s-v3-a735-refine3-core0075"
+   ]
+  },
+  {
+   "id": "C3s-V3-a735-span-core005",
+   "model": "V3",
+   "kind": "levels",
+   "time_s": 16.0,
+   "runs": [
+    "local/accel-20261001/runs/c3s-v3-a735-refine1-core005",
+    "local/accel-20261001/runs/c3s-v3-a735-refine2-core005",
+    "local/accel-20261001/runs/c3s-v3-a735-refine3-core005"
+   ]
+  }
+ ]
+}

@@ -99,8 +99,7 @@ check is a human one.
 - [Semantic versioning](https://semver.org/) applies from the first code release.
 - Each tagged release carries locked environment specifications and container recipes
   (Docker / Apptainer) so archived results remain executable.
-- Each release is archived on Zenodo under the concept DOI
-  [10.5281/zenodo.21656345](https://doi.org/10.5281/zenodo.21656345) and exposed through OpenAIRE.
+- Each release is archived on Zenodo; the DOI of the archive is given in `CITATION.cff` and the README.
 - Release notes state what changed, what was deprecated, and what evidence class each new or changed
   result falls into.
 

@@ -1,0 +1,4 @@
+# C3s supplement: M600 refine 3 with core 0.075 m (0.15/n = 0.05 m fails at step 15 when the start vortex passes the tail:
+# 'VSM load total requires forward chordwise flow'); the 25-step probe with 0.075 m completed.
+c3s-m600-refine3-core0075 M600 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.02 --refine 3 --core 0.075
+c3s-v3-refine3-core0075 V3 80 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 3 --core 0.075

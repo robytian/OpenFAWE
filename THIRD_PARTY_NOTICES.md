@@ -13,7 +13,7 @@ links below.
 | Vortex-Step-Method, © 2022–2024 Oriol Cayon, Jelle Poland, TU Delft ([repository](https://github.com/awegroup/Vortex-Step-Method)) | Vortex step method algorithm, ported to OpenFAWE with attribution | MIT |
 | OpenFAST / OLAF, National Renewable Energy Laboratory and contributors ([repository](https://github.com/OpenFAST/openfast)) | Free-vortex-wake algorithm, ported to OpenFAWE with attribution; modified | Apache-2.0 |
 | TU Delft V3 kite data, © 2024 Airborne Wind Energy Research Group ([repository](https://github.com/awegroup/TUDELFT_V3_KITE)) | V3 geometry and reference data | MIT |
-| Makani, Makani Technologies LLC ([repository](https://github.com/google/makani)) | Public M600 data used to reconstruct the M600 wing and tail; modified | Apache-2.0 |
+| Makani, Makani Technologies LLC ([repository](https://github.com/google/makani)) | Public M600 data used to reconstruct the M600 wing and tail, rotor positions and Rev4 tables, crosswind playbook, rigid body and GS02 ground station; lumped-mass tether, rotor-table conventions and nominal crosswind loop transcribed from the simulator and flight controller; modified | Apache-2.0 |
 
 ## Software bundled in the Windows program
 

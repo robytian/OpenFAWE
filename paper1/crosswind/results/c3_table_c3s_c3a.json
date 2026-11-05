@@ -1,0 +1,234 @@
+[
+ {
+  "run": "c3s-m600-single-frozen1-5laps",
+  "kind": "single",
+  "spacing_D": null,
+  "offset_D": null,
+  "rotors": false,
+  "status": "complete",
+  "laps": 5,
+  "frames": 4681,
+  "backend": "cuda_tree",
+  "elapsed_h": 3.77,
+  "K3": {
+   "A": 1.987559571868472e-07
+  },
+  "K7": {
+   "A": "passed"
+  },
+  "K7_last": {
+   "A": {
+    "lap": 5,
+    "against": 4,
+    "force_max_relative": 0.00022240889053150553,
+    "force_mean_relative": 9.019172901444518e-05,
+    "moment_max_relative": 0.00025455872532031336,
+    "moment_mean_relative": 0.0001029745299050898
+   }
+  },
+  "units": {
+   "A": {
+    "lap": 5,
+    "CZ": 2.32699952065728,
+    "CX": -0.06766987427444879,
+    "Cm": -0.22689124586297724,
+    "lift_kN": 103.62651629144273,
+    "aero_power_kW": 574.1455096266735,
+    "tension_kN": 98.62675519116436,
+    "shaft_power_kW": null,
+    "thrust_kN": null,
+    "rotor_power_on_body_kW": null,
+    "ring_core": null
+   }
+  },
+  "planes": [
+   {
+    "station_D": 0.5,
+    "deficit_max": 0.29380568457919964,
+    "deficit_mean_positive": 0.010312452874745758,
+    "momentum_deficit_m2_s": 4821.980796305438
+   },
+   {
+    "station_D": 1.0,
+    "deficit_max": 0.6942358007538318,
+    "deficit_mean_positive": 0.023464656880607625,
+    "momentum_deficit_m2_s": 2252.5648969944073
+   },
+   {
+    "station_D": 1.5,
+    "deficit_max": 0.3551068908754039,
+    "deficit_mean_positive": 0.02259136114153637,
+    "momentum_deficit_m2_s": 3284.452771546712
+   },
+   {
+    "station_D": 2.0,
+    "deficit_max": 0.5469529200173335,
+    "deficit_mean_positive": 0.015512136326687322,
+    "momentum_deficit_m2_s": 5702.186683240078
+   },
+   {
+    "station_D": 2.5,
+    "deficit_max": 0.19216848246552432,
+    "deficit_mean_positive": 0.007290698565123327,
+    "momentum_deficit_m2_s": 4641.485337606018
+   },
+   {
+    "station_D": 3.0,
+    "deficit_max": 0.18760918838726848,
+    "deficit_mean_positive": 0.004113362020204201,
+    "momentum_deficit_m2_s": 3722.1059259342755
+   }
+  ],
+  "ring_nodes": 0
+ },
+ {
+  "run": "c3a-m600-pair-d1-5laps",
+  "kind": "pair",
+  "spacing_D": 1.0,
+  "offset_D": 0.0,
+  "rotors": false,
+  "status": "complete",
+  "laps": 5,
+  "frames": 4681,
+  "backend": "cuda_tree",
+  "elapsed_h": 7.51,
+  "K3": {
+   "A": 1.987559571868472e-07,
+   "B": 1.987559571868472e-07
+  },
+  "K7": {
+   "A": "passed",
+   "B": "passed"
+  },
+  "K7_last": {
+   "A": {
+    "lap": 5,
+    "against": 4,
+    "force_max_relative": 0.0003183154656357681,
+    "force_mean_relative": 0.00010419308118841342,
+    "moment_max_relative": 0.0004301335210227446,
+    "moment_mean_relative": 0.00015582497548360068
+   },
+   "B": {
+    "lap": 5,
+    "against": 4,
+    "force_max_relative": 0.003977447759585634,
+    "force_mean_relative": 0.0009668655340422404,
+    "moment_max_relative": 0.006198465342673111,
+    "moment_mean_relative": 0.0019472020190872815
+   }
+  },
+  "units": {
+   "A": {
+    "lap": 5,
+    "CZ": 2.326391128257574,
+    "CX": -0.06746679704300561,
+    "Cm": -0.22670178926928672,
+    "lift_kN": 103.5965716280525,
+    "aero_power_kW": 573.5176139612444,
+    "tension_kN": 98.62675519116436,
+    "shaft_power_kW": null,
+    "thrust_kN": null,
+    "rotor_power_on_body_kW": null,
+    "ring_core": null
+   },
+   "B": {
+    "lap": 5,
+    "CZ": 2.3147511232317037,
+    "CX": -0.06278416247035262,
+    "Cm": -0.22213919258815557,
+    "lift_kN": 103.06705770910786,
+    "aero_power_kW": 561.1722968055774,
+    "tension_kN": 98.62675519116885,
+    "shaft_power_kW": null,
+    "thrust_kN": null,
+    "rotor_power_on_body_kW": null,
+    "ring_core": null
+   }
+  },
+  "b_over_a": [
+   {
+    "lap": 1,
+    "lift_ratio_b_over_a": 1.0000880099431722,
+    "power_ratio_b_over_a": 1.0003995112217698,
+    "force_body_ratio_b_over_a": [
+     1.0011978170139493,
+     1.0008663734835033,
+     1.0000880099431715
+    ],
+    "tension_ratio_b_over_a": 1.0000000000000306
+   },
+   {
+    "lap": 2,
+    "lift_ratio_b_over_a": 0.9988273346133487,
+    "power_ratio_b_over_a": 0.9946144070012036,
+    "force_body_ratio_b_over_a": [
+     0.9814971432682414,
+     1.0018183875699405,
+     0.9988273346133477
+    ],
+    "tension_ratio_b_over_a": 0.9999999999999923
+   },
+   {
+    "lap": 3,
+    "lift_ratio_b_over_a": 0.9954256451316298,
+    "power_ratio_b_over_a": 0.9807541665827288,
+    "force_body_ratio_b_over_a": [
+     0.9402736349552937,
+     0.9967448502623004,
+     0.9954256451316306
+    ],
+    "tension_ratio_b_over_a": 1.000000000000019
+   },
+   {
+    "lap": 4,
+    "lift_ratio_b_over_a": 0.9950599490188227,
+    "power_ratio_b_over_a": 0.9791217076482757,
+    "force_body_ratio_b_over_a": [
+     0.9354930104755748,
+     0.9957958213180785,
+     0.9950599490188224
+    ],
+    "tension_ratio_b_over_a": 1.000000000000118
+   },
+   {
+    "lap": 5,
+    "lift_ratio_b_over_a": 0.9948886926408551,
+    "power_ratio_b_over_a": 0.9784743888328054,
+    "force_body_ratio_b_over_a": [
+     0.9337268361704408,
+     0.9956943244568094,
+     0.9948886926408569
+    ],
+    "tension_ratio_b_over_a": 1.0000000000000455
+   }
+  ],
+  "planes": [
+   {
+    "station_D": 0.5,
+    "deficit_max": 0.2718500462595296,
+    "deficit_mean_positive": 0.006261355136212405,
+    "momentum_deficit_m2_s": 6675.583609255682
+   },
+   {
+    "station_D": 1.5,
+    "deficit_max": 1.2892391081521988,
+    "deficit_mean_positive": 0.04638582799369052,
+    "momentum_deficit_m2_s": 8063.242362879215
+   },
+   {
+    "station_D": 2.5,
+    "deficit_max": 1.1258676504472502,
+    "deficit_mean_positive": 0.03704084913286483,
+    "momentum_deficit_m2_s": 9205.770320989708
+   },
+   {
+    "station_D": 3.5,
+    "deficit_max": 1.5000689511543581,
+    "deficit_mean_positive": 0.005627420672872701,
+    "momentum_deficit_m2_s": 6227.697509633524
+   }
+  ],
+  "ring_nodes": 0
+ }
+]

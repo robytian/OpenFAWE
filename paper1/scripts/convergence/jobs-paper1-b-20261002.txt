@@ -1,0 +1,31 @@
+# Paper 1, second batch (inputs from the paper session, handoff board 2026-10-02 02:10).
+# run_jobs format: NAME MODEL STEPS options...  Tree theta 0.2 / order 2 / leaf 32 (V2 default), core 0.15 m unless stated.
+# Chords per step: V3 0.2 s * 2.851 m/s / 2.5675 m = 0.2221; M600 0.02 s * 20 m/s / 1.2831 m = 0.3117.
+#
+# (A) Eight-combination figure (figures 4/5): free-wake halves of VSM and LL at converged wake length.
+#     V3 public angles (wind-tunnel corrected) to 40 chords (180 steps); M600 alpha -4/0/4 deg to 103 chords (330 steps).
+#     The lifting-surface halves (LSi, LSp) run in the paperfig pipeline, not here.
+p1b-v3-a308-vsm V3 180 --alpha 3.0810784665 --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-v3-a541-vsm V3 180 --alpha 5.4128464203 --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-v3-a308-ll V3 180 --alpha 3.0810784665 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-v3-a541-ll V3 180 --alpha 5.4128464203 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-v3-a735-ll V3 180 --alpha 7.3503244580 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-m600-am4-vsm M600 330 --alpha -4 --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-m600-a0-vsm M600 330 --alpha 0 --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-m600-a4-vsm M600 330 --alpha 4 --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-m600-am4-ll M600 330 --alpha -4 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-m600-a0-ll M600 330 --alpha 0 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32
+p1b-m600-a4-ll M600 330 --alpha 4 --method free_wake --backend tree --theta 0.2 --order 2 --leaf 32
+#
+# (B) V3 second angle 7.3503 deg: the same ladders as at 5.41 deg.
+#     C2 wake length (states at 10/20/40/80 chords; step 180 is also the VSM free-wake value of (A) at this angle)
+c2-v3-a735-long360 V3 360 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --save 45,90,180,360
+#     C3s spanwise refinement with the fixed 0.075 m core
+c3s-v3-a735-refine1-core0075 V3 80 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 1 --core 0.075
+c3s-v3-a735-refine2-core0075 V3 80 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 2 --core 0.075
+c3s-v3-a735-refine3-core0075 V3 80 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2 --refine 3 --core 0.075
+#     C1 time step at fixed T = 16 s
+c1-v3-a735-dt0400 V3 40 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.4
+c1-v3-a735-dt0200 V3 80 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.2
+c1-v3-a735-dt0100 V3 160 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.1
+c1-v3-a735-dt0050 V3 320 --alpha 7.3503244580 --backend tree --theta 0.2 --order 2 --leaf 32 --dt 0.05

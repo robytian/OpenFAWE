@@ -1,0 +1,878 @@
+{
+ "script": "loop_angle_readback.py",
+ "angle": "controller's loop angle of every step (c3_figures.loop_angle_deg)",
+ "singles": [
+  {
+   "run": "p1a-m600-single-rotors-adp-dt010-4laps",
+   "reference": "p1n-m600-single-dt010-4laps",
+   "laps": 4,
+   "dt_s": 0.009998763768303066,
+   "mean_dCZ": 0.04516181760449204,
+   "mean_dCm": 0.0253990980134757,
+   "lift_change_percent": {
+    "min": 1.8240313748568937,
+    "min_angle_deg": 338.5,
+    "max": 2.1652340587909658,
+    "max_angle_deg": 200.5,
+    "mean_of_lap_lift": 1.939431565593197
+   },
+   "dCm": {
+    "min": 0.001507404221322145,
+    "min_angle_deg": 240.4,
+    "max": 0.04371693250502068,
+    "max_angle_deg": 64.2
+   },
+   "dP_kW": 12.893074252136753,
+   "shaft_kW": {
+    "mean": 526.6834086538461,
+    "min": {
+     "value": 334.26,
+     "angle_deg": 268.8
+    },
+    "max": {
+     "value": 828.982,
+     "angle_deg": 107.6
+    }
+   },
+   "thrust_kN": {
+    "mean": -13.770449198717948,
+    "smallest_magnitude": {
+     "value": -10.041799999999999,
+     "angle_deg": 269.3
+    },
+    "largest_magnitude": {
+     "value": -18.803099999999997,
+     "angle_deg": 107.8
+    }
+   }
+  },
+  {
+   "run": "mbl5-m600-single-rotors-modelb-rb064-sc010-dt005-3laps",
+   "reference": "mbn-m600-single-dt005-3laps",
+   "laps": 3,
+   "dt_s": 0.004999381884151533,
+   "mean_dCZ": -0.07819251834179511,
+   "mean_dCm": -0.0046622863693306996,
+   "lift_change_percent": {
+    "min": -4.4193879744869875,
+    "min_angle_deg": 43.6,
+    "max": -1.8516070744798885,
+    "max_angle_deg": 236.9,
+    "mean_of_lap_lift": -3.492028359045274
+   },
+   "dCm": {
+    "min": -0.026845416075945677,
+    "min_angle_deg": 277.3,
+    "max": 0.013929114086194516,
+    "max_angle_deg": 64.4
+   },
+   "dP_kW": -11.492083066239317,
+   "shaft_kW": {
+    "mean": 529.7536343482906,
+    "min": {
+     "value": 335.316,
+     "angle_deg": 269.1
+    },
+    "max": {
+     "value": 833.897,
+     "angle_deg": 107.7
+    }
+   },
+   "thrust_kN": {
+    "mean": -13.846480235042735,
+    "smallest_magnitude": {
+     "value": -10.078,
+     "angle_deg": 269.5
+    },
+    "largest_magnitude": {
+     "value": -18.8707,
+     "angle_deg": 107.9
+    }
+   }
+  }
+ ],
+ "pairs": [
+  {
+   "run": "c3a-m600-pair-d1-5laps",
+   "laps": 5,
+   "steps_per_lap": 936,
+   "lift_ratio_change_percent": {
+    "min": -1.2857964323233828,
+    "min_angle_deg": 359.7,
+    "max": -0.00756011340169449,
+    "max_angle_deg": 262.5
+   },
+   "loss_above_1p2_percent": [
+    [
+     359.7,
+     353.8
+    ],
+    [
+     13.4,
+     0.0
+    ]
+   ],
+   "loss_above_0p5_percent": [
+    [
+     359.7,
+     316.3
+    ],
+    [
+     176.3,
+     122.6
+    ],
+    [
+     54.9,
+     0.0
+    ]
+   ],
+   "loss_below_0p05_percent": [
+    [
+     279.7,
+     242.7
+    ]
+   ],
+   "loss_peaks_above_0p3_percent": [
+    {
+     "angle_deg": 359.7,
+     "loss_percent": 1.2857964323233828
+    },
+    {
+     "angle_deg": 7.0,
+     "loss_percent": 1.2509068370228915
+    }
+   ],
+   "A": {
+    "K7a_force": {
+     "max": 9.320610120705768e-05,
+     "angle_deg": 3.6
+    },
+    "K7a_moment": {
+     "max": 0.00010157444454606989,
+     "angle_deg": 8.7
+    }
+   },
+   "B": {
+    "K7a_force": {
+     "max": 0.001346111073949118,
+     "angle_deg": 45.9
+    },
+    "K7a_moment": {
+     "max": 0.0037523397938336775,
+     "angle_deg": 13.1
+    }
+   }
+  },
+  {
+   "run": "p2a-m600-pair-d1-rotors-adp-5laps",
+   "laps": 5,
+   "steps_per_lap": 936,
+   "lift_ratio_change_percent": {
+    "min": -1.2524193788523985,
+    "min_angle_deg": 6.0,
+    "max": 0.01167279373899266,
+    "max_angle_deg": 261.5
+   },
+   "loss_above_1p2_percent": [
+    [
+     11.7,
+     0.0
+    ]
+   ],
+   "loss_above_0p5_percent": [
+    [
+     359.7,
+     314.1
+    ],
+    [
+     173.1,
+     123.1
+    ],
+    [
+     53.2,
+     0.0
+    ]
+   ],
+   "loss_below_0p05_percent": [
+    [
+     279.4,
+     235.9
+    ]
+   ],
+   "loss_peaks_above_0p3_percent": [
+    {
+     "angle_deg": 359.7,
+     "loss_percent": 1.162920926925437
+    },
+    {
+     "angle_deg": 6.0,
+     "loss_percent": 1.2524193788523985
+    }
+   ],
+   "A": {
+    "K7a_force": {
+     "max": 8.190859757494863e-05,
+     "angle_deg": 38.5
+    },
+    "K7a_moment": {
+     "max": 0.00011808728981639451,
+     "angle_deg": 41.2
+    }
+   },
+   "B": {
+    "K7a_force": {
+     "max": 0.001160277603482968,
+     "angle_deg": 354.5
+    },
+    "K7a_moment": {
+     "max": 0.0043136405821606345,
+     "angle_deg": 13.4
+    }
+   }
+  },
+  {
+   "run": "p2b-m600-pair-d1-rotors-adp-keep1872-4laps",
+   "laps": 4,
+   "steps_per_lap": 936,
+   "lift_ratio_change_percent": {
+    "min": -1.2453988335487942,
+    "min_angle_deg": 7.0,
+    "max": 0.010420822998224999,
+    "max_angle_deg": 263.5
+   },
+   "loss_above_1p2_percent": [
+    [
+     356.7,
+     350.0
+    ],
+    [
+     12.7,
+     0.7
+    ]
+   ],
+   "loss_above_0p5_percent": [
+    [
+     359.7,
+     317.9
+    ],
+    [
+     172.2,
+     124.1
+    ],
+    [
+     54.0,
+     0.0
+    ]
+   ],
+   "loss_below_0p05_percent": [
+    [
+     282.6,
+     237.7
+    ]
+   ],
+   "loss_peaks_above_0p3_percent": [
+    {
+     "angle_deg": 353.2,
+     "loss_percent": 1.2102154926691755
+    },
+    {
+     "angle_deg": 7.0,
+     "loss_percent": 1.2453988335487942
+    }
+   ],
+   "A": {
+    "K7a_force": {
+     "max": 0.0001618853400886311,
+     "angle_deg": 35.4
+    },
+    "K7a_moment": {
+     "max": 0.00019283770785146726,
+     "angle_deg": 240.9
+    }
+   },
+   "B": {
+    "K7a_force": {
+     "max": 0.001201749565940064,
+     "angle_deg": 54.0
+    },
+    "K7a_moment": {
+     "max": 0.008925266232572482,
+     "angle_deg": 359.7
+    }
+   }
+  },
+  {
+   "run": "c3b-m600-pair-d2-7laps",
+   "laps": 7,
+   "steps_per_lap": 936,
+   "lift_ratio_change_percent": {
+    "min": -1.2861739695867902,
+    "min_angle_deg": 0.0,
+    "max": -0.4685829120905205,
+    "max_angle_deg": 258.4
+   },
+   "loss_above_1p2_percent": [
+    [
+     359.7,
+     339.8
+    ],
+    [
+     14.1,
+     0.0
+    ]
+   ],
+   "loss_above_0p5_percent": [
+    [
+     359.7,
+     276.1
+    ],
+    [
+     246.6,
+     0.0
+    ]
+   ],
+   "loss_below_0p05_percent": [],
+   "loss_peaks_above_0p3_percent": [
+    {
+     "angle_deg": 0.0,
+     "loss_percent": 1.2861739695867902
+    }
+   ],
+   "A": {
+    "K7a_force": {
+     "max": 6.053406985894176e-05,
+     "angle_deg": 122.1
+    },
+    "K7a_moment": {
+     "max": 8.293426647288013e-05,
+     "angle_deg": 43.2
+    }
+   },
+   "B": {
+    "K7a_force": {
+     "max": 0.0009300084417348627,
+     "angle_deg": 186.1
+    },
+    "K7a_moment": {
+     "max": 0.007437571360234199,
+     "angle_deg": 354.1
+    }
+   }
+  },
+  {
+   "run": "p4-m600-pair-d2-rotors-adp-7laps",
+   "laps": 7,
+   "steps_per_lap": 936,
+   "lift_ratio_change_percent": {
+    "min": -1.2395702576977197,
+    "min_angle_deg": 0.0,
+    "max": -0.4175073576004107,
+    "max_angle_deg": 271.2
+   },
+   "loss_above_1p2_percent": [
+    [
+     5.0,
+     0.0
+    ]
+   ],
+   "loss_above_0p5_percent": [
+    [
+     359.7,
+     281.7
+    ],
+    [
+     250.5,
+     0.0
+    ]
+   ],
+   "loss_below_0p05_percent": [],
+   "loss_peaks_above_0p3_percent": [
+    {
+     "angle_deg": 0.0,
+     "loss_percent": 1.2395702576977197
+    }
+   ],
+   "A": {
+    "K7a_force": {
+     "max": 5.5538695493407145e-05,
+     "angle_deg": 352.2
+    },
+    "K7a_moment": {
+     "max": 0.00010695211241430833,
+     "angle_deg": 39.3
+    },
+    "K7_force": {
+     "max": 0.00020565209441029842,
+     "angle_deg": 352.8,
+     "total_norm_at_max": 25200.74444083212,
+     "aero_norm_at_max": 94157.29916455701,
+     "steps_above_1_percent_angles": []
+    },
+    "K7_moment": {
+     "max": 0.00023890550723177332,
+     "angle_deg": 132.0,
+     "total_norm_at_max": 13686.350206670622,
+     "aero_norm_at_max": 87080.4924904496,
+     "steps_above_1_percent_angles": []
+    }
+   },
+   "B": {
+    "K7a_force": {
+     "max": 0.0010397690036242297,
+     "angle_deg": 0.0
+    },
+    "K7a_moment": {
+     "max": 0.0035909958560479266,
+     "angle_deg": 339.2
+    },
+    "K7_force": {
+     "max": 0.0037265170735302226,
+     "angle_deg": 0.0,
+     "total_norm_at_max": 26656.073482481977,
+     "aero_norm_at_max": 96478.55907346276,
+     "steps_above_1_percent_angles": []
+    },
+    "K7_moment": {
+     "max": 0.006737650938798606,
+     "angle_deg": 312.2,
+     "total_norm_at_max": 10460.819842020224,
+     "aero_norm_at_max": 34688.71693691952,
+     "steps_above_1_percent_angles": []
+    }
+   }
+  },
+  {
+   "run": "c3c7-m600-pair-d1-off05-7laps",
+   "laps": 7,
+   "steps_per_lap": 936,
+   "lift_ratio_change_percent": {
+    "min": -1.9012372325095672,
+    "min_angle_deg": 106.3,
+    "max": 0.5042538165545674,
+    "max_angle_deg": 127.5
+   },
+   "loss_above_1p2_percent": [
+    [
+     112.2,
+     98.6
+    ]
+   ],
+   "loss_above_0p5_percent": [
+    [
+     115.7,
+     92.4
+    ]
+   ],
+   "loss_below_0p05_percent": [
+    [
+     359.7,
+     290.4
+    ],
+    [
+     234.8,
+     206.3
+    ],
+    [
+     184.7,
+     119.1
+    ],
+    [
+     80.2,
+     0.0
+    ]
+   ],
+   "loss_peaks_above_0p3_percent": [
+    {
+     "angle_deg": 253.6,
+     "loss_percent": 0.45735472426802204
+    },
+    {
+     "angle_deg": 106.3,
+     "loss_percent": 1.9012372325095672
+    }
+   ],
+   "A": {
+    "K7a_force": {
+     "max": 7.599188468659286e-05,
+     "angle_deg": 348.0
+    },
+    "K7a_moment": {
+     "max": 6.635719738143829e-05,
+     "angle_deg": 26.5
+    },
+    "K7_force": {
+     "max": 0.0002616455722526946,
+     "angle_deg": 348.4,
+     "total_norm_at_max": 25942.737026701965,
+     "aero_norm_at_max": 90481.33073073995,
+     "steps_above_1_percent_angles": []
+    },
+    "K7_moment": {
+     "max": 0.00026066133870352587,
+     "angle_deg": 120.6,
+     "total_norm_at_max": 15238.316204615016,
+     "aero_norm_at_max": 88913.78730066515,
+     "steps_above_1_percent_angles": []
+    }
+   },
+   "B": {
+    "K7a_force": {
+     "max": 0.0008380251796756788,
+     "angle_deg": 95.2
+    },
+    "K7a_moment": {
+     "max": 0.005013349378746899,
+     "angle_deg": 97.1
+    },
+    "K7_force": {
+     "max": 0.0020333724193927834,
+     "angle_deg": 94.7,
+     "total_norm_at_max": 63826.22903002178,
+     "aero_norm_at_max": 155358.3989027743,
+     "steps_above_1_percent_angles": []
+    },
+    "K7_moment": {
+     "max": 0.028150420077046323,
+     "angle_deg": 97.6,
+     "total_norm_at_max": 15146.269417372569,
+     "aero_norm_at_max": 85770.43606897102,
+     "steps_above_1_percent_angles": [
+      [
+       126.5,
+       114.7
+      ],
+      [
+       103.4,
+       90.5
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "run": "p5-m600-pair-d1-off05-rotors-adp-7laps",
+   "laps": 7,
+   "steps_per_lap": 936,
+   "lift_ratio_change_percent": {
+    "min": -2.0889093602559528,
+    "min_angle_deg": 106.3,
+    "max": 0.5519048787100189,
+    "max_angle_deg": 127.0
+   },
+   "loss_above_1p2_percent": [
+    [
+     112.7,
+     98.6
+    ]
+   ],
+   "loss_above_0p5_percent": [
+    [
+     115.7,
+     92.4
+    ]
+   ],
+   "loss_below_0p05_percent": [
+    [
+     359.7,
+     291.0
+    ],
+    [
+     235.9,
+     206.3
+    ],
+    [
+     185.2,
+     118.6
+    ],
+    [
+     80.7,
+     0.0
+    ]
+   ],
+   "loss_peaks_above_0p3_percent": [
+    {
+     "angle_deg": 254.3,
+     "loss_percent": 0.41729189389176913
+    },
+    {
+     "angle_deg": 106.3,
+     "loss_percent": 2.0889093602559528
+    }
+   ],
+   "A": {
+    "K7a_force": {
+     "max": 9.170098212249004e-05,
+     "angle_deg": 26.2
+    },
+    "K7a_moment": {
+     "max": 0.00013891821760298996,
+     "angle_deg": 26.2
+    },
+    "K7_force": {
+     "max": 0.0002744846921333776,
+     "angle_deg": 25.1,
+     "total_norm_at_max": 34718.75651651565,
+     "aero_norm_at_max": 113507.97935422356,
+     "steps_above_1_percent_angles": []
+    },
+    "K7_moment": {
+     "max": 0.00039961547528505976,
+     "angle_deg": 97.1,
+     "total_norm_at_max": 16121.983926047367,
+     "aero_norm_at_max": 83119.03963077402,
+     "steps_above_1_percent_angles": []
+    }
+   },
+   "B": {
+    "K7a_force": {
+     "max": 0.0010537736644026367,
+     "angle_deg": 106.3
+    },
+    "K7a_moment": {
+     "max": 0.003711669151450536,
+     "angle_deg": 104.4
+    },
+    "K7_force": {
+     "max": 0.0024938443597761943,
+     "angle_deg": 105.8,
+     "total_norm_at_max": 66387.74792880806,
+     "aero_norm_at_max": 157625.70300997968,
+     "steps_above_1_percent_angles": []
+    },
+    "K7_moment": {
+     "max": 0.024126613677616576,
+     "angle_deg": 103.9,
+     "total_norm_at_max": 13127.315071658613,
+     "aero_norm_at_max": 85688.63835333024,
+     "steps_above_1_percent_angles": [
+      [
+       118.6,
+       98.6
+      ]
+     ]
+    }
+   }
+  },
+  {
+   "run": "c3e-m600-pair-d1-4laps-free2",
+   "laps": 4,
+   "steps_per_lap": 936,
+   "lift_ratio_change_percent": {
+    "min": -2.118713299062003,
+    "min_angle_deg": 353.2,
+    "max": 0.23874088334125965,
+    "max_angle_deg": 70.3
+   },
+   "loss_above_1p2_percent": [
+    [
+     359.7,
+     343.6
+    ],
+    [
+     31.7,
+     15.5
+    ],
+    [
+     9.0,
+     0.0
+    ]
+   ],
+   "loss_above_0p5_percent": [
+    [
+     359.7,
+     326.6
+    ],
+    [
+     180.3,
+     127.0
+    ],
+    [
+     116.2,
+     101.5
+    ],
+    [
+     45.5,
+     0.0
+    ]
+   ],
+   "loss_below_0p05_percent": [
+    [
+     290.1,
+     225.1
+    ],
+    [
+     82.5,
+     64.6
+    ],
+    [
+     54.0,
+     52.4
+    ]
+   ],
+   "loss_peaks_above_0p3_percent": [
+    {
+     "angle_deg": 353.2,
+     "loss_percent": 2.118713299062003
+    },
+    {
+     "angle_deg": 306.3,
+     "loss_percent": 0.4106359273443494
+    },
+    {
+     "angle_deg": 139.4,
+     "loss_percent": 1.108669040730026
+    },
+    {
+     "angle_deg": 60.3,
+     "loss_percent": 0.32376054756817485
+    },
+    {
+     "angle_deg": 26.9,
+     "loss_percent": 1.7677867985096518
+    }
+   ],
+   "A": {
+    "K7a_force": {
+     "max": 0.00021926517598480362,
+     "angle_deg": 359.7
+    },
+    "K7a_moment": {
+     "max": 0.0002688215349986018,
+     "angle_deg": 65.5
+    },
+    "K7_force": {
+     "max": 0.0007567669988179862,
+     "angle_deg": 357.1,
+     "total_norm_at_max": 27227.332100778254,
+     "aero_norm_at_max": 94312.946213801,
+     "steps_above_1_percent_angles": []
+    },
+    "K7_moment": {
+     "max": 0.0009584043301359391,
+     "angle_deg": 108.3,
+     "total_norm_at_max": 15838.10808375367,
+     "aero_norm_at_max": 87407.78423705095,
+     "steps_above_1_percent_angles": []
+    }
+   },
+   "B": {
+    "K7a_force": {
+     "max": 0.010028226705282662,
+     "angle_deg": 14.8
+    },
+    "K7a_moment": {
+     "max": 0.14232141360494477,
+     "angle_deg": 4.0
+    },
+    "K7_force": {
+     "max": 0.03353764973825971,
+     "angle_deg": 14.8,
+     "total_norm_at_max": 30488.645233961084,
+     "aero_norm_at_max": 102011.73664186824,
+     "steps_above_1_percent_angles": [
+      [
+       359.7,
+       358.4
+      ],
+      [
+       355.4,
+       351.2
+      ],
+      [
+       339.8,
+       329.1
+      ],
+      [
+       310.0,
+       305.6
+      ],
+      [
+       191.7,
+       181.2
+      ],
+      [
+       147.2,
+       135.9
+      ],
+      [
+       69.0,
+       66.8
+      ],
+      [
+       55.7,
+       48.7
+      ],
+      [
+       44.7,
+       23.3
+      ],
+      [
+       21.5,
+       10.0
+      ],
+      [
+       1.0,
+       0.0
+      ]
+     ]
+    },
+    "K7_moment": {
+     "max": 0.20337656453947767,
+     "angle_deg": 3.6,
+     "total_norm_at_max": 34185.54137193744,
+     "aero_norm_at_max": 48958.35275150172,
+     "steps_above_1_percent_angles": [
+      [
+       359.7,
+       340.4
+      ],
+      [
+       339.2,
+       324.8
+      ],
+      [
+       321.9,
+       301.5
+      ],
+      [
+       296.1,
+       292.0
+      ],
+      [
+       251.5,
+       223.6
+      ],
+      [
+       184.3,
+       160.1
+      ],
+      [
+       154.4,
+       97.1
+      ],
+      [
+       94.3,
+       76.6
+      ],
+      [
+       73.4,
+       58.6
+      ],
+      [
+       56.1,
+       49.1
+      ],
+      [
+       47.5,
+       20.1
+      ],
+      [
+       18.3,
+       0.0
+      ]
+     ]
+    }
+   }
+  }
+ ]
+}

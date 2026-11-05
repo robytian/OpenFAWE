@@ -1,0 +1,485 @@
+{
+ "script": "k7_readback.py",
+ "k7_split": {},
+ "rotor_effect": {},
+ "k7a": {
+  "p2a-m600-pair-d1-rotors-adp-5laps": {
+   "run": "p2a-m600-pair-d1-rotors-adp-5laps",
+   "steps_per_lap": 936,
+   "laps": 5,
+   "backend": "cuda_tree",
+   "limit": 0.01,
+   "written_K7": {
+    "A": "passed",
+    "B": "failed"
+   },
+   "units": {
+    "A": {
+     "lap": 5,
+     "against": 4,
+     "force": {
+      "max": 8.190859757494863e-05,
+      "mean": 3.561532256780917e-05,
+      "loop_angle_of_max_deg": 317.7,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.00011808728981639451,
+      "mean": 5.7529869658038946e-05,
+      "loop_angle_of_max_deg": 315.0,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "wing_plus_rotor_force": {
+      "max": 8.084249397656666e-05,
+      "mean": 3.538958796011585e-05,
+      "loop_angle_of_max_deg": 317.7
+     },
+     "verdict": "passed"
+    },
+    "B": {
+     "lap": 5,
+     "against": 4,
+     "force": {
+      "max": 0.001160277603482968,
+      "mean": 0.0003197438582762316,
+      "loop_angle_of_max_deg": 6.2,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "moment": {
+      "max": 0.0043136405821606345,
+      "mean": 0.0012652582240604289,
+      "loop_angle_of_max_deg": 344.2,
+      "steps_above_0p5_percent": 0,
+      "steps_above_1_percent": 0
+     },
+     "wing_plus_rotor_force": {
+      "max": 0.0011391876656674485,
+      "mean": 0.00031940311300261725,
+      "loop_angle_of_max_deg": 6.2
+     },
+     "verdict": "passed"
+    }
+   }
+  }
+ },
+ "pair_effect": {
+  "p2a_vs_c3a": {
+   "with_rotors": {
+    "run": "p2a-m600-pair-d1-rotors-adp-5laps",
+    "K3": {
+     "A": {
+      "limit": 1e-06,
+      "worst_relative": 1.987559571868472e-07,
+      "passed": true,
+      "report": {
+       "scheme": "fourth_order_central",
+       "samples": 4681,
+       "velocity_vs_position": {
+        "max_abs": 1.2259404571703784e-07,
+        "scale": 58.30069714847621,
+        "relative": 2.1027886751478076e-09,
+        "compared": 4677
+       },
+       "angular_velocity_vs_attitude": {
+        "max_abs": 4.3762755664908526e-08,
+        "scale": 0.45640934780003695,
+        "relative": 9.588488026341204e-08,
+        "compared": 4677
+       },
+       "attitude_scheme": "fourth_order_central",
+       "acceleration_vs_velocity": {
+        "max_abs": 5.004191153135164e-06,
+        "scale": 25.177565613446276,
+        "relative": 1.987559571868472e-07,
+        "compared": 4677
+       }
+      }
+     },
+     "B": {
+      "limit": 1e-06,
+      "worst_relative": 1.987559571868472e-07,
+      "passed": true,
+      "report": {
+       "scheme": "fourth_order_central",
+       "samples": 4681,
+       "velocity_vs_position": {
+        "max_abs": 1.2259305364903156e-07,
+        "scale": 58.30069714847621,
+        "relative": 2.102771658747407e-09,
+        "compared": 4677
+       },
+       "angular_velocity_vs_attitude": {
+        "max_abs": 4.3762755664908526e-08,
+        "scale": 0.45640934780003695,
+        "relative": 9.588488026341204e-08,
+        "compared": 4677
+       },
+       "attitude_scheme": "fourth_order_central",
+       "acceleration_vs_velocity": {
+        "max_abs": 5.004191153135164e-06,
+        "scale": 25.177565613446276,
+        "relative": 1.987559571868472e-07,
+        "compared": 4677
+       }
+      }
+     }
+    },
+    "K7": {
+     "A": "passed",
+     "B": "failed"
+    },
+    "last_pairs": {
+     "A": {
+      "lap": 5,
+      "against": 4,
+      "force_max_relative": 0.00023212429117185123,
+      "force_mean_relative": 0.0001130707377849024,
+      "moment_max_relative": 0.00028547102293906496,
+      "moment_mean_relative": 0.00011558848288391226
+     },
+     "B": {
+      "lap": 5,
+      "against": 4,
+      "force_max_relative": 0.004214069886118992,
+      "force_mean_relative": 0.0010574600012945808,
+      "moment_max_relative": 0.01057910302317448,
+      "moment_mean_relative": 0.0028728959586376687
+     }
+    },
+    "elapsed_s": 22270.67678810004,
+    "backend": "cuda_tree",
+    "laps": 5
+   },
+   "without": {
+    "run": "c3a-m600-pair-d1-5laps",
+    "K7": {
+     "A": "passed",
+     "B": "passed"
+    },
+    "backend": "cuda_tree",
+    "laps": 5
+   },
+   "units": {
+    "A": [
+     {
+      "lap": 1,
+      "CZ_with": 2.3722199349798148,
+      "CZ_without": 2.323808663653262,
+      "CZ_change": 0.04841127132655254,
+      "Cm_with": -0.20334028789949046,
+      "Cm_without": -0.22830975976020623,
+      "Cm_change": 0.02496947186071577,
+      "lift_relative_change": 0.02086622798075899,
+      "aero_power_with_W": 590190.9249665452,
+      "aero_power_without_W": 573047.2901059163,
+      "rotor_shaft_power_W": {
+       "mean": 522556.27559040335,
+       "min": 331071.3480768189,
+       "max": 823967.1564833381
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13694.079317850435,
+       "min": -18740.205822427728,
+       "max": -9965.913490575029
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11858974358974358,
+       "max": 2,
+       "steps_nonzero": 102
+      }
+     },
+     {
+      "lap": 2,
+      "CZ_with": 2.3747500815484965,
+      "CZ_without": 2.327001700306565,
+      "CZ_change": 0.0477483812419317,
+      "Cm_with": -0.20108850184425944,
+      "Cm_without": -0.22688826297315232,
+      "Cm_change": 0.025799761128892873,
+      "lift_relative_change": 0.020588301170463508,
+      "aero_power_with_W": 591012.7083878181,
+      "aero_power_without_W": 574107.5421774846,
+      "rotor_shaft_power_W": {
+       "mean": 522389.6527455079,
+       "min": 331039.4977119149,
+       "max": 824080.4781267348
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13689.651088170413,
+       "min": -18741.711636498436,
+       "max": -9965.130189877993
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11752136752136752,
+       "max": 2,
+       "steps_nonzero": 101
+      }
+     },
+     {
+      "lap": 3,
+      "CZ_with": 2.374394069379126,
+      "CZ_without": 2.3266327689346014,
+      "CZ_change": 0.04776130044452476,
+      "Cm_with": -0.20099740621927564,
+      "Cm_without": -0.22677672527292966,
+      "Cm_change": 0.02577931905365402,
+      "lift_relative_change": 0.020597020460858984,
+      "aero_power_with_W": 590664.9968782921,
+      "aero_power_without_W": 573747.8675036693,
+      "rotor_shaft_power_W": {
+       "mean": 522357.8894060398,
+       "min": 331019.7960733287,
+       "max": 824129.3599973759
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13688.94289625974,
+       "min": -18742.34092014874,
+       "max": -9964.655342882616
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11752136752136752,
+       "max": 2,
+       "steps_nonzero": 101
+      }
+     },
+     {
+      "lap": 4,
+      "CZ_with": 2.3742377056642354,
+      "CZ_without": 2.3264654201409245,
+      "CZ_change": 0.04777228552331092,
+      "Cm_with": -0.2009581378959198,
+      "Cm_without": -0.22672707649380044,
+      "Cm_change": 0.025768938597880653,
+      "lift_relative_change": 0.020605886072858626,
+      "aero_power_with_W": 590524.1772603256,
+      "aero_power_without_W": 573590.4141048517,
+      "rotor_shaft_power_W": {
+       "mean": 522343.71847307164,
+       "min": 331005.72239968326,
+       "max": 824144.0314515023
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13688.626016430171,
+       "min": -18742.533469985843,
+       "max": -9964.318004603416
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11752136752136752,
+       "max": 2,
+       "steps_nonzero": 101
+      }
+     },
+     {
+      "lap": 5,
+      "CZ_with": 2.3741569750462963,
+      "CZ_without": 2.326391128257574,
+      "CZ_change": 0.04776584678872231,
+      "Cm_with": -0.2009374992264595,
+      "Cm_without": -0.22670178926928672,
+      "Cm_change": 0.02576429004282721,
+      "lift_relative_change": 0.02060416422730804,
+      "aero_power_with_W": 590457.4639496211,
+      "aero_power_without_W": 573517.6139612444,
+      "rotor_shaft_power_W": {
+       "mean": 522336.35266176617,
+       "min": 330998.44695703936,
+       "max": 824152.3213664879
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13688.47584644007,
+       "min": -18742.638545109676,
+       "max": -9964.148339005902
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11752136752136752,
+       "max": 2,
+       "steps_nonzero": 101
+      }
+     }
+    ],
+    "B": [
+     {
+      "lap": 1,
+      "CZ_with": 2.3723001115599933,
+      "CZ_without": 2.3239419689983096,
+      "CZ_change": 0.04835814256168369,
+      "Cm_with": -0.20335531282905572,
+      "Cm_without": -0.22834359923933573,
+      "Cm_change": 0.024988286410280003,
+      "lift_relative_change": 0.020838583168101277,
+      "aero_power_with_W": 590363.7297448028,
+      "aero_power_without_W": 573276.2289289185,
+      "rotor_shaft_power_W": {
+       "mean": 522575.6473332041,
+       "min": 331130.9612712701,
+       "max": 824010.8384974488
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13694.422263044864,
+       "min": -18740.72294649269,
+       "max": -9967.348371683855
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11858974358974358,
+       "max": 2,
+       "steps_nonzero": 102
+      }
+     },
+     {
+      "lap": 2,
+      "CZ_with": 2.3723007795794273,
+      "CZ_without": 2.3239068868763306,
+      "CZ_change": 0.048393892703096686,
+      "Cm_with": -0.2001071213994599,
+      "Cm_without": -0.22553771010004897,
+      "Cm_change": 0.025430588700589063,
+      "lift_relative_change": 0.02086564519623857,
+      "aero_power_with_W": 588455.2348266639,
+      "aero_power_without_W": 571015.6326177773,
+      "rotor_shaft_power_W": {
+       "mean": 522671.3298943343,
+       "min": 331198.6681382164,
+       "max": 824185.0446734321
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13695.09787340381,
+       "min": -18743.042936422968,
+       "max": -9969.075050564847
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11752136752136752,
+       "max": 2,
+       "steps_nonzero": 101
+      }
+     },
+     {
+      "lap": 3,
+      "CZ_with": 2.363069950293113,
+      "CZ_without": 2.3160920303225003,
+      "CZ_change": 0.046977919970612625,
+      "Cm_with": -0.19707361944360588,
+      "Cm_without": -0.22259667314476633,
+      "Cm_change": 0.025523053701160453,
+      "lift_relative_change": 0.020365028996988555,
+      "aero_power_with_W": 578817.3556591626,
+      "aero_power_without_W": 562705.6116221792,
+      "rotor_shaft_power_W": {
+       "mean": 522526.87399937725,
+       "min": 331111.6561230594,
+       "max": 824233.3271656493
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13692.354290446357,
+       "min": -18743.985582482073,
+       "max": -9966.80547512159
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11752136752136752,
+       "max": 2,
+       "steps_nonzero": 101
+      }
+     },
+     {
+      "lap": 4,
+      "CZ_with": 2.362607731901385,
+      "CZ_without": 2.315169577757239,
+      "CZ_change": 0.04743815414414598,
+      "Cm_with": -0.19697535275603303,
+      "Cm_without": -0.22226570231129214,
+      "Cm_change": 0.025290349555259106,
+      "lift_relative_change": 0.020556900520824373,
+      "aero_power_with_W": 578212.2297359223,
+      "aero_power_without_W": 561614.8257490239,
+      "rotor_shaft_power_W": {
+       "mean": 522470.7872947183,
+       "min": 331080.9404686344,
+       "max": 824357.302720253
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13691.098350640621,
+       "min": -18745.580169207824,
+       "max": -9966.095769868381
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11752136752136752,
+       "max": 2,
+       "steps_nonzero": 101
+      }
+     },
+     {
+      "lap": 5,
+      "CZ_with": 2.3624577679702474,
+      "CZ_without": 2.3147511232317037,
+      "CZ_change": 0.04770664473854369,
+      "Cm_with": -0.19694784888654984,
+      "Cm_without": -0.22213919258815557,
+      "Cm_change": 0.025191343701605723,
+      "lift_relative_change": 0.02069303878249351,
+      "aero_power_with_W": 578043.5271099346,
+      "aero_power_without_W": 561172.2968055774,
+      "rotor_shaft_power_W": {
+       "mean": 522460.509313509,
+       "min": 331033.1817493792,
+       "max": 824486.5591738573
+      },
+      "rotor_thrust_total_N": {
+       "mean": -13690.76815746001,
+       "min": -18747.16856290629,
+       "max": -9964.914865104149
+      },
+      "ring_nodes_within_surface_core": {
+       "mean": 0.11752136752136752,
+       "max": 2,
+       "steps_nonzero": 101
+      }
+     }
+    ]
+   },
+   "ratios": [
+    {
+     "lap": 1,
+     "lift_B_over_A_with": 1.0000609277996764,
+     "lift_B_over_A_without": 1.0000880099431722,
+     "power_B_over_A_with": 1.0002927947058275,
+     "power_B_over_A_without": 1.0003995112217698,
+     "shaft_B_over_A": 1.000037071113114
+    },
+    {
+     "lap": 2,
+     "lift_B_over_A_with": 0.9990987651144804,
+     "lift_B_over_A_without": 0.9988273346133487,
+     "power_B_over_A_with": 0.9956727266184672,
+     "power_B_over_A_without": 0.9946144070012036,
+     "shaft_B_over_A": 1.0005392088976992
+    },
+    {
+     "lap": 3,
+     "lift_B_over_A_with": 0.995199375362114,
+     "lift_B_over_A_without": 0.9954256451316298,
+     "power_B_over_A_with": 0.9799418599684337,
+     "power_B_over_A_without": 0.9807541665827288,
+     "shaft_B_over_A": 1.000323503476763
+    },
+    {
+     "lap": 4,
+     "lift_B_over_A_with": 0.995012189583398,
+     "lift_B_over_A_without": 0.9950599490188227,
+     "power_B_over_A_with": 0.97915081549832,
+     "power_B_over_A_without": 0.9791217076482757,
+     "shaft_B_over_A": 1.000243266678918
+    },
+    {
+     "lap": 5,
+     "lift_B_over_A_with": 0.9949753278840929,
+     "lift_B_over_A_without": 0.9948886926408551,
+     "power_B_over_A_with": 0.9789757305180824,
+     "power_B_over_A_without": 0.9784743888328054,
+     "shaft_B_over_A": 1.000237694832286
+    }
+   ]
+  }
+ }
+}

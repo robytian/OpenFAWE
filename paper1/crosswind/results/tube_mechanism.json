@@ -1,0 +1,284 @@
+{
+ "script": "tube_mechanism.py",
+ "units": "lengths in core radii sigma, velocities in sheet strengths gamma",
+ "R": 11.5,
+ "half_length": 400.0,
+ "ring_segments": 64,
+ "discreteness": {
+  "d=1": [
+   {
+    "h_over_sigma": 0.25,
+    "largest_deviation": 6.996740022080505e-08,
+    "mean_discrete": 0.053226535950265864,
+    "mean_continuous": 0.053226572687087394
+   },
+   {
+    "h_over_sigma": 0.35,
+    "largest_deviation": 6.917235245013087e-07,
+    "mean_discrete": 0.0532271509275841,
+    "mean_continuous": 0.05322657101704103
+   },
+   {
+    "h_over_sigma": 0.5,
+    "largest_deviation": 1.0319313758846982e-06,
+    "mean_discrete": 0.053227440928755705,
+    "mean_continuous": 0.05322657712441794
+   },
+   {
+    "h_over_sigma": 0.7,
+    "largest_deviation": 3.925186350534071e-06,
+    "mean_discrete": 0.05322828202976019,
+    "mean_continuous": 0.0532265755343046
+   },
+   {
+    "h_over_sigma": 1.0,
+    "largest_deviation": 4.670744824941675e-05,
+    "mean_discrete": 0.05323001312000397,
+    "mean_continuous": 0.053226582105773905
+   },
+   {
+    "h_over_sigma": 1.4,
+    "largest_deviation": 0.00034175007689668524,
+    "mean_discrete": 0.05323340506349511,
+    "mean_continuous": 0.05322655910542856
+   },
+   {
+    "h_over_sigma": 2.0,
+    "largest_deviation": 0.008899171333085668,
+    "mean_discrete": 0.05323984283010529,
+    "mean_continuous": 0.05322659577911854
+   },
+   {
+    "h_over_sigma": 2.8,
+    "largest_deviation": 0.042220025198218616,
+    "mean_discrete": 0.053253614141412074,
+    "mean_continuous": 0.053226567736505644
+   },
+   {
+    "h_over_sigma": 4.0,
+    "largest_deviation": 0.1225109851305388,
+    "mean_discrete": 0.053276355821691386,
+    "mean_continuous": 0.05322660008077527
+   },
+   {
+    "h_over_sigma": 5.6,
+    "largest_deviation": 0.25421302502856286,
+    "mean_discrete": 0.053325366185687006,
+    "mean_continuous": 0.05322657581514347
+   },
+   {
+    "h_over_sigma": 8.0,
+    "largest_deviation": 0.4704642029874075,
+    "mean_discrete": 0.05340523174519963,
+    "mean_continuous": 0.053226593022026536
+   }
+  ],
+  "d=2": [
+   {
+    "h_over_sigma": 0.25,
+    "largest_deviation": 1.8768932838779048e-07,
+    "mean_discrete": 0.001503767850902174,
+    "mean_continuous": 0.0015038203745419238
+   },
+   {
+    "h_over_sigma": 0.35,
+    "largest_deviation": 7.211972748238319e-07,
+    "mean_discrete": 0.001504369840569946,
+    "mean_continuous": 0.0015038188406743102
+   },
+   {
+    "h_over_sigma": 0.5,
+    "largest_deviation": 8.821939038983727e-07,
+    "mean_discrete": 0.0015046360461258266,
+    "mean_continuous": 0.0015038224491456898
+   },
+   {
+    "h_over_sigma": 0.7,
+    "largest_deviation": 1.7983974600662821e-06,
+    "mean_discrete": 0.0015054340164577702,
+    "mean_continuous": 0.0015038242200506478
+   },
+   {
+    "h_over_sigma": 1.0,
+    "largest_deviation": 4.4814751887284e-06,
+    "mean_discrete": 0.0015070112388194461,
+    "mean_continuous": 0.0015038292545788135
+   },
+   {
+    "h_over_sigma": 1.4,
+    "largest_deviation": 8.05791226836253e-06,
+    "mean_discrete": 0.001510223913123514,
+    "mean_continuous": 0.0015038105975871644
+   },
+   {
+    "h_over_sigma": 2.0,
+    "largest_deviation": 0.0010106646262701214,
+    "mean_discrete": 0.001516222111794358,
+    "mean_continuous": 0.0015038418111372523
+   },
+   {
+    "h_over_sigma": 2.8,
+    "largest_deviation": 0.008444231872323849,
+    "mean_discrete": 0.001529253321327536,
+    "mean_continuous": 0.001503814604387881
+   },
+   {
+    "h_over_sigma": 4.0,
+    "largest_deviation": 0.03672958136482131,
+    "mean_discrete": 0.001550453060097927,
+    "mean_continuous": 0.0015038510821237955
+   },
+   {
+    "h_over_sigma": 5.6,
+    "largest_deviation": 0.09900191767497002,
+    "mean_discrete": 0.0015965163450224707,
+    "mean_continuous": 0.0015038370232296268
+   },
+   {
+    "h_over_sigma": 8.0,
+    "largest_deviation": 0.21997116027975752,
+    "mean_discrete": 0.0016717944206876556,
+    "mean_continuous": 0.0015038076701073277
+   }
+  ],
+  "d=3": [
+   {
+    "h_over_sigma": 0.25,
+    "largest_deviation": 9.598039099988748e-08,
+    "mean_discrete": -0.00018333323596239406,
+    "mean_continuous": -0.0001832649362756455
+   },
+   {
+    "h_over_sigma": 0.35,
+    "largest_deviation": 5.908452773137124e-07,
+    "mean_discrete": -0.00018273630713827962,
+    "mean_continuous": -0.0001832668975998362
+   },
+   {
+    "h_over_sigma": 0.5,
+    "largest_deviation": 8.095926929262847e-07,
+    "mean_discrete": -0.0001825095048952505,
+    "mean_continuous": -0.00018326140116388045
+   },
+   {
+    "h_over_sigma": 0.7,
+    "largest_deviation": 1.6079558465781167e-06,
+    "mean_discrete": -0.00018177059020105932,
+    "mean_continuous": -0.00018326163064086805
+   },
+   {
+    "h_over_sigma": 1.0,
+    "largest_deviation": 3.2850536298482903e-06,
+    "mean_discrete": -0.00018026578531361306,
+    "mean_continuous": -0.00018325376416283008
+   },
+   {
+    "h_over_sigma": 1.4,
+    "largest_deviation": 1.3890420105787767e-05,
+    "mean_discrete": -0.00017736457689120292,
+    "mean_continuous": -0.00018327685847119174
+   },
+   {
+    "h_over_sigma": 2.0,
+    "largest_deviation": 1.3128987138599405e-05,
+    "mean_discrete": -0.0001716703032628589,
+    "mean_continuous": -0.00018324501219868744
+   },
+   {
+    "h_over_sigma": 2.8,
+    "largest_deviation": 0.0008790702163571247,
+    "mean_discrete": -0.00015965256389778972,
+    "mean_continuous": -0.00018326330267392547
+   },
+   {
+    "h_over_sigma": 4.0,
+    "largest_deviation": 0.007427074056148543,
+    "mean_discrete": -0.00013959552340052207,
+    "mean_continuous": -0.00018323800494417895
+   },
+   {
+    "h_over_sigma": 5.6,
+    "largest_deviation": 0.02967273366396113,
+    "mean_discrete": -9.680387031327237e-05,
+    "mean_continuous": -0.00018325722058516703
+   },
+   {
+    "h_over_sigma": 8.0,
+    "largest_deviation": 0.08669371589117664,
+    "mean_discrete": -2.563540194571125e-05,
+    "mean_continuous": -0.00018325044020636838
+   }
+  ]
+ },
+ "smoothing": {
+  "d_over_sigma": [
+   -4.0,
+   -3.75,
+   -3.5,
+   -3.25,
+   -3.0,
+   -2.75,
+   -2.5,
+   -2.25,
+   -2.0,
+   -1.75,
+   -1.5,
+   -1.25,
+   -1.0,
+   -0.75,
+   -0.5,
+   -0.25,
+   0.25,
+   0.5,
+   0.75,
+   1.0,
+   1.25,
+   1.5,
+   1.75,
+   2.0,
+   2.25,
+   2.5,
+   2.75,
+   3.0,
+   3.25,
+   3.5,
+   3.75,
+   4.0
+  ],
+  "axial_over_gamma": [
+   0.9995875850442208,
+   0.9995876024782548,
+   0.9995876204570998,
+   0.9995876389784651,
+   0.9995876580399818,
+   0.9995858225661367,
+   0.9995655730300707,
+   0.9994659627942832,
+   0.9990324515842044,
+   0.9974142961546013,
+   0.9922502475165561,
+   0.9781967497842428,
+   0.9457008515026585,
+   0.8821579085122301,
+   0.7777121107623948,
+   0.6343525609629516,
+   0.31828939529150746,
+   0.19432734220728076,
+   0.1069955606183491,
+   0.05322658007826324,
+   0.024093982135171346,
+   0.010070740569639173,
+   0.003972848722114452,
+   0.0015038378642068782,
+   0.0005239014984766176,
+   0.00011422549139842794,
+   -7.878993382480819e-05,
+   -0.00018325036439210778,
+   -0.0002465538586087501,
+   -0.00028831447559602927,
+   -0.0003169099299328138,
+   -0.0003362588454525003
+  ],
+  "note": "negative d: inside the tube; the ideal sheet gives 1 inside and 0 outside"
+ }
+}

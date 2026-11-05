@@ -1,0 +1,6 @@
+  V3 vsm_free_wake step 0 CL=0.297715 t=0.8s
+  V3 vsm_free_wake step 20 CL=0.696364 t=2.4s
+  V3 vsm_free_wake step 40 CL=0.705044 t=5.2s
+  V3 vsm_free_wake step 60 CL=0.706596 t=7.8s
+  V3 vsm_free_wake step 80 CL=0.707104 t=10.1s
+{"out": "c3s-v3-a735-refine1-core005", "status": "complete", "error": null, "frames": 81, "elapsed_s": 10.1}

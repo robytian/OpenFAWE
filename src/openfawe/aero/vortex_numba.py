@@ -20,6 +20,7 @@ the historical exception type and message. Results are never repaired.
 """
 
 import math
+import operator
 
 import numpy as np
 from numba import njit, prange
@@ -176,12 +177,9 @@ def sum_segments_serial(points, starts, directions, lengths, gamma, radius, mode
 PARALLEL_MIN_PAIRS = 200_000
 
 
-def exclusion_csr(point_count, pairs):
-    """Per-point sorted unique excluded segment IDs from an (e, 2) (point, segment) array.
-
-    Equivalent to the reference's {segment: unique points} dictionary: the
-    same set of pairs, here grouped by point in increasing segment order.
-    """
+def exclusion_csr_reference(point_count, pairs):
+    """The original ``exclusion_csr`` (``np.unique(pairs, axis=0)``), kept as the reference of its compiled form (GPU
+    whole-step contract revision 4, S3 (a), Z1)."""
     pairs = np.asarray(pairs, dtype=np.int64).reshape(-1, 2)
     if len(pairs) == 0:
         return np.zeros(point_count + 1, dtype=np.int64), np.zeros(0, dtype=np.int64)
@@ -190,6 +188,59 @@ def exclusion_csr(point_count, pairs):
     pointer = np.zeros(point_count + 1, dtype=np.int64)
     np.cumsum(counts, out=pointer[1:])
     return pointer, np.ascontiguousarray(pairs[:, 1])
+
+
+@njit(cache=True)
+def _exclusion_csr_compiled(point_count, points, segments):
+    """Counting sort by point, then an insertion sort of each point's (few) segments and removal of repeats: the arrays of
+    ``exclusion_csr_reference`` element for element."""
+    count = points.shape[0]
+    start = np.zeros(point_count + 1, np.int64)
+    for k in range(count):
+        start[points[k] + 1] += 1
+    for p in range(point_count):
+        start[p + 1] += start[p]
+    cursor = start[:-1].copy()
+    buffer = np.empty(count, np.int64)
+    for k in range(count):
+        p = points[k]
+        buffer[cursor[p]] = segments[k]
+        cursor[p] += 1
+    pointer = np.zeros(point_count + 1, np.int64)
+    m = 0
+    for p in range(point_count):
+        a, b = start[p], start[p + 1]
+        for i in range(a + 1, b):                      # insertion sort (a point has few excluded segments)
+            value = buffer[i]
+            j = i - 1
+            while j >= a and buffer[j] > value:
+                buffer[j + 1] = buffer[j]
+                j -= 1
+            buffer[j + 1] = value
+        for i in range(a, b):
+            if i == a or buffer[i] != buffer[i - 1]:
+                buffer[m] = buffer[i]
+                m += 1
+        pointer[p + 1] = m
+    return pointer, buffer[:m].copy()
+
+
+def exclusion_csr(point_count, pairs):
+    """Per-point sorted unique excluded segment IDs from an (e, 2) (point, segment) array.
+
+    Equivalent to the reference's {segment: unique points} dictionary: the
+    same set of pairs, here grouped by point in increasing segment order.
+    Compiled (GPU whole-step contract revision 4, S3 (a)): the arrays are those of ``exclusion_csr_reference``
+    element for element; pairs whose point lies outside [0, point_count) take the reference, which raises as before.
+    """
+    pairs = np.asarray(pairs, dtype=np.int64).reshape(-1, 2)
+    if len(pairs) == 0:
+        return np.zeros(point_count + 1, dtype=np.int64), np.zeros(0, dtype=np.int64)
+    count = operator.index(point_count)              # a non-integer count raises, as np.zeros(point_count + 1) would
+    points = np.ascontiguousarray(pairs[:, 0])
+    if int(points.min()) < 0 or int(points.max()) >= count:
+        return exclusion_csr_reference(point_count, pairs)
+    return _exclusion_csr_compiled(count, points, np.ascontiguousarray(pairs[:, 1]))
 
 
 def direct_sum(points, starts, directions, lengths, gamma, radius, model, csr,
