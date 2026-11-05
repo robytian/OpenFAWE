@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use OpenFAWE, please cite the archived release below rather than the repository URL."
+message: "If you use OpenFAWE, please cite the paper given as preferred citation and, for the code, this release."
 title: "OpenFAWE: an open framework for coupled floating airborne wind energy dynamics and physics-linked cost screening"
 abstract: >-
   OpenFAWE is an open-source code for the aerodynamics of airborne wind energy kites, developed towards
-  floating airborne wind energy. Release 0.3.0 contains the aerodynamic module (lifting line, vortex step
+  floating airborne wind energy. Release 0.2.0 contains the aerodynamic module (lifting line, vortex step
   method and vortex-lattice lifting surface with straight or time-marching free vortex wakes; NumPy,
   Numba, CPU tree-code and GPU tree-code Biot-Savart backends), actuator-disc rotors that release
   vortex rings into the free wake, prescribed crosswind motions of one or several kites in one vortex
@@ -17,13 +17,10 @@ authors:
     orcid: "https://orcid.org/0000-0003-1912-0232"
     affiliation: "Centre for Marine Technology and Ocean Engineering (CENTEC), Instituto Superior Tecnico, University of Lisbon"
     email: yinong.tian@tecnico.ulisboa.pt
-version: 0.3.0
+version: 0.2.0
 date-released: "2026-11-05"
-# DOI of the archived release 0.1.0 (concept record of the software); Zenodo issues a version DOI for 0.3.0.
-doi: 10.5281/zenodo.21656345
 license: Apache-2.0
 repository-code: "https://github.com/robytian/OpenFAWE"
-url: "https://doi.org/10.5281/zenodo.21656345"
 keywords:
   - airborne wind energy
   - free-vortex wake

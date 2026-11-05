@@ -1,6 +1,6 @@
 {
  "source_commit": "e58677c06f092141cea79ed6fc545fd4c3fd3869",
- "note": "Every computation of paper 1 was made with the private repository at source_commit. Files with edited=false are byte-identical to their origin; edited files differ only as stated in edit_note. Since release 0.3.0 this manifest lists the files of paper1/scripts, paper1/extra and paper1/fig only; the source code, models and tests of the release are listed in ../MANIFEST.json and the crosswind part in crosswind/MANIFEST.json.",
+ "note": "Every computation of paper 1 was made with the private repository at source_commit. Files with edited=false are byte-identical to their origin; edited files differ only as stated in edit_note. Since the release of 2026-11-05 this manifest lists the files of paper1/scripts, paper1/extra and paper1/fig only; the source code, models and tests of the release are listed in ../MANIFEST.json and the crosswind part in crosswind/MANIFEST.json.",
  "files": [
   {
    "path": "paper1/scripts/convergence/accel_bench.py",
@@ -774,7 +774,7 @@
    "sha256": "39d35f7ca3d8bab9fef19403fc4359563600832fce5b2e9c5b3611d69bc94f5a",
    "origin_sha256": "cd9fd5a0145643fa3c42b4e4008a04a20b5c25b6fbe3dcdbc6b9bbbe80b81532",
    "edited": true,
-   "edit_note": "paths of the public layout; release 0.3.0: wording of the module docstring (manuscript version)"
+   "edit_note": "paths of the public layout; release of 2026-11-05: wording of the module docstring (manuscript version)"
   },
   {
    "path": "paper1/extra/duhamel.json",
@@ -1134,7 +1134,7 @@
    "sha256": "b3b9953a353c8c36e6ef5472e8bff8739ba49afca0a75fc83afe4c0feb13c96e",
    "origin_sha256": "73d66b6a66d726d0c2d946d4a3bdc88bb7dbbcabb2fda6a3e9b0e1e511f52faf",
    "edited": true,
-   "edit_note": "release 0.3.0: wording of the module docstring (manuscript version)"
+   "edit_note": "release of 2026-11-05: wording of the module docstring (manuscript version)"
   },
   {
    "path": "paper1/fig/make_model_figures.py",
@@ -1152,7 +1152,7 @@
    "sha256": "6b9cbd30714d5287bdef7a75e28bac5b882de095745b68bd4a6dcd0c138ff72b",
    "origin_sha256": "9c20eab5f87157dad885f6dbd563ddc8128557d226fad2623db3fa0cf53d4177",
    "edited": true,
-   "edit_note": "release 0.3.0: wording of the module docstring (manuscript version)"
+   "edit_note": "release of 2026-11-05: wording of the module docstring (manuscript version)"
   },
   {
    "path": "paper1/fig/make_fig07_wake_q_planes.py",

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "openfawe"
-version = "0.3.0"
+version = "0.2.0"
 description = "OpenFAWE: free-vortex-wake aerodynamics for airborne wind energy kites - vortex step method, CPU/GPU tree codes, rotor vortex rings, crosswind loops and several kites in one wake"
 readme = "README.md"
 license = "Apache-2.0"
