@@ -1,0 +1,7 @@
+/* OpenFAWE documentation: a few touches on the Read the Docs theme */
+.wy-side-nav-search, .wy-nav-top { background-color: #0f2738; }
+.wy-side-nav-search > a { color: #ffffff; font-weight: 600; }
+.wy-nav-content { max-width: 1000px; }
+.rst-content img { border-radius: 4px; }
+.hero-caption { color: #555; font-size: 90%; text-align: center; margin-top: -0.6em; }
+.rst-content table.docutils td, .rst-content table.docutils th { white-space: normal; }
