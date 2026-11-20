@@ -115,9 +115,9 @@ From Y. Tian, S. Wang, *Free-vortex-wake dynamics of airborne wind energy kites 
 | **Two kites** | A second unit one loop diameter downstream loses 0.5 % of its lift and 2.2 % of its aerodynamic power, with or without rotors |
 
 <p align="center">
-  <img src="docs/figures/openfawe-hero.png" alt="Free vortex wakes of the TU Delft V3 kite and the Makani M600 after an impulsive start, computed with OpenFAWE" width="100%">
+  <img src="docs/media/openfawe-land-system.png" alt="The land-based airborne wind energy system in OpenFAWE: the Makani M600 on its crosswind loop with the free vortex wake of its wing and rotors, the tether and the GS02 ground station" width="100%">
 </p>
-<p align="center"><sub>Free wakes of the TU Delft V3 kite and the Makani M600 after an impulsive start: archived 40-step states, an illustration of the method rather than a convergence result.</sub></p>
+<p align="center"><sub>The land-based airborne wind energy system as OpenFAWE flies it, to scale: the Makani M600 on its crosswind loop at 12 m/s with the free vortex wake of its wing (blue) and rotors (orange), the tether and the GS02 ground station (example flight <code>vortex-12ms</code>; the ground station is drawn after GS02's dimensions).</sub></p>
 
 ## Source code: quick start
 
