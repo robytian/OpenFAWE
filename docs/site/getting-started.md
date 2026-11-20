@@ -42,3 +42,5 @@ start /wait "" "OpenFAWE Studio.exe" --self-test
 | `cycle-power-curve` | tables; vortex | 6–14 m/s | break-even crosswind time of a whole flight (CSV) |
 
 The [example flights chapter](guide/examples.md) explains each one.
+
+**Data use.** The example flights distributed with OpenFAWE Studio 1.0.0 and their results – the program's `examples` folder, the power-curve table, the whole-flight video and the pictures made from them – belong to a manuscript in preparation by Y. Tian and S. Wang. Until that paper is published they may be used to check an installation, to learn the program and to compare with your own simulations, citing this repository (see `CITATION.cff`). They may not be republished, or used as the data of a publication or a thesis, without the author's written permission. Contact: yinong.tian@tecnico.ulisboa.pt. The full terms are in [DATA-USE.md](https://github.com/robytian/OpenFAWE/blob/main/DATA-USE.md).

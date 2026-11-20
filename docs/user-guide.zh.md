@@ -91,6 +91,8 @@ echo %errorlevel%
 | `f3-vortex-turbulent` | 同上 | IEC 61400-1 正常湍流（B 级，TurbSim），平均 10 m/s | 湍流风里的整次飞行：控制器在阵风里保持横风圈 |
 | `cycle-power-curve` | 查表；涡方法 | 6–14 m/s | 每次飞行的横风功率、固定开销与盈亏平衡所需的横风时长（CSV，附说明） |
 
+**数据使用。**随 OpenFAWE Studio 1.0.0 发布的示例飞行及其结果——程序的 `examples` 文件夹、功率曲线表、整次飞行视频以及用它们做的图——属于 Y. Tian 与 S. Wang 正在准备的一篇论文。在该论文发表之前，它们可用于检查安装、学习使用本程序以及与您自己的仿真结果对比，并请引用本仓库（见 `CITATION.cff`）；未经作者书面许可，不得重新发布，也不得作为论文或学位论文的数据使用。联系：yinong.tian@tecnico.ulisboa.pt。条款全文见仓库里的 DATA-USE.md。
+
 为了让软件包不太大，算例的记录做了精简：横风与转换模式每 0.1 s 一条，悬停与栖架每 1 s 一条，另留每次模式切换。飞行本身是每 10 ms 算一次的。`case.json` 写明精简的做法、留下的记录条数，以及算这次飞行的机器与版本。五次涡方法飞行各带 5 个存下的尾迹状态，每个涡方法模式一个（HoverAccel、TransIn、CrosswindNormal、CrosswindPrepTransOut、HoverTransOut）；其间的尾迹见发布页上的视频。`f3-vortex-turbulent` 是在[验证](#验证) V5 所说的湍流风场（IEC 61400-1 正常湍流，B 级）里飞的；风场文件本身不随包附带，`case.json` 里写了它的模型、文件名与 SHA-256。
 
 ## 5. 回放、尾迹与曲线

@@ -209,15 +209,20 @@ built from, published as it is, with the internal labels of its development reco
 The offshore edition (floating platform, mooring, two kites on a shared mooring) is the next version.
 Results are research output and are not validated for design use.
 
+## Data use
+
+The example flights distributed with OpenFAWE Studio 1.0.0 and their results – the program's `examples` folder, the power-curve table, the whole-flight video and the pictures made from them – belong to a manuscript in preparation by Y. Tian and S. Wang. Until that paper is published they may be used to check an installation, to learn the program and to compare with your own simulations, citing this repository (see `CITATION.cff`). They may not be republished, or used as the data of a publication or a thesis, without the author's written permission. Contact: yinong.tian@tecnico.ulisboa.pt. The full terms are in [DATA-USE.md](DATA-USE.md).
+
 ## Licence
 
-Source code, models, scripts and data: Copyright (c) 2026 Yinong Tian, Apache License 2.0; see
+Source code, models, scripts and the code and data of paper 1: Copyright (c) 2026 Yinong Tian, Apache License 2.0; see
 [LICENSE](LICENSE) and [NOTICE](NOTICE). The OpenFAWE algorithms ported from the Vortex-Step-Method
 (MIT) and OpenFAST/OLAF (Apache-2.0) and the Makani M600 models and routines (Apache-2.0) keep their
 licences; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and [`third_party/`](third_party).
 The Windows programs under Releases (OpenFAWE Studio, the Wake Viewer): free for non-commercial use, see
 [LICENSE-BINARIES.md](LICENSE-BINARIES.md). Makani's flight controller in OpenFAWE Studio is compiled from
-Makani's source (Apache-2.0) without the GNU Scientific Library.
+Makani's source (Apache-2.0) without the GNU Scientific Library. The example flights, their results and the media
+made from them are under the [data-use terms](DATA-USE.md), not under Apache-2.0.
 
 Questions and bug reports: please open an issue.
 
@@ -232,3 +237,5 @@ OpenFAWE Studio：用 Makani 自己的飞行控制器，让 M600 从栖架起飞
 与定长系绳的一致（7.8e-11，最初写的界是 1e-12）和风筝在栖架上静止（10 s 内 40 mm、0.8°，界 5 mm、0.1°）；两处都来自照搬的
 Makani 做法，程序没有为通过而改动，原因见[帮助文档](docs/user-guide.zh.md)第 11 节。漂浮式在下一版。
 计算结果为研究结果，不能用于设计。
+
+**数据使用**：随 OpenFAWE Studio 1.0.0 发布的示例飞行及其结果——程序的 `examples` 文件夹、功率曲线表、整次飞行视频以及用它们做的图——属于 Y. Tian 与 S. Wang 正在准备的一篇论文。在该论文发表之前，它们可用于检查安装、学习使用本程序以及与您自己的仿真结果对比，并请引用本仓库（见 `CITATION.cff`）；未经作者书面许可，不得重新发布，也不得作为论文或学位论文的数据使用。联系：yinong.tian@tecnico.ulisboa.pt。条款全文见 [DATA-USE.md](DATA-USE.md)。

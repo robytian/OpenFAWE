@@ -16,6 +16,10 @@ The programs are provided "as is", without warranty of any kind. Their results
 are research output: they are not validated for design, certification or
 safety decisions, and the author accepts no liability for their use.
 
+## Example data
+
+The example flights distributed with OpenFAWE Studio 1.0.0 and their results – the program's `examples` folder, the power-curve table, the whole-flight video and the pictures made from them – belong to a manuscript in preparation by Y. Tian and S. Wang. Until that paper is published they may be used to check an installation, to learn the program and to compare with your own simulations, citing this repository (see `CITATION.cff`). They may not be republished, or used as the data of a publication or a thesis, without the author's written permission. See DATA-USE.md in the repository for the contact.
+
 Third-party components remain under their own licences; see
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Nothing in this licence limits
 the rights those licences give you. In particular, Qt and Qt for Python

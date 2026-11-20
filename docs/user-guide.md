@@ -121,6 +121,8 @@ system, `energy-by-mode.csv`.
 | `f3-vortex-turbulent` | as above | IEC 61400-1 normal turbulence (class B, TurbSim), mean 10 m/s | the whole flight in turbulent wind: the controller holding the loops in gusts |
 | `cycle-power-curve` | tables; vortex | 6–14 m/s | per flight: the crosswind power, the overhead energy and the break-even crosswind time (CSV with a README) |
 
+**Data use.** The example flights distributed with OpenFAWE Studio 1.0.0 and their results – the program's `examples` folder, the power-curve table, the whole-flight video and the pictures made from them – belong to a manuscript in preparation by Y. Tian and S. Wang. Until that paper is published they may be used to check an installation, to learn the program and to compare with your own simulations, citing this repository (see `CITATION.cff`). They may not be republished, or used as the data of a publication or a thesis, without the author's written permission. Contact: yinong.tian@tecnico.ulisboa.pt. The full terms are in DATA-USE.md in the repository.
+
 The records of the examples are thinned so that the package stays small: the crosswind and transition modes every
 0.1 s, hover and the perch every 1 s, plus every change of mode. The flights themselves were computed every 10 ms.
 `case.json` states the thinning, the number of records kept and the machine and version that computed the flight.
