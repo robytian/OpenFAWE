@@ -74,11 +74,28 @@ class CudaSettings:
     'cuda', this precision and block). Only the VSM free wake (``vsm_wake.history_vsm_induction``) reads it; the
     lifting-line and lattice wakes are unaffected.
     A single sum (``segments_velocity``) does not read it: the wake's choice is made in ``vsm_wake.control_options``.
+
+    moments (whole-step GPU contract revision 6, S3'; only the 'cuda_tree' backend): 'cpu' (default, left out of the
+    metadata) computes the tree's node moments and contractions on the CPU (``vortex_tree.node_moments``) and uploads
+    them; 'gpu' computes them on the GPU (``vortex_cuda_moments``, one thread block per node) and keeps them there.
+
+    build (whole-step GPU contract revision 7, S3''; only the 'cuda_tree' backend): 'cpu' (default, left out of the
+    metadata) builds the tree on the CPU (``vortex_tree.build_tree``); 'gpu' builds it on the GPU (``vortex_cuda_build``),
+    element for element the same tree.
+
+    rings (whole-step GPU contract revision 10, R; only with a wake's 'cuda_tree' velocity backend, which ``WakeConfig``
+    checks): 'cpu' (default, left out of the metadata) keeps the rotor rings' induction at lifting-surface points
+    (``wake.ring_induction``) on the CPU's exact direct sum; 'gpu' evaluates that sum with the GPU direct sum (backend
+    'cuda', float64 whatever this precision, this block; revision 10 addendum 2). The refined surface sheet is still
+    built on the CPU. A single sum does not read it: the choice is made in ``wake.ring_options``.
     """
     precision: str = "mixed"
     block: int = 128
     suspect: str = "cpu"
     control: str = "cpu"
+    moments: str = "cpu"
+    build: str = "cpu"
+    rings: str = "cpu"
 
     def __post_init__(self):
         if self.precision not in ("fp64", "mixed", "fp32"):
@@ -91,6 +108,12 @@ class CudaSettings:
             raise ValueError("cuda suspect='gpu64' is for the single precisions 'mixed' and 'fp32' only")
         if self.control not in ("cpu", "gpu"):
             raise ValueError("cuda control must be 'cpu' or 'gpu'")
+        if self.moments not in ("cpu", "gpu"):
+            raise ValueError("cuda moments must be 'cpu' or 'gpu'")
+        if self.build not in ("cpu", "gpu"):
+            raise ValueError("cuda build must be 'cpu' or 'gpu'")
+        if self.rings not in ("cpu", "gpu"):
+            raise ValueError("cuda rings must be 'cpu' or 'gpu'")
 
 
 def cuda_backend_available():
@@ -389,6 +412,10 @@ def segments_velocity(points, nodes, connectivity, circulation, *, model=CoreMod
             raise ValueError("cuda must be CudaSettings")
         if cuda.suspect != "cpu" and backend != "cuda_tree":
             raise ValueError("cuda suspect='gpu64' is for the cuda_tree backend only")
+        if getattr(cuda, "moments", "cpu") != "cpu" and backend != "cuda_tree":
+            raise ValueError("cuda moments='gpu' is for the cuda_tree backend only")     # GPU contract revision 6
+        if getattr(cuda, "build", "cpu") != "cpu" and backend != "cuda_tree":
+            raise ValueError("cuda build='gpu' is for the cuda_tree backend only")       # GPU contract revision 7
         if not cuda_backend_available():
             raise ValueError(f"the cuda velocity backend needs a CUDA device ({cuda_unavailable_reason()})")
     points, nodes = _matrix(points, 3, "points"), _matrix(nodes, 3, "nodes")

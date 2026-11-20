@@ -126,10 +126,18 @@ def solve_newton(target, initial, settings, *, jacobian=None, diagnostics=None):
 
 
 class HybridSolveError(NonlinearSolveError):
-    """All declared attempts failed; the caller must not advance its state."""
+    """All declared attempts failed; the caller must not advance its state.
 
-    def __init__(self, attempts, *, diagnostics=None):
+    ``last_residual`` (OF-0010 P5d; an attachment only, the message is unchanged) is the residual
+    target(Gamma) - Gamma at the final iterate of the last Picard attempt that ended 'exhausted'
+    (one value per unknown; ``last_residual_relaxation`` is that attempt's relaxation), or None
+    when no Picard attempt ended so (every one ended 'domain_error' or 'nonfinite').
+    """
+
+    def __init__(self, attempts, *, diagnostics=None, last_residual=None, last_residual_relaxation=None):
         self.attempts_json = json.dumps(attempts, sort_keys=True, allow_nan=False)
+        self.last_residual = last_residual
+        self.last_residual_relaxation = last_residual_relaxation
         super().__init__('Newton/Picard attempts exhausted: '+self.attempts_json, diagnostics=diagnostics)
 
 
@@ -195,6 +203,7 @@ def solve_newton_picard(target, initial, settings, *, jacobian=None, diagnostics
                              message=str(error)))
     else:
         return accepted(gamma, iterations, dict(solver='newton'))
+    last_residual = last_relaxation = None             # OF-0010 P5d: attachments of the error only
     for relaxation in settings.fallback_relaxations:
         gamma = seed.copy()
         attempt = dict(solver='picard', relaxation=relaxation)
@@ -210,6 +219,7 @@ def solve_newton_picard(target, initial, settings, *, jacobian=None, diagnostics
             if update == settings.fallback_max_iterations:
                 attempt.update(status='exhausted', iterations=update+1,
                                residual_m2_s=maximum, residual_limit_m2_s=limit)
+                last_residual, last_relaxation = np.array(error, dtype=float, copy=True), relaxation
                 break
             with np.errstate(over='ignore', invalid='ignore'):
                 gamma = gamma+relaxation*error
@@ -217,7 +227,8 @@ def solve_newton_picard(target, initial, settings, *, jacobian=None, diagnostics
                 attempt.update(status='nonfinite', iterations=update+1)
                 break
         attempts.append(attempt)
-    raise HybridSolveError(attempts, diagnostics=diagnostics)
+    raise HybridSolveError(attempts, diagnostics=diagnostics, last_residual=last_residual,
+                           last_residual_relaxation=last_relaxation)
 
 
 def section_solver_trace(trace_json, polar, alpha, residual, limit):

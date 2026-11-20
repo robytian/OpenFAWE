@@ -1,0 +1,1680 @@
+{
+ "release": "1.0.0",
+ "date": "2026-11-20",
+ "note": "Every file that release 1.0.0 adds to the repository or changes in it, with its SHA-256 and origin. MANIFEST.json, paper1/MANIFEST.json and paper1/crosswind/MANIFEST.json remain the record of release 0.2.0.",
+ "files": [
+  {
+   "path": ".zenodo.json",
+   "sha256": "e3d25c16e8cdbbb5bbd74361a54629a153b0e30754f4b4a3dd26203da20b4e80",
+   "bytes": 3154,
+   "origin": "release 0.2.0's file with what release 1.0.0 changes"
+  },
+  {
+   "path": "CHANGELOG.md",
+   "sha256": "f32b5dbdc80234de343f0282677dcc3d727f3da9a1fcaebf87c676235e0fc077",
+   "bytes": 8680,
+   "origin": "release 0.2.0's file with what release 1.0.0 changes"
+  },
+  {
+   "path": "CITATION.cff",
+   "sha256": "f465f2408a944f57a4b9750c79022c81b47449e652812a3ba4ccc15e858d5a65",
+   "bytes": 3259,
+   "origin": "release 0.2.0's file with what release 1.0.0 changes"
+  },
+  {
+   "path": "LICENSE-BINARIES.md",
+   "sha256": "8c60e0155083c86607ee2969657f5ed61e97cde931783c8fac5616127aa1bac2",
+   "bytes": 1408,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "README.md",
+   "sha256": "3d091261f62a1556b871454aa8b03cd64fe41179a70151e22d49c296c1e155d1",
+   "bytes": 15317,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "apps/studio/README.zh.md",
+   "sha256": "419b1a3f4837ab944e3566992b909e33635fd0c8b51feecdf990894a6e4a491a",
+   "bytes": 1961,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/__init__.py",
+   "sha256": "ce0737901c5a42ee58bdb1c3e5e0779f0fe220397742eb43aaaa6052844c8db9",
+   "bytes": 916,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/__main__.py",
+   "sha256": "81d8930c74e288a538e8333db6b0e588e26b2f0be92dd288dbf3b6e9db962eb4",
+   "bytes": 3145,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/engine.py",
+   "sha256": "74dc27d1b774e8adca11f60855803b23c8fd5a43f0a29284fe2efbd4d0a6dc0e",
+   "bytes": 20503,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/freeflight_io.py",
+   "sha256": "d6ea1a2455e09b0695293da427abd2afa2245d5c386a0acb2fe5b24c447ca97a",
+   "bytes": 21572,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/frozen.py",
+   "sha256": "25a5e569e69b0fd36d80bfb32cff4688b7b8de8a6dc2b2c9fdb1f3ed633acfda",
+   "bytes": 1840,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/frozen_cuda.py",
+   "sha256": "6ab93c2d26c058d05df3f177310e32e7541c6b6b6927463c9080fb6b74d0c3b8",
+   "bytes": 2074,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/inflow.py",
+   "sha256": "f9ddd872ae4ca50abda491d2b12ce1970db11835da70ad9ee9bef310be7b166f",
+   "bytes": 2981,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/main_window.py",
+   "sha256": "8a1fc74ef71d3161c83628eaef5e4a0ffb22f40480996a6fada3c45461e07a12",
+   "bytes": 35162,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/resources.py",
+   "sha256": "3a5a6849e9526b21e46b90c85affa734efcb13e6cfa2403d5cb6e0a0968da8b4",
+   "bytes": 4155,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/runstore.py",
+   "sha256": "f8ddf3a5e0a20d714b827cefdb034fcee41badc41b574726902888a83d4c8b50",
+   "bytes": 11159,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/scene.py",
+   "sha256": "a658d648666abf2fb9d547d1461f38f4ed163fe8ceec3ca3615ba32579f2e9d7",
+   "bytes": 14628,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/selftest.py",
+   "sha256": "be73bca4c0485b66aa7d0ff8924e16897bec547255d96094d402cd71d84ebb0f",
+   "bytes": 22577,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/spec.py",
+   "sha256": "49910ede44d14a2ce9fa050991ceaa58b000012d6e341f9ea388b6662c379980",
+   "bytes": 13592,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/turnkey_worker.py",
+   "sha256": "3f84cfd5ed2b8be8471bded6065a09ea4755165533fac41fb690fd6adecd566e",
+   "bytes": 19930,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/video.py",
+   "sha256": "fec089613f367207622fff57e5b805494494e33842ef4ade1e821bcf605b8dd9",
+   "bytes": 5862,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/openfawe_studio/worker.py",
+   "sha256": "388e954961810cc5cc315e634f26b0e51a89e883b067b9e5dbabffd3ee88583d",
+   "bytes": 3173,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/LICENSE-BINARIES.md",
+   "sha256": "8c60e0155083c86607ee2969657f5ed61e97cde931783c8fac5616127aa1bac2",
+   "bytes": 1408,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/THIRD_PARTY_NOTICES.md",
+   "sha256": "2207cdfa00414da78d35e5ba20b4256b30d5e8676b1067f8f5c76e83c04083ba",
+   "bytes": 4713,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/cuda_bundle.py",
+   "sha256": "bb3d8f127f8431218d4a1aefc0ee83788a677f2c16799ad7a615f2c9c62aa990",
+   "bytes": 5123,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/licenses/GPL-3.0.txt",
+   "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+   "bytes": 35149,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/licenses/LGPL-3.0.txt",
+   "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+   "bytes": 7652,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/make_case.py",
+   "sha256": "0b99aec08d289e83e972489fb27ccd21fdaf0002b347910e40bf3e8f0ca335a6",
+   "bytes": 9009,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/openfawe_studio.spec",
+   "sha256": "5624fd90287142305b3ff00a614ffc400cd53ab407bb760eca3be994037bfb50",
+   "bytes": 5946,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/requirements-build-win.txt",
+   "sha256": "86b34edfcead38192d64cef481893cdb3cf702d9b981a816f64b5289d3a62e5f",
+   "bytes": 863,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/stage_bundle.py",
+   "sha256": "e94bc0c1c52abbbf0d36dbc51e002782287abfbf3f45ed24a6641ecadcede45c",
+   "bytes": 10309,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/release/studio_entry.py",
+   "sha256": "7d1567b2c3f610ad132a74da7fe6dc513f1bd20206a98360547d0c5705d7520f",
+   "bytes": 850,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/run_studio.bat",
+   "sha256": "a6993880ccc856a409c580c0d48610d53150c32c2058d1d6c22e255486a57eb1",
+   "bytes": 1136,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: OpenFAWE Studio"
+  },
+  {
+   "path": "apps/studio/tests/test_free_flight.py",
+   "sha256": "1f3d3f0c99c15638d052e075a6c5dbf58b65c8b81609fe76cdb11a23aba50450",
+   "bytes": 4685,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "apps/studio/tests/test_frozen_cuda.py",
+   "sha256": "9887b352767900ae4758695573e6b95eb01f873b0f6f21a435c13f96348de9dc",
+   "bytes": 15297,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "apps/studio/tests/test_make_case_spec.py",
+   "sha256": "95beb4bfdba6d7a20cb9872a8b9551bedac30499a9983b66e7286b2a5d3b9a03",
+   "bytes": 1978,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "cases/aircraft/m600_makani_rigid_body.json",
+   "sha256": "69b58a11ec0ce6e629fb531859ed88895ee3c9ee4a6df24bbdbcdfdf5e674111",
+   "bytes": 3439,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/aircraft/m600_makani_rigid_body_serial05.json",
+   "sha256": "05f4cd34a9d86004bf644faa47d9a2b968bcc2b39518b5f11ab5b734e0d789c2",
+   "bytes": 1897,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/aircraft/m600_neutral.json",
+   "sha256": "98dfce28d0a73580c1a98abb264b1ad0ed9d6540d7cba798c01f886016ec31d4",
+   "bytes": 516793,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/aircraft/v3_cad.json",
+   "sha256": "eec533d1227f1bbcf9b6e4c509570767d5ed2a60345c33f654f97916c17ebb57",
+   "bytes": 472267,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/aircraft/v3_cad_attached.json",
+   "sha256": "6f6b4a87aa85381306606fa7a76029b47068f4be0ccb4bde91829539d27ae223",
+   "bytes": 450177,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/aircraft/v3_cad_camber.json",
+   "sha256": "dba4280590bc0ac434b0da55d9d6fdeed19b34dd1a6790f713b5fce1f6a950f3",
+   "bytes": 3245309,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/aircraft/v3_cad_camber_integral.json",
+   "sha256": "e8ae241da0029baf998b919275a8272e4c23eb39a064a3cbaca0dedbc00616f3",
+   "bytes": 10487246,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/aircraft/v3_cad_raw_supported.json",
+   "sha256": "6acf0b49a6355f9575de907ef62cf743bef66858b8e7c15c62f804aeca2e9c88",
+   "bytes": 476640,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/aircraft/wing_tail_reference.json",
+   "sha256": "e13cad172af52149d622bba0f82dfb0d3c9661b7a8a2296c246510faa6452046",
+   "bytes": 15793,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/flight/m600_crosswind_playbook_land.json",
+   "sha256": "a3f8e8ffc0ff53e759feeee27d80f60fc327e3ab53ea0870b19f79e693cc9bfc",
+   "bytes": 11195,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/ground/makani_gs02_norway.json",
+   "sha256": "ada665b6b18ed4ce35ade4f9913d9d34f40211789014d330ae683f93f7a0f652",
+   "bytes": 12191,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/ground/makani_gs02_parker_ranch.json",
+   "sha256": "73cd1443ad3efa9c114bd1592b4e7d0b12ecfd00aceebd2cfadfa883c681496e",
+   "bytes": 9212,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/README.md",
+   "sha256": "cf9fee1bbfb96bba05a047b84ca11ff5a05569b01765ee6562e0429927e9576d",
+   "bytes": 5051,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/approx_blade_rj8.json",
+   "sha256": "a693b4f094c07fae5d0a504ecf5348f131a9d279915116bf7d4b8d69fd9b87da",
+   "bytes": 27543,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/f8.json",
+   "sha256": "2d80d70185496cbaa443d71f03a6a8a4f5b9acc84b7540615388ad318b19bbe3",
+   "bytes": 6500,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/hover_model_sn02_wind_10_no_wake_model.json",
+   "sha256": "254d17acc26241bd046223ab38896ef868749020470b58e73b213d5e374b1628",
+   "bytes": 7329778,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/m600_aswing_baseline.json",
+   "sha256": "f84b4fa63d39dbe2743d29c12fe94e2e39457514ffba6a12d306072f899d66b3",
+   "bytes": 121570,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/m600_aswing_baseline_zero_angular_rate.json",
+   "sha256": "e6517e6b9ed0bd815ecf6aa474f82c1ce2f2070c064ae602036f6a48e9acaf14",
+   "bytes": 121339,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/m600_low_tail_no_winglets.avl",
+   "sha256": "2585234786d393a95c9039193a692d92ade7a252270669e420683d272f528eb2",
+   "bytes": 25020,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/mp6d.json",
+   "sha256": "779dc6ea4ca37db3c3e7aa07d15f1a0e84264d30089300cffc8bb5766dfdb774",
+   "bytes": 12732,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/naca0012_high_aoa.json",
+   "sha256": "42521ea5dd29fe2f7d2c659b02b30d443df091e348f14b7a53e0ccda27a7cfe0",
+   "bytes": 220423,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/oref.json",
+   "sha256": "26e2cf25ed0d386247f20fa50044a2176c889897e738cd903cf0f3af73f95473",
+   "bytes": 16986,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/ref.json",
+   "sha256": "f756d9170eeff4cc2539c50e803e7933736f784bc232ea1bf2995818a3231c4c",
+   "bytes": 16989,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/polars/makani/spoiler_offset_tables.json",
+   "sha256": "34d34301a15451b3b1280a1a9b36f34027a7339e228d6c763cacccad8e3188c0",
+   "bytes": 16968,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/powertrain/makani_m600_motors.json",
+   "sha256": "6c96e2c9c32f13940827c3692b238fca3d96166142774b8d7f76eb2226e795c6",
+   "bytes": 1122,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/powertrain/makani_m600_power_sys.json",
+   "sha256": "001fc651ff6abdfeee56b97732507d7423c3c808086353c09e76867e8b6e99d0",
+   "bytes": 1923,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_continuous_center.json",
+   "sha256": "d1ddffddfc1da36c9c646054f724a2228ae780a8c0f2e722418369ac2223bb40",
+   "bytes": 506355,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_flat_ideal.json",
+   "sha256": "a078e0806079490959ab7ea4099a1ec62166f0e969ab50ad1e83e59575b9fea6",
+   "bytes": 23159,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_pitch_plane_flat_ideal.json",
+   "sha256": "5d8a9bd84ddc705ba661f0bb8a077ac85be24d138512af2388f9adba410725c9",
+   "bytes": 22496,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_reconstructed.json",
+   "sha256": "e374ef0eaa47d14d9cb1019bb0071f97980159e6088da234e9c41a91178a5292",
+   "bytes": 3560622,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_reconstructed_flat.json",
+   "sha256": "230469e4773e6eb7dca4f91bd3b931a6592e85eca79f563ee9a116bf2407fba9",
+   "bytes": 49491,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_reconstructed_profile_drag.json",
+   "sha256": "1a672b7076fc31950dad09bb40760a6bcf955a63673dca0e1667b97cc2d63ba8",
+   "bytes": 2710356,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_reconstructed_pylons.json",
+   "sha256": "2fc6839cb698d787aecc844322dedfbb8667e8b44d7cb9f44043fd2648296949",
+   "bytes": 2514699,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_reconstructed_pylons_profile_drag.json",
+   "sha256": "2931fc63243a8509560f72706d2238b83d13deb70db94dc7a34b7da2c80c68dd",
+   "bytes": 2731065,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_xfoil_polars.json",
+   "sha256": "c2792d4a71a854e475de805e465eb539abed8b6c3f54859cb86d7ddacf33d592",
+   "bytes": 2637520,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/m600_makani_xfoil_polars_pylons.json",
+   "sha256": "6a3e266d776c44d9d2bfd1d24b4a9b84dba1e862252d0649cec1e7034ed6b793",
+   "bytes": 2688017,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/qualification/v3_cad_camber_integral_re500k.json",
+   "sha256": "6a5cc92128f78e823091c3e6c92146b09fcfad6a9bc771e0655491348da0a2e5",
+   "bytes": 10487605,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/reference/de2019_source.json",
+   "sha256": "a1d9df211aa78a00bf9ea4e2a935693b6d2ee03e7063eafb0b4988698cdc6aa2",
+   "bytes": 114759,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/reference/m600_airfoil_tables.json",
+   "sha256": "5eaccd1d4338b105897fb95fbbcf60d6ba4c5a9788995562334b40420c60c755",
+   "bytes": 2370372,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/rotors/m600_rotors_makani.json",
+   "sha256": "dc7e2def1e8b81a7afd5e573390b1a2e20f6ac38c6660a52f1ec47093ff63505",
+   "bytes": 3070,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/rotors/makani/rotor_rev4.json",
+   "sha256": "56a334dca21004b6cc9d0b78105779c7384ba38fc8fba5bd6c01d43228e9ed73",
+   "bytes": 361449,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "cases/tether/v3_dyneema_4mm.json",
+   "sha256": "be03bbbe8e3e99a0a50bea583738d7f8e4eab27aee26d1285bbe25d94c5df3a1",
+   "bytes": 2058,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: case input"
+  },
+  {
+   "path": "docs/media/flight-modes.svg",
+   "sha256": "7a06eadc7b23987d630e5c349791ecbeaa19fb59895dfb54623c17a32c880599",
+   "bytes": 10154,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "docs/media/flight-modes.zh.svg",
+   "sha256": "2603a2be72d0cbed9460d72edcc00f282da939d51145e9c95c9967908529f5d3",
+   "bytes": 9985,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "docs/media/openfawe-v1-crosswind-12ms.gif",
+   "sha256": "9f886414129f317143a7638dba797f4023a4507458b6c42213bc7a1a1b38a231",
+   "bytes": 3150221,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "docs/media/openfawe-v1-whole-flight-12ms.mp4",
+   "sha256": "9407bf3fee35576b90e8031bc4c7d2cf12bf19bbedc03ae1dfc37d5d1b827456",
+   "origin": "paper 2 supplementary video S1 (Video_S1_whole_flight_12ms_power.mp4, v6, 2026-11-16); copied into the folder on the first PC"
+  },
+  {
+   "path": "docs/media/studio-window.png",
+   "sha256": "f11f13886e73615b09231b485bb98cacd92d57510e09ccbd5a115a4e8eb780be",
+   "bytes": 228665,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "docs/record-keys.md",
+   "sha256": "6e009b82dfd8b9e23af9547f3cd729570056521b3eb225abb86b3129eec25366",
+   "bytes": 11405,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "docs/record-keys.zh.md",
+   "sha256": "d9fec62c40e1a61cc83c82df97d04ba96e567e62acb537485af117c0749aa352",
+   "bytes": 10487,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "docs/tasks/OF-0006-body20260930/mesh/fuselage-s015-r24.npz",
+   "sha256": "14c39b466195fe3a90f36d5af6e6a5a6b9314adcdf7c1d1f705076002b7092bd",
+   "bytes": 80618,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0006-body20260930/mesh/fuselage-s030-r16.npz",
+   "sha256": "00a85a05cc8f34be8f4f7d419eee16c6470a3ca155ca80c92c9e80c09253fbc1",
+   "bytes": 31530,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0007-g4motion20261002/a3_pitch.py",
+   "sha256": "e6690b826122640f9c454ff78f99490de574e48512aa56cb721067bc94940288",
+   "bytes": 41182,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0007-g4motion20261002/a5_loop.py",
+   "sha256": "de63e2025e71b53523b4396ca0f7800870382a209056d6b34b43307cf9f53ec3",
+   "bytes": 34820,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0007-wingfull20261001/alpha_sweep.py",
+   "sha256": "56f4147cfddc34aa5d6055fd7ae5c97d4117dafc69db372ba7708fdb183429a2",
+   "bytes": 16966,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0008-g5control20261006/closed_loop_checks.py",
+   "sha256": "8c02aa11b23b2ea2dcedca2e30421a067b2c612ab1107509725800dfd192c19b",
+   "bytes": 49093,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0008-g5control20261006/drag_checks.py",
+   "sha256": "7f0367bf836ea6b471480c973bcc805be90d0d0a820e06cf7e462b2ec4fc1957",
+   "bytes": 28204,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0008-g5control20261006/pylon_loop_checks.py",
+   "sha256": "0458fa8fdb5c351fd0ba134ba8da456055f335461503d94e992b8f285cb47bd5",
+   "bytes": 30574,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0008-g5control20261006/turnkey_checks.py",
+   "sha256": "38b236a1b6316820099cdd377662be3e762fe01353b43be5141e78b11aa2e3ce",
+   "bytes": 56963,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0008-g5control20261006/turnkey_vortex.py",
+   "sha256": "fc080088b7ff575c9a422eed717334d64ec79762eddb7e00a33f09ac3f040625",
+   "bytes": 13613,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0008-g5control20261006/turnkey_whole_vortex.py",
+   "sha256": "50ce04b85d7f34ccd9936214e5a0aa4f1496d00c2c5210202ccd93db37b7dd0b",
+   "bytes": 78080,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0010-platform20261022/platform_flight.py",
+   "sha256": "4d8f9f10ea4b901549c4675df9af23dec942c5888443c18f54c87dc89d4d2757",
+   "bytes": 62637,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: loaded by the program from its task folders (resources.TASK_FILES)"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/build_nogsl_linux.py",
+   "sha256": "12dcdee6ef00afc1ead59cdec0f04859cc5f252dc54e4a0ccf1e139f03035b47",
+   "bytes": 7641,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/build_nogsl_windows.py",
+   "sha256": "93fe267d76d0665c7ed0eee0022deafdbf46a9b88cd8f6fd13f45d5db717889f",
+   "bytes": 6713,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/gsl_blas.h",
+   "sha256": "19506581ef0d91e1f324c157d69ea68640b65bea0f3a0ebbc85a33797a0772d8",
+   "bytes": 551,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/gsl_blas_types.h",
+   "sha256": "3fb59508ce627901361ac5085b93077a0366328ab91f08ae7efdd5b592c3a55e",
+   "bytes": 380,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/gsl_cblas.h",
+   "sha256": "e662e2aa369fb06335ec366ff297a37f40f678745bc33ca2b593c9ae93379fad",
+   "bytes": 490,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/gsl_errno.h",
+   "sha256": "1d1b5722ca138904477463f60cdd33b24c070c12b6c4910d6fe1c2d786fa4746",
+   "bytes": 536,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/gsl_linalg.h",
+   "sha256": "20082181cbdcb8d3b584e9932a273e3bcbbfc73964e9b7930c6c0eb9d80a14fe",
+   "bytes": 790,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/gsl_matrix.h",
+   "sha256": "dd44ce156224e87636279f54001ce05178dc10cc5f50d33f6256e9b60e19aff5",
+   "bytes": 1402,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/gsl_permute_vector.h",
+   "sha256": "68c482a4b3424646a7beb0f7a1bc12189571ae3f8e3fb8d75af5958e4cb29694",
+   "bytes": 315,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/gsl_vector.h",
+   "sha256": "3b7e013ae39c2f60a9cf5ddcda1de992744d8bbf8f81001acd96f703551c06ce",
+   "bytes": 388,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/include/gsl/nogsl_types.h",
+   "sha256": "1fd52fd3dca3a1351b64432d486ba9934c3d9f1ddadbe05f51226b83daa8b2b1",
+   "bytes": 1150,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/src/nogsl.c",
+   "sha256": "4547046bad9ed201ec54eb267e5b7bcdec6003c61568e38c8b69bb63d204f09e",
+   "bytes": 22032,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/tests/capture.c",
+   "sha256": "4fda1eee4e450e7cc6d7912fe968a17c0b74ae10e53f71fd258ce816dece69dd",
+   "bytes": 2646,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/tests/nogsl_check.py",
+   "sha256": "f13db17bdb3264c78746e68539503511de5ec81d79b2a66fbd4dff65c4f85f35",
+   "bytes": 8830,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/tasks/OF-0013-release-v1-20261112/nogsl/tests/nogsl_compare.c",
+   "sha256": "407b717dbfb4f33a5adaa1e4101a5f570ccf011ebf6756b7e140b72944e52099",
+   "bytes": 3937,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "docs/user-guide.md",
+   "sha256": "6a19c39aceaa6e31d753ba9adeff338d0d400c8ad819306dea494b04224c1911",
+   "bytes": 28362,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "docs/user-guide.zh.md",
+   "sha256": "08783616dfb401bccb6ff12dd204230fa1df0f75c6dc319bd88a07662b9f2e30",
+   "bytes": 24872,
+   "origin": "the documents of release 1.0.0"
+  },
+  {
+   "path": "pyproject.toml",
+   "sha256": "bfa246e497eaa66eea9156287a1f865ef89c5038e0f0214a6b9aa133abf055a3",
+   "bytes": 1228,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the package's metadata"
+  },
+  {
+   "path": "src/openfawe/__init__.py",
+   "sha256": "44ec15fdec3e20dcadb025c6f094371492f4a04bd673417ae9fbd23ba1c20641",
+   "bytes": 177,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/__init__.py",
+   "sha256": "41f67c7ed34501d9c8d7fa75c10772f313d23a0ecfedcdb466d6d17c8a634c84",
+   "bytes": 484,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/aircraft.py",
+   "sha256": "2a13d058439f3ec3600e9ffece3ec04f09e33a887acec91dcc5a9240c09b2b20",
+   "bytes": 9986,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.aircraft, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/cores.py",
+   "sha256": "a5d050daed89a8eb65a31a55314cb681ce182c40f4e600a1101da553228138bf",
+   "bytes": 6985,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.cores, reached from docs/tasks/OF-0008-g5control20261006/turnkey_whole_vortex.py"
+  },
+  {
+   "path": "src/openfawe/aero/geometry_guard.py",
+   "sha256": "aa69d1c1149ec0427d4ddb0e82d2c551615339e212cbff614b3c281290049866",
+   "bytes": 20893,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.geometry_guard, reached from src/openfawe/aero/wake.py"
+  },
+  {
+   "path": "src/openfawe/aero/handover.py",
+   "sha256": "1f0059927b70bb2ce323cf33a994b5bb807ccd5e60d88cfab271b86a6e762b90",
+   "bytes": 22032,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.handover, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/hover_ring.py",
+   "sha256": "4f584ecdaa4a5afedb01d28858aaa779a4943b30b635187f476d159bbaa80443",
+   "bytes": 15276,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.hover_ring, reached from docs/tasks/OF-0008-g5control20261006/turnkey_whole_vortex.py"
+  },
+  {
+   "path": "src/openfawe/aero/initial_rate.py",
+   "sha256": "e600091e5479b4db4f7b094dc02baec70af4319adfee1b38952e31f577d3c585",
+   "bytes": 5532,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.initial_rate, reached from src/openfawe/aero_archive.py"
+  },
+  {
+   "path": "src/openfawe/aero/lifting_surface.py",
+   "sha256": "920dfda131b9c301f917058ed1431ef938927da2bbd7f84591f8e688f9f17e1c",
+   "bytes": 64535,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.lifting_surface, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/ll_straight.py",
+   "sha256": "fbf142d473fbad222e981f8f0edf376295f2c5135b23974a0370e5bf0f2791c5",
+   "bytes": 6107,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.ll_straight, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/makani_database.py",
+   "sha256": "4af9f7510322e133199997cf533a029befc1575b387e0f55ebebf74f13389976",
+   "bytes": 20413,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.makani_database, reached from apps/studio/openfawe_studio/turnkey_worker.py"
+  },
+  {
+   "path": "src/openfawe/aero/makani_flap_increments.py",
+   "sha256": "748905615a74642a9b06de3f7a4b294d267832c63ee3d9ca001c3ea608e3f294",
+   "bytes": 10514,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.makani_flap_increments, reached from docs/tasks/OF-0008-g5control20261006/closed_loop_checks.py"
+  },
+  {
+   "path": "src/openfawe/aero/makani_hover_strip.py",
+   "sha256": "6f78c72e8e9bb58dea8aa273c19f3fd098bcbcbb48f7db42abc40091018f8f2e",
+   "bytes": 18865,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.makani_hover_strip, reached from docs/tasks/OF-0007-wingfull20261001/alpha_sweep.py"
+  },
+  {
+   "path": "src/openfawe/aero/methods.py",
+   "sha256": "65c23e3f96e30594829e6cdd3f4b6af1e8e721152d7eac4e7b1d4afab6f20873",
+   "bytes": 23248,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.methods, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/network_numba.py",
+   "sha256": "3e277147d5b405e294bcaa9dcbc820e71b4eac694404467458b6297f2cfafc43",
+   "bytes": 10370,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.network_numba, reached from src/openfawe/rotor/ring_wake.py"
+  },
+  {
+   "path": "src/openfawe/aero/nonlinear.py",
+   "sha256": "54d56ba8f7c299999028fad58d6c4b72a9b89edb682da2d8b3cc43aa248839ab",
+   "bytes": 17542,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.nonlinear, reached from docs/tasks/OF-0007-wingfull20261001/alpha_sweep.py"
+  },
+  {
+   "path": "src/openfawe/aero/platform_sections.py",
+   "sha256": "468eb4449f4c6d245dcb506f9ac4ce4bc2cecd625b2bc4dc8e1204b8421ea634",
+   "bytes": 13234,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.platform_sections, reached from src/openfawe/flight/platform_surfaces.py"
+  },
+  {
+   "path": "src/openfawe/aero/polar_coupling.py",
+   "sha256": "e5db7a4cd05582ef5f889744686dcf204a4f13b3103e0e923f0c08616cf1d8fd",
+   "bytes": 19977,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.polar_coupling, reached from src/openfawe/aero_archive.py"
+  },
+  {
+   "path": "src/openfawe/aero/polars.py",
+   "sha256": "bfadb71ba16575991ec1eeb1b755f3940d7f97763187869d597e7651207354e7",
+   "bytes": 10912,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.polars, reached from src/openfawe/aero/makani_hover_strip.py"
+  },
+  {
+   "path": "src/openfawe/aero/spanwise_viscosity.py",
+   "sha256": "82e9033ee731e8fe974f9eca5f5cd16e97609108848d56eefeaa714739fd67e2",
+   "bytes": 10845,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.spanwise_viscosity, reached from src/openfawe/flight/platform_surfaces.py"
+  },
+  {
+   "path": "src/openfawe/aero/surface_cores.py",
+   "sha256": "ca2563a20ee749b0ce0386603388ee51a95169c0a5bc485f095e6fe796b705ac",
+   "bytes": 7960,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.surface_cores, reached from src/openfawe/aero/vsm_wake.py"
+  },
+  {
+   "path": "src/openfawe/aero/vortex.py",
+   "sha256": "af792e55bf5c5d20e07a2ccdaa486f44b98f419f03a689b6ab33dab35119c62b",
+   "bytes": 27190,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vortex, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_cuda.py",
+   "sha256": "be8ebeb8ab247476233b19760a2d05582e7dde2bfa43cad29eee807eec1dc8a2",
+   "bytes": 22546,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vortex_cuda, reached from docs/tasks/OF-0008-g5control20261006/turnkey_whole_vortex.py"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_cuda_build.py",
+   "sha256": "fa844b1a36d9f11ecb3a1fe6d8ac233ed87f60e1d2e3d3855d1f228fa777ebaa",
+   "bytes": 11258,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vortex_cuda_build, reached from src/openfawe/aero/vortex_cuda_tree.py"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_cuda_moments.py",
+   "sha256": "c12867f451dd537b6f5e57139c7198c838c492e1e19a5882742ac4be3faf461c",
+   "bytes": 9670,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vortex_cuda_moments, reached from src/openfawe/aero/vortex_cuda_tree.py"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_cuda_tree.py",
+   "sha256": "fd9c7b46def4b5e6f840c606310b1cbccf3294aa414b723ca3fe24a73be24e76",
+   "bytes": 30511,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vortex_cuda_tree, reached from apps/studio/openfawe_studio/selftest.py"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_numba.py",
+   "sha256": "8844ee38b1303c6a406010f2dfc5a36f1bfc887cf39ee319c5ecb0ebc9d7d0e0",
+   "bytes": 13564,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vortex_numba, reached from apps/studio/openfawe_studio/selftest.py"
+  },
+  {
+   "path": "src/openfawe/aero/vortex_tree.py",
+   "sha256": "0f10f560b709a6d601e7fc2552fba83f1d506de81ca2234387b0b8a56749178d",
+   "bytes": 26043,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vortex_tree, reached from apps/studio/openfawe_studio/selftest.py"
+  },
+  {
+   "path": "src/openfawe/aero/vsm.py",
+   "sha256": "12389269909b015563884d4981bbc26e8107c171d2ce4a7299e0f164703fc293",
+   "bytes": 40264,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vsm, reached from docs/tasks/OF-0007-wingfull20261001/alpha_sweep.py"
+  },
+  {
+   "path": "src/openfawe/aero/vsm_wake.py",
+   "sha256": "b444418149bb89b9c748226c049d5cf6370f44bf07384e62250785ddc3529253",
+   "bytes": 29323,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.vsm_wake, reached from src/openfawe/rotor/coupled.py"
+  },
+  {
+   "path": "src/openfawe/aero/wake.py",
+   "sha256": "9bc446fa84ba62c622d28178df49c04f66e2c595d4936b13ba871e29f2b5a701",
+   "bytes": 45263,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.wake, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/aero/wake_potential.py",
+   "sha256": "8dddbc98c6e005ee3efcfe8a94e6980f63ceef28ab688ac790be85f1e4c3ab2f",
+   "bytes": 10135,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.wake_potential, reached from src/openfawe/aero_archive.py"
+  },
+  {
+   "path": "src/openfawe/aero/wing.py",
+   "sha256": "3ebb0e5ddf89ed6057533f415517cd339a0e416542d3f67a22f313be1b0ddedd",
+   "bytes": 26682,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero.wing, reached from docs/tasks/OF-0007-wingfull20261001/alpha_sweep.py"
+  },
+  {
+   "path": "src/openfawe/aero_archive.py",
+   "sha256": "1386136b6f16b26b54d2b76e7a5f6ae2ce85d9acdcc72496cf360e7c1f32bbdc",
+   "bytes": 86501,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero_archive, reached from src/openfawe/aero_vtk.py"
+  },
+  {
+   "path": "src/openfawe/aero_vtk.py",
+   "sha256": "e00f18c72e2b5c38faa31c801a52e552d9272fe009c40983dd72703e58d4a176",
+   "bytes": 13404,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.aero_vtk, reached from apps/studio/openfawe_studio/freeflight_io.py"
+  },
+  {
+   "path": "src/openfawe/compute/__init__.py",
+   "sha256": "ae2faa5811793693c090f348e8f6b1e0cef966c24c711311a82ce704fe2651a1",
+   "bytes": 424,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.compute, reached from apps/studio/openfawe_studio/selftest.py"
+  },
+  {
+   "path": "src/openfawe/compute/hardware.py",
+   "sha256": "fe1548327474dc3d6df3b2bc22f4bb3b3917e803daffe11349c1628cc4df3616",
+   "bytes": 5145,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.compute.hardware, reached from apps/studio/openfawe_studio/selftest.py"
+  },
+  {
+   "path": "src/openfawe/flight/__init__.py",
+   "sha256": "3c69d1ad578dbd5abd86a538444f4d807d1b7b048649cd7160ebb4e13d29b6a5",
+   "bytes": 717,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/flight/closed_loop.py",
+   "sha256": "df7a5b6df9b248cb4ab63c6f0b8a7fc377cfc80e2b547b154ebc8269adb32c59",
+   "bytes": 25076,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.closed_loop, reached from docs/tasks/OF-0008-g5control20261006/closed_loop_checks.py"
+  },
+  {
+   "path": "src/openfawe/flight/companion.py",
+   "sha256": "ef22ba0045de2b20765c57b44faa54a055fb2be88084fbd376a695038ceea5a6",
+   "bytes": 7183,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.companion, reached from docs/tasks/OF-0008-g5control20261006/pylon_loop_checks.py"
+  },
+  {
+   "path": "src/openfawe/flight/crosswind_loop.py",
+   "sha256": "54d319f5fecdd7d1a04a790507209b2d83249bd6263a38d98e2ad2aaebe66b2c",
+   "bytes": 45361,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.crosswind_loop, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/flight/free_flight.py",
+   "sha256": "6492d8c2e1a30c79391d06ca1f380fd0161f25f0af1b7cfff639cbf96d4bae86",
+   "bytes": 27569,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.free_flight, reached from docs/tasks/OF-0008-g5control20261006/closed_loop_checks.py"
+  },
+  {
+   "path": "src/openfawe/flight/kinematics.py",
+   "sha256": "4406192ef61b886e14be1618efc78c05b4511d506a9b015d86991b04ca3ae3a7",
+   "bytes": 35691,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.kinematics, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/flight/makani_full.py",
+   "sha256": "c82de0ddef430a2df28231911dfdccb2ee35381920c0a9adef79293826978cd2",
+   "bytes": 18689,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.makani_full, reached from apps/studio/openfawe_studio/turnkey_worker.py"
+  },
+  {
+   "path": "src/openfawe/flight/makani_interface.py",
+   "sha256": "0dcf01b88b5e9e3104c1690ec31fefd67b8a4758cb0631b641b048922eee65cf",
+   "bytes": 9631,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.makani_interface, reached from apps/studio/openfawe_studio/freeflight_io.py"
+  },
+  {
+   "path": "src/openfawe/flight/plant.py",
+   "sha256": "ca3bf75cb7d05c1b2f68902b016c67296e057e270563ffb1f392f45ff58759e0",
+   "bytes": 16179,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.plant, reached from docs/tasks/OF-0008-g5control20261006/closed_loop_checks.py"
+  },
+  {
+   "path": "src/openfawe/flight/platform_surfaces.py",
+   "sha256": "9c1abe59c6ac4f9a56b16478e6131405ff870babb6d0c93ba82851933cf08a5a",
+   "bytes": 36912,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.platform_surfaces, reached from apps/studio/openfawe_studio/freeflight_io.py"
+  },
+  {
+   "path": "src/openfawe/flight/prescribed.py",
+   "sha256": "7687a021e5d7805010ceec3881cced1e5afaa42021515f8c3c79b0f0289c647f",
+   "bytes": 59624,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.prescribed, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/flight/quasi_steady.py",
+   "sha256": "697e9b017ab8f4205b16790546fa98719d7e3481b6f5095a0b291e7d6954f0f8",
+   "bytes": 4742,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.quasi_steady, reached from docs/tasks/OF-0008-g5control20261006/turnkey_whole_vortex.py"
+  },
+  {
+   "path": "src/openfawe/flight/reference_flight.py",
+   "sha256": "cbc3534d0baf59927ab430765e665bda9e5e8b2172d08d7fe6f24e6447dcb7a0",
+   "bytes": 10769,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.reference_flight, reached from src/openfawe/ground/turnkey.py"
+  },
+  {
+   "path": "src/openfawe/flight/residual.py",
+   "sha256": "ec379c4f6f26513d8590bc0f074dfeae303e8d81aafe70451778ac9545a574b4",
+   "bytes": 13262,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.residual, reached from docs/tasks/OF-0007-g4motion20261002/a5_loop.py"
+  },
+  {
+   "path": "src/openfawe/flight/rigid_body.py",
+   "sha256": "91b567bf7a6c77717336c89a2f806b7992e0a85f78626031355b05101cbc87f3",
+   "bytes": 9276,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.flight.rigid_body, reached from docs/tasks/OF-0008-g5control20261006/closed_loop_checks.py"
+  },
+  {
+   "path": "src/openfawe/ground/__init__.py",
+   "sha256": "fe80a9c785745eb59d7e284518da094fd387db875104248e2f453d76e8f94330",
+   "bytes": 98,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground, reached from apps/studio/openfawe_studio/freeflight_io.py"
+  },
+  {
+   "path": "src/openfawe/ground/gs02.py",
+   "sha256": "eb61efb21cfc37dfb3de887ffc92d3ced0fac1ea655681c7a96423edca94a28a",
+   "bytes": 50912,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.gs02, reached from apps/studio/openfawe_studio/freeflight_io.py"
+  },
+  {
+   "path": "src/openfawe/ground/iec_wind.py",
+   "sha256": "77c50dbdd98397f013d7744cec1df322d1ba21ebc3a97484b31840f738b68b0f",
+   "bytes": 19477,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.iec_wind, reached from docs/tasks/OF-0010-platform20261022/platform_flight.py"
+  },
+  {
+   "path": "src/openfawe/ground/makani_wind.py",
+   "sha256": "44e9672011b8363cafb86f7c151af18e2bc053da969b34fab855a3830e7cf25c",
+   "bytes": 1064,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.makani_wind, reached from src/openfawe/ground/iec_wind.py"
+  },
+  {
+   "path": "src/openfawe/ground/perch.py",
+   "sha256": "9f6085e04fc9986141f66183df24f6aaa9252d89826f0e6dbc05139054d117f4",
+   "bytes": 44257,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.perch, reached from apps/studio/openfawe_studio/freeflight_io.py"
+  },
+  {
+   "path": "src/openfawe/ground/resume.py",
+   "sha256": "46135285babe486b2a8bccd8f16bf9bd553de954e50fe49cf2d6c3c794e8a715",
+   "bytes": 8736,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.resume, reached from src/openfawe/ground/turnkey.py"
+  },
+  {
+   "path": "src/openfawe/ground/turbulent_wind.py",
+   "sha256": "8e1c6023c3cd2faebe612462083ace074396d8dfce9afd3e15f1781140bc06fb",
+   "bytes": 17175,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.turbulent_wind, reached from docs/tasks/OF-0008-g5control20261006/turnkey_checks.py"
+  },
+  {
+   "path": "src/openfawe/ground/turnkey.py",
+   "sha256": "d6bec819b0e0545c1361b3be8214ab251acee08dddde9b8ed2a5f8f76aa0bb01",
+   "bytes": 73378,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.turnkey, reached from apps/studio/openfawe_studio/freeflight_io.py"
+  },
+  {
+   "path": "src/openfawe/ground/turnkey_scoring.py",
+   "sha256": "f4587b4ef4c2047ec28c27a59789123232a88a483110d6422a390c17552efab5",
+   "bytes": 13406,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.turnkey_scoring, reached from docs/tasks/OF-0008-g5control20261006/turnkey_checks.py"
+  },
+  {
+   "path": "src/openfawe/ground/wind_shear.py",
+   "sha256": "6d026de0ca82ef78b3a77fb4d01b07db0311b327e89f7d5b7a66326c96bece61",
+   "bytes": 8783,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.ground.wind_shear, reached from docs/tasks/OF-0008-g5control20261006/turnkey_checks.py"
+  },
+  {
+   "path": "src/openfawe/power/__init__.py",
+   "sha256": "7e95a70deda96398663949bf5e8201f3ff8115e0ce8c45cbe251edcd9127ee7e",
+   "bytes": 113,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.power, reached from docs/tasks/OF-0008-g5control20261006/turnkey_checks.py"
+  },
+  {
+   "path": "src/openfawe/power/makani_motors.py",
+   "sha256": "14d40f12d502c5490e6accede118aa609d414d1e8ff5999cfe14d4ff2a156968",
+   "bytes": 10737,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.power.makani_motors, reached from src/openfawe/power/makani_power_sys.py"
+  },
+  {
+   "path": "src/openfawe/power/makani_power_jit.py",
+   "sha256": "74abaa4e139858dec383270078ee607a2477c069dbe191a0525b30c172bef63e",
+   "bytes": 29069,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.power.makani_power_jit, reached from src/openfawe/ground/turnkey.py"
+  },
+  {
+   "path": "src/openfawe/power/makani_power_sys.py",
+   "sha256": "3c7d69ab629e432448d1228a797c4d179773a997a2a7bcd8702126289b3bf0a8",
+   "bytes": 38640,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.power.makani_power_sys, reached from docs/tasks/OF-0008-g5control20261006/turnkey_checks.py"
+  },
+  {
+   "path": "src/openfawe/provenance.py",
+   "sha256": "ef0f8101d5416aaed812c2fa23c28228cd34501db5ec66c0ac92c941b8a4ba8e",
+   "bytes": 2082,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.provenance, reached from apps/studio/openfawe_studio/runstore.py"
+  },
+  {
+   "path": "src/openfawe/rotor/__init__.py",
+   "sha256": "c0ef7c5af4f73ced9752986bc6c09c0f5ebe3cff053181561d28e08eb65e2e6d",
+   "bytes": 365,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.rotor, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/rotor/actuator_disc.py",
+   "sha256": "c8cd7957d0eab2096d9f9996159818dc204f65a80b78f7eb5c5f513f1636abc6",
+   "bytes": 13825,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.rotor.actuator_disc, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/rotor/coupled.py",
+   "sha256": "5a9595ebe5b895c1ad6e7b18092dace4dfa1d6c3c7ef01f79ee48a8f64b8d596",
+   "bytes": 10555,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.rotor.coupled, reached from docs/tasks/OF-0008-g5control20261006/turnkey_whole_vortex.py"
+  },
+  {
+   "path": "src/openfawe/rotor/makani_corrections.py",
+   "sha256": "c0af0e44446b3991f4896146811111686a5c6b435f7229749a0ce8ff910bffe3",
+   "bytes": 2711,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.rotor.makani_corrections, reached from src/openfawe/ground/turnkey.py"
+  },
+  {
+   "path": "src/openfawe/rotor/ring_wake.py",
+   "sha256": "108213c3d16bc0ba6dd55c6499a849a7472edbe4fc796a0a207bdad537d504b7",
+   "bytes": 28158,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.rotor.ring_wake, reached from docs/tasks/OF-0008-g5control20261006/turnkey_whole_vortex.py"
+  },
+  {
+   "path": "src/openfawe/rotor/table.py",
+   "sha256": "0bf2d8491b2bec6e26c34660c24eac2a286c4f5c1c9382c0074f49587a6a9ef6",
+   "bytes": 8977,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.rotor.table, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/tether/__init__.py",
+   "sha256": "ccb1684510dc59901a49ef4978236e456cba1b7bfe24891721eeaa36fbf16fdf",
+   "bytes": 80,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.tether, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/tether/bridle.py",
+   "sha256": "1575ea9fcc932c1b8d2236ce4dabe3abc4abeeb6a4367f2592520f30151b267b",
+   "bytes": 4185,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.tether.bridle, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/tether/lumped_line.py",
+   "sha256": "b726c5bc1c56c8b24654474723255b1398cc5d7613873468a16c2e14e7fcc32d",
+   "bytes": 16325,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.tether.lumped_line, reached from apps/studio/openfawe_studio/engine.py"
+  },
+  {
+   "path": "src/openfawe/tether/variable_line.py",
+   "sha256": "0b07f6952552cc39a2da88f7e90f2a3d2872baa8f83955eb9170c82bc7bf90bc",
+   "bytes": 22648,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.tether.variable_line, reached from src/openfawe/ground/perch.py"
+  },
+  {
+   "path": "src/openfawe/vec3.py",
+   "sha256": "8ddf19dccef69d6d796f4d050e6a32ac062c807fcead56a3e8ca751c2a07a0ee",
+   "bytes": 1144,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: module openfawe.vec3, reached from src/openfawe/flight/rigid_body.py"
+  },
+  {
+   "path": "tests/__init__.py",
+   "sha256": "08a0edeee2f3b4fb12382549bb805b0cef47f58928b990e3bf8be37efc535616",
+   "bytes": 29,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "tests/fixtures/lifting_surface_reference.json",
+   "sha256": "c41ba755e35a9a853ffdbc657720ce2967ce9b9fdf9c6943505c726b5f15eb81",
+   "bytes": 31956,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "tests/fixtures/ll_straight_reference.json",
+   "sha256": "e176d4a4d38cee4675137511ff4805a97584e5ec02e275fc487a709e473f4865",
+   "bytes": 66334,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "tests/fixtures/olaf_ellipse.json",
+   "sha256": "d8174a97f788b9e89224db878996e6cb555b36c860907cf34adb0d1c821a57d6",
+   "bytes": 11247,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "tests/fixtures/polar_coupling_geometric_reference.json",
+   "sha256": "aecf3e108129fce56dd5e4bc1e1865deb2fd99f2892e2f313f0fda6e593b81fc",
+   "bytes": 215391,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "tests/fixtures/v3_reference.json",
+   "sha256": "29eee27dc773a967a809bf7d05445c049f388b6b179c2d84fb246ca897b8318c",
+   "bytes": 60503,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "tests/fixtures/vsm_assembly.json",
+   "sha256": "199698956e57ea99435b77add72c14fd1d6b10f0dc8e94165643f92dc3f9686d",
+   "bytes": 21969,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "tests/fixtures/vsm_source.json",
+   "sha256": "504fe05b5195157ee94e18ff9e649efe700811ec2584545e1e88f861b6df9bd9",
+   "bytes": 149625,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "tests/test_aero_clock.py",
+   "sha256": "d540ecd95fe87889c28f2910e9cfe78e2a3165c2980ad7c06d1f693b43b64676",
+   "bytes": 1214,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_aero_contracts.py",
+   "sha256": "3cf29e98eb2058d4468ae1bd5c9c1f87695cd1cb7a85527f2825755e8c8a4d7b",
+   "bytes": 18380,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_aero_fields.py",
+   "sha256": "ec0e446fccdd0b840d09cc2bf45dbfaeb6cb655b4227c40fad78cbba58eb0960",
+   "bytes": 4246,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_bound_convection_core.py",
+   "sha256": "c39d54d0aa03b08ad9751ce1f8bb32e2248d1d43ca32443ad5f632b3636e266f",
+   "bytes": 12375,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_bridle.py",
+   "sha256": "9dd1e396b61a9a7c92cb78c7479baf91271da210d2f4080eb764c53a3c54c5f0",
+   "bytes": 6289,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_cambered_polar_loads.py",
+   "sha256": "ae603c973dda5ba88581e170f8b1194dc791f8a98252559874e7a3aaba276063",
+   "bytes": 7638,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_cap_load_stage.py",
+   "sha256": "663ec5d250e11f4728bb5f3ab2df14c28dbaaf9f0378b37a4ef4b20f24c3a885",
+   "bytes": 4098,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_closed_loop.py",
+   "sha256": "75b809a6b2307b075e35b273a4e5b6c4b735a5a3b75dffaee15d1dd42d7cae80",
+   "bytes": 34292,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_compute_hardware.py",
+   "sha256": "4e95b3429984a20616d4ee5074c195a59448ac9da3963a7a1581e42e74e5d922",
+   "bytes": 2919,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_control_options.py",
+   "sha256": "1ec573bae81fd8e5de441641c8c606302f919e69eadca490767ef1ba0f441d30",
+   "bytes": 2603,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_cosine_lattice.py",
+   "sha256": "dd88e491213d9241cb71fb94b6f37df50c1c613d34175824b1e43f80aa8ec543",
+   "bytes": 12460,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_crosswind_loop.py",
+   "sha256": "0a4d7d28943855103ff9b86f405bc3977580d52e622927c0980732d2cfe9c4b2",
+   "bytes": 24318,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_cuda_build.py",
+   "sha256": "17818a7e8f221077eed07fba29e318ac414f2c8cec7d33871c6b1a99723969ab",
+   "bytes": 5153,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_cuda_moments.py",
+   "sha256": "4f0aafc26f1889a7e918c035786d1aa28c39b8d4b0fa75f4911fe764fbab56d4",
+   "bytes": 9164,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_far_wake.py",
+   "sha256": "22e330c0a7e98341e975ce173d0b241c71bf64d4109b6841df0d26441f15a9d8",
+   "bytes": 25458,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_flight_kinematics.py",
+   "sha256": "620634ca541c8ff1837d869fcafc848cbd39cc89d2914f43d44cd38ad903aa52",
+   "bytes": 20470,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_free_flight.py",
+   "sha256": "0e39d3b1048e38bc7be40608780a70c15b483038ad51a2f104fe4e1a550e6aec",
+   "bytes": 24922,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_frozen_rows_drift.py",
+   "sha256": "c405f64c3127e6354177bc0b38ece789c355c56ca38552e934d91c0055bb35ae",
+   "bytes": 5003,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_geometry_guard.py",
+   "sha256": "f8a7597caae332ac78a23235c9654bc7bc3609c0666532e8ec9d14dea0bb9158",
+   "bytes": 12819,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_gpu_settings_fp64.py",
+   "sha256": "93044d92a898f22143d26466572ed42951c87fbb0e05cf8f61bca98bf8add38f",
+   "bytes": 1546,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_gs02.py",
+   "sha256": "d02d93d5642180828a183ac08863c37db96b3d2482ec4cd303b2a13bd6403024",
+   "bytes": 29318,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_gs02_vessel.py",
+   "sha256": "793590356c12fe8055bd19ec8a5f39b66ba97b55180232bd0944cbac1d396b8b",
+   "bytes": 3362,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_handover.py",
+   "sha256": "4082bf596db1943233faa5777957119340314dde4f7a3dd6c07e5277c734b344",
+   "bytes": 30364,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_hover_ring.py",
+   "sha256": "51962c8d1a1823ca0cb7c8004a9ce077c11b3c919c8e5281e1b5db091443f8e9",
+   "bytes": 12756,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_hybrid_solver.py",
+   "sha256": "706f65350e022248410d790a3e2389511d97886c91af5fc186cfd3295e96f7ee",
+   "bytes": 12469,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_lattice_time.py",
+   "sha256": "7c6920574d359b8cd8c7866e96fb15d48f0b4b96f2561c78da0168aa0c43b87f",
+   "bytes": 9945,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_lifting_surface.py",
+   "sha256": "03ba73031adf2497c9ebe4182bc154c9b57a135541eb5c8edb8e72e5648ec52b",
+   "bytes": 19268,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_linear_wake_convection.py",
+   "sha256": "ef676e9379746811b4814deb48d55852f423a52e9e93f13b2ef2ba253e4bec02",
+   "bytes": 10454,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_linear_wake_cores.py",
+   "sha256": "f814f00a8a209e9ea9534f5903645479f3d7918785990d168173e339be22e1e0",
+   "bytes": 9978,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_local_wake_cores.py",
+   "sha256": "869f42245808919fb4290415602d69b916bfe4aa4d20a27f2239db0ba11ecbcf",
+   "bytes": 15061,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_network_numba.py",
+   "sha256": "7a5d748728afe236290a7080db1e29f4e0b79a34d99d22d52b88b4f1c75a6833",
+   "bytes": 4958,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_numerical_matrix.py",
+   "sha256": "8a5e497fe382fd8d3be7c87d9cc03f874b1ecaf366017db4b6165c98185de763",
+   "bytes": 10414,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_perch.py",
+   "sha256": "63c28b427a16c662609c2ae333749e697395e6255fcc7fd07fe47e3d13097d97",
+   "bytes": 19148,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_plant.py",
+   "sha256": "11add187bdb28b3cb42cf9893e7a76c2277525832c236284bf2b3cdeb36916e0",
+   "bytes": 25772,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_power_jit.py",
+   "sha256": "0c612ede668ef3e0645775aea6f45333fe7abf476e7496841f35503e8aba106b",
+   "bytes": 9591,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_prescribed_motion.py",
+   "sha256": "771834ec7bb40c1c7ba627ea43f3c6bc3d1afc5b046ae338e3bee38ad4b13ecb",
+   "bytes": 96155,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_quasi_steady.py",
+   "sha256": "86ffebd1750990ef484cf9e2707be7e9f00f20a1c9a23f58f0fa109c31720a7b",
+   "bytes": 3262,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_reference_plant.py",
+   "sha256": "c2567c818f262fd07552850e4a76e46aa1feb4c73fb7559ef936e7e95647b0f5",
+   "bytes": 22167,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_repair_motion.py",
+   "sha256": "ed92c570d621ebd9abcdb8a523fafaec53adebf65a80b85bb0573102b44cf780",
+   "bytes": 3330,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_residual.py",
+   "sha256": "40ee95aca1d45596cad622a272e6f08fa90d6c84ac252b1eeb615d6e17da293b",
+   "bytes": 16400,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_rigid_body.py",
+   "sha256": "0fcbb193f8cd3251cd47db28d3f70bd726a0fd98405967471190da35b3ff49ab",
+   "bytes": 15873,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_ring_truncation.py",
+   "sha256": "1eb3c3f18db63ed080fed19755c50aadc1e0b232b0d6816bfa290bc98c936757",
+   "bytes": 11167,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_rosenhead.py",
+   "sha256": "e9f28d4be950c5726114eb6821d5e70785f45e31c8d4cb7deb111928c85e25d8",
+   "bytes": 5847,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_studio_task_files.py",
+   "sha256": "703736370b9c8b1c5395c8cd333bd0788215a3a439ddf1dd123f3d79277545be",
+   "bytes": 3950,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_tether_ground_contact.py",
+   "sha256": "397cb55b8bc60663dd598484bc719f3020a68d8348d21abfbaf99f91248f9851",
+   "bytes": 9605,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_tether_lumped.py",
+   "sha256": "89202ffb62372c0c65447d1d6406f2f0dcdc23743c788de7eed1f4c09aa5f88f",
+   "bytes": 15306,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_turnkey.py",
+   "sha256": "75852f5f7dec162a4e13591fecdeb278b688d98645c28a7fd8ed66be7bac452b",
+   "bytes": 19258,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_turnkey_stop_rules.py",
+   "sha256": "5c693b7978cf9d6bca87f9a8232ae0e98425d7a87315b404c94b661313d2711b",
+   "bytes": 4209,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_variable_line.py",
+   "sha256": "78e4548b44426667aec35fc3323a07ee8dc6b395cbd079262cd2698020cdb97f",
+   "bytes": 15961,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_variable_line_start_force.py",
+   "sha256": "74e15492d49f431b64f8857404c49113d9dd20712de8a82f21ae236d0fb67168",
+   "bytes": 1893,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_vortex_batch.py",
+   "sha256": "38124f59c52aa9ac72d357c65cdac44b9ff9733565ebd106145b01adaa7ce58f",
+   "bytes": 6055,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_vortex_batch_backends.py",
+   "sha256": "7546bbc4df7d92dfe8a1cf9e6f0d63a152c2424db2d4c442a779b77f29f0fff1",
+   "bytes": 2995,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_vortex_cuda_default.py",
+   "sha256": "a9b88a26229c55c970c4f099d2d20591cd3e9ace164ce8262ecd05183ab2997b",
+   "bytes": 1783,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_vortex_numba.py",
+   "sha256": "912833b80f38cc17fe670732ae073a09bdb15a919f800f8c181c5f74fde5cbc6",
+   "bytes": 11135,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_vortex_tree.py",
+   "sha256": "6b355a697740fc7b7c69545509af1e9ff14498e0be6e38dded26ec4dc86af2fa",
+   "bytes": 11951,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_vsm_jacobian.py",
+   "sha256": "52d5fa03e545d16dc859e01f2c0f6032e125d3f1a28feae318a48f0658d85f63",
+   "bytes": 16094,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_vsm_wake.py",
+   "sha256": "40f98e22d7fe52c7a4ddbb567d9f19b6d4525769e4000333de57da5f62e6712c",
+   "bytes": 5363,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_vsm_wake_batched.py",
+   "sha256": "d941d66d9c8b78cda1539d653b70f8b13a92f7dfc1ad778ae14a2329a5a7bc1e",
+   "bytes": 10525,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_wake.py",
+   "sha256": "6fbf3a9f525fb21db675ab02acb2ffec0b21d7eafb84670e089446417ad7f56f",
+   "bytes": 6179,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_wake_archive_contracts.py",
+   "sha256": "6648d850839d6db85dc2d7dd2ecc6a6840d02d2566e386eeb1825e3754d03f6f",
+   "bytes": 8584,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_wake_convection.py",
+   "sha256": "9f2ac70e29a8bc191ebef28b5b954b9bdff4b1804ce806e8003cd3bb283710a2",
+   "bytes": 4596,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_wind_shear.py",
+   "sha256": "54d74559b083c43a000392b1633712ce0fd49cf84f68dd7e207f707917090479",
+   "bytes": 19834,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_wind_speed_option.py",
+   "sha256": "96e98013224bb4ae171ee7f7258e881562166fbba0fe18489e00ac73d338879d",
+   "bytes": 4015,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/test_wing.py",
+   "sha256": "f84ac9c4de24634d3bad42d79336ed065fe1a9069f1907009a64a2640d7ccac1",
+   "bytes": 7104,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: unit test of the published code"
+  },
+  {
+   "path": "tests/turnkey_units_probe.py",
+   "sha256": "7f0cdf80579d6f4826b1ce3cba8f9aa489725e2e1620dcdbe16d84d0c0790b21",
+   "bytes": 476,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: test support"
+  },
+  {
+   "path": "third_party/CAMBER-SOURCES.md",
+   "sha256": "448c5a112861c31a60c6ae100e15e1aa16fb5920915a0b80bc1ac08f8e6309a5",
+   "bytes": 1652,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/LICENSE-Makani.txt",
+   "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+   "bytes": 11358,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/LICENSE-OpenFAST.txt",
+   "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+   "bytes": 11357,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/LICENSE-TUDELFT-V3.txt",
+   "sha256": "ea4ac14f6ec78d9b44e303db75413ddc5188f125629bcd19954392edeb7d2065",
+   "bytes": 1113,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/LICENSE-VSM.txt",
+   "sha256": "8b5d245cd77b44a5247410a94b973a58d4a3cad5e4cda934f056bd1b84f3da6f",
+   "bytes": 1141,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/MAKANI-NOTICE.md",
+   "sha256": "ee91bf10608057b95e6c5cce33a9d63a36ccc41da0da6e3800c4ea7160adbfae",
+   "bytes": 8270,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/OPENFAST-NOTICE.md",
+   "sha256": "e6e5460f9cde68200427346a48fc59078cbcc50aa7503bc889edd3d2665ef102",
+   "bytes": 2353,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/OPENFAST-WING-WAKE-NOTICE.md",
+   "sha256": "f91bc3d8daa52f6ef3beb821bcdb36f2d6cb58fa65a9106dd978a0259076cde6",
+   "bytes": 2374,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/VSM-NOTICE.md",
+   "sha256": "09976b0df9e25a3e96505952577ee20d66c6f5e3adfa8c72bc0ee5ba2c8b0ecd",
+   "bytes": 1535,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: licence or notice of third-party work"
+  },
+  {
+   "path": "third_party/makani-controller-win-nogsl/README.md",
+   "sha256": "7fbc5fcf1b51cd5543e08cca0ab4a5d85928e445d44e0384783ea5e993dd2252",
+   "bytes": 1591,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "third_party/makani-controller-win-nogsl/lib/libmakani_full_controller.so",
+   "sha256": "d6576a8ec8843735f9681591636bfa5e37fdbff4d209b72401f79d2e43367a63",
+   "bytes": 717538,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "third_party/makani-controller-win-nogsl/lib/makani_controller_api_layout.json",
+   "sha256": "76adf040021cde80434a46480446b845bff42cd100e76bcfa28d83761b5afd45",
+   "bytes": 106268,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  },
+  {
+   "path": "third_party/makani-controller-win-nogsl/lib/makani_full_controller_api.py",
+   "sha256": "cc3e934f9dd7c717b10992d4e30ad109f99428c459ada855c5d3dcd503442416",
+   "bytes": 449526,
+   "origin": "the source OpenFAWE Studio 1.0.0 is built from: the controller library without GSL: the build, its scripts and the replaced sources"
+  }
+ ]
+}

@@ -25,6 +25,8 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from openfawe.vec3 import cross3   # OF-0014: numpy.cross for 3-vectors, bit for bit
+
 
 @dataclass(frozen=True)
 class Bridle:
@@ -43,7 +45,7 @@ class Bridle:
     def pivot(self, pose):
         """Inertial position and velocity of the pivot (a point of the body)."""
         position = pose.position_m+pose.rotation@self.pivot_body_m
-        return position, pose.velocity_m_s+np.cross(pose.angular_velocity_rad_s, position-pose.position_m)
+        return position, pose.velocity_m_s+cross3(pose.angular_velocity_rad_s, position-pose.position_m)
 
     def point(self, pose, node_position, node_velocity):
         """Inertial position and velocity of the bridle point for the given last tether node."""

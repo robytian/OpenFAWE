@@ -487,7 +487,8 @@ def solve_vsm_operator(wing, polar, inflow, operator_matrix, load_operator_matri
                        known_induction=(0.,0.,0.), known_load_induction=(0.,0.,0.),
                        structural_velocity=(0.,0.,0.), load_relative_ambient=None, density=1.225,
                        kinematic_viscosity=1.4639e-5, initial=None,
-                       settings=SolveSettings(relaxation=.03, max_iterations=2000), diagnostics=None):
+                       settings=SolveSettings(relaxation=.03, max_iterations=2000), diagnostics=None,
+                       regularization=None, circulation_mask=None):
     """Solve the unchanged VSM closure using explicit current/history operators.
 
     ``operator_matrix`` maps current Gamma to induction at 3/4 chord and must
@@ -502,6 +503,14 @@ def solve_vsm_operator(wing, polar, inflow, operator_matrix, load_operator_matri
     ``settings.closure='full_incidence'`` (decision 0020) replaces the forward-
     flow domain checks and the source target by ``_vsm_closure_full`` and
     ``_full_incidence_loads``; the default ``'source'`` path is unchanged.
+    ``regularization`` (default None: unchanged) is a callable ``(target, alpha, polar) -> target`` applied to the
+    full-incidence closure's target circulation at every evaluation (OF-0010 P5c, ``aero.spanwise_viscosity``); the
+    Newton and Picard solves then find its fixed point. Only with the full-incidence closure and a finite-difference
+    Jacobian.
+    ``circulation_mask`` (default None: unchanged; OF-0010 P5d) is one finite value in [0, 1] per panel that multiplies
+    the full-incidence closure's circulation weight W (``onset_weight``; W = 1 where no regime parameter is declared):
+    a panel with mask 0 carries no bound circulation in this solve and its load follows strip theory at the local
+    total flow, as a panel of weight zero does. Only with the full-incidence closure, not with ``regularization``.
     """
     rho, nu = positive(density, 'density'), positive(kinematic_viscosity, 'viscosity')
     if not isinstance(settings, SolveSettings):
@@ -560,14 +569,36 @@ def solve_vsm_operator(wing, polar, inflow, operator_matrix, load_operator_matri
             raise ValueError(f'{name} must have shape (panels,panels,3)')
         return matrix
     matrix = resolved(operator_matrix, 'VSM closure operator')
+    if circulation_mask is not None:                   # OF-0010 P5d: checked before the closure is set up
+        if not full_incidence:
+            raise ValueError('the circulation mask needs the full-incidence closure')
+        if regularization is not None:
+            raise ValueError('the circulation mask is not combined with the closure regularization')
+        circulation_mask = _real(circulation_mask, 'circulation mask')
+        if (circulation_mask.shape != (wing.panels,) or not np.isfinite(circulation_mask).all()
+                or np.any(circulation_mask < 0.) or np.any(circulation_mask > 1.)):
+            raise ValueError('the circulation mask must have one finite value in [0, 1] per panel')
     if full_incidence:
         onset = None
         if settings.span_flow_fraction > 0. or settings.reverse_flow == 'strip':
             onset = onset_weight(ambient+known, tangent, normal, settings.span_flow_fraction,
                                  settings.reverse_fade if settings.reverse_flow == 'strip' else None)
+        if circulation_mask is not None:               # OF-0010 P5d: W times the mask
+            onset = ((circulation_mask.copy(), np.zeros(wing.panels, dtype=bool)) if onset is None else
+                     (onset[0]*circulation_mask, onset[1]))
         closure_args = (ambient, matrix, known, chord, tangent, normal, span, polar, onset)
         closure_function, closure_jacobian = _vsm_closure_full, _vsm_closure_full_jacobian
+        if regularization is not None:                 # OF-0010 P5c: the regularised target
+            if settings.jacobian == 'active_segment':
+                raise ValueError('the closure regularization needs the finite-difference Jacobian')
+            plain_closure = closure_function
+
+            def closure_function(value, *args):
+                result = plain_closure(value, *args)
+                return (regularization(result[0], result[2], polar),)+tuple(result[1:])
     else:
+        if regularization is not None:
+            raise ValueError('the closure regularization needs the full-incidence closure')
         closure_args = (ambient, matrix, known, chord, tangent, normal, span, cross_speed, polar)
         closure_function, closure_jacobian = _vsm_closure, _vsm_closure_jacobian
     newton_iterations = 0

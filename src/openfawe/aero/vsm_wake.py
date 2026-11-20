@@ -104,6 +104,8 @@ def _cross_class_operator(matrix, wing, rows, points, config, cores, at_load_poi
     surfaces.check(wing)
     if len(surfaces.classes) < 2:
         return
+    if compiled_network(config) and _batched_cross_class(matrix, wing, rows, points, config, cores, surfaces):
+        return
     width = wing.node_count
     target_class = surfaces.panel_class
     for panel in range(wing.panels):
@@ -116,6 +118,58 @@ def _cross_class_operator(matrix, wing, rows, points, config, cores, at_load_poi
         radii = np.maximum(edge_radii(wing, edges, cores, config.core_radius_m), surfaces.edge_radius(edges, width))
         matrix[targets, panel] = segments_velocity(points[targets], nodes, edges, gamma, model=CROSS_MODEL,
                                                    core_radius=radii, **kernel_options(config))
+
+
+def _batched_cross_class(matrix, wing, rows, points, config, cores, surfaces):
+    """The cross-class blocks of ``_cross_class_operator`` in one kernel pass per target class (node 3 contract
+    addendum 9: the per-panel loop was the largest wake-independent part of a P2 period). Returns False, writing
+    nothing, when a pair would raise (the per-panel loop then runs and raises as before).
+
+    Per class c: the points of class c against the segments of the columns (panels) of the other classes, with the
+    Rosenhead-Moore kernel and max(material, AVL) radii; each column summed over its segments in ``pack_rings``' order
+    for that panel (``_ring_layout``, bound edges kept as the per-panel loop keeps them), so every element equals the
+    per-panel ``segments_velocity`` call bit for bit (tests.test_vsm_wake_batched)."""
+    from .surface_cores import CROSS_MODEL
+    from .vortex_numba import assemble_columns, pair_matrix
+    from .vortex import _norm, _model
+    nodes = np.asarray(rows, dtype=np.float64).reshape(-1, 3)
+    width = wing.node_count
+    segments, pointer, column_segment, column_sign = _ring_layout(len(rows), width, wing.panel_edges, False)
+    starts = nodes[segments[:, 0]]
+    delta = nodes[segments[:, 1]] - starts
+    lengths = _norm(delta)
+    if np.any(lengths == 0):
+        return False
+    directions = delta / lengths[:, None]
+    radii = np.maximum(edge_radii(wing, segments, cores, config.core_radius_m), surfaces.edge_radius(segments, width))
+    points = np.ascontiguousarray(points, dtype=np.float64)
+    target_class = surfaces.panel_class
+    blocks = []
+    for c in surfaces.classes:
+        targets = np.flatnonzero(target_class == c)
+        columns = np.flatnonzero(target_class != c)
+        if not len(targets) or not len(columns):
+            continue
+        # The columns' segments, renumbered in first use; each column keeps its own order.
+        parts = [column_segment[pointer[j]:pointer[j+1]] for j in columns]
+        used, local = np.unique(np.concatenate(parts), return_inverse=True)
+        sub_pointer = np.zeros(len(columns)+1, dtype=np.int64)
+        sub_pointer[1:] = np.cumsum([len(p) for p in parts])
+        sub_sign = np.concatenate([column_sign[pointer[j]:pointer[j+1]] for j in columns])
+        pairs = np.empty((len(targets), len(used), 3))
+        flags = np.zeros(len(targets), dtype=np.int8)
+        with np.errstate(over="raise", invalid="raise", divide="raise", under="ignore"):
+            pair_matrix(np.ascontiguousarray(points[targets]), np.ascontiguousarray(starts[used]),
+                        np.ascontiguousarray(directions[used]), np.ascontiguousarray(lengths[used]),
+                        np.ascontiguousarray(radii[used]), int(_model(CROSS_MODEL)), True, pairs, flags)
+        if np.any(flags) or not np.isfinite(pairs).all():
+            return False
+        block = np.empty((len(targets), len(columns), 3))
+        assemble_columns(pairs, sub_pointer, np.ascontiguousarray(local, dtype=np.int64), sub_sign, block)
+        blocks.append((targets, columns, block))
+    for targets, columns, block in blocks:
+        matrix[np.ix_(targets, columns)] = block
+    return True
 
 
 _RING_LAYOUT = {}
@@ -249,17 +303,20 @@ def history_vsm_parts(wing, points, nodes, edges, gamma, radii, config, surfaces
 def control_options(config):
     """The engine of the wake's induction at control and load points: ``kernel_options(config)`` (exact, CPU), or with
     ``CudaSettings.control='gpu'`` under the 'cuda_tree' velocity backend the GPU direct sum of the same precision and
-    block (whole-step GPU contract revision 4 addendum 1, S4 (a))."""
+    block (whole-step GPU contract revision 4 addendum 1, S4 (a)). The direct sum has no tree: the tree's options (the
+    suspect pairs, the node moments and the build on the GPU; revisions 5-7) are set back to their defaults for it, which
+    the direct sum does not read (revision 7 addendum 4)."""
     cuda = getattr(config, 'cuda', None)
     if cuda is None or getattr(cuda, 'control', 'cpu') == 'cpu':
         return kernel_options(config)
     if getattr(config, 'velocity_backend', 'numpy') != 'cuda_tree':
         raise ValueError("cuda control='gpu' needs the cuda_tree velocity backend")
-    return dict(backend='cuda', cuda=replace(cuda, suspect='cpu', control='cpu'))
+    return dict(backend='cuda', cuda=replace(cuda, suspect='cpu', control='cpu', moments='cpu', build='cpu', rings='cpu'))
 
 
 def _solve(wing, polar, config, inflow, time, structural_velocity,
-           rows=(), cores=None, known=(0.,0.,0.), known_load=(0.,0.,0.), initial=None, surfaces=None):
+           rows=(), cores=None, known=(0.,0.,0.), known_load=(0.,0.,0.), initial=None, surfaces=None,
+           regularization=None, circulation_mask=None):
     extra = {} if surfaces is None else dict(surfaces=surfaces)      # surfaces=None: the calls exactly as before P2
     operator = vsm_wake_influence(wing, rows, config=config, cores=cores, **extra)
     load_operator = vsm_wake_influence(wing, rows, config=config, cores=cores,
@@ -271,18 +328,22 @@ def _solve(wing, polar, config, inflow, time, structural_velocity,
         load_relative_ambient=(ambient_velocity(inflow, wing.cp, time)
                                - ambient_velocity(structural_velocity, wing.cp, time)),
         kinematic_viscosity=config.kinematic_viscosity_m2_s,
-        initial=initial, settings=config.solve)
+        initial=initial, settings=config.solve,
+        **({} if regularization is None else dict(regularization=regularization)),   # OF-0010 P5c (None: as before)
+        **({} if circulation_mask is None else dict(circulation_mask=circulation_mask)))   # OF-0010 P5d (None: as before)
 
 
 def solve_finite_vsm(wing, polar, inflow, downstream_rows=(), *,
                      config=WakeConfig(), cores=None, time_s=0.,
                      structural_velocity=(0.,0.,0.), known_induction=(0.,0.,0.),
-                     known_load_induction=(0.,0.,0.), initial=None):
+                     known_load_induction=(0.,0.,0.), initial=None, surfaces=None):
     """Declared finite-wake VSM solve for verification, without creating history.
 
     Each supplied downstream ring carries the current circulation; callers can
     compare a long straight network against the semi-infinite VSM limit. This
     does not label prescribed rows as a dynamically evolved wake.
+    ``surfaces`` (OF-0010 revision 17, opt-in): the P2 inter-surface cores, as in
+    ``start_vsm_wake``; None gives the call exactly as before.
     """
     if not isinstance(config, WakeConfig):
         raise ValueError('config must be WakeConfig')
@@ -290,11 +351,12 @@ def solve_finite_vsm(wing, polar, inflow, downstream_rows=(), *,
     if time.shape:
         raise ValueError('finite VSM evaluation time must be scalar')
     return _solve(wing, polar, config, inflow, time.item(), structural_velocity,
-        downstream_rows, cores, known_induction, known_load_induction, initial)
+        downstream_rows, cores, known_induction, known_load_induction, initial,
+        **({} if surfaces is None else dict(surfaces=surfaces)))
 
 
 def start_vsm_wake(wing, polar, config, inflow, *, time_s=0.,
-                   structural_velocity=(0.,0.,0.), surfaces=None):
+                   structural_velocity=(0.,0.,0.), surfaces=None, regularization=None, circulation_mask=None):
     """Impulsive start with the closed bound-to-TE ring; no prefilled wake."""
     if not isinstance(config, WakeConfig):
         raise ValueError('config must be WakeConfig')
@@ -303,15 +365,48 @@ def start_vsm_wake(wing, polar, config, inflow, *, time_s=0.,
         raise ValueError('initial time must be scalar')
     cores = initial_cores(wing, config)
     solution = _solve(wing, polar, config, inflow, time.item(),
-                      structural_velocity, cores=cores, **({} if surfaces is None else dict(surfaces=surfaces)))
+                      structural_velocity, cores=cores, **({} if surfaces is None else dict(surfaces=surfaces)),
+                      **({} if regularization is None else dict(regularization=regularization)),
+                      **({} if circulation_mask is None else dict(circulation_mask=circulation_mask)))
     return VsmWakeState(time.item(), 0, wing, solution,
         np.empty((0, wing.node_count, 3)), np.empty(0),
         np.empty((0, wing.panels)), ambient_velocity(structural_velocity, geometry(wing)[0], time.item()), cores, config=config)
 
 
+STALL_LAG_MIN_SPEED_M_S = 1.0        # the floor of |U_out| in the time constant (addendum 8)
+
+
+def stall_lag_weights(solution, polar, wing, config, outside_velocity):
+    """H6 (OF-0010 revision 22 addendum 8): the per-panel blending weight min(1, dt/tau) of the stalled panels, 1 for the
+    attached ones; tau_i = stall_lag c_i / max(|U_out,i|, 1 m/s). Stalled: the solution's ``panel_regime`` other than
+    'attached' when the closure gives one, else ``not polar.attached(alpha)`` of the solution's angles."""
+    if solution.panel_regime is not None:
+        stalled = np.asarray(solution.panel_regime) != 0
+    else:
+        stalled = ~np.asarray(polar.attached(solution.polar_alpha_rad), dtype=bool)
+    speed = np.maximum(np.linalg.norm(np.asarray(outside_velocity, dtype=float).reshape(-1, 3), axis=1), STALL_LAG_MIN_SPEED_M_S)
+    tau = config.stall_lag*np.asarray(wing.chord_cp, dtype=float)/speed
+    return np.where(stalled, np.minimum(1.0, config.dt_s/tau), 1.0)
+
+
+def stall_lagged(solution, previous, polar, wing, config, outside_velocity):
+    """H6: the quasi-steady ``solution`` blended towards ``previous`` (the last step's, already lagged) on the stalled
+    panels: circulation, panel forces and couples, cl, cd, cm; everything else of the solution (the induced and relative
+    velocities, the angles, the regimes, the iterations) stays the quasi-steady step's. With no stalled panel the
+    solution is returned as it is (bit for bit)."""
+    w = stall_lag_weights(solution, polar, wing, config, outside_velocity)
+    if np.all(w == 1.0):
+        return solution
+    def blend(name):
+        new, old = getattr(solution, name), getattr(previous, name)
+        ww = w[:, None] if new.ndim == 2 else w
+        return old+ww*(new-old)
+    return replace(solution, **{name: blend(name) for name in ("circulation", "panel_force", "panel_couple", "cl", "cd", "cm")})
+
+
 def advance_vsm_wake(state, polar, config, inflow, *, next_wing=None,
                      structural_velocity=(0.,0.,0.), next_time_s=None, initial_circulation=None,
-                     chooser=None, surfaces=None):
+                     chooser=None, surfaces=None, regularization=None, circulation_mask=None):
     """One physical wake step; failures never modify the old state.
 
     ``initial_circulation`` (default None: the previous step's circulation, the
@@ -334,6 +429,9 @@ def advance_vsm_wake(state, polar, config, inflow, *, next_wing=None,
     then be None. The convection, the wake rows and the known induction are the
     same with and without a chooser; the returned state is bound to ``config``
     with the chosen solve settings.
+
+    ``regularization`` (OF-0010 P5c) and ``circulation_mask`` (OF-0010 P5d) are passed to
+    ``aero.vsm.solve_vsm_operator`` only when given; None leaves the call exactly as before.
     """
     if type(state) is not VsmWakeState:
         raise ValueError('advance_vsm_wake requires its own VsmWakeState')
@@ -391,7 +489,13 @@ def advance_vsm_wake(state, polar, config, inflow, *, next_wing=None,
             if seed.shape != (wing.panels,):
                 raise ValueError('initial circulation must have one value per panel')
     solution = _solve(wing, polar, config, inflow, new_time,
-        structural_velocity, rows[:1], cores, known, known_load, seed, **({} if surfaces is None else dict(surfaces=surfaces)))
+        structural_velocity, rows[:1], cores, known, known_load, seed, **({} if surfaces is None else dict(surfaces=surfaces)),
+        **({} if regularization is None else dict(regularization=regularization)),
+        **({} if circulation_mask is None else dict(circulation_mask=circulation_mask)))
+    if getattr(config, 'stall_lag', 0.0) > 0.0:         # OF-0010 revision 22 addendum 8 (H6); 0: the solution as before
+        outside = (ambient_velocity(inflow, wing.cp, new_time)-ambient_velocity(structural_velocity, wing.cp, new_time)
+                   + (0.0 if ring_known_load is None else ring_known_load))
+        solution = stall_lagged(solution, state.solution, polar, wing, config, outside)
     return VsmWakeState(new_time, state.step+1, wing, solution, rows,
         release_times, history,
         ambient_velocity(structural_velocity, geometry(wing)[0], new_time), cores, config=config,

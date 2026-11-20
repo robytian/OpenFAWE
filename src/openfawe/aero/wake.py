@@ -11,7 +11,7 @@ bounds the cost per step of the wing wake; rotor rings are not truncated). Pure
 state transitions let a caller discard/repeat a coupling attempt.
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 import operator
 import numpy as np
 
@@ -37,6 +37,21 @@ def kernel_options(config, large=False):
     if backend == 'cuda_tree' and large:       # whole-step GPU contract S1: CPU-built tree, GPU evaluation
         return dict(backend='cuda_tree', tree=config.tree, cuda=config.cuda)
     return dict(backend='numpy' if backend == 'numpy' else 'numba')
+
+
+def ring_options(config, large=False):
+    """The engine of the rotor rings' induction at lifting-surface points (``ring_induction``): ``kernel_options(config,
+    large)`` (default), or with ``CudaSettings.rings='gpu'`` under the 'cuda_tree' velocity backend the GPU direct sum in
+    float64 with the same block (whole-step GPU contract revision 10, R; addendum 2: float32 positions near the 0.1 m
+    surface core are not accurate enough, and the sum is small). The direct sum has no tree: the tree's and the wake's own
+    GPU options are set back to their defaults for it, which the direct sum does not read."""
+    cuda = getattr(config, 'cuda', None)
+    if cuda is None or getattr(cuda, 'rings', 'cpu') == 'cpu':
+        return kernel_options(config, large=large)
+    if getattr(config, 'velocity_backend', 'numpy') != 'cuda_tree':
+        raise ValueError("cuda rings='gpu' needs the cuda_tree velocity backend")
+    return dict(backend='cuda', cuda=replace(cuda, precision='fp64', suspect='cpu', control='cpu', moments='cpu', build='cpu',
+                                             rings='cpu'))
 
 
 def count(value, name, minimum=0):
@@ -99,11 +114,34 @@ class WakeConfig:
     # 'cuda_tree' (the CPU-built tree evaluated on the GPU, which also needs tree settings; whole-step GPU contract S1); the last
     # field, and left out of wake_config_metadata when None, so every other configuration's metadata is unchanged.
     cuda: CudaSettings | None = None
+    # How the rows beyond ``free_convection_rows`` move (opt-in; 'ambient', the default, is the treatment above and leaves
+    # every result unchanged). 'ambient_rings' (OF-0010 revision 22 addendum 4, B3 H5): those rows take the ambient velocity
+    # plus the induction of the rotor rings alone (the ring edges of the network, with their cores and the configured
+    # kernel), not the induction of the lifting surfaces' own bound and wake system. The slipstream then still carries the
+    # old rows while the sheet's self-induction, which tangles it in hover, is left out of their motion; their circulation
+    # still acts on everything. Only with ``free_convection_rows``; without rings in the network it equals 'ambient'.
+    frozen_rows_drift: str = 'ambient'
+    # Opt-in first-order lag of the stalled sections' circulation and loads between VSM wake steps (OF-0010 revision 22
+    # addendum 8, B3 H6; 0, the default, changes nothing): an Oye-type dynamic-stall time constant tau_i = stall_lag c_i /
+    # max(|U_out,i|, 1 m/s) per panel, U_out the flow at the load point from outside the lifting surfaces' own circulation
+    # system (ambient minus structural velocity plus the rotor rings' induction); each step the quasi-steady solution of the
+    # panels whose regime is not attached is blended as x_i = x_i,previous + min(1, dt/tau_i) (x*_i - x_i,previous) for the
+    # circulation, the panel forces and couples and the coefficients; attached panels stay quasi-steady. The blended
+    # circulation is what the wake carries. Oye's constant is 4 (Hansen, Aerodynamics of Wind Turbines, ch. 9; AeroDyn UAMod 6).
+    stall_lag: float = 0.0
 
     def __post_init__(self):
         for name in ("dt_s", "core_radius_m", "density_kg_m3", "kinematic_viscosity_m2_s"):
             positive(getattr(self,name),name)
         count(self.max_rows,"max_rows",1)
+        lag = self.stall_lag
+        if isinstance(lag, bool) or not isinstance(lag, (int, float)) or not np.isfinite(lag) or lag < 0.0:
+            raise ValueError("stall_lag must be a finite number >= 0 (0 switches the lag off)")
+        object.__setattr__(self, 'stall_lag', float(lag))
+        if self.frozen_rows_drift not in ('ambient', 'ambient_rings'):
+            raise ValueError("frozen_rows_drift must be 'ambient' or 'ambient_rings'")
+        if self.frozen_rows_drift != 'ambient' and self.free_convection_rows is None:
+            raise ValueError("frozen_rows_drift 'ambient_rings' needs free_convection_rows")
         if self.free_convection_rows is not None:
             object.__setattr__(self, 'free_convection_rows', count(self.free_convection_rows, 'free_convection_rows', 1))
             if self.free_wake is False:
@@ -138,6 +176,12 @@ class WakeConfig:
                 raise ValueError("cuda suspect='gpu64' is for the cuda_tree velocity backend only")
             if getattr(self.cuda, 'control', 'cpu') != 'cpu' and self.velocity_backend != 'cuda_tree':
                 raise ValueError("cuda control='gpu' needs the cuda_tree velocity backend")    # GPU contract revision 4 addendum 2
+            if getattr(self.cuda, 'moments', 'cpu') != 'cpu' and self.velocity_backend != 'cuda_tree':
+                raise ValueError("cuda moments='gpu' needs the cuda_tree velocity backend")    # GPU contract revision 6
+            if getattr(self.cuda, 'build', 'cpu') != 'cpu' and self.velocity_backend != 'cuda_tree':
+                raise ValueError("cuda build='gpu' needs the cuda_tree velocity backend")      # GPU contract revision 7
+            if getattr(self.cuda, 'rings', 'cpu') != 'cpu' and self.velocity_backend != 'cuda_tree':
+                raise ValueError("cuda rings='gpu' needs the cuda_tree velocity backend")      # GPU contract revision 10
             if not cuda_backend_available():
                 from .vortex import cuda_unavailable_reason
                 raise ValueError(f'the cuda velocity backend needs a CUDA device ({cuda_unavailable_reason()})')
@@ -152,8 +196,9 @@ class WakeConfig:
                 raise ValueError('local wake birth cores require a regularized core model')
         if not isinstance(self.free_wake, bool) or not isinstance(self.solve, SolveSettings):
             raise ValueError("invalid wake switch or solver settings")
-        if self.solve.jacobian != 'finite_difference':
-            raise ValueError('wake circulation does not support an active-segment Jacobian')
+        # An active-segment Jacobian (GPU whole-step contract revision 9 addendum 2) is checked where it is used: the
+        # free-wake VSM honours it (``solve_vsm_operator``), ``AeroBackend`` refuses it for every other method and the
+        # lifting-line solve (``solve_circulation``) refuses it, so no consumer ignores it.
         positive(self.eddy_viscosity_factor, 'eddy viscosity factor', zero=True)
         if self.core_evolution not in ('constant', 'age', 'age_stretch'):
             raise ValueError('unknown core evolution policy')
@@ -327,7 +372,7 @@ def ring_induction(rings, points, config, *, large=False, sheet_points=None):
     return segments_velocity(points, np.asarray(nodes, dtype=float), np.asarray(edges, dtype=np.int64),
                              np.asarray(gamma, dtype=float), model=config.core_model,
                              core_radius=core,
-                             **kernel_options(config, large=large))
+                             **ring_options(config, large=large))
 
 
 def ring_induction_pair(rings, first_points, second_points, config):
@@ -406,6 +451,22 @@ def _network_convection(nodes, edges, gamma, first, radii, config, inflow, time,
             velocity[:free] += segments_velocity(points[:free],nodes,edges,gamma,model=config.core_model,
                                                  core_radius=radii, exclusions=exclusions[exclusions[:,0]<free],
                                                  **kernel_options(config, large=True))
+            if (getattr(config,'frozen_rows_drift','ambient') == 'ambient_rings' and ring_first is not None
+                    and ring_first < len(nodes)):
+                # OF-0010 revision 22 addendum 4 (B3, H5): the frozen rows also take the rotor rings' induction - the ring
+                # edges alone (both nodes ring nodes), their cores from ``radii``; the exclusions of those points, remapped.
+                ring_edge=np.all(edges>=ring_first,axis=1)
+                if np.any(ring_edge):
+                    sub=np.flatnonzero(ring_edge)
+                    remap=np.full(len(edges),-1,dtype=np.int64)
+                    remap[sub]=np.arange(len(sub))
+                    frozen_pairs=exclusions[(exclusions[:,0]>=free)&(exclusions[:,0]<rows_end)]
+                    frozen_pairs=frozen_pairs[ring_edge[frozen_pairs[:,1]]]
+                    frozen_pairs=np.column_stack((frozen_pairs[:,0]-free, remap[frozen_pairs[:,1]])).reshape(-1,2)
+                    ring_cores=np.broadcast_to(radii,(len(edges),))[ring_edge]
+                    velocity[free:rows_end] += segments_velocity(points[free:rows_end],nodes,edges[ring_edge],gamma[ring_edge],
+                                                                 model=config.core_model, core_radius=ring_cores,
+                                                                 exclusions=frozen_pairs, **kernel_options(config, large=True))
             if rows_end < ring_end:
                 ring_pairs=exclusions[(exclusions[:,0]>=rows_end)&(exclusions[:,0]<ring_end)]-np.array([rows_end,0])
                 velocity[rows_end:ring_end] += segments_velocity(points[rows_end:ring_end],nodes,edges,gamma,model=config.core_model,

@@ -106,6 +106,8 @@ class AeroBackend:
             raise ValueError('invalid aerodynamic backend settings')
         if self.method != AeroMethod.VSM and self.vsm_solve.jacobian != 'finite_difference':
             raise ValueError('active-segment Jacobian is supported only by straight VSM')
+        if self.method != AeroMethod.VSM_FREE_WAKE and self.wake.solve.jacobian != 'finite_difference':
+            raise ValueError('an active-segment Jacobian in the wake settings is supported only by vsm_free_wake')  # rev 9 add 2
         if not isinstance(self.lifting_surface, LiftingSurfaceConfig):
             raise ValueError('lifting_surface must be LiftingSurfaceConfig')
         if (self.method != AeroMethod.VLM_FREE_WAKE

@@ -24,3 +24,13 @@ license for unrelated project material. They are not endorsed by OpenFAST.
 The welib comparison reuses previously recorded numerical results only; it does
 not vendor welib code. Its common lineage and known test-fixture error remain
 documented in the source contract. No bitwise Fortran-equivalence claim is made.
+
+## MoorDyn-F C binding with a double-precision interface (OF-0011, 2026-11-10)
+
+`third_party/openfast-moordyn-c-binding-dp/MoorDyn_C_Binding_dp.f90` is a copy of OpenFAST's
+`modules/moordyn/src/MoorDyn_C_Binding.f90` (local source `openfast-v5.0.0-main-20260710-src`) in which the C
+interface arguments are `c_double` instead of `c_float`; nothing else is changed. The change is listed in full in
+`double-precision.patch`, with checksums in that folder's `README.zh.md`. Source license: Apache License 2.0
+(`LICENSE-OpenFAST.txt`). Modified by OpenFAWE in 2026; not endorsed by OpenFAST. It is called from
+`src/openfawe/floating/moordyn_f.py`, whose ctypes declarations follow pyOpenFAST's `moordyn.py` (same source,
+Apache-2.0). `src/openfawe/floating/hydrodyn_files.py` uses pyOpenFAST's `HydroDynLib` unchanged.

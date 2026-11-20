@@ -9,6 +9,58 @@ is published that says so and the archived record is annotated; the original is 
 
 ---
 
+## [1.0.0] — 2026-11-20
+
+The whole flight of the Makani M600 energy kite and OpenFAWE Studio, the Windows program that runs and
+replays it. The program is under Releases (`OpenFAWE-Studio-1.0.0-win64.zip`); this repository gains the
+source the program is built from.
+
+### Added
+
+- `src/openfawe/flight` (the interface to Makani's M600 flight controller), `src/openfawe/ground` (the
+  GS02 ground station with its winch, the perch, winds, the whole flight), `src/openfawe/power` (motors
+  and the power system) and the modules they need: the source of what OpenFAWE Studio runs, 78 modules in
+  `src/openfawe`, the same set as in the packaged program.
+- `apps/studio`: OpenFAWE Studio - the program, its packaging scripts and its tests.
+- `docs/user-guide.md` and `docs/user-guide.zh.md` (the user guide, with the validation chapter),
+  `docs/record-keys.md` and `docs/record-keys.zh.md` (the recorded quantities) and the media of the front
+  page.
+- `docs/tasks`: what the program loads at run time (the whole flight on the vortex method, the power
+  settings, the energy account) and the build of Makani's controller without the GNU Scientific Library;
+  the folder names there carry the numbers of development records that are not published.
+- `third_party/makani-controller-win-nogsl`: Makani's flight controller compiled as a Windows library
+  (Apache-2.0; built from Makani's source without the GNU Scientific Library). On Linux it is built with
+  `docs/tasks/OF-0013-release-v1-20261112/nogsl/build_nogsl_linux.py`.
+- `cases/`: the models and tables of the whole flight and the qualification cases of its tests.
+- `tests/`: the tests of the added modules.
+- `MANIFEST-1.0.0.json`: every file this release adds or changes, with its SHA-256 and origin.
+
+### Changed
+
+- `README.md`, `LICENSE-BINARIES.md` (a clause for the LGPL libraries of the packaged program),
+  `pyproject.toml`, `src/openfawe/__init__.py`, `third_party/MAKANI-NOTICE.md`, `CITATION.cff` and
+  `.zenodo.json` describe release 1.0.0.
+- The files of release 0.2.0 that the whole flight changed are replaced by the versions the program is
+  built from; `MANIFEST-1.0.0.json` lists them. `MANIFEST.json` remains the record of release 0.2.0.
+
+### Known issues
+
+- Two of the 831 tests fail, and are published as they are: the variable-length tether at full length
+  against the fixed-length one (`tests/test_variable_line.py`: 7.8e-11 against the bound of 1e-12 written
+  first) and the kite at rest on the perch (`tests/test_perch.py`: 40 mm and 0.8° within 10 s against 5 mm
+  and 0.1°). Both come from methods taken over from Makani as they are, and the program was not changed
+  to pass them; section 11 of the user guide gives the causes. Eight tests of release 0.2.0 compare with
+  development records or use modules that are not published and stop with an error; 17 are skipped, each
+  with its reason.
+- The source is published as it is, with the internal labels of its development records still in the
+  comments.
+
+### Not included
+
+- The floating platform, the mooring and two kites on a shared mooring: the next version.
+
+---
+
 ## [0.2.0] — 2026-11-05
 
 Aerodynamic module with rotor, flight and tether models, and the code and data of the paper

@@ -1,0 +1,27 @@
+{
+ "schema": "openfawe.makani_motor_params.v1",
+ "name": "Makani M600 Yasa 2.3 motor and motor controller parameters (MotorParams of sim/sim_types.h:286-305)",
+ "provenance": {
+  "source": "Makani snapshot 1d66923, config/powertrain/motors.py:21-106 (MakeParams); the struct is sim/sim_types.h:286-305",
+  "licence": "Apache License 2.0 (Makani Technologies LLC)",
+  "transcribed": "values copied, the expressions of motors.py evaluated in double precision (modulation_limit = 0.97 * 0.95, Rs = 0.067 * (1 + 0.004041 * (160 - 20)), flux_linkage = 0.1666 * 0.9)"
+ },
+ "modulation_limit": 0.9215,
+ "phase_current_cmd_limit": 250.0,
+ "iq_cmd_lower_limit": -250.0,
+ "iq_cmd_upper_limit": 250.0,
+ "Ld": 0.0009,
+ "Lq": 0.0009,
+ "Rs": 0.10490458,
+ "flux_linkage": 0.14994,
+ "num_pole_pairs": 15,
+ "hysteresis_loss_coefficient": 1.851851852e-06,
+ "omega_loss_coefficient_cubic": 8.373e-05,
+ "omega_loss_coefficient_sq": 0.009943,
+ "omega_loss_coefficient_lin": 2.347,
+ "rds_on": 0.003625,
+ "specific_switching_loss": 7.53e-08,
+ "fixed_loss_sq_coeff": 3.8e-09,
+ "fixed_loss_lin_coeff": 3.372e-06,
+ "switching_frequency": 15000.0
+}

@@ -1,0 +1,22 @@
+# OF-0013 revision 1 section 4: the packaging environment local\studio-build-venv312 on the first PC (Windows, CPython
+# 3.12). The versions are those of local\accel-venv312 there (the environment of the judged runs); release_build.py
+# installs with  -c <pip freeze of accel-venv312>  so that every other shared package is that environment's version too.
+# PyInstaller and its hooks are new (the owner's yes, 2026-11-12 19:5x). The CUDA wheels are in
+# docs/tasks/OF-0006-accel20261001/hub/node2/gpu-requirements-win.txt (hashes), installed separately with --no-deps.
+numpy==2.3.5
+numba==0.62.1
+llvmlite==0.45.1
+scipy==1.16.3
+PySide6_Essentials==6.11.2
+shiboken6==6.11.2
+pyvista==0.49.0
+pyvistaqt==0.13.1
+vtk==9.7.1
+pyqtgraph==0.14.0
+h5py==3.16.0
+matplotlib==3.11.2
+pillow==12.3.0
+psutil==7.2.2
+QtPy==2.4.3
+pyinstaller==6.22.3
+pyinstaller-hooks-contrib==2026.10

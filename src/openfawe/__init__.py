@@ -1,3 +1,4 @@
-"""OpenFAWE: aerodynamic module (vortex methods for airborne wind energy kites)."""
+"""OpenFAWE: simulation of airborne wind energy kites - free-vortex-wake aerodynamics, rotors, tether, ground station,
+power system and whole flights."""
 
-__version__ = "0.1.0.dev1"
+__version__ = "1.0.0"

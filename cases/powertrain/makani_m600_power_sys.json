@@ -1,0 +1,49 @@
+{
+ "schema": "openfawe.makani_power_sys_params.v1",
+ "name": "Makani M600 stacked power system: PowerSysParams, PowerSysSimParams (without its motor entry) and the rotor sensors' calibrations",
+ "provenance": {
+  "source": "Makani snapshot 1d66923: config/powertrain/power_sys.py (MakeParams), config/base_station/sim/power_sys_sim.py (MakeParams; 'motor' is config/powertrain/motors.py, cases/powertrain/makani_m600_motors.json), config/m600/rotor_sensors.py (omega_cal, torque_cal, the same for all eight rotors)",
+  "licence": "Apache License 2.0 (Makani Technologies LLC)",
+  "transcribed": "values copied, the expressions evaluated in double precision as Python does (np.pi is math.pi)",
+  "not_used": "P_source is used only by the controller's configuration (config/m600/control/rotor_control.py:200), not by the simulator"
+ },
+ "power_sys": {
+  "use_ground_voltage_compensation": true,
+  "P_source": -1100000.0,
+  "R_tether": 1.0,
+  "R_source": 0.1,
+  "v_source_0": 4200.0,
+  "C_block": 0.006
+ },
+ "power_sys_sim": {
+  "current_filter_cutoff_freq": 20.0,
+  "ground_voltage_pole": -188.49555921538757,
+  "min_ground_voltage_compensation": -700.0,
+  "max_ground_voltage_compensation": 300.0,
+  "kp_rotor_vel_err": 48.0,
+  "ki_rotor_vel_err": 287.0,
+  "rotor_vel_err_pole": -0.18849555921538758,
+  "rotor_vel_err_torque_pole": -100.53096491487338,
+  "kp_voltage_err": 90.0,
+  "voltage_control_pole": -6.283185307179586,
+  "voltage_control_zero": -125.66370614359172,
+  "fc_stacking_speed_correction": 3.0,
+  "kp_stacking_speed_correction": 0.26666666666666666,
+  "cap_drain_conductance": 0.5,
+  "omega_cmd_rate_limit": 500.0,
+  "speed_cmd_pole": -100.53096491487338,
+  "min_tether_current": -1000.0,
+  "kp_excess_tether_current": 6.0,
+  "voltage_average_upper_sat": 1550.0
+ },
+ "omega_cal": {
+  "scale": -1.0,
+  "bias": 0.0,
+  "bias_count": 0
+ },
+ "torque_cal": {
+  "scale": -1.0,
+  "bias": 0.0,
+  "bias_count": 0
+ }
+}

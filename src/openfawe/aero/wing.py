@@ -351,6 +351,10 @@ def wake_config_metadata(config):
         values.pop('free_convection_rows', None)
     if values.get('retained_rows') is None:
         values.pop('retained_rows', None)
+    if values.get('frozen_rows_drift', 'ambient') == 'ambient':
+        values.pop('frozen_rows_drift', None)        # OF-0010 revision 22 addendum 4 (H5): the default stays out
+    if not values.get('stall_lag'):
+        values.pop('stall_lag', None)                # OF-0010 revision 22 addendum 8 (H6): 0 stays out
     if values.get('cuda') is None:
         values.pop('cuda', None)
     else:
@@ -358,6 +362,12 @@ def wake_config_metadata(config):
             values['cuda'].pop('suspect')        # whole-step GPU contract revision 3: the default stays out
         if values['cuda'].get('control') == 'cpu':
             values['cuda'].pop('control')        # revision 4 addendum 1, S4 (a): the default stays out
+        if values['cuda'].get('moments') == 'cpu':
+            values['cuda'].pop('moments')        # revision 6, S3': the default stays out
+        if values['cuda'].get('build') == 'cpu':
+            values['cuda'].pop('build')          # revision 7, S3'': the default stays out
+        if values['cuda'].get('rings') == 'cpu':
+            values['cuda'].pop('rings')          # revision 10, R: the default stays out
     return values
 
 

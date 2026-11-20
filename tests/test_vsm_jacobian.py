@@ -135,7 +135,11 @@ class PolicyTests(unittest.TestCase):
         with self.assertRaises(ValueError):SolveSettings(solver='newton',jacobian='unknown')
         for mode in ['free_wake','vsm_free_wake','vlm','vlm_free_wake','ll_straight']:
             with self.assertRaises(ValueError):AeroBackend(mode,vsm_solve=AN)
-        with self.assertRaises(ValueError):WakeConfig(solve=AN)
+        # GPU whole-step contract revision 9 addendum 2: the wake settings take it, every method but vsm_free_wake refuses it
+        wake=WakeConfig(solve=AN)
+        for mode in ['free_wake','vsm','vlm','vlm_free_wake','ll_straight']:
+            with self.assertRaises(ValueError):AeroBackend(mode,wake=wake)
+        AeroBackend('vsm_free_wake',wake=wake)
         wing=Wing.ellipse(4)
         with self.assertRaises(ValueError):solve_circulation(wing,SectionPolar.linear(),[5.,0.,.5],np.zeros((4,4,3)),settings=AN)
         class Other:

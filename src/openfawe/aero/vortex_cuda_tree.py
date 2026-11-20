@@ -29,6 +29,11 @@ Each thread has a 512-deep stack like the CPU code; an overflow (which the CPU c
 at most ``TARGETS_PER_LAUNCH`` targets (the Windows display watchdog stops a launch after about 2 s).
 
 Wired into ``segments_velocity`` as ``backend='cuda_tree'`` (whole-step GPU contract, stage S1).
+
+With ``CudaSettings.moments='gpu'`` (whole-step GPU contract revision 6, stage S3') the node quantities - centre, bounding
+radius, largest core, moments and contractions - are computed on the GPU by ``vortex_cuda_moments`` and stay there.
+With ``CudaSettings.build='gpu'`` (revision 7, stage S3'') the tree is built on the GPU by ``vortex_cuda_build`` (the same
+tree element for element). With the defaults (``'cpu'``) this module does what it did before, line for line.
 """
 import math
 import time
@@ -468,11 +473,25 @@ def cuda_tree_sum(points, starts, directions, lengths, gamma, radius, model, csr
     ends = starts + length_vectors
     alpha = gamma[:, None] * length_vectors
     mid = 0.5 * (starts + ends)
-    order, lo, hi, left, right, _ = VT.build_tree(mid, int(tree.leaf_size))
+    build_gpu = getattr(settings, "build", "cpu") == "gpu"
+    if build_gpu:                          # whole-step contract revision 7 (S3''): the same tree, built on the GPU
+        from . import vortex_cuda_build as VCB
+        d_built_order, order, lo, hi, left, right, _ = VCB.device_build_tree(mid, int(tree.leaf_size))
+    else:
+        order, lo, hi, left, right, _ = VT.build_tree(mid, int(tree.leaf_size))
     build_s = time.perf_counter() - tick
     tick = time.perf_counter()
-    centre, bound, core, m0, m1, m2 = VT.node_moments(order, lo, hi, starts, ends, alpha, length_vectors, radius, gamma)
-    w1, t2, w2 = VT.node_contractions(m1, m2)
+    moments_gpu = getattr(settings, "moments", "cpu") == "gpu"
+    if moments_gpu:                        # whole-step contract revision 6 (S3'): the node quantities on the GPU
+        from . import vortex_cuda_moments as VCM
+        d_starts = cuda.to_device(starts)
+        dq = VCM.device_node_quantities(order, lo, hi, starts, ends, alpha, length_vectors, radius, gamma,
+                                        single=precision != "fp64", device_starts=d_starts,
+                                        device_order=d_built_order if build_gpu else None)
+        cuda.synchronize()
+    else:
+        centre, bound, core, m0, m1, m2 = VT.node_moments(order, lo, hi, starts, ends, alpha, length_vectors, radius, gamma)
+        w1, t2, w2 = VT.node_contractions(m1, m2)
     inverse = np.empty_like(order)
     inverse[order] = np.arange(len(order))
     pointer, segments = csr
@@ -485,12 +504,22 @@ def cuda_tree_sum(points, starts, directions, lengths, gamma, radius, model, csr
     single = precision != "fp64"
     real = np.float32 if single else np.float64
     to = cuda.to_device
-    d = dict(points=to(points), starts=to(starts), order=to(np.ascontiguousarray(order, dtype=np.int64)),
-             lo=to(lo), hi=to(hi), left=to(left), right=to(right), centre=to(centre), bound=to(bound), core=to(core),
-             ex_ptr=to(pointer), ex_pos=to(positions if len(positions) else np.zeros(1, dtype=np.int64)))
-    for name, value in (("directions", directions), ("lengths", lengths), ("gamma", gamma), ("radius", radius),
-                        ("m0", m0), ("m1", m1), ("m2", m2), ("w1", w1), ("t2", t2), ("w2", w2)):
-        d[name] = to(np.ascontiguousarray(value, dtype=real))
+    if moments_gpu:                        # revision 6: centre, bound, core, moments and contractions are on the device
+        d = dict(points=to(points), starts=d_starts,
+                 order=d_built_order if build_gpu else to(np.ascontiguousarray(order, dtype=np.int64)),
+                 lo=to(lo), hi=to(hi), left=to(left), right=to(right), centre=dq["centre"], bound=dq["bound"],
+                 core=dq["core"], ex_ptr=to(pointer), ex_pos=to(positions if len(positions) else np.zeros(1, dtype=np.int64)))
+        for name, value in (("directions", directions), ("lengths", lengths), ("gamma", gamma), ("radius", radius)):
+            d[name] = to(np.ascontiguousarray(value, dtype=real))
+        for name in ("m0", "m1", "m2", "w1", "t2", "w2"):
+            d[name] = dq[name]
+    else:
+        d = dict(points=to(points), starts=to(starts), order=to(np.ascontiguousarray(order, dtype=np.int64)),
+                 lo=to(lo), hi=to(hi), left=to(left), right=to(right), centre=to(centre), bound=to(bound), core=to(core),
+                 ex_ptr=to(pointer), ex_pos=to(positions if len(positions) else np.zeros(1, dtype=np.int64)))
+        for name, value in (("directions", directions), ("lengths", lengths), ("gamma", gamma), ("radius", radius),
+                            ("m0", m0), ("m1", m1), ("m2", m2), ("w1", w1), ("t2", t2), ("w2", w2)):
+            d[name] = to(np.ascontiguousarray(value, dtype=real))
     d_out = cuda.to_device(np.zeros((n, 3), dtype=np.float64 if precision != "fp32" else np.float32))
     d_flags = cuda.to_device(np.zeros(n, dtype=np.int8))
     d_far = cuda.to_device(np.zeros(n, dtype=np.int64))
@@ -528,6 +557,10 @@ def cuda_tree_sum(points, starts, directions, lengths, gamma, radius, model, csr
         suspect = np.flatnonzero(d_suspects.copy_to_host()) if single else np.zeros(0, dtype=np.int64)
     download_s = time.perf_counter() - tick
     tick = time.perf_counter()
+    if len(suspect) and moments_gpu:       # revision 6: the CPU recomputation reads the float64 node quantities
+        centre, bound, core = (dq[name].copy_to_host() for name in ("centre", "bound", "core"))
+        m0, m1, m2, w1, t2, w2 = (dq[name + ("_64" if single else "")].copy_to_host()
+                                  for name in ("m0", "m1", "m2", "w1", "t2", "w2"))
     if len(suspect):                       # contract D3: suspect targets recomputed whole on the CPU tree code (float64)
         sub_ptr = np.zeros(len(suspect) + 1, dtype=np.int64)
         np.cumsum(pointer[suspect + 1] - pointer[suspect], out=sub_ptr[1:])
@@ -548,7 +581,8 @@ def cuda_tree_sum(points, starts, directions, lengths, gamma, radius, model, csr
     Statistics.last = dict(points=n, segments=m, nodes=len(lo), precision=precision, launches=launches,
                            targets_per_launch=per, longest_launch_s=longest, suspect=int(len(suspect)),
                            mean_far_nodes=float(far.mean()), build_s=build_s, moments_s=moments_s, upload_s=upload_s,
-                           evaluate_s=evaluate_s, download_s=download_s, recompute_s=recompute_s)
+                           evaluate_s=evaluate_s, download_s=download_s, recompute_s=recompute_s,
+                           **({"moments": "gpu"} if moments_gpu else {}), **({"build": "gpu"} if build_gpu else {}))
     Statistics.last_far_counts = far
     Statistics.totals["calls"] += 1
     Statistics.totals["launches"] += launches

@@ -14,8 +14,10 @@ The JSON arrays ``thrust`` and ``power`` equal the coefficient formulas at
 rho = 1.225 kg/m^3 to 9e-12 relative (verified for rotor_rev4.json).
 """
 
+from bisect import bisect_right
 from dataclasses import dataclass
 import json
+import math
 from pathlib import Path
 
 import numpy as np
@@ -31,6 +33,28 @@ def _fractional_index(grid, value):
     index = int(np.searchsorted(grid[1:n - 1], value, side="right"))
     low, high = grid[index], grid[index + 1]
     return index + (value - low) / (high - low)
+
+
+def _fractional_index_list(grid, inner, value):
+    """``_fractional_index`` on a Python list (OF-0014): ``bisect_right`` on the inner grid points is ``searchsorted``
+    with ``side="right"`` (NaN included: both give the last bin), and the fraction is the same expression on the same
+    doubles."""
+    index = bisect_right(inner, value)
+    low, high = grid[index], grid[index + 1]
+    return index + (value - low) / (high - low)
+
+
+def _bilinear_list(z, size1, size2, s, t):
+    """``_bilinear`` (saturated) on nested Python lists (OF-0014): ``math.floor`` for ``int(np.floor(.))`` (equal for
+    finite values; both raise for NaN and infinity) and the same expression on the same doubles."""
+    s0 = min(max(math.floor(s), 0), size1 - 2)
+    t0 = min(max(math.floor(t), 0), size2 - 2)
+    s = min(max(s, 0.0), float(size1 - 1))
+    t = min(max(t, 0.0), float(size2 - 1))
+    ds, dt = s - s0, t - t0
+    row0, row1 = z[s0], z[s0 + 1]
+    z00, z10, z01, z11 = row0[t0], row1[t0], row0[t0 + 1], row1[t0 + 1]
+    return z00 + (z10 - z00) * ds + (z01 - z00) * dt + (z00 - z10 - z01 + z11) * ds * dt
 
 
 def _bilinear(z, s, t, saturate=True):
@@ -78,6 +102,10 @@ class RotorTable:
                             ("thrust_coeffs", kt), ("power_coeffs", kp)):
             value.setflags(write=False)
             object.__setattr__(self, name, value)
+        # OF-0014: the same doubles as Python lists for the look-ups (no numpy call per look-up)
+        object.__setattr__(self, "_lists", dict(omegas=omegas.tolist(), omegas_inner=omegas[1:len(omegas) - 1].tolist(),
+                                                speeds=speeds.tolist(), speeds_inner=speeds[1:len(speeds) - 1].tolist(),
+                                                kt=kt.tolist(), kp=kp.tolist(), shape=kt.shape))
 
     @classmethod
     def from_makani_json(cls, path):
@@ -99,8 +127,9 @@ class RotorTable:
     # -- look-ups --------------------------------------------------------------
     def indices(self, omega_rad_s, freestream_m_s):
         """Fractional (s, t) indices before saturation (diagnostics)."""
-        return (_fractional_index(self.omegas_rad_s, float(omega_rad_s)),
-                _fractional_index(self.freestreams_m_s, float(freestream_m_s)))
+        lists = self._lists
+        return (_fractional_index_list(lists["omegas"], lists["omegas_inner"], float(omega_rad_s)),
+                _fractional_index_list(lists["speeds"], lists["speeds_inner"], float(freestream_m_s)))
 
     def saturated(self, omega_rad_s, freestream_m_s):
         """True when the look-up is clamped to the table range (T8 bookkeeping)."""
@@ -109,11 +138,11 @@ class RotorTable:
 
     def thrust_coefficient(self, omega_rad_s, freestream_m_s):
         s, t = self.indices(omega_rad_s, freestream_m_s)
-        return float(_bilinear(self.thrust_coeffs, s, t))
+        return float(_bilinear_list(self._lists["kt"], *self._lists["shape"], s, t))
 
     def power_coefficient(self, omega_rad_s, freestream_m_s):
         s, t = self.indices(omega_rad_s, freestream_m_s)
-        return float(_bilinear(self.power_coeffs, s, t))
+        return float(_bilinear_list(self._lists["kp"], *self._lists["shape"], s, t))
 
     def torque_coefficient(self, omega_rad_s, freestream_m_s):
         return self.power_coefficient(omega_rad_s, freestream_m_s) / (2.0 * np.pi)

@@ -39,6 +39,22 @@ def hub_apparent_wind(state, config, disc, disc_index, inflow, hub_velocity=(0.0
     return velocity[0] - np.asarray(hub_velocity, dtype=float)
 
 
+def hub_wing_winds(state, config, centres):
+    """The lifting-surface network's part of ``hub_apparent_wind`` at several hubs in one sum (node 3 contract
+    addendum 9: one network packing per step instead of one per disc): for a state without rings, zero ambient and zero
+    hub velocity, row i equals ``hub_apparent_wind(state, config, disc_i, i, (0, 0, 0))`` bit for bit - the same network,
+    radii and kernel, each point's sum over the segments in the same order (per-point sums do not depend on the point
+    set), and the same two additions."""
+    centres = np.asarray(centres, dtype=float).reshape(-1, 3)
+    velocity = np.zeros_like(centres)
+    nodes, edges, gamma = wake_network(state)
+    if len(edges):
+        radii = edge_radii(state.wing, edges, state.cores, config.core_radius_m)
+        velocity += segments_velocity(centres, nodes, edges, gamma, model=config.core_model, core_radius=radii,
+                                      **kernel_options(config))
+    return velocity - np.zeros(3)
+
+
 def shed_rotor_rings(state, config, discs, omegas_rad_s, inflow, *, nodes_per_ring=16,
                      hub_velocities=None, phase=0.0, surface_core_m=None, turbine_extension=None,
                      free_convection_steps=None, ring_core_m=None, ring_bound_core_m=None, ring_surface_overlap=None,

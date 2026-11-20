@@ -1,0 +1,58 @@
+{
+ "schema": "openfawe.rigid_body.v1",
+ "name": "M600 rigid-body properties and bridle (Makani wing serial 05, crosswind configuration; the offshore test site)",
+ "frame": "x_downstream_y_span_z_up",
+ "length_unit": "m",
+ "mass_kg": 1692.2999999999997,
+ "centre_of_mass_m": [
+  0.081,
+  -0.006,
+  -0.126
+ ],
+ "inertia_about_centre_of_mass_kg_m2": [
+  [
+   32005.623749999995,
+   -22.581628124999998,
+   35.855606249999994
+  ],
+  [
+   -22.581628124999998,
+   9741.301875,
+   -17.462420625
+  ],
+  [
+   35.855606249999994,
+   -17.462420625,
+   38732.51624999999
+  ]
+ ],
+ "bridle": {
+  "pivot_m": [
+   0.1494,
+   -0.5090999999999997,
+   -0.13035
+  ],
+  "radius_m": 4.786,
+  "attachments_m": {
+   "port": [
+    0.1494,
+    -5.8843,
+    -0.13035
+   ],
+   "starboard": [
+    0.1494,
+    5.8661,
+    -0.13035
+   ]
+  },
+  "y_offset_m": -0.5
+ },
+ "provenance": {
+  "source": "google/makani commit 1d66923, config/m600/wing.py, branch kWingSerial05Crosswind: the wing serial that config/common/wing_serial.py (lines 44-45) selects for a crosswind flight plan at kTestSiteNorway; the values are those of the Norway system params (cases/ground/makani_gs02_norway.json 'wing', equal to the offshore library's params.json) converted to this file's frame by the rule of m600_makani_rigid_body.json (x and z change sign; the land file satisfies the same rule exactly)",
+  "mass": "wing_mass = 1629.6 + 51.5 + 10.6 + 0.6 kg (kite, bridles, wing-side tether termination, GoPros on the termination)",
+  "centre_of_mass": "center_of_mass_pos = [-0.081, -0.006, 0.126] m in Makani body axes",
+  "inertia": "I = [[30260.0, 21.35, 33.90], [21.35, 9210.0, 16.51], [33.90, 16.51, 36620.0]] * wing_mass / 1600.0 kg m^2 in Makani body axes",
+  "bridle": "bridle_pos, bridle_rad and bridle_y_offset equal for both serials (checked); the bridle block is the land file's",
+  "task": "OF-0011 revision 6 addendum 73 item 1"
+ }
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "openfawe.tether.v1",
+  "name": "TU Delft V3 kite, 4 mm Dyneema tether of the 20 kW pumping system (OF-0009 case C2)",
+  "properties": {
+    "length_m": 300.0,
+    "linear_density_kg_m": 0.0091,
+    "outer_diameter_m": 0.004,
+    "tensile_stiffness_N": 614600.0,
+    "bending_stiffness_Nm2": 0.0,
+    "section_drag_coeff": 1.1
+  },
+  "settings": {
+    "num_nodes": 20,
+    "longitudinal_damping_ratio": 0.1,
+    "bending_damping_ratio": 1.0
+  },
+  "bridle": {
+    "pivot_body_m": [0.0, 0.0, 0.0],
+    "radius_m": 0.5,
+    "note": "The V3 CAD frame of the aircraft case has its origin about 11 m below the wing, at the bridle/KCU; the tether is attached there (pivot at the origin, a 0.5 m leg towards the last tether node, which is the swing model of tether/bridle.py)."
+  },
+  "declared_strain_for_the_sphere": 0.005,
+  "sources": {
+    "length_m": "traction phase of the two test flights, 234-385 m and 390-720 m (van der Vlugt et al. 2019, Renewable Energy 131:83-99, Table 1); 300 m chosen inside the first range",
+    "outer_diameter_m": "4 mm (van der Vlugt et al. 2019, Table 1)",
+    "linear_density_kg_m": "tether density 724 kg/m3 (van der Vlugt et al. 2019, Table 1) times the section area of a 4 mm circle: 0.0091 kg/m",
+    "section_drag_coeff": "1.1, cylinder in cross flow at Re 2.7e3-8.2e3 (van der Vlugt et al. 2019, Section 3.4)",
+    "tensile_stiffness_N": "unit spring constant k0 = 614600 N of the 4 mm main tether (Fechner, van der Vlugt, Schreuder, Schmehl 2015, Renewable Energy 83:705-716, Table 2; arXiv 1406.6218)",
+    "bending_stiffness_Nm2": "neglected (braided fibre rope)",
+    "longitudinal_damping_ratio": "Makani default of the line model kept (0.1); Fechner et al. 2015 give a unit damping c0 = 473 N s, not transcribed",
+    "num_nodes": "20 nodes, segments of 15 m; the stability bound of the explicit RK4 line step is checked by the driver",
+    "declared_strain_for_the_sphere": "tether force 3.0-3.1 kN in the traction phase (van der Vlugt et al. 2019, Table 1) over k0: 0.0049, rounded to 0.005"
+  }
+}
